@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EB552E80-C66A-40A7-BEF9-AC1E7DAB0760}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>virtualTetsDriver</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\libraries\libraries.props" />
+    <Import Project="..\debug-libs.props" />
+    <Import Project="..\utilities.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\libraries\libraries.props" />
+    <Import Project="..\release-libs.props" />
+    <Import Project="..\utilities.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\libraries\virtualTets;$(SolutionDir)\libraries\interpolationCoordinates;$(SolutionDir)\libraries\sparseSolver;$(SolutionDir)\libraries\polarDecomposition;$(SolutionDir)\libraries\matrix;$(SolutionDir)\libraries\libiglInterface;$(SolutionDir)\libraries\exactArithmetic;$(SolutionDir)\libraries\volumetricMesh;$(SolutionDir)\libraries\objMesh;$(SolutionDir)\libraries\macros;$(SolutionDir)\libraries\mesh;$(SolutionDir)\libraries\sparseMatrix;$(SolutionDir)\libraries\constrainedDOFs;$(SolutionDir)\libraries\performanceCounter;$(SolutionDir)\libraries\listIO;$(SolutionDir)\libraries\matrixIO;$(SolutionDir)\libraries\imageIO;$(SolutionDir)\libraries\getopts;$(SolutionDir)\libraries\configFile;$(SolutionDir)\libraries\minivector;$(SolutionDir)\libraries\basicAlgorithms;$(SolutionDir)\libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>virtualTets.lib;interpolationCoordinates.lib;sparseSolver.lib;polarDecomposition.lib;matrix.lib;libiglInterface.lib;exactArithmetic.lib;volumetricMesh.lib;objMesh.lib;mesh.lib;sparseMatrix.lib;constrainedDOFs.lib;performanceCounter.lib;listIO.lib;matrixIO.lib;imageIO.lib;getopts.lib;configFile.lib;minivector.lib;basicAlgorithms.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\libraries\virtualTets;$(SolutionDir)\libraries\interpolationCoordinates;$(SolutionDir)\libraries\sparseSolver;$(SolutionDir)\libraries\polarDecomposition;$(SolutionDir)\libraries\matrix;$(SolutionDir)\libraries\libiglInterface;$(SolutionDir)\libraries\exactArithmetic;$(SolutionDir)\libraries\volumetricMesh;$(SolutionDir)\libraries\objMesh;$(SolutionDir)\libraries\macros;$(SolutionDir)\libraries\mesh;$(SolutionDir)\libraries\sparseMatrix;$(SolutionDir)\libraries\constrainedDOFs;$(SolutionDir)\libraries\performanceCounter;$(SolutionDir)\libraries\listIO;$(SolutionDir)\libraries\matrixIO;$(SolutionDir)\libraries\imageIO;$(SolutionDir)\libraries\getopts;$(SolutionDir)\libraries\configFile;$(SolutionDir)\libraries\minivector;$(SolutionDir)\libraries\basicAlgorithms;$(SolutionDir)\libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>virtualTets.lib;interpolationCoordinates.lib;sparseSolver.lib;polarDecomposition.lib;matrix.lib;libiglInterface.lib;exactArithmetic.lib;volumetricMesh.lib;objMesh.lib;mesh.lib;sparseMatrix.lib;constrainedDOFs.lib;performanceCounter.lib;listIO.lib;matrixIO.lib;imageIO.lib;getopts.lib;configFile.lib;minivector.lib;basicAlgorithms.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="virtualTetsDriver.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,1 @@
+../../utilities/bin/immersionMesher ../../models/selfIntersecting/helix/helix.obj ../../models/selfIntersecting/helix/helix.veg -o helix-im.veg -w helix-im.interp

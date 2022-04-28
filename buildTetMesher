@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# select the OS, and compile all model reduction libraries + drivers
+
+if [ `uname -s` = "Darwin" ]
+then
+  # Mac OS X
+  cd Makefile-headers
+  ./selectMacOSX
+  echo "OS selection: Mac OS X."
+  cd ..
+else
+  # Linux
+  cd Makefile-headers
+  ./selectLinux
+  echo "OS selection: Linux."
+  cd ..
+fi
+
+echo "Compiling computeDistanceField..."
+cd utilities/computeDistanceField
+make
+cd -
+
+echo "Compiling isosurfaceMesher..."
+cd utilities/isosurfaceMesher
+make
+cd -
+
+echo "Compiling tetMesher..."
+cd utilities/tetMesher
+make
+cd -
+
+echo '      Mesher examples are in "examples/mesher".'

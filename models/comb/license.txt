@@ -1,0 +1,9 @@
+This model was downloaded and modified from Sketchfab (https://sketchfab.com).
+https://skfb.ly/DYPp
+
+Its original license: https://creativecommons.org/licenses/by/4.0/
+
+Under the restriction of the license, we identify here the changes made to this model:
+Added a material to the obj mesh. 
+The shape is the same as the one from Sketchfab. However, we subdivided the triangles in the comb's teeth.
+

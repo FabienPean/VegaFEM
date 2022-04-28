@@ -1,0 +1,1 @@
+../../utilities/bin/immersionMesher ../../models/selfIntersecting/torus/torus-difficult.obj ../../models/selfIntersecting/torus/torus-difficult.veg -o torus-difficult-im.veg -w torus-difficult-im.interp

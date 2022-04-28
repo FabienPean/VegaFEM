@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="boundingBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="createTriMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edgeKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exactOctree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="geometryQuery.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="halfSpace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="initPredicates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="labelOuterTets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="meshIntersection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="predicates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="simpleSphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tetKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tetMeshGeo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tetMeshManifold.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tetrahedron.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="triKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="triMeshGeo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="triMeshManifold.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="triMeshNeighbor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="triMeshPseudoNormal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tribox2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tribox3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="verticesInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="windingNumberTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="boundingBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="createTriMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exactOctree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="geometryQuery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intersection_tunicate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="labelOuterTets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meshIntersection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="predicates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rectKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="simpleSphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tetKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tetMeshGeo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tetMeshManifold.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tetrahedron.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triMeshGeo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triMeshManifold.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triMeshNeighbor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triMeshPseudoNormal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tribox2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tribox3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="verticesInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="windingNumberTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="predicates_Shewchuk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <GLUI_INCLUDE_DIR>$(SolutionDir)\libraries\glui\glui-2.35\src\include</GLUI_INCLUDE_DIR>
+    <WXWIDGETS_INCLUDE_DIR>
+    </WXWIDGETS_INCLUDE_DIR>
+    <MKL_LIBRARY_DIR>
+    </MKL_LIBRARY_DIR>
+    <CGAL_LIBRARY_DIR>
+    </CGAL_LIBRARY_DIR>
+    <WXWIDGETS_LIBRARY_DIR>
+    </WXWIDGETS_LIBRARY_DIR>
+    <CGAL_MATH_LIBRARIES>
+    </CGAL_MATH_LIBRARIES>
+    <MKL_LIBRARIES>
+    </MKL_LIBRARIES>
+    <ARPACK_LIBRARIES>
+    </ARPACK_LIBRARIES>
+    <CG_LIBRARIES>
+    </CG_LIBRARIES>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)\utilities\bin\$(Configuration)\</OutDir>
+    <IncludePath>$(GLUI_INCLUDE_DIR);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>$(GLUI_LIBRARIES);$(GLUT_LIBRARIES);$(GLEW_LIBRARIES);$(TIFF_LIBRARIES);$(PNG_LIBRARIES);$(JPEG_LIBRARIES);$(TBB_LIBRARIES);$(MKL_LIBRARIES);$(CG_LIBRARIES);$(CGAL_MATH_LIBRARIES);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\libraries\lib\$(Configuration);$(MKL_LIBRARY_DIR);$(CGAL_LIBRARY_DIR);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="GLUI_INCLUDE_DIR">
+      <Value>$(GLUI_INCLUDE_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="WXWIDGETS_INCLUDE_DIR">
+      <Value>$(WXWIDGETS_INCLUDE_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="MKL_LIBRARY_DIR">
+      <Value>$(MKL_LIBRARY_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CGAL_LIBRARY_DIR">
+      <Value>$(CGAL_LIBRARY_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="WXWIDGETS_LIBRARY_DIR">
+      <Value>$(WXWIDGETS_LIBRARY_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CGAL_MATH_LIBRARIES">
+      <Value>$(CGAL_MATH_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="MKL_LIBRARIES">
+      <Value>$(MKL_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ARPACK_LIBRARIES">
+      <Value>$(ARPACK_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CG_LIBRARIES">
+      <Value>$(CG_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

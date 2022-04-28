@@ -1,0 +1,1 @@
+../../utilities/bin/virtualTetsDriver ../../models/comb/comb.tet.veg ../../models/comb/comb.obj comb-vt.veg -w comb-vt.interp

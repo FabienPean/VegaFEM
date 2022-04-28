@@ -1,0 +1,1 @@
+../../utilities/bin/immersionMesher ../../models/selfIntersecting/quintupleTorus/quintupleTorus.obj ../../models/selfIntersecting/quintupleTorus/quintupleTorus.veg -o quintupleTorus-im.veg -w quintupleTorus-im.interp

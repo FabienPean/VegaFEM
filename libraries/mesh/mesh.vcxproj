@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="14.0">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{83603987-0B95-4440-8371-649717DAD6F6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mesh</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+    <Import Project="..\libraries.props" />
+    <Import Project="..\copy-headers.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+    <Import Project="..\libraries.props" />
+    <Import Project="..\copy-headers.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\libraries\basicAlgorithms;$(SolutionDir)\libraries\macros;$(SolutionDir)\libraries\minivector;$(SolutionDir)\libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\libraries\basicAlgorithms;$(SolutionDir)\libraries\macros;$(SolutionDir)\libraries\minivector;$(SolutionDir)\libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="boundingBox.h" />
+    <ClInclude Include="createTriMesh.h" />
+    <ClInclude Include="edgeKey.h" />
+    <ClInclude Include="exactOctree.h" />
+    <ClInclude Include="geometryQuery.h" />
+    <ClInclude Include="halfSpace.h" />
+    <ClInclude Include="initPredicates.h" />
+    <ClInclude Include="labelOuterTets.h" />
+    <ClInclude Include="meshIntersection.h" />
+    <ClInclude Include="plane.h" />
+    <ClInclude Include="predicates.h" />
+    <ClInclude Include="simpleSphere.h" />
+    <ClInclude Include="tetKey.h" />
+    <ClInclude Include="tetMeshGeo.h" />
+    <ClInclude Include="tetMeshManifold.h" />
+    <ClInclude Include="tetrahedron.h" />
+    <ClInclude Include="triKey.h" />
+    <ClInclude Include="triMeshGeo.h" />
+    <ClInclude Include="triMeshManifold.h" />
+    <ClInclude Include="triMeshNeighbor.h" />
+    <ClInclude Include="triMeshPseudoNormal.h" />
+    <ClInclude Include="triangle.h" />
+    <ClInclude Include="tribox2.h" />
+    <ClInclude Include="tribox3.h" />
+    <ClInclude Include="verticesInfo.h" />
+    <ClInclude Include="windingNumberTree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="boundingBox.cpp" />
+    <ClCompile Include="createTriMesh.cpp" />
+    <ClCompile Include="exactOctree.cpp" />
+    <ClCompile Include="geometryQuery.cpp" />
+    <ClCompile Include="intersection_tunicate.cpp" />
+    <ClCompile Include="labelOuterTets.cpp" />
+    <ClCompile Include="meshIntersection.cpp" />
+    <ClCompile Include="predicates.cpp" />
+    <ClCompile Include="predicates_Shewchuk.c" />
+    <ClCompile Include="rectKey.cpp" />
+    <ClCompile Include="simpleSphere.cpp" />
+    <ClCompile Include="tetKey.cpp" />
+    <ClCompile Include="tetMeshGeo.cpp" />
+    <ClCompile Include="tetMeshManifold.cpp" />
+    <ClCompile Include="tetrahedron.cpp" />
+    <ClCompile Include="triKey.cpp" />
+    <ClCompile Include="triMeshGeo.cpp" />
+    <ClCompile Include="triMeshManifold.cpp" />
+    <ClCompile Include="triMeshNeighbor.cpp" />
+    <ClCompile Include="triMeshPseudoNormal.cpp" />
+    <ClCompile Include="triangle.cpp" />
+    <ClCompile Include="tribox2.cpp" />
+    <ClCompile Include="tribox3.cpp" />
+    <ClCompile Include="verticesInfo.cpp" />
+    <ClCompile Include="windingNumberTree.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

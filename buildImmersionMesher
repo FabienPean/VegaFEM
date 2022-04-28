@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+# select the OS, and compile all model reduction libraries + drivers
+
+if [ `uname -s` = "Darwin" ]
+then
+  # Mac OS X
+  cd Makefile-headers
+  ./selectMacOSX
+  echo "OS selection: Mac OS X."
+  cd ..
+else
+  # Linux
+  cd Makefile-headers
+  ./selectLinux
+  echo "OS selection: Linux."
+  cd ..
+fi
+
+#build virtualTetsDriver, immersionMesher and editShapeARAP
+#Note: virtualTetsDriver and immersionMesher require CGAL and libigl
+
+echo "Compiling virtualTetsDriver..."
+cd utilities/virtualTetsDriver/
+make
+cd -
+
+echo "Compiling immersionMesher..."
+cd utilities/immersionMesher/
+make
+cd -
+
+echo "Compiling editShapeARAP..."
+cd utilities/editShapeARAP/
+make
+cd -
+
+echo '      virtualTetsDriver examples are in "examples/virtualTets".'
+echo '      immersionMesher examples are in "examples/immersionMesher".'

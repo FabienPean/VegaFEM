@@ -1,0 +1,1 @@
+../../utilities/bin/virtualTetsDriver ../../models/dragon-77k/dragon-coarse.tet.veg ../../models/dragon-77k/dragon-77k.obj dragon-vt.veg -w dragon-vt.interp

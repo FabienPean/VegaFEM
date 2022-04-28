@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <GLUT_LIBRARIES>C:\lib2015\distrib\lib\Release\freeglut.lib</GLUT_LIBRARIES>
+    <GLUI_LIBRARIES>$(SolutionDir)\libraries\glui\glui-2.35\src\msvc\lib\Release\glui32.lib</GLUI_LIBRARIES>
+    <TBB_LIBRARIES>
+    </TBB_LIBRARIES>
+    <TIFF_LIBRARIES>
+    </TIFF_LIBRARIES>
+    <JPEG_LIBRARIES>
+    </JPEG_LIBRARIES>
+    <PNG_LIBRARIES>
+    </PNG_LIBRARIES>
+    <GLEW_LIBRARIES>C:\lib2015\distrib\lib\Release\glew32.lib</GLEW_LIBRARIES>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="GLUT_LIBRARIES">
+      <Value>$(GLUT_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="GLUI_LIBRARIES">
+      <Value>$(GLUI_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="TBB_LIBRARIES">
+      <Value>$(TBB_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="TIFF_LIBRARIES">
+      <Value>$(TIFF_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="JPEG_LIBRARIES">
+      <Value>$(JPEG_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="PNG_LIBRARIES">
+      <Value>$(PNG_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="GLEW_LIBRARIES">
+      <Value>$(GLEW_LIBRARIES)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

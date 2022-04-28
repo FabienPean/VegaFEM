@@ -1,0 +1,1 @@
+../../utilities/bin/immersionMesher ../../models/selfIntersecting/torus/torus-easy.obj ../../models/selfIntersecting/torus/torus-easy.veg -o torus-easy-im.veg -w torus-easy-im.interp

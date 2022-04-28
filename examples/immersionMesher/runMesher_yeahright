@@ -1,0 +1,1 @@
+../../utilities/bin/immersionMesher ../../models/selfIntersecting/yeahright/yeahright-on-ground.obj ../../models/selfIntersecting/yeahright/yeahright-on-ground.veg -o yeahright-im.veg -w yeahright-im.interp

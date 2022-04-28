@@ -1,0 +1,1 @@
+../../utilities/bin/immersionMesher ../../models/selfIntersecting/doubleLoop/doubleLoopWithCube.obj ../../models/selfIntersecting/doubleLoop/doubleLoopWithCube.veg -o doubleLoop-im.veg -w doubleLoop-im.interp

@@ -1,0 +1,8 @@
+We generated the yeahright-on-ground model by modifying the “yeahright” model from Keenan Crane’s 3D Model Repository [Crane 2017] available at:
+
+https://www.cs.cmu.edu/~kmcrane/Projects/ModelRepository/
+
+Both the original model and our model have genus 131. The modification is that we dropped the original model under gravity using a FEM simulation, and let it come to rest on a plane without any self-collision handling. This resulted in a massively self-intersecting shape of genus 131.
+
+The original author released the model into the public domain. We hereby also release our modifications into the public domain. 
+
