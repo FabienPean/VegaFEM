@@ -1,6 +1,0 @@
-#!/bin/bash
-#
-#clean all libraries and utilities
-
-find libraries/ -name Makefile -execdir make clean ';'
-find utilities/ -name Makefile -execdir make clean ';'
