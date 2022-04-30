@@ -31,7 +31,7 @@
  *************************************************************************/
 
 #include <cmath>
-#include <memory.h>
+#include <cstring>
 #include "matrix.h"
 #include "matrixLAPACK.h"
 #include "integratorMulti1D.h"

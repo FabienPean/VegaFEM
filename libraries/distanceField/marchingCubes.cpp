@@ -43,7 +43,7 @@
 #define USE_STATIC_TABLE
 
 #include <cfloat>
-#include <memory.h>
+#include <cstring>
 #include <string>
 #include <algorithm>
 #include <set>
