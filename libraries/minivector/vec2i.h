@@ -25,8 +25,8 @@
 #ifndef VEC2I_H
 #define VEC2I_H
 
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 #include <ostream>
 
 class Vec2i

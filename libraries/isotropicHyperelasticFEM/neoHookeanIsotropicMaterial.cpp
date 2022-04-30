@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include "neoHookeanIsotropicMaterial.h"
 #include "volumetricMeshENuMaterial.h"
 

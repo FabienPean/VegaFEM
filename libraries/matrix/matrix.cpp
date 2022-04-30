@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include "matrix.h"
 #include "matrixIO.h"
 #include "matrixExp.h"

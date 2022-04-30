@@ -102,7 +102,7 @@ Both publications are available online at www.jernejbarbic.com .
 
 */
 
-#include <stdlib.h>
+#include <cstdlib>
 
 // This abstract class is derived into: IntegratorBaseDense (dense systems)
 // and ImplicitNewmarkSparse ((large) sparse systems).
@@ -142,7 +142,7 @@ public:
   inline virtual double * Getqvel() { return qvel; }
   inline virtual double * Getqaccel() { return qaccel; }
 
-  // == set external forces (a vector of r numbers) ===
+// == set external forces (a vector of r numbers) ===
 
   // external forces remain in force until explicity changed
   void SetExternalForces(double * externalForces); 

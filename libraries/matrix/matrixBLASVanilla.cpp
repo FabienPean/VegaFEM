@@ -32,7 +32,7 @@
 
 #include "matrixMacros.h"
 #include "matrixBLAS.h"
-#include <math.h>
+#include <cmath>
 
 template<class real>
 real * SumMatrices(int m, int n, real * mtx1, real * mtx2, real * output)

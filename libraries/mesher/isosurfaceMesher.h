@@ -42,7 +42,7 @@
 #ifndef _ISOSURFACEMESHER_H_
 #define _ISOSURFACEMESHER_H_
 
-#include <time.h>
+#include <ctime>
 #include <vector>
 #include <map>
 #include <set>

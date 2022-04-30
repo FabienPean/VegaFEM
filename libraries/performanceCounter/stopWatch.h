@@ -56,7 +56,7 @@
 #else
 #include <cstdlib>
 #include <cstdio>
-#include "sys/time.h"
+#include <sys/time.h>
 #endif
 
 class StopWatch

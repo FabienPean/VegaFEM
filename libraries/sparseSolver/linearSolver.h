@@ -40,8 +40,8 @@
   Jernej Barbic, USC, 2010
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 class LinearSolver
 {

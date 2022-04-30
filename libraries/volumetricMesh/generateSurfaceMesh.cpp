@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <float.h>
+#include <cfloat>
 #include "objMesh.h"
 #include "generateSurfaceMesh.h"
 #include "cubicMesh.h"

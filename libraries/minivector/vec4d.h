@@ -34,7 +34,7 @@
 #ifndef _MINIVEC4D_H_
 #define _MINIVEC4D_H_
 
-#include <stdio.h>
+#include <cstdio>
 #include <cmath>
 #include <ostream>
 #include <cstring>

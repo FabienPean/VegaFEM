@@ -34,11 +34,11 @@
 #define _PRINTBITMAP_H_
 
 #include "macros.h"
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <float.h>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cfloat>
 
 void print_bitmap_string(float x, float y, float z, const char * s);
 void print_bitmap_integer(float x, float y, float z, int i);

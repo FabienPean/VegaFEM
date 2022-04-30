@@ -33,8 +33,8 @@
 #ifndef _VOLUMETRICMESHPARSER_H_
 #define _VOLUMETRICMESHPARSER_H_
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <vector>
 using namespace std;
 

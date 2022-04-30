@@ -39,11 +39,11 @@
 #ifndef _REDUCEDLINEARFORCEMODEL_H_
 #define _REDUCEDLINEARFORCEMODEL_H_
 
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <float.h>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cfloat>
 
 #include "reducedForceModel.h"
 

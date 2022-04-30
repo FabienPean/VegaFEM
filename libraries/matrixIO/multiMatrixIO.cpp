@@ -34,9 +34,9 @@
   Load/save multiple binary matrices from a single file.
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 #include "multiMatrixIO.h"
 
 int MultiMatrixIO::Save(const char * filename, int numMatrices, int * m, int * n, double ** matrices)

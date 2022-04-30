@@ -49,8 +49,8 @@ However, for very large systems (e.g. 200,000 x 200,000 matrices on a
 
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include "sparseMatrix.h"
 #include "linearSolver.h"
 

@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <cstdio>
 #include "rigidBody.h"
 
 // This example demonstrates how to use the rigidBody.h class

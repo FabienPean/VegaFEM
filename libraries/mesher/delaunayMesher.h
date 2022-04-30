@@ -38,7 +38,7 @@
 #ifndef _DELAUNAYMESHER_H_
 #define _DELAUNAYMESHER_H_
 
-#include <stddef.h>
+#include <cstddef>
 #include <cassert>
 #include <iostream>
 #include <list>

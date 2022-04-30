@@ -46,8 +46,8 @@
   2Gb machine), the Cholesky decomposition might run out of memory.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include "linearSolver.h"
 #include "sparseMatrix.h"
 

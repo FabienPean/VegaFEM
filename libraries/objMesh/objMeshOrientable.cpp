@@ -36,7 +36,7 @@
   #pragma warning(disable : 4244)
 #endif
 
-#include "float.h"
+#include <cfloat>
 #include <vector>
 #include <set>
 #include <string>
@@ -44,7 +44,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
-#include <assert.h>
+#include <cassert>
 using namespace std;
 #include "objMeshOrientable.h"
 

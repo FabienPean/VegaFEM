@@ -31,8 +31,8 @@
  *************************************************************************/
 
 #include "constrainedDOFs.h"
-#include "stdio.h"
-#include "stdlib.h"
+#include <cstdio>
+#include <cstdlib>
 #include <cassert>
 
 void ConstrainedDOFs::InsertDOFs(int mFull, const double * xConstrained, double * x, int numFixedRows, const int * fixedRows, int oneIndexed)

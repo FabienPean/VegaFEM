@@ -38,7 +38,7 @@
 #ifndef _FORCEMODEL_H_
 #define _FORCEMODEL_H_
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "sparseMatrix.h"
 
 class ForceModel

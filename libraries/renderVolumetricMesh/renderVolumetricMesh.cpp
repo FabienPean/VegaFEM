@@ -31,7 +31,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <float.h>
+#include <cfloat>
 #include "openGL-headers.h"
 #include "printBitmap.h"
 #include "openGLHelper.h"

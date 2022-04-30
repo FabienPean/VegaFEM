@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include "homogeneousStVKIsotropicMaterial.h"
 
 HomogeneousStVKIsotropicMaterial::HomogeneousStVKIsotropicMaterial(double E_, double nu_, int enableCompressionResistance_, double compressionResistance_) : IsotropicMaterialWithCompressionResistance(enableCompressionResistance_), compressionResistance(compressionResistance_)

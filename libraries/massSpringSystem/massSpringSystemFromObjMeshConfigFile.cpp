@@ -35,7 +35,7 @@
 #include "configFile.h"
 #include "massSpringSystemFromObjMesh.h"
 #include "massSpringSystemFromObjMeshConfigFile.h"
-#include <string.h>
+#include <cstring>
 
 char * MassSpringSystemFromObjMeshConfigFile::DuplicateString(const char * s)
 {

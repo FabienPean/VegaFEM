@@ -31,8 +31,8 @@
  *************************************************************************/
 
 #include "hashTable.h"
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 #include <set>
 using namespace std;
 

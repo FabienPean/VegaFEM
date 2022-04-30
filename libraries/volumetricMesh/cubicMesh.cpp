@@ -30,9 +30,9 @@
  *                                                                       *
  *************************************************************************/
 
-#include <float.h>
-#include <string.h>
-#include <assert.h>
+#include <cfloat>
+#include <cstring>
+#include <cassert>
 #include <set>
 #include <map>
 #include <vector>

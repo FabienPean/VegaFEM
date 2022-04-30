@@ -30,9 +30,9 @@
  *                                                                       *
  *************************************************************************/
 
-#include <float.h>
-#include <string.h>
-#include <assert.h>
+#include <cfloat>
+#include <cstring>
+#include <cassert>
 #include <iostream>
 #include <map>
 #include "volumetricMeshParser.h"

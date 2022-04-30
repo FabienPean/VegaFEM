@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include "lapack-headers.h"
 #include "modalMatrix.h"
 

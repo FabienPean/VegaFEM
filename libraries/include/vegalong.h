@@ -1,8 +1,8 @@
 #ifndef vegalong
 
-#include <stdint.h>
-#define vegalong int64_t
-#define vegaunsignedlong uint64_t
+#include <cstdint>
+#define vegalong std::int64_t
+#define vegaunsignedlong std::uint64_t
 
 #endif
 

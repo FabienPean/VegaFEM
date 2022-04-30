@@ -34,8 +34,8 @@
 #ifndef VEC3I_H
 #define VEC3I_H
 
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 #include <ostream>
 #include "vec3d.h"
 

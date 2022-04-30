@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include "homogeneousNeoHookeanIsotropicMaterial.h"
 
 HomogeneousNeoHookeanIsotropicMaterial::HomogeneousNeoHookeanIsotropicMaterial(double E_, double nu_, int enableCompressionResistance_, double compressionResistance_) : IsotropicMaterialWithCompressionResistance(enableCompressionResistance_), compressionResistance(compressionResistance_)

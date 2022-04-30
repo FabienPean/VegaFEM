@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "lapack-headers.h"
 #include "performanceCounter.h"
 #include "implicitBackwardEulerDense.h"

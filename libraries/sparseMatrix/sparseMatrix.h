@@ -101,7 +101,7 @@
   2 2 6
 */
 
-#include <string.h>
+#include <cstring>
 #include <vector>
 #include <map>
 

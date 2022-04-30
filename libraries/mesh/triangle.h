@@ -38,7 +38,7 @@
 #ifndef _TRIANGLE_H_
 #define _TRIANGLE_H_
 
-#include <math.h>
+#include <cmath>
 #include <vector>
 #include <iostream>
 #include "boundingBox.h"

@@ -30,10 +30,10 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cctype>
 #include "matrixMacros.h"
 #include "matrixIO.h"
 

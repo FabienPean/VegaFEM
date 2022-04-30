@@ -33,10 +33,10 @@
 
 #if defined(_WIN32) || defined(WIN32)
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstring>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include "ObjMeshGPUDeformer_uUq_pbuffer.h"
 
 ObjMeshGPUDeformer_uUq_pbuffer::~ObjMeshGPUDeformer_uUq_pbuffer() {}

@@ -38,7 +38,7 @@
 #ifndef _MATRIX_BLAS_H_
 #define _MATRIX_BLAS_H_
 
-#include <stdlib.h>
+#include <cstdlib>
 
 template<class real>
 real * SumMatrices(int m, int n, const real * mtx1, const real * mtx2, real * output = NULL);

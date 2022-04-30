@@ -30,9 +30,9 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 #include "openGL-headers.h"
 #include "saveScreenShot.h"
 

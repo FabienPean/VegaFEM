@@ -50,9 +50,9 @@
   elements and vertices are 1-indexed (same as in TetGen and Stellar).
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <vector>
 #include <set>
 #include <string>

@@ -31,7 +31,7 @@
  *************************************************************************/
 
 #include "arapDeformer.h"
-#include <float.h>
+#include <cfloat>
 #include "vec3d.h"
 //#include "matrix.h"
 #include "polarDecomposition.h"

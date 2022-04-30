@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdio.h>
+#include <cstdio>
 #include <cassert>
 #include "distanceFieldCreator.h"
 #include "signedDistanceFieldFromPolygonSoup.h"

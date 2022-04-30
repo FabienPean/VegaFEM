@@ -30,9 +30,9 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <cmath>
+#include <cstdlib>
+#include <cstdio>
 #include "CGSolver.h"
 
 CGSolver::CGSolver(SparseMatrix * A_): A(A_) 

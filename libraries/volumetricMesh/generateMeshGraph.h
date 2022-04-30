@@ -33,9 +33,9 @@
 #ifndef _GENERATEMESHGRAPH_H_
 #define _GENERATEMESHGRAPH_H_
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
 #include "volumetricMesh.h"
 #include "graph.h"
 

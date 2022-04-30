@@ -31,10 +31,10 @@
  *                                                                       *
  *************************************************************************/
 
-#include <float.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cfloat>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #if defined(_WIN32) || defined(WIN32)
   #include "GL/glew.h"
 #endif

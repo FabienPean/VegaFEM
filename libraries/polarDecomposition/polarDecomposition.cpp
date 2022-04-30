@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 #include "polarDecomposition.h"
 #include "mat3d.h"
 

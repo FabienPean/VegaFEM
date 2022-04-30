@@ -74,10 +74,10 @@
 /*********************************************************************/
 
 #include "getopts.h"
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstring>
+#include <cerrno>
+#include <cstdio>
 #include "vegalong.h"
 
 int getopts(int argc, char **argv, opt_t opttable[])

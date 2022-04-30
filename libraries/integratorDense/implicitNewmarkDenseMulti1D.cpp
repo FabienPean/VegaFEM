@@ -30,9 +30,9 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
+#include <cstdio>
+#include <cstring>
+#include <cmath>
 #include "lapack-headers.h"
 #include "matrix.h"
 #include "matrixLAPACK.h"

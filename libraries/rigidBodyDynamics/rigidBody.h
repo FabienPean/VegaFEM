@@ -152,7 +152,7 @@ or 4th order. Add support for impulses.
 
 */
 
-#include <string.h>
+#include <cstring>
 #include "quaternion.h"
 
 class RigidBody

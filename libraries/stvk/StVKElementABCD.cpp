@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "StVKElementABCD.h"
 
 void StVKElementABCD::AllocateElementIterator(void ** elementIterator)

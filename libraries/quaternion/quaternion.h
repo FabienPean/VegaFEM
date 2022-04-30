@@ -51,8 +51,8 @@
   See also example.cpp .
 */
 
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 
 // forward declarations for the friend template
 template <typename real> class Quaternion;

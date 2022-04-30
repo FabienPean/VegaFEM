@@ -34,14 +34,14 @@
 #ifndef _OBJMESH_H_
 #define _OBJMESH_H_
 
-#include <math.h>
+#include <cmath>
 #include <string>
 #include <vector>
 #include <map>
 #include <iostream>
 #include <set>
 #include <algorithm>
-#include <assert.h>
+#include <cassert>
 #include <exception>
 #include <memory>
 #include <functional>

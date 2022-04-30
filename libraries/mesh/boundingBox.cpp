@@ -34,7 +34,7 @@
 //  Author: Jernej Barbic, CMU
 
 #include "openGL-headers.h"
-#include <float.h>
+#include <cfloat>
 #include <vector>
 #include <iostream>
 #include <cassert>

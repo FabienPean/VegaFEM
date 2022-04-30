@@ -30,12 +30,12 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include <memory.h>
 #include "matrix.h"
 #include "matrixLAPACK.h"
 #include "integratorMulti1D.h"
-#include "float.h"
+#include <cfloat>
 
 IntegratorMulti1D::IntegratorMulti1D(int r, double timestep, double * massMatrix_, double * tangentStiffnessMatrix_, double dampingMassCoef, double dampingStiffnessCoef): IntegratorBaseDense(r, timestep, dampingMassCoef, dampingStiffnessCoef)
 {

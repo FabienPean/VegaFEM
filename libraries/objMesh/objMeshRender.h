@@ -39,7 +39,7 @@
 #include <vector>
 #include <map>
 #include <set>
-#include <assert.h>
+#include <cassert>
 #include "objMesh.h"
 
 //flags for ObjMeshRender:

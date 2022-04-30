@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include "StVKIsotropicMaterial.h"
 #include "volumetricMeshENuMaterial.h"
 

@@ -69,8 +69,8 @@
 #ifndef _LIGHTING_H_
 #define _LIGHTING_H_
 
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 
 class ConfigFile;
 

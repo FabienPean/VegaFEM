@@ -34,7 +34,7 @@
   Load/save many sets of interpolation weights from one file.
 */
 
-#include <stdio.h>
+#include <cstdio>
 #include "interpolationWeightsMultiLoad.h"
 #include "volumetricMesh.h"
 #include "vegalong.h"

@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <string.h>
+#include <cstring>
 #include "volumetricMeshParser.h"
 
 VolumetricMeshParser::VolumetricMeshParser(const char * includeToken_)

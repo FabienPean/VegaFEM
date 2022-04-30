@@ -35,8 +35,8 @@
   except it also stores the nearest point, not just the distance to it.
 */
 
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include <fstream>
 #include "closestPointField.h"
 #include "trilinearInterpolation.h"

@@ -30,9 +30,9 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include "matrixIO.h"
 #include "performanceCounter.h"
 #include "constrainedDOFs.h"

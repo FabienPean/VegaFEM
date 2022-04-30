@@ -31,9 +31,9 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include "objMeshGPUDeformer_coarseToFine_fbo.h"
 
 #include "glh_extensions.h"

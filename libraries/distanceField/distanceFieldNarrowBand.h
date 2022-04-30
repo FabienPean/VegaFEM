@@ -42,7 +42,7 @@
 #include "distanceFieldBase.h"
 #include "vegalong.h"
 #include <map>
-#include <float.h>
+#include <cfloat>
 
 class DistanceFieldNarrowBand : public DistanceFieldBase
 {

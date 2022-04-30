@@ -55,9 +55,9 @@
 #ifndef _MATRIX_H_
 #define _MATRIX_H_
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 #include "matrixMacros.h"
 #include "matrixBLAS.h"
 #include "matrixLAPACK.h"

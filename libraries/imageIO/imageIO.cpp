@@ -39,9 +39,9 @@
   In order to enable PNG, JPEG or TIFF, uncomment the corresponding line in imageFormats.h, and link against the external library.
 */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
 
 #if defined(_WIN32) || defined(WIN32)
   #pragma warning(disable : 4996)

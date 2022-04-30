@@ -39,7 +39,7 @@
 #ifndef _REDUCEDSTVKFORCE_MODEL_H_
 #define _REDUCEDSTVKFORCE_MODEL_H_
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "StVKReducedInternalForces.h"
 #include "StVKReducedStiffnessMatrix.h"
 #include "reducedForceModel.h"

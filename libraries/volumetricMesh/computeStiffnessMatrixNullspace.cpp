@@ -35,7 +35,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <string.h>
+#include <cstring>
 #include "matrixMacros.h"
 #include "minivector.h"
 #include "computeStiffnessMatrixNullspace.h"

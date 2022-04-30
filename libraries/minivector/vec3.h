@@ -34,8 +34,8 @@
 #ifndef _MINIVEC3_H_
 #define _MINIVEC3_H_
 
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 #include <ostream>
 
 // forward declarations for external helper functions

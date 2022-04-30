@@ -59,8 +59,8 @@ Version: 1.0
 
 #if (defined __unix__) || (defined __APPLE__)
 
-#include "stdlib.h"
-#include "sys/time.h"
+#include <cstdlib>
+#include <sys/time.h>
 
 class PerformanceCounter
 {

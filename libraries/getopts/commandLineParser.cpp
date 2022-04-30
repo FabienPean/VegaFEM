@@ -33,10 +33,10 @@
 #include "commandLineParser.h"
 #include <iostream>
 #include <string>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstring>
+#include <cerrno>
+#include <cstdio>
 using namespace std;
 
 CommandLineParser::CommandLineParser() {}

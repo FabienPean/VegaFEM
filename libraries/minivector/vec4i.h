@@ -35,8 +35,8 @@
 #define VEC4I_H
 
 
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 #include <ostream>
 #include <algorithm>
 

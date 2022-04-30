@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#include <string.h>
-#include <stdlib.h>
+#include <cstring>
+#include <cstdlib>
 #include "sceneObjectWithRestPosition.h"
 
 SceneObjectWithRestPosition::SceneObjectWithRestPosition(const char * filename): SceneObject(filename) 

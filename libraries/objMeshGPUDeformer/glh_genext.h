@@ -12,7 +12,7 @@ extern "C" {
 #  include <GL/wglext.h>
 #  define GLH_EXT_GET_PROC_ADDRESS(p)   wglGetProcAddress(p) 
 #elif defined(UNIX)
-#  include <string.h>
+#  include <cstring>
 #  include <GL/glx.h>
 #  include <GL/glxext.h>
 #  define GLH_EXT_GET_PROC_ADDRESS(p)   glXGetProcAddressARB( (const GLubyte *) p) 

@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include "isotropicMaterialWithCompressionResistance.h"
 
 IsotropicMaterialWithCompressionResistance::IsotropicMaterialWithCompressionResistance(int enableCompressionResistance_) : IsotropicMaterial(), enableCompressionResistance(enableCompressionResistance_)

@@ -41,7 +41,7 @@
 #ifndef _REDUCEDMASSSPRINGSYSTEMFORCEMODEL_H_
 #define _REDUCEDMASSSPRINGSYSTEMFORCEMODEL_H_
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "modalMatrix.h"
 #include "sparseMatrix.h"
 #include "massSpringSystem.h"

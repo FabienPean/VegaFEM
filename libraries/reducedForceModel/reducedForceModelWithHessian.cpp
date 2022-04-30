@@ -31,7 +31,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include "reducedForceModelWithHessian.h"
 #include "lapack-headers.h"
 #include "matrixMacros.h"

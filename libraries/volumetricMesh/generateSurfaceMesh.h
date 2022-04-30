@@ -40,9 +40,9 @@
 #ifndef _GENERATESURFACEMESH_H_
 #define _GENERATESURFACEMESH_H_
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
 #include "volumetricMesh.h"
 #include "objMesh.h"
 

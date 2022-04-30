@@ -38,7 +38,7 @@
 #endif
 
 #include "openGL-headers.h"
-#include <string.h>
+#include <cstring>
 #include "objMeshRender.h"
 #include "openGLHelper.h"
 #include "imageIO.h"

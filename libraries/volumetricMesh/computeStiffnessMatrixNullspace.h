@@ -38,9 +38,9 @@
 #ifndef _COMPUTESTIFFNESSMATRIXNULLSPACE_H_
 #define _COMPUTESTIFFNESSMATRIXNULLSPACE_H_
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
 
 /*
   Computes the nullspace of the tangent stiffness matrix at the specified deformation. At the origin (u=0), stiffness matrix has nullspace of dimension 6, elsewhere, it has nullspace of dimension 3.

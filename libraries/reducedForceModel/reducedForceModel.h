@@ -39,8 +39,8 @@
 #ifndef _REDUCEDFORCEMODELMODEL_H_
 #define _REDUCEDFORCEMODELMODEL_H_
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstdio>
 
 class ReducedForceModel
 {

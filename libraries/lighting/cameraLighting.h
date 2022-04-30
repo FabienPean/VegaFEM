@@ -33,8 +33,8 @@
 #ifndef CAMERALIGHTING_H
 #define CAMERALIGHTING_H
 
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 
 class SphericalCamera;
 

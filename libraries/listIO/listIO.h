@@ -37,7 +37,7 @@
   A class to load an integer list from a text file into memory. 
 */
 
-#include <stdio.h>
+#include <cstdio>
 #include <vector>
 #include <set>
 

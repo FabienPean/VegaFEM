@@ -1,4 +1,4 @@
-#include <string.h>
+#include <cstring>
 #include "integratorSolverSelection.h"
 
 // returns the string corresponding to the selected integrator solver

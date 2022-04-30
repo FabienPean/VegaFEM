@@ -37,7 +37,7 @@
   Signed Distance Fields for Polygon Soup Meshes, Graphics Interface 2014, Montreal, Canada
 */
 
-#include <stdio.h>
+#include <cstdio>
 #include "signedDistanceFieldFromPolygonSoup.h"
 #include "marchingCubes.h"
 using namespace::std;

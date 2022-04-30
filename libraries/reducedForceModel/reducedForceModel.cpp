@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
-#include <stdio.h>
+#include <cmath>
+#include <cstdio>
 #include "reducedForceModel.h"
 
 void ReducedForceModel::GetForceAndMatrix(double * u, double * internalForces, double * tangentStiffnessMatrix)

@@ -30,11 +30,11 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <float.h>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cfloat>
 #include "sceneObject6DOF.h"
 
 SceneObject6DOF::SceneObject6DOF(const char * filenameOBJ): SceneObjectWithRestPosition(filenameOBJ), scale(1.0) 

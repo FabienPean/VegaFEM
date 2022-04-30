@@ -34,8 +34,8 @@
 #ifndef _MINIVEC3D_H_
 #define _MINIVEC3D_H_
 
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 #include <ostream>
 #include <cstring>
 

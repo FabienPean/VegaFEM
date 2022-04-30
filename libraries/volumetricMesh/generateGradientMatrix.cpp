@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <string.h>
+#include <cstring>
 #include "matrixMacros.h"
 #include "generateGradientMatrix.h"
 

@@ -35,7 +35,7 @@
 #ifndef _MINIVEC2D_H_
 #define _MINIVEC2D_H_
 
-#include <math.h>
+#include <cmath>
 #include <ostream>
 
 class Vec2d {

@@ -34,7 +34,7 @@
   Main computational routine for narrowband distance field computation.
 */
 
-#include <float.h>
+#include <cfloat>
 #include "performanceCounter.h"
 #include "vegalong.h"
 

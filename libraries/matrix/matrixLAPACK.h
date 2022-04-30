@@ -38,7 +38,7 @@
 #ifndef _MATRIX_LAPACK_H_
 #define _MATRIX_LAPACK_H_
 
-#include <stdlib.h>
+#include <cstdlib>
 
 template<class real>
 real * InverseMatrix(int m, const real * mtx, real * output = NULL);

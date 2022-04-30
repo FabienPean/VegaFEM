@@ -29,8 +29,8 @@
   Funding: NSF, Link Foundation
 */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstdio>
 #include "lapack-headers.h"
 #ifdef __APPLE__
   #include "TargetConditionals.h"

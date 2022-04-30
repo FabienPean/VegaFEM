@@ -36,9 +36,9 @@
   #pragma warning(disable : 4267)
   #pragma warning(disable : 4244)
 #endif
-#include <float.h>
-#include <math.h>
-#include <string.h>
+#include <cfloat>
+#include <cmath>
+#include <cstring>
 #include <vector>
 #include <string>
 #include <map>
@@ -49,7 +49,7 @@
 #include <algorithm>
 #include <functional>
 #include <cctype>
-#include <assert.h>
+#include <cassert>
 #include <cassert>
 #include "macros.h"
 #include "disjointSet.h"

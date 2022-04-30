@@ -56,8 +56,8 @@
 #ifndef _MATRIXIO_H_
 #define _MATRIXIO_H_
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <vector>
 #include "matrixMacros.h"
 

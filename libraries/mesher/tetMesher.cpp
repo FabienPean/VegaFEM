@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <limits.h>
+#include <climits>
 #include <vector>
 #include <cfloat>
 #include <stack>

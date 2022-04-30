@@ -45,7 +45,7 @@
 #include "matrixMacros.h"
 #include <fstream>
 #include <iomanip>
-#include <string.h>
+#include <cstring>
 using namespace std;
 
 ObjMeshOffsetVoxels::ObjMeshOffsetVoxels(const ObjMesh * objMesh_, const int resolution_[3], int depth_, Vec3d bmin_, Vec3d bmax_ )

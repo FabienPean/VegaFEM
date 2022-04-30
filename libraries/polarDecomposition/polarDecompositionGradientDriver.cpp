@@ -59,9 +59,9 @@
 #include "polarDecomposition.h"
 #include "polarDecompositionGradient.h"
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 
 void PrintVector3(double * vec, char * s)
 {

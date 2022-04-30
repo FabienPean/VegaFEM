@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include "homogeneousMooneyRivlinIsotropicMaterial.h"
 
 HomogeneousMooneyRivlinIsotropicMaterial::HomogeneousMooneyRivlinIsotropicMaterial(double mu01_, double mu10_, double v1_, int enableCompressionResistance_, double compressionResistance_) : IsotropicMaterialWithCompressionResistance(enableCompressionResistance_), mu01(mu01_), mu10(mu10_), v1(v1_), compressionResistance(compressionResistance_) 

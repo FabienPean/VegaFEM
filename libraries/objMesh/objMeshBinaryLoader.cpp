@@ -39,7 +39,7 @@
 #include <vector>
 #include <queue>
 #include <string>
-#include <string.h>
+#include <cstring>
 #include <map>
 #include <fstream>
 #include <sstream>

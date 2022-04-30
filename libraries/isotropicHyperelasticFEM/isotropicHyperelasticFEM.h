@@ -33,7 +33,7 @@
 #ifndef _ISOTROPICHYPERELASTICFEM_H_
 #define _ISOTROPICHYPERELASTICFEM_H_
 
-#include <float.h>
+#include <cfloat>
 #include "tetMesh.h"
 #include "sparseMatrix.h"
 #include "isotropicMaterial.h"

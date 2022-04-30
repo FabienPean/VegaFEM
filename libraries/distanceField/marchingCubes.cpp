@@ -42,7 +42,7 @@
 // otherwise, the marching cubes table is read from a static array (that was previously generated using "createTable()")
 #define USE_STATIC_TABLE
 
-#include <float.h>
+#include <cfloat>
 #include <memory.h>
 #include <string>
 #include <algorithm>

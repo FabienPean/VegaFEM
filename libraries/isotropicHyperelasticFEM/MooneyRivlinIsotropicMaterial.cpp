@@ -30,7 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include "MooneyRivlinIsotropicMaterial.h"
 #include "volumetricMeshMooneyRivlinMaterial.h"
 

@@ -34,7 +34,7 @@
   These are the key computational routines to compute the distance field.
 */
 
-#include <float.h>
+#include <cfloat>
 #include "objMeshGraph.h"
 #include "vegalong.h"
 #include "basicAlgorithms.h"

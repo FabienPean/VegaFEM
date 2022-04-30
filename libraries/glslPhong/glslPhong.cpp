@@ -35,9 +35,9 @@
    Requires OpenGL 2.0 or higher
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 
 #if defined(_WIN32) || defined(WIN32) || defined(linux) || defined(__linux__)
   #define USE_GLEW

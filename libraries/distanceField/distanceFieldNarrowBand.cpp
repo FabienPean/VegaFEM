@@ -34,10 +34,10 @@
   Narrowband distance field computation.
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <float.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
+#include <cfloat>
 #include <fstream>
 #include <set>
 #include "triangle.h"

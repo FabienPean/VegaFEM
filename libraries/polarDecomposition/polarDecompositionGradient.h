@@ -52,7 +52,7 @@
 #ifndef _POLARDECOMPOSITIONGRADIENT_H_
 #define _POLARDECOMPOSITIONGRADIENT_H_
 
-#include <stdlib.h>
+#include <cstdlib>
 
 class PolarDecompositionGradient
 {

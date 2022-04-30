@@ -32,7 +32,7 @@
 
 #include <set>
 #include <cfloat>
-#include <limits.h>
+#include <climits>
 #include <algorithm>
 #include <fstream>
 
