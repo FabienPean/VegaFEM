@@ -59,15 +59,15 @@
   #include <windows.h>
 #endif
 #include <set>
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstdio>
 #include <climits>
 #include <iostream>
 #include <sstream>
 #include <fstream>
 #include <memory>
-#include <math.h>
-#include <time.h>
+#include <cmath>
+#include <ctime>
 #include <GL/glui.h>
 
 //#define USE_GPERF_TOOLS

@@ -30,14 +30,14 @@
  *                                                                       *
  *************************************************************************/
 
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include <time.h>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
+#include <ctime>
 #include <fstream>
 #include <iostream>
-#include <float.h>
+#include <cfloat>
 #include <vector>
 using namespace std;
 

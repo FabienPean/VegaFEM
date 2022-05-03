@@ -43,12 +43,12 @@
 #endif
 
 #include <iostream>
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include <time.h>
-#include <float.h>
-#include <ctype.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
+#include <ctime>
+#include <cfloat>
+#include <cctype>
 #include <string>
 #include <vector>
 #include <map>
@@ -59,14 +59,14 @@
   #ifndef M_PI
     #define M_PI 3.141592654 
   #endif
-  #include "GL/glew.h"
+  #include <GL/glew.h>
 #endif
 
 #include "openGL-headers.h"
 #include "objMeshRender.h"
 #include "getopts.h"
 #include "matrixIO.h"
-#include "GL/glui.h"
+#include <GL/glui.h>
 #include "performanceCounter.h"
 #include "openGLHelper.h"
 #include "lighting.h"

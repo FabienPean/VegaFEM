@@ -58,13 +58,13 @@ Supported materials:
 
 *******************************************************************************/
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <iostream>
 #include <vector>
 #include <string>
 #include <cstdio>
 #include <cassert>
-#include <float.h>
+#include <cfloat>
 using namespace std;
 
 #if defined(WIN32) || defined(_WIN32)
@@ -127,7 +127,7 @@ using namespace std;
 #include "matrixIO.h"
 #include "averagingBuffer.h"
 
-#include "GL/glui.h"
+#include <GL/glui.h>
 
 // graphics 
 char windowTitleBase[4096] = "Real-time sim";

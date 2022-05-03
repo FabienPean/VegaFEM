@@ -76,7 +76,7 @@ using namespace std;
 #include "reducedStVKForceModel.h"
 #include "reducedLinearStVKForceModel.h"
 #include "configFile.h"
-#include "GL/glui.h"
+#include <GL/glui.h>
 #include "lighting.h"
 #include "matrixIO.h"
 

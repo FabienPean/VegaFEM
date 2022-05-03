@@ -73,7 +73,7 @@
 #include "inputDevice.h"
 #include "cameraChangeLoad.h"
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <vector>

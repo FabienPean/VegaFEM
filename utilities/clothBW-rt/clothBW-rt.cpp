@@ -32,7 +32,7 @@
  *                                                                       *
  *************************************************************************/
 
-#include <math.h>
+#include <cmath>
 #include <vector>
 #include "GL/glui.h"
 #include "initGraphics.h"

@@ -37,8 +37,8 @@
 
 // linear mode computation
 
-#include <math.h>
-#include <float.h>
+#include <cmath>
+#include <cfloat>
 #include "sparseMatrix.h"
 #include "generateMassMatrix.h"
 #include "StVKStiffnessMatrix.h"
