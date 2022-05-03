@@ -34,7 +34,7 @@
 
 #include <cmath>
 #include <vector>
-#include "GL/glui.h"
+
 #include "initGraphics.h"
 #include "performanceCounter.h"
 #include "objMesh.h"
@@ -49,6 +49,7 @@
 #include "listIO.h"
 #include "sceneObjectDeformable.h"
 #include "saveScreenShot.h"
+#include <GL/glui.h>
 
 /*
   Driver for cloth simulation. Cloth is implemented using:
