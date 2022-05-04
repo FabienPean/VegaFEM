@@ -233,14 +233,14 @@ void SetupLights()
   
     // light positions and directions 
     //GLfloat lP0[4] = { 0.2, 0.2, -0.2, 1.0 }; 
-    GLfloat lP0[] = { lightBoxMin[0], lightBoxMin[1], lightBoxMin[2], 1.0 };
-    GLfloat lP1[] = { lightBoxMax[0], lightBoxMin[1], lightBoxMin[2], 1.0 };
-    GLfloat lP2[] = { lightBoxMax[0], lightBoxMax[1], lightBoxMin[2], 1.0 };
-    GLfloat lP3[] = { lightBoxMin[0], lightBoxMax[1], lightBoxMin[2], 1.0 };
-    GLfloat lP4[] = { lightBoxMin[0], lightBoxMin[1], lightBoxMax[2], 1.0 };
-    GLfloat lP5[] = { lightBoxMax[0], lightBoxMin[1], lightBoxMax[2], 1.0 };
-    GLfloat lP6[] = { lightBoxMax[0], lightBoxMax[1], lightBoxMax[2], 1.0 };
-    GLfloat lP7[] = { lightBoxMin[0], lightBoxMax[1], lightBoxMax[2], 1.0 };
+    GLfloat lP0[] = { float(lightBoxMin[0]), float(lightBoxMin[1]), float(lightBoxMin[2]), 1.0};
+    GLfloat lP1[] = { float(lightBoxMax[0]), float(lightBoxMin[1]), float(lightBoxMin[2]), 1.0 };
+    GLfloat lP2[] = { float(lightBoxMax[0]), float(lightBoxMax[1]), float(lightBoxMin[2]), 1.0 };
+    GLfloat lP3[] = { float(lightBoxMin[0]), float(lightBoxMax[1]), float(lightBoxMin[2]), 1.0 };
+    GLfloat lP4[] = { float(lightBoxMin[0]), float(lightBoxMin[1]), float(lightBoxMax[2]), 1.0 };
+    GLfloat lP5[] = { float(lightBoxMax[0]), float(lightBoxMin[1]), float(lightBoxMax[2]), 1.0 };
+    GLfloat lP6[] = { float(lightBoxMax[0]), float(lightBoxMax[1]), float(lightBoxMax[2]), 1.0 };
+    GLfloat lP7[] = { float(lightBoxMin[0]), float(lightBoxMax[1]), float(lightBoxMax[2]), 1.0 };
   
     // set up 
     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, aGa);
@@ -1023,14 +1023,14 @@ void Display()
         GL_LIGHT4, GL_LIGHT5, GL_LIGHT6, GL_LIGHT7 };
   
       //GLfloat lP0[4] = { 0.2, 0.2, -0.2, 1.0 }; 
-      GLfloat lP0[4] = { lightBoxMin[0], lightBoxMin[1], lightBoxMin[2], 1.0 };
-      GLfloat lP1[4] = { lightBoxMax[0], lightBoxMin[1], lightBoxMin[2], 1.0 };
-      GLfloat lP2[4] = { lightBoxMax[0], lightBoxMax[1], lightBoxMin[2], 1.0 };
-      GLfloat lP3[4] = { lightBoxMin[0], lightBoxMax[1], lightBoxMin[2], 1.0 };
-      GLfloat lP4[4] = { lightBoxMin[0], lightBoxMin[1], lightBoxMax[2], 1.0 };
-      GLfloat lP5[4] = { lightBoxMax[0], lightBoxMin[1], lightBoxMax[2], 1.0 };
-      GLfloat lP6[4] = { lightBoxMax[0], lightBoxMax[1], lightBoxMax[2], 1.0 };
-      GLfloat lP7[4] = { lightBoxMin[0], lightBoxMax[1], lightBoxMax[2], 1.0 };
+      GLfloat lP0[4] = { float(lightBoxMin[0]), float(lightBoxMin[1]), float(lightBoxMin[2]), 1.0 };
+      GLfloat lP1[4] = { float(lightBoxMax[0]), float(lightBoxMin[1]), float(lightBoxMin[2]), 1.0 };
+      GLfloat lP2[4] = { float(lightBoxMax[0]), float(lightBoxMax[1]), float(lightBoxMin[2]), 1.0 };
+      GLfloat lP3[4] = { float(lightBoxMin[0]), float(lightBoxMax[1]), float(lightBoxMin[2]), 1.0 };
+      GLfloat lP4[4] = { float(lightBoxMin[0]), float(lightBoxMin[1]), float(lightBoxMax[2]), 1.0 };
+      GLfloat lP5[4] = { float(lightBoxMax[0]), float(lightBoxMin[1]), float(lightBoxMax[2]), 1.0 };
+      GLfloat lP6[4] = { float(lightBoxMax[0]), float(lightBoxMax[1]), float(lightBoxMax[2]), 1.0 };
+      GLfloat lP7[4] = { float(lightBoxMin[0]), float(lightBoxMax[1]), float(lightBoxMax[2]), 1.0 };
       GLfloat * lightPos[8] = { lP0, lP1, lP2, lP3, lP4, lP5, lP6, lP7 };
     
       glDisable(GL_LIGHTING);
