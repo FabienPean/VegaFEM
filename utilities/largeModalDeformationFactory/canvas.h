@@ -38,7 +38,7 @@
 #ifndef _CANVAS_H_
 #define _CANVAS_H_
 
-#include "wx/glcanvas.h"
+#include <wx/glcanvas.h>
 #include "camera.h"
 #include "objMesh.h"
 #include "cubicMesh.h"
