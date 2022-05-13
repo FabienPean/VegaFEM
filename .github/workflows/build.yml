@@ -1,0 +1,82 @@
+name: Build
+
+on: [push]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Intel Apt repository
+      timeout-minutes: 1
+      run: |
+        wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
+        sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
+        #rm GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
+        echo "deb https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
+        sudo apt update
+
+    - name: Cache Intel oneAPI
+      id: cache-intel
+      uses: actions/cache@v3
+      with:
+        path: /opt/intel/
+        key: ${{ runner.os }}-${{ hashFiles('GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB') }}
+
+    - name: Install Intel oneAPI
+      timeout-minutes: 5
+      if: steps.cache-intel.outputs.cache-hit != 'true'
+      run: sudo apt install -y intel-oneapi-common-vars intel-oneapi-mkl intel-oneapi-mkl-devel intel-oneapi-tbb intel-oneapi-tbb-devel #devel needed for cmake and headers
+
+    - name: Setup Intel oneAPI environment
+      run: |
+        source /opt/intel/oneapi/setvars.sh
+        printenv >> $GITHUB_ENV
+    
+    - name: Setup ninja
+      uses: seanmiddleditch/gha-setup-ninja@master
+
+    - name: System dependencies
+      run: |
+        sudo apt install -y libomp-dev
+        sudo apt install -y clang
+        sudo apt install -y autoconf-archive #mpfr
+        sudo apt install -y libopengl-dev libglu-dev libx11-dev libxrandr-dev libxi-dev libxxf86vm-dev #freeglut
+
+    - name: Setup vcpkg
+      id: setup-vcpkg
+      uses: friendlyanon/setup-vcpkg@v1
+      with: 
+        committish: master
+
+    - name: Run vcpkg
+      shell: bash
+      run: vcpkg install opengl glui glew cgal openblas eigen3 intel-mkl
+    
+    - name: Configure CMake
+      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+      run: |
+        mkdir build
+        cd build
+        cmake -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake -DMKL_DIR=/opt/intel/oneapi/mkl/latest/lib/cmake/mkl/ -S ../ -B ./
+      env:
+        CC: clang
+        CXX: clang++
+#        MKL_DIR: /opt/intel/oneapi/mkl/latest/lib/cmake/mkl/
+        
+    - name: Build
+      # Build your program with the given configuration
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      # Execute tests defined by the CMake configuration.  
+      # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
+      run: ctest -C ${{env.BUILD_TYPE}}
