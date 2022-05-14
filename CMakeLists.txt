@@ -17,6 +17,7 @@ target_include_directories(
                          $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>
 )
 
+
 find_package(OpenGL REQUIRED)
 target_compile_definitions(${PROJECT_NAME} PRIVATE -DENABLE_OpenGL )
 find_package(glui CONFIG REQUIRED)
@@ -56,6 +57,8 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(libigl)
 
+find_package(OpenMP)
+target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_CXX)
 target_link_libraries(${PROJECT_NAME} PRIVATE igl::core igl::predicates igl_copyleft::cgal)
 target_link_libraries(${PROJECT_NAME} PRIVATE GLEW::GLEW)
 
@@ -129,11 +132,14 @@ foreach(lib ${VegaFEM_core_libs})
 endforeach()
 
 file(GLOB_RECURSE to_remove "{CMAKE_CURRENT_SOURCE_DIR}/libraries/*/*GPU*")
-list(FILTER all_sources EXCLUDE REGEX ".*GPU.*")                    #requires dependency on CG
-list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")           #cpp embedded into another one
-list(FILTER all_sources EXCLUDE REGEX ".*example.*")
-list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")  #cpp embedded into another one
-list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")  #requires dependency on ARPACK
+list(FILTER all_sources EXCLUDE REGEX ".*GPU.*")                                #requires dependency on CG
+list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       #cpp embedded into another one
+list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
+list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
+list(FILTER all_sources EXCLUDE REGEX ".*example.*")                            #contains a main()
+list(FILTER all_sources EXCLUDE REGEX ".*polarDecompositionGradientDriver.*")   #contains a main()
+
+
 message(${all_sources})
 target_sources(${PROJECT_NAME} PRIVATE ${all_sources})
 
