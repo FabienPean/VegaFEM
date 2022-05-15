@@ -63,7 +63,7 @@
 #include <cstdio>
 #include <cstring>
 
-void PrintVector3(double * vec, char * s)
+void PrintVector3(double * vec, const char * s)
 {
   if (s != NULL)
     printf("%s\n", s);
@@ -71,7 +71,7 @@ void PrintVector3(double * vec, char * s)
   printf("%G %G %G\n", vec[0], vec[1], vec[2]);
 }
 
-void PrintMatrix3x3(double * mat, char * s)
+void PrintMatrix3x3(double * mat, const char * s)
 {
   if (s != NULL)
     printf("%s\n", s);
