@@ -252,7 +252,7 @@ bool BoundingBox::lineSegmentIntersection(const Vec3d & segmentStart, const Vec3
   Vec3d dir = segmentEnd - segmentStart;
   bool inside = true;
   char quadrant[NUMDIM];
-  register int i;
+  int i;
   int whichPlane;
   double maxT[NUMDIM];
   double candidatePlane[NUMDIM];
