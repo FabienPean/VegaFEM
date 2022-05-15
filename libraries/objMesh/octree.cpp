@@ -54,15 +54,6 @@ bool Octree<TriangleClass>::build(std::vector<TriangleClass> & triangleList, int
 }
 
 template<class TriangleClass>
-int Octree<TriangleClass>::buildPrintInfo = 0;
-
-template<class TriangleClass>
-int Octree<TriangleClass>::numMaxDepthExceededCases = 0;
-
-template<class TriangleClass>
-int Octree<TriangleClass>::numMaxTriInDepthExceededCases = 0;
-
-template<class TriangleClass>
 bool Octree<TriangleClass>::build(std::vector<TriangleClass> & triangleList, BoundingBox & parentCube, int maxNumTriangles)
 {
   // set the bounding box

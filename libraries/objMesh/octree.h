@@ -99,6 +99,15 @@ protected:
 };
 
 template<class TriangleClass>
+int Octree<TriangleClass>::buildPrintInfo = 0;
+
+template<class TriangleClass>
+int Octree<TriangleClass>::numMaxDepthExceededCases = 0;
+
+template<class TriangleClass>
+int Octree<TriangleClass>::numMaxTriInDepthExceededCases = 0;
+
+template<class TriangleClass>
 inline void Octree<TriangleClass>::getBuildInfo(int * numMaxDepthExceededCases, int * numMaxTriInDepthExceededCases)
 {
   *numMaxDepthExceededCases = this->numMaxDepthExceededCases;
