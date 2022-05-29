@@ -1,5 +1,6 @@
-cmake_minimum_required(VERSION 3.14...3.22)
-
+cmake_minimum_required(VERSION 3.16...3.22)
+# 3.21 for https://cmake.org/cmake/help/git-stage/manual/cmake-generator-expressions.7.html#genex:TARGET_RUNTIME_DLLS to copy DLLs to binary folder
+# Alternative 3.16 for https://cmake.org/cmake/help/latest/command/file.html#get-runtime-dependencies
 project(
   VegaFEM
   VERSION 4.0
@@ -180,17 +181,17 @@ set(VegaFEM_utilities
     virtualTetsDriver
 )
 foreach(exe ${VegaFEM_utilities})
-  target_include_directories(
-    ${PROJECT_NAME} PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/utilities/${exe}>
-                           $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
-  )
-  
   file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
   add_executable(${exe} ${sources})
   target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
-  glui::glui #reducedDynamicSolver-rt interactiveDeformableSimulator immersionMesher editShapeARAP displayObj clothBW-rt
+    glui::glui #reducedDynamicSolver-rt interactiveDeformableSimulator immersionMesher editShapeARAP displayObj clothBW-rt
   )
-
+  if($<BOOL:$<PLATFORM_ID:Windows>>)
+  add_custom_command(TARGET ${exe} POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<$<PLATFORM_ID:Windows>:$<TARGET_RUNTIME_DLLS:${exe}>>" $<TARGET_FILE_DIR:${exe}> 
+      COMMAND_EXPAND_LISTS
+  )
+  endif()
 endforeach()
 
 file(GLOB_RECURSE VegaFEM_utilities_tmp CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/volumetricMeshUtilities/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/volumetricMeshUtilities/*.cpp")
@@ -198,6 +199,14 @@ foreach(exe ${VegaFEM_utilities_tmp})
   get_filename_component(filename ${exe} NAME_WE)
   add_executable(${filename} ${exe})
   target_link_libraries(${filename} PRIVATE ${PROJECT_NAME})
+
+   if($<BOOL:$<PLATFORM_ID:Windows>>)
+   add_custom_command(TARGET ${filename} POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<$<PLATFORM_ID:Windows>:$<TARGET_RUNTIME_DLLS:${filename}>>" $<TARGET_FILE_DIR:${filename}>
+      COMMAND_EXPAND_LISTS
+  )
+  endif()
+
 endforeach()
 
 
