@@ -3,19 +3,19 @@ cmake_minimum_required(VERSION 3.16...3.22)
 # Alternative 3.16 for https://cmake.org/cmake/help/latest/command/file.html#get-runtime-dependencies
 project(
   VegaFEM
-  VERSION 4.0
+  VERSION 4.0.1
   LANGUAGES C CXX
 )
 
 #file(GLOB_RECURSE headers CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/libraries/*.h")
 #file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/libraries/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/libraries/*.cpp")
 
-add_library(${PROJECT_NAME} STATIC )
+add_library(${PROJECT_NAME} STATIC)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 14)
 
 target_include_directories(
   ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-                         $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>
+                         $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
 )
 
 
@@ -25,14 +25,15 @@ find_package(glui CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE glui::glui)
 find_package(CGAL CONFIG REQUIRED COMPONENTS Core)
 target_link_libraries(${PROJECT_NAME} PRIVATE CGAL::CGAL CGAL::CGAL_Core)
+set(MKL_THREADING sequential) # sequential intel_thread gnu_thread pgi_thread tbb_thread
 find_package(MKL CONFIG REQUIRED)
-message(STATUS "${MKL_IMPORTED_TARGETS}") #Provides available list of targets based on input
-target_compile_options(${PROJECT_NAME}  PUBLIC $<TARGET_PROPERTY:MKL::MKL,INTERFACE_COMPILE_OPTIONS>)
-target_include_directories(${PROJECT_NAME}  PUBLIC $<TARGET_PROPERTY:MKL::MKL,INTERFACE_INCLUDE_DIRECTORIES>)
-target_link_libraries(${PROJECT_NAME} PUBLIC $<LINK_ONLY:MKL::MKL>)
-target_link_libraries(${PROJECT_NAME} PUBLIC $<LINK_ONLY:MKL::mkl_intel_ilp64>)
-target_link_libraries(${PROJECT_NAME} PUBLIC $<LINK_ONLY:MKL::mkl_core>)
-target_link_libraries(${PROJECT_NAME} PUBLIC $<LINK_ONLY:MKL::mkl_intel_thread>)
+#message(STATUS "${MKL_IMPORTED_TARGETS}") #Provides available list of targets based on input
+#target_compile_options(${PROJECT_NAME}  PUBLIC $<TARGET_PROPERTY:MKL::MKL,INTERFACE_COMPILE_OPTIONS>)
+target_link_libraries(${PROJECT_NAME} PRIVATE MKL::MKL)
+target_compile_definitions(${PROJECT_NAME} PRIVATE PARDISO_SOLVER_IS_AVAILABLE)
+#target_link_libraries(${PROJECT_NAME} PUBLIC $<LINK_ONLY:MKL::mkl_intel_ilp64>)
+#target_link_libraries(${PROJECT_NAME} PUBLIC $<LINK_ONLY:MKL::mkl_core>)
+#target_link_libraries(${PROJECT_NAME} PUBLIC $<LINK_ONLY:MKL::mkl_intel_thread>)
 find_package(OpenBLAS CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE OpenBLAS::OpenBLAS)
 find_package(Eigen3 CONFIG REQUIRED)
@@ -140,8 +141,6 @@ list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             
 list(FILTER all_sources EXCLUDE REGEX ".*example.*")                            #contains a main()
 list(FILTER all_sources EXCLUDE REGEX ".*polarDecompositionGradientDriver.*")   #contains a main()
 
-
-message(${all_sources})
 target_sources(${PROJECT_NAME} PRIVATE ${all_sources})
 
 set(VegaFEM_copyleft
@@ -211,7 +210,7 @@ endforeach()
 
 
 
-target_link_libraries(clothBW-rt PUBLIC OpenGL::GL)
+target_link_libraries(clothBW-rt PUBLIC OpenGL::GL OpenMP::OpenMP_CXX)
 
 
 find_package(GLEW REQUIRED)
