@@ -46,7 +46,7 @@ jobs:
       id: setup-vcpkg
       uses: friendlyanon/setup-vcpkg@v1
       with: 
-        committish: master
+        committish: ${{ env.VCPKG_VERSION }}
     - name: Run vcpkg
       shell: bash
       run: vcpkg install opengl glui glew cgal openblas eigen3 intel-mkl
