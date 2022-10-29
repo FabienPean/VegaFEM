@@ -34,8 +34,8 @@
   Helper class for the ARPACK solver.
 */
 
-#ifndef _ZTAZMULTIPLICATOR_H_
-#define _ZTAZMULTIPLICATOR_H_
+#ifndef VEGAFEM_ZTAZMULTIPLICATOR_H
+#define VEGAFEM_ZTAZMULTIPLICATOR_H
 
 #include "sparseMatrix.h"
 #include "matrix.h"

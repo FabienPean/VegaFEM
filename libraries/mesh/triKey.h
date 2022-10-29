@@ -46,8 +46,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TRIKEY_H
-#define TRIKEY_H
+#ifndef VEGAFEM_TRIKEY_H
+#define VEGAFEM_TRIKEY_H
 
 #include <algorithm>
 #include <ostream>

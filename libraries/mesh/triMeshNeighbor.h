@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TRIMESHNEIGHBOR_H
-#define TRIMESHNEIGHBOR_H
+#ifndef VEGAFEM_TRIMESHNEIGHBOR_H
+#define VEGAFEM_TRIMESHNEIGHBOR_H
 
 #include "triMeshGeo.h"
 #include "edgeKey.h"

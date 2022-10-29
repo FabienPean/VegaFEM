@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef MASSSPRINGSYSTEMFROMTETMESH_H_
-#define MASSSPRINGSYSTEMFROMTETMESH_H_
+#ifndef VEGAFEM_MASSSPRINGSYSTEMFROMTETMESH_H
+#define VEGAFEM_MASSSPRINGSYSTEMFROMTETMESH_H
 
 #include "massSpringSystem.h"
 

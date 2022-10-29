@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHGPUDEFORMER_COARSETOFINE_H_
-#define _OBJMESHGPUDEFORMER_COARSETOFINE_H_
+#ifndef VEGAFEM_OBJMESHGPUDEFORMER_COARSETOFINE_H
+#define VEGAFEM_OBJMESHGPUDEFORMER_COARSETOFINE_H
 
 #include "objMeshGPUDeformer.h"
 

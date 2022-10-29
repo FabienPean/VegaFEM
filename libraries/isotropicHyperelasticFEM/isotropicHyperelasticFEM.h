@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _ISOTROPICHYPERELASTICFEM_H_
-#define _ISOTROPICHYPERELASTICFEM_H_
+#ifndef VEGAFEM_ISOTROPICHYPERELASTICFEM_H
+#define VEGAFEM_ISOTROPICHYPERELASTICFEM_H
 
 #include <cfloat>
 #include "tetMesh.h"

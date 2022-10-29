@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef LABELOUTERTETS_H
-#define LABELOUTERTETS_H
+#ifndef VEGAFEM_LABELOUTERTETS_H
+#define VEGAFEM_LABELOUTERTETS_H
 
 #include "tetMeshGeo.h"
 #include <functional>

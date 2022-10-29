@@ -34,8 +34,8 @@
   Intersection between a tet and a triangle.
 */
 
-#ifndef _TRIANGLETETINTERSECTION_H_
-#define _TRIANGLETETINTERSECTION_H_
+#ifndef VEGAFEM_TRIANGLETETINTERSECTION_H
+#define VEGAFEM_TRIANGLETETINTERSECTION_H
 
 #include "vec3d.h"
 

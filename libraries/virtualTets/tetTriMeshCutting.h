@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TETTRIMESHCUTTING_H
-#define TETTRIMESHCUTTING_H
+#ifndef VEGAFEM_TETTRIMESHCUTTING_H
+#define VEGAFEM_TETTRIMESHCUTTING_H
 
 #include "triMeshGeo.h"
 #include "tetMeshGeo.h"

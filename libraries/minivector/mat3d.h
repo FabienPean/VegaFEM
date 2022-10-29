@@ -34,8 +34,8 @@
 
 
 
-#ifndef _MINIMAT3D_H_
-#define _MINIMAT3D_H_
+#ifndef VEGAFEM_MINIMAT3D_H
+#define VEGAFEM_MINIMAT3D_H
 
 #include "vec3d.h"
 

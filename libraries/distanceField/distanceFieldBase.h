@@ -73,8 +73,8 @@
   Note: once max depth level is reached, the maxTriCount bound is not imposed any more.
 */
 
-#ifndef _DISTANCEFIELDBASE_H_
-#define _DISTANCEFIELDBASE_H_
+#ifndef VEGAFEM_DISTANCEFIELDBASE_H
+#define VEGAFEM_DISTANCEFIELDBASE_H
 
 #include "objMesh.h"
 #include <algorithm>

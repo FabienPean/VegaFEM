@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SPARSE_MATRIX_H_
-#define _SPARSE_MATRIX_H_
+#ifndef VEGAFEM_SPARSE_MATRIX_H
+#define VEGAFEM_SPARSE_MATRIX_H
 
 /*
   The "SparseMatrix" class implements double-precision sparse matrices 

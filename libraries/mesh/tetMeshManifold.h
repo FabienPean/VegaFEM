@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TETMESHMANIFOLD_H
-#define TETMESHMANIFOLD_H
+#ifndef VEGAFEM_TETMESHMANIFOLD_H
+#define VEGAFEM_TETMESHMANIFOLD_H
 #include <map>
 #include <set>
 #include "tetKey.h"

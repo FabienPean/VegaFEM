@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef GEOMETRYQUERYER_H
-#define GEOMETRYQUERYER_H
+#ifndef VEGAFEM_GEOMETRYQUERYER_H
+#define VEGAFEM_GEOMETRYQUERYER_H
 
 #include "vec3ER.h"
 

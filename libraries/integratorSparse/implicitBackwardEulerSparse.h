@@ -34,8 +34,8 @@
   A class to timestep large sparse dynamics using implicit backward Euler.
 */
 
-#ifndef _IMPLICITBACKWARDEULERSPARSE_H_
-#define _IMPLICITBACKWARDEULERSPARSE_H_
+#ifndef VEGAFEM_IMPLICITBACKWARDEULERSPARSE_H
+#define VEGAFEM_IMPLICITBACKWARDEULERSPARSE_H
 
 #include "implicitNewmarkSparse.h"
 

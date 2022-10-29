@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef RECTKEY_H
-#define RECTKEY_H
+#ifndef VEGAFEM_RECTKEY_H
+#define VEGAFEM_RECTKEY_H
 
 #include <algorithm>
 #include <ostream>

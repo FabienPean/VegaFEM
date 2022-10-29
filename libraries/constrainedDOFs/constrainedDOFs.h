@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _CONSTRAINED_DOFS_H_
-#define _CONSTRAINED_DOFS_H_
+#ifndef VEGAFEM_CONSTRAINED_DOFS_H
+#define VEGAFEM_CONSTRAINED_DOFS_H
 
 /*
   Insert or remove given components from a linear array.

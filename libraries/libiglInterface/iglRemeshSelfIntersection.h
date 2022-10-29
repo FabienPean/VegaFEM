@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef IGLREMESHSELFINTERSECTION_H
-#define IGLREMESHSELFINTERSECTION_H
+#ifndef VEGAFEM_IGLREMESHSELFINTERSECTION_H
+#define VEGAFEM_IGLREMESHSELFINTERSECTION_H
 
 #include "triMeshGeo.h"
 #include "vec3ER.h"

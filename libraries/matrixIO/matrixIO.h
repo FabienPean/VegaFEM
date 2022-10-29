@@ -53,8 +53,8 @@
   in case of error when accessing the file.
 */
 
-#ifndef _MATRIXIO_H_
-#define _MATRIXIO_H_
+#ifndef VEGAFEM_MATRIXIO_H
+#define VEGAFEM_MATRIXIO_H
 
 #include <cstdio>
 #include <cstdlib>

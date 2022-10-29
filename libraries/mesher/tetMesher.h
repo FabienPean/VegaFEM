@@ -50,8 +50,8 @@
   Note: The tet mesher is experimental. It may generate sliver tets with some inputs.
 */
 
-#ifndef _TETMESHER_H_
-#define _TETMESHER_H_
+#ifndef VEGAFEM_TETMESHER_H
+#define VEGAFEM_TETMESHER_H
 
 #include <vector>
 #include <set>

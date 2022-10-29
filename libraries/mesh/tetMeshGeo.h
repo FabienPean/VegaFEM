@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TETMESHGEO_H
-#define TETMESHGEO_H
+#ifndef VEGAFEM_TETMESHGEO_H
+#define VEGAFEM_TETMESHGEO_H
 
 #include "minivector.h"
 #include "boundingBox.h"

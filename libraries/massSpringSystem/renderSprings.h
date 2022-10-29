@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _RENDERSPRINGS_H_
-#define _RENDERSPRINGS_H_
+#ifndef VEGAFEM_RENDERSPRINGS_H
+#define VEGAFEM_RENDERSPRINGS_H
 
 #include "massSpringSystem.h"
 

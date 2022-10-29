@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STENCILFORCEMODEL_H_
-#define _STENCILFORCEMODEL_H_
+#ifndef VEGAFEM_STENCILFORCEMODEL_H
+#define VEGAFEM_STENCILFORCEMODEL_H
 
 #include <vector>
 

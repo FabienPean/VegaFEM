@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHGPUDEFORMER__H_
-#define _OBJMESHGPUDEFORMER__H_
+#ifndef VEGAFEM_OBJMESHGPUDEFORMER__H
+#define VEGAFEM_OBJMESHGPUDEFORMER__H
 
 #if defined(_WIN32) || defined(WIN32)
   #include <windows.h>

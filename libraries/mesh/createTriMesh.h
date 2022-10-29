@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef CREATETRIMESH_H
-#define CREATETRIMESH_H
+#ifndef VEGAFEM_CREATETRIMESH_H
+#define VEGAFEM_CREATETRIMESH_H
 
 #include "triMeshGeo.h"
 

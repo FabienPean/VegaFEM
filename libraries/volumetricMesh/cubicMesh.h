@@ -55,8 +55,8 @@
 //   |/      |/       /
 //   4 - - - 5       z
 
-#ifndef _CUBICMESH_H_
-#define _CUBICMESH_H_
+#ifndef VEGAFEM_CUBICMESH_H
+#define VEGAFEM_CUBICMESH_H
 
 #include "volumetricMesh.h"
 // see also volumetricMesh.h for a description of the routines

@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESH_H_
-#define _OBJMESH_H_
+#ifndef VEGAFEM_OBJMESH_H
+#define VEGAFEM_OBJMESH_H
 
 #include <cmath>
 #include <string>

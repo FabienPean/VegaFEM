@@ -35,8 +35,8 @@
   See also sceneObject.h . 
 */
 
-#ifndef _SCENEOBJECTDEFORMABLE_H_
-#define _SCENEOBJECTDEFORMABLE_H_
+#ifndef VEGAFEM_SCENEOBJECTDEFORMABLE_H
+#define VEGAFEM_SCENEOBJECTDEFORMABLE_H
 
 #include "lighting.h"
 #include "sceneObjectWithRestPosition.h"

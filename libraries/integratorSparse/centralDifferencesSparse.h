@@ -64,8 +64,8 @@ See also integratorBase.h .
 
 */
 
-#ifndef _CENTRALDIFFERENCESSPARSE_H_
-#define _CENTRALDIFFERENCESSPARSE_H_
+#ifndef VEGAFEM_CENTRALDIFFERENCESSPARSE_H
+#define VEGAFEM_CENTRALDIFFERENCESSPARSE_H
 
 #include "integratorBaseSparse.h"
 #include "integratorSolverSelection.h"

@@ -37,8 +37,8 @@
         with the same order.
 */
 
-#ifndef _GENERATESURFACEMESH_H_
-#define _GENERATESURFACEMESH_H_
+#ifndef VEGAFEM_GENERATESURFACEMESH_H
+#define VEGAFEM_GENERATESURFACEMESH_H
 
 #include <cstdlib>
 #include <cstdio>

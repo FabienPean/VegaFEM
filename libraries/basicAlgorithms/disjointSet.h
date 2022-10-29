@@ -42,8 +42,8 @@
   Heuristics such as path compression etc. have been implemented.
 */
 
-#ifndef _DISJOINT_SET_H_
-#define _DISJOINT_SET_H_
+#ifndef VEGAFEM_DISJOINT_SET_H
+#define VEGAFEM_DISJOINT_SET_H
 
 #include <vector>
 #include <map>

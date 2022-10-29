@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVKREDUCEDHESSIANTENSOR_H_
-#define _STVKREDUCEDHESSIANTENSOR_H_
+#ifndef VEGAFEM_STVKREDUCEDHESSIANTENSOR_H
+#define VEGAFEM_STVKREDUCEDHESSIANTENSOR_H
 
 #include "StVKReducedStiffnessMatrix.h"
 

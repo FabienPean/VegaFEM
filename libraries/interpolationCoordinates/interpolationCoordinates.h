@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef INTERPOLATIONCOORDINATES_H
-#define INTERPOLATIONCOORDINATES_H
+#ifndef VEGAFEM_INTERPOLATIONCOORDINATES_H
+#define VEGAFEM_INTERPOLATIONCOORDINATES_H
 
 class InterpolationCoordinates
 {

@@ -41,8 +41,8 @@ values of r, there will be a computational slowdown.
 
 */
 
-#ifndef _IMPLICITBACKWARDEULERDENSE_H_
-#define _IMPLICITBACKWARDEULERDENSE_H_
+#ifndef VEGAFEM_IMPLICITBACKWARDEULERDENSE_H
+#define VEGAFEM_IMPLICITBACKWARDEULERDENSE_H
 
 #include "integratorBaseDense.h"
 

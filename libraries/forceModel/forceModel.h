@@ -35,8 +35,8 @@
   Serves as a connecting class between integrators and classes to calculate internal forces and tangent stiffness matrices.
 */
 
-#ifndef _FORCEMODEL_H_
-#define _FORCEMODEL_H_
+#ifndef VEGAFEM_FORCEMODEL_H
+#define VEGAFEM_FORCEMODEL_H
 
 #include <cstdlib>
 #include "sparseMatrix.h"

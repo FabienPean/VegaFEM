@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef __BOUNDINGBOX_H__
-#define __BOUNDINGBOX_H__
+#ifndef VEGAFEM_BOUNDINGBOX_H
+#define VEGAFEM_BOUNDINGBOX_H
 
 //  Bounding Box
 //  Author: Jernej Barbic, CMU

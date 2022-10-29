@@ -52,8 +52,8 @@
 
 */
 
-#ifndef _MATRIX_H_
-#define _MATRIX_H_
+#ifndef VEGAFEM_MATRIX_H
+#define VEGAFEM_MATRIX_H
 
 #include <cstdlib>
 #include <cstdio>

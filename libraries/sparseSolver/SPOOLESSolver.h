@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SPOOLESSOLVER_H_
-#define _SPOOLESSOLVER_H_
+#ifndef VEGAFEM_SPOOLESSOLVER_H
+#define VEGAFEM_SPOOLESSOLVER_H
 
 /*
   Solves A * x = rhs, where A is sparse, usually large, and symmetric.

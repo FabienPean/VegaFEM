@@ -35,8 +35,8 @@
   See also sceneObject.h . 
 */
 
-#ifndef _SCENEOBJECTREDUCEDCPU_H_
-#define _SCENEOBJECTREDUCEDCPU_H_
+#ifndef VEGAFEM_SCENEOBJECTREDUCEDCPU_H
+#define VEGAFEM_SCENEOBJECTREDUCEDCPU_H
 
 #include "sceneObjectReduced.h"
 

@@ -35,8 +35,8 @@
    computes the deformation gradient, and other related quantities.
 */
 
-#ifndef _VOLUMETRICMESHDEFORMATIONGRADIENT_H_
-#define _VOLUMETRICMESHDEFORMATIONGRADIENT_H_
+#ifndef VEGAFEM_VOLUMETRICMESHDEFORMATIONGRADIENT_H
+#define VEGAFEM_VOLUMETRICMESHDEFORMATIONGRADIENT_H
 
 #include "volumetricMesh.h"
 

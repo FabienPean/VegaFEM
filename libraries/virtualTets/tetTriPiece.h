@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TETTRIPIECE_H
-#define TETTRIPIECE_H
+#ifndef VEGAFEM_TETTRIPIECE_H
+#define VEGAFEM_TETTRIPIECE_H
 
 #include "tetTriMeshCutting.h"
 #include "triMeshPseudoNormal.h"

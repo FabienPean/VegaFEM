@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHOFFSETVOXELS_H_
-#define _OBJMESHOFFSETVOXELS_H_
+#ifndef VEGAFEM_OBJMESHOFFSETVOXELS_H
+#define VEGAFEM_OBJMESHOFFSETVOXELS_H
 
 /*
   Author: Jernej Barbic, 2003

@@ -51,8 +51,8 @@
   Authors of this code: Jernej Barbic, Yili Zhao
 */
 
-#ifndef _MATRIX_MULTIPLY_MACROS_H_
-#define _MATRIX_MULTIPLY_MACROS_H_
+#ifndef VEGAFEM_MATRIX_MULTIPLY_MACROS_H
+#define VEGAFEM_MATRIX_MULTIPLY_MACROS_H
 
 #ifndef MIN
   #define MIN(x,y) ((x)<(y) ? (x) : (y))

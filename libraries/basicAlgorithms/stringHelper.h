@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef STRINGHELPER_H
-#define STRINGHELPER_H
+#ifndef VEGAFEM_STRINGHELPER_H
+#define VEGAFEM_STRINGHELPER_H
 
 #include <string>
 

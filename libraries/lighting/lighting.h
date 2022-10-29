@@ -66,8 +66,8 @@
   See also example.lighting for an example of a lighting configuration file.
 */
 
-#ifndef _LIGHTING_H_
-#define _LIGHTING_H_
+#ifndef VEGAFEM_LIGHTING_H
+#define VEGAFEM_LIGHTING_H
 
 #include <cstdlib>
 #include <cstring>

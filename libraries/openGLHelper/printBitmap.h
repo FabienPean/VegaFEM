@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _PRINTBITMAP_H_
-#define _PRINTBITMAP_H_
+#ifndef VEGAFEM_PRINTBITMAP_H
+#define VEGAFEM_PRINTBITMAP_H
 
 #include "macros.h"
 #include <cmath>

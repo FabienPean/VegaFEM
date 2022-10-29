@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _MASSSPRINGSYSTEMFROMOBJMESH_H_
-#define _MASSSPRINGSYSTEMFROMOBJMESH_H_
+#ifndef VEGAFEM_MASSSPRINGSYSTEMFROMOBJMESH_H
+#define VEGAFEM_MASSSPRINGSYSTEMFROMOBJMESH_H
 
 #include "massSpringSystem.h"
 class ObjMesh;

@@ -1,7 +1,7 @@
 /* getopts.h */
 
-#ifndef _GETOPTS_H_
-#define _GETOPTS_H_
+#ifndef VEGAFEM_GETOPTS_H
+#define VEGAFEM_GETOPTS_H
 
 #define OPTINT 1
 #define OPTSTR 2

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef INITPREDICATES_H
-#define INITPREDICATES_H
+#ifndef VEGAFEM_INITPREDICATES_H
+#define VEGAFEM_INITPREDICATES_H
 
 // Initialize the variables used for exact arithmetic.
 void initPredicates();

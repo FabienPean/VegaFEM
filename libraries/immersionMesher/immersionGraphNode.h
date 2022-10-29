@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef IMMERSIONGRAPHNODE_H
-#define IMMERSIONGRAPHNODE_H
+#ifndef VEGAFEM_IMMERSIONGRAPHNODE_H
+#define VEGAFEM_IMMERSIONGRAPHNODE_H
 
 #include <iostream>
 #include <vector>

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef COMMANDLINEPARSER_H
-#define COMMANDLINEPARSER_H
+#ifndef VEGAFEM_COMMANDLINEPARSER_H
+#define VEGAFEM_COMMANDLINEPARSER_H
 
 #include "vegalong.h"
 #include <string>

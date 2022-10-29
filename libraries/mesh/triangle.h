@@ -35,8 +35,8 @@
   Jernej Barbic, CMU
 */
 
-#ifndef _TRIANGLE_H_
-#define _TRIANGLE_H_
+#ifndef VEGAFEM_TRIANGLE_H
+#define VEGAFEM_TRIANGLE_H
 
 #include <cmath>
 #include <vector>

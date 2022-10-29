@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TRIMESHGEO_H
-#define TRIMESHGEO_H
+#ifndef VEGAFEM_TRIMESHGEO_H
+#define VEGAFEM_TRIMESHGEO_H
 
 #include "vec3d.h"
 #include "vec3i.h"

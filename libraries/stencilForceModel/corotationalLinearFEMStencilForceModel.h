@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _COROTATIONALLINEARFEM_STENCIL_FORCEMODEL_H_
-#define _COROTATIONALLINEARFEM_STENCIL_FORCEMODEL_H_
+#ifndef VEGAFEM_COROTATIONALLINEARFEM_STENCIL_FORCEMODEL_H
+#define VEGAFEM_COROTATIONALLINEARFEM_STENCIL_FORCEMODEL_H
 
 #include "corotationalLinearFEM.h"
 #include "stencilForceModel.h"

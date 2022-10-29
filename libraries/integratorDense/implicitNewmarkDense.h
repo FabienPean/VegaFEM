@@ -41,8 +41,8 @@ values of r, there will be a computational slowdown.
 
 */
 
-#ifndef _IMPLICITNEWMARKDENSE_H_
-#define _IMPLICITNEWMARKDENSE_H_
+#ifndef VEGAFEM_IMPLICITNEWMARKDENSE_H
+#define VEGAFEM_IMPLICITNEWMARKDENSE_H
 
 #include "integratorBaseDense.h"
 

@@ -34,8 +34,8 @@
   Load/save many sets of interpolation weights from one file.
 */
 
-#ifndef _INTERPOLATIONWEIGHTSMULTILOAD_H_
-#define _INTERPOLATIONWEIGHTSMULTILOAD_H_
+#ifndef VEGAFEM_INTERPOLATIONWEIGHTSMULTILOAD_H
+#define VEGAFEM_INTERPOLATIONWEIGHTSMULTILOAD_H
 
 // input: filename, numModels
 // output: numTargetLocations, numElementVertices, vertices, weights

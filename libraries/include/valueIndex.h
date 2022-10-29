@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef VALUEINDEX_H
-#define VALUEINDEX_H
+#ifndef VEGAFEM_VALUEINDEX_H
+#define VEGAFEM_VALUEINDEX_H
 
 #include <cfloat>
 

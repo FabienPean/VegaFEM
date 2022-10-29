@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHCLOSE_H_
-#define _OBJMESHCLOSE_H_
+#ifndef VEGAFEM_OBJMESHCLOSE_H
+#define VEGAFEM_OBJMESHCLOSE_H
 
 //  Closes a manifold mesh
 

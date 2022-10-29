@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef FOG_H
-#define FOG_H
+#ifndef VEGAFEM_FOG_H
+#define VEGAFEM_FOG_H
 
 #include "openGL-headers.h"
 

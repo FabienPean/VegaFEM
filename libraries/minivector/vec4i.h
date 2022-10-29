@@ -31,8 +31,8 @@
  *************************************************************************/
 
 
-#ifndef VEC4I_H
-#define VEC4I_H
+#ifndef VEGAFEM_VEC4I_H
+#define VEGAFEM_VEC4I_H
 
 
 #include <cstdio>

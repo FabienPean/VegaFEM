@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef CAMERALIGHTING_H
-#define CAMERALIGHTING_H
+#ifndef VEGAFEM_CAMERALIGHTING_H
+#define VEGAFEM_CAMERALIGHTING_H
 
 #include <cstdlib>
 #include <cstring>

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _GENERATETETMESHFROMCUBICMESH_H_
-#define _GENERATETETMESHFROMCUBICMESH_H_
+#ifndef VEGAFEM_GENERATETETMESHFROMCUBICMESH_H
+#define VEGAFEM_GENERATETETMESHFROMCUBICMESH_H
 
 #include "cubicMesh.h"
 #include "tetMesh.h"

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVKTETABCD_H_
-#define _STVKTETABCD_H_
+#ifndef VEGAFEM_STVKTETABCD_H
+#define VEGAFEM_STVKTETABCD_H
 
 #include "StVKElementABCD.h"
 #include "tetMesh.h"

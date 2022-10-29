@@ -36,8 +36,8 @@
   See also sceneObject.h . 
 */
 
-#ifndef _SCENEOBJECTREDUCEDGPU_H_
-#define _SCENEOBJECTREDUCEDGPU_H_
+#ifndef VEGAFEM_SCENEOBJECTREDUCEDGPU_H
+#define VEGAFEM_SCENEOBJECTREDUCEDGPU_H
 
 #include "sceneObjectReduced.h"
 #include "objMeshGPUDeformer_uUq_pbuffer.h"

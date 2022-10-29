@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SCENEOBJECTWITHRESTPOSITION_H_
-#define _SCENEOBJECTWITHRESTPOSITION_H_
+#ifndef VEGAFEM_SCENEOBJECTWITHRESTPOSITION_H
+#define VEGAFEM_SCENEOBJECTWITHRESTPOSITION_H
 
 #include "sceneObject.h"
 

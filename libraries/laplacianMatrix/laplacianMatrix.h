@@ -36,8 +36,8 @@
    they transform scalar quantities defined on the elements. 
 */
 
-#ifndef _LAPLACIANMATRIX_H_
-#define _LAPLACIANMATRIX_H_
+#ifndef VEGAFEM_LAPLACIANMATRIX_H
+#define VEGAFEM_LAPLACIANMATRIX_H
 
 #include "sparseMatrix.h"
 #include "tetMesh.h"

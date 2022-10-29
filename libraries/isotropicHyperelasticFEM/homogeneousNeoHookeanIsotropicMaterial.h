@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _HOMOGENEOUSNEOHOOKEANISOTROPICMATERIAL_H_
-#define _HOMOGENEOUSNEOHOOKEANISOTROPICMATERIAL_H_
+#ifndef VEGAFEM_HOMOGENEOUSNEOHOOKEANISOTROPICMATERIAL_H
+#define VEGAFEM_HOMOGENEOUSNEOHOOKEANISOTROPICMATERIAL_H
 
 #include "isotropicMaterialWithCompressionResistance.h"
 

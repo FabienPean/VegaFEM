@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _MODALMATRIX_H_
-#define _MODALMATRIX_H_
+#ifndef VEGAFEM_MODALMATRIX_H
+#define VEGAFEM_MODALMATRIX_H
 
 #include "matrixMacros.h"
 

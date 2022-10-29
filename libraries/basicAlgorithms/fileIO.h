@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef FILEIO_H
-#define FILEIO_H
+#ifndef VEGAFEM_FILEIO_H
+#define VEGAFEM_FILEIO_H
 
 #include <fstream>
 #include <functional>

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _MATRIXPROJECTION_H_
-#define _MATRIXPROJECTION_H_
+#ifndef VEGAFEM_MATRIXPROJECTION_H
+#define VEGAFEM_MATRIXPROJECTION_H
 
 /*
   These routines allow you to multiply a matrix with a vector,

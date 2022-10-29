@@ -35,8 +35,8 @@
   See also sceneObject.h . 
 */
 
-#ifndef _SCENEOBJECTREDUCED_H_
-#define _SCENEOBJECTREDUCED_H_
+#ifndef VEGAFEM_SCENEOBJECTREDUCED_H
+#define VEGAFEM_SCENEOBJECTREDUCED_H
 
 #include "macros.h"
 #include <cmath>

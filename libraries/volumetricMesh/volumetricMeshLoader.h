@@ -35,8 +35,8 @@
   the type of the mesh (tet mesh, cube mesh).
 */
 
-#ifndef _VOLUMETRICMESHLOADER_H_
-#define _VOLUMETRICMESHLOADER_H_
+#ifndef VEGAFEM_VOLUMETRICMESHLOADER_H
+#define VEGAFEM_VOLUMETRICMESHLOADER_H
 
 #include "volumetricMesh.h"
 

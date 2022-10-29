@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef VIRTUALTETS_H
-#define VIRTUALTETS_H
+#ifndef VEGAFEM_VIRTUALTETS_H
+#define VEGAFEM_VIRTUALTETS_H
 
 #include "tetMeshGeo.h"
 #include "triMeshGeo.h"

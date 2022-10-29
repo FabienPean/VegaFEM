@@ -44,8 +44,8 @@
   (run-time solver switching would be possible too with more coding).
 */
 
-#ifndef _IMPLICITNEWMARKSPARSE_H_
-#define _IMPLICITNEWMARKSPARSE_H_
+#ifndef VEGAFEM_IMPLICITNEWMARKSPARSE_H
+#define VEGAFEM_IMPLICITNEWMARKSPARSE_H
 
 #ifdef __APPLE__
   #include "TargetConditionals.h"

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _RIGIDBODY_H_
-#define _RIGIDBODY_H_
+#ifndef VEGAFEM_RIGIDBODY_H
+#define VEGAFEM_RIGIDBODY_H
 
 /*
 

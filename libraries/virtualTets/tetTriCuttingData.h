@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TETTRICUTTINGDATA_H
-#define TETTRICUTTINGDATA_H
+#ifndef VEGAFEM_TETTRICUTTINGDATA_H
+#define VEGAFEM_TETTRICUTTINGDATA_H
 
 #include "tetTriMeshCutting.h"
 #include <vector>

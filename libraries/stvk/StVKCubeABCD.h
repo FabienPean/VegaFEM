@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVKCUBEABCD_H_
-#define _STVKCUBEABCD_H_
+#ifndef VEGAFEM_STVKCUBEABCD_H
+#define VEGAFEM_STVKCUBEABCD_H
 
 #include "StVKElementABCD.h"
 

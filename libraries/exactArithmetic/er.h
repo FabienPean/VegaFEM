@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef CGALKERNELEXACT_H_
-#define CGALKERNELEXACT_H_
+#ifndef VEGAFEM_CGALKERNELEXACT_H
+#define VEGAFEM_CGALKERNELEXACT_H
 
 #include <iostream>
 

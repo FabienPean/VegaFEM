@@ -1,5 +1,5 @@
-#ifndef _SPARSESOLVER_AVAILABILITY_H_
-#define _SPARSESOLVER_AVAILABILITY_H_
+#ifndef VEGAFEM_SPARSESOLVER_AVAILABILITY_H
+#define VEGAFEM_SPARSESOLVER_AVAILABILITY_H
 
 // uncomment the corresponding line if Pardiso or SPOOLES is installed and configured
 

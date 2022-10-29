@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef CREATEOBJMESH_H
-#define CREATEOBJMESH_H
+#ifndef VEGAFEM_CREATEOBJMESH_H
+#define VEGAFEM_CREATEOBJMESH_H
 
 #include "objMesh.h"
 

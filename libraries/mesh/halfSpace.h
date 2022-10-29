@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef HALFSPACE_H_
-#define HALFSPACE_H_
+#ifndef VEGAFEM_HALFSPACE_H
+#define VEGAFEM_HALFSPACE_H
 
 #include "vec3d.h"
 

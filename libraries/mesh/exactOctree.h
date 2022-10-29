@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef EXACT_OCTREE_H
-#define EXACT_OCTREE_H
+#ifndef VEGAFEM_EXACT_OCTREE_H
+#define VEGAFEM_EXACT_OCTREE_H
 
 // An octree implementation using exact predicates for precise geometry queries.
 // The base class is ExactOctreeBase. It has several derived classes:

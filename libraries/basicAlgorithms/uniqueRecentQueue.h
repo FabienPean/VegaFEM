@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef UNIQUERECENTQUEUE_H_
-#define UNIQUERECENTQUEUE_H_
+#ifndef VEGAFEM_UNIQUERECENTQUEUE_H
+#define VEGAFEM_UNIQUERECENTQUEUE_H
 
 #include "range.h"
 #include <list>

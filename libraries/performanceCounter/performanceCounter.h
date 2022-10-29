@@ -52,8 +52,8 @@ Version: 1.0
 
 */
 
-#ifndef _PERFORMANCECOUNTER_H_
-#define _PERFORMANCECOUNTER_H_
+#ifndef VEGAFEM_PERFORMANCECOUNTER_H
+#define VEGAFEM_PERFORMANCECOUNTER_H
 
 /**************** LINUX/MAC OS X COUNTER *******************/
 

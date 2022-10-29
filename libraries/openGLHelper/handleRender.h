@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef HANDLERENDER_H
-#define HANDLERENDER_H
+#ifndef VEGAFEM_HANDLERENDER_H
+#define VEGAFEM_HANDLERENDER_H
 #include "minivector.h"
 
 

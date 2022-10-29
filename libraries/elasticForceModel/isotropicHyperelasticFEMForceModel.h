@@ -34,8 +34,8 @@
   Force model for the hyperelastic isotropic nonlinear FEM material.
 */
 
-#ifndef _ISOTROPICHYPERELASTICFEMFORCEMODEL_H_
-#define _ISOTROPICHYPERELASTICFEMFORCEMODEL_H_
+#ifndef VEGAFEM_ISOTROPICHYPERELASTICFEMFORCEMODEL_H
+#define VEGAFEM_ISOTROPICHYPERELASTICFEMFORCEMODEL_H
 
 #include "isotropicHyperelasticFEM.h"
 #include "forceModel.h"

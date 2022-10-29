@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SIMPLESPHERE_H_
-#define _SIMPLESPHERE_H_
+#ifndef VEGAFEM_SIMPLESPHERE_H
+#define VEGAFEM_SIMPLESPHERE_H
 
 /*
   A sphere

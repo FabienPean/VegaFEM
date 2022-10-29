@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _COROTATIONALLINEARFEM_H_
-#define _COROTATIONALLINEARFEM_H_
+#ifndef VEGAFEM_COROTATIONALLINEARFEM_H
+#define VEGAFEM_COROTATIONALLINEARFEM_H
 
 /*
   Corotational linear FEM deformable model for tet meshes and cubic meshes.

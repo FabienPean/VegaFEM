@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef CAMERACHANGELOAD_H
-#define CAMERACHANGELOAD_H
+#ifndef VEGAFEM_CAMERACHANGELOAD_H
+#define VEGAFEM_CAMERACHANGELOAD_H
 
 #include "camera.h"
 #include <string>

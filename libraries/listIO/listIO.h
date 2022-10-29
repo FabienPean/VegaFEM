@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _LISTIO_H_
-#define _LISTIO_H_
+#ifndef VEGAFEM_LISTIO_H
+#define VEGAFEM_LISTIO_H
 
 /*
   A class to load an integer list from a text file into memory. 

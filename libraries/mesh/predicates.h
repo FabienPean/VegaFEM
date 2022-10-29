@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef PREDICATES_H
-#define PREDICATES_H
+#ifndef VEGAFEM_PREDICATES_H
+#define VEGAFEM_PREDICATES_H
 
 // Predicates for robust geometric queries.
 // Interface to Shewchuk's exact predicates code.

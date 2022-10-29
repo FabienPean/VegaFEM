@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _IPIVC_H_
-#define _IPIVC_H_
+#ifndef VEGAFEM_IPIVC_H
+#define VEGAFEM_IPIVC_H
 #include <cstdlib>
 
 // a buffer to hold r integers

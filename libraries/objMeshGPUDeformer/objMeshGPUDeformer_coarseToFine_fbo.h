@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHGPUDEFORMER_COARSETOFINE_FBO_H_
-#define _OBJMESHGPUDEFORMER_COARSETOFINE_FBO_H_
+#ifndef VEGAFEM_OBJMESHGPUDEFORMER_COARSETOFINE_FBO_H
+#define VEGAFEM_OBJMESHGPUDEFORMER_COARSETOFINE_FBO_H
 
 #include "objMeshGPUDeformer_coarseToFine.h"
 

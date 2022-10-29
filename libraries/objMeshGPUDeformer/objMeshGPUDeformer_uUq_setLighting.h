@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHGPUDEFORMER_UUQ_SETLIGHTING_H_
-#define _OBJMESHGPUDEFORMER_UUQ_SETLIGHTING_H_
+#ifndef VEGAFEM_OBJMESHGPUDEFORMER_UUQ_SETLIGHTING_H
+#define VEGAFEM_OBJMESHGPUDEFORMER_UUQ_SETLIGHTING_H
 
 #include "objMeshGPUDeformer_uUq.h"
 #include "lighting.h"

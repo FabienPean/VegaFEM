@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _VOLUMETRICMESHMOONEYRIVLINMATERIAL_H_
-#define _VOLUMETRICMESHMOONEYRIVLINMATERIAL_H_
+#ifndef VEGAFEM_VOLUMETRICMESHMOONEYRIVLINMATERIAL_H
+#define VEGAFEM_VOLUMETRICMESHMOONEYRIVLINMATERIAL_H
 
 #include "volumetricMesh.h"
 

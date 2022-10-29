@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _AVERAGING_BUFFER_H_
-#define _AVERAGING_BUFFER_H_
+#ifndef VEGAFEM_AVERAGING_BUFFER_H
+#define VEGAFEM_AVERAGING_BUFFER_H
 
 #include <vector>
 // FIFO averaging buffer

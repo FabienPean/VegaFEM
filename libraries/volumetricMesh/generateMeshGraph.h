@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _GENERATEMESHGRAPH_H_
-#define _GENERATEMESHGRAPH_H_
+#ifndef VEGAFEM_GENERATEMESHGRAPH_H
+#define VEGAFEM_GENERATEMESHGRAPH_H
 
 #include <cstdlib>
 #include <cstdio>

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVKISOTROPICMATERIAL_H_
-#define _STVKISOTROPICMATERIAL_H_
+#ifndef VEGAFEM_STVKISOTROPICMATERIAL_H
+#define VEGAFEM_STVKISOTROPICMATERIAL_H
 
 #include "isotropicMaterialWithCompressionResistance.h"
 #include "tetMesh.h"

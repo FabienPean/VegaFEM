@@ -34,8 +34,8 @@
   Helper class for the ARPACK solver.
 */
 
-#ifndef _INVZTAZMSOLVER_H_
-#define _INVZTAZMSOLVER_H_
+#ifndef VEGAFEM_INVZTAZMSOLVER_H
+#define VEGAFEM_INVZTAZMSOLVER_H
 
 #include "invZTAZSolver.h"
 #include "ZTAZMultiplicator.h"

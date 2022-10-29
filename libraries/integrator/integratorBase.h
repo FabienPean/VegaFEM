@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _INTEGRATORBASE_H_
-#define _INTEGRATORBASE_H_
+#ifndef VEGAFEM_INTEGRATORBASE_H
+#define VEGAFEM_INTEGRATORBASE_H
 
 /*
 

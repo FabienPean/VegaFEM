@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _NEOHOOKEANISOTROPICMATERIAL_H_
-#define _NEOHOOKEANISOTROPICMATERIAL_H_
+#ifndef VEGAFEM_NEOHOOKEANISOTROPICMATERIAL_H
+#define VEGAFEM_NEOHOOKEANISOTROPICMATERIAL_H
 
 #include "tetMesh.h"
 #include "isotropicMaterialWithCompressionResistance.h"

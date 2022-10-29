@@ -35,8 +35,8 @@
   Helper class for the ARPACK solver.
 */
 
-#ifndef _INVMKSOLVER_H_
-#define _INVMKSOLVER_H_
+#ifndef VEGAFEM_INVMKSOLVER_H
+#define VEGAFEM_INVMKSOLVER_H
 
 #include "linearSolver.h"
 #include "sparseMatrix.h"

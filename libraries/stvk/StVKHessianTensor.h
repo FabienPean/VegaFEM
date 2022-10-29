@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVKHESSIANTENSOR_H_
-#define _STVKHESSIANTENSOR_H_
+#ifndef VEGAFEM_STVKHESSIANTENSOR_H
+#define VEGAFEM_STVKHESSIANTENSOR_H
 
 /*
   The second derivative (Hessian tensor) of internal elastic forces.

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVKTETHIGHMEMORYABCD_H_
-#define _STVKTETHIGHMEMORYABCD_H_
+#ifndef VEGAFEM_STVKTETHIGHMEMORYABCD_H
+#define VEGAFEM_STVKTETHIGHMEMORYABCD_H
 
 #include "StVKElementABCD.h"
 #include "tetMesh.h"

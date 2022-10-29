@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef MASSSPRINGSYSTEMFROMCUBEMESHCONFIGFILE_H_
-#define MASSSPRINGSYSTEMFROMCUBEMESHCONFIGFILE_H_
+#ifndef VEGAFEM_MASSSPRINGSYSTEMFROMCUBEMESHCONFIGFILE_H
+#define VEGAFEM_MASSSPRINGSYSTEMFROMCUBEMESHCONFIGFILE_H
 
 #include "massSpringSystem.h"
 

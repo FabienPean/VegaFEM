@@ -45,8 +45,8 @@
  David Pritchard: Implementing Baraff & Witkin's Cloth Simulation, May 2003, with minor updates April 2012
 */
 
-#ifndef _CLOTHBW_H_
-#define _CLOTHBW_H_
+#ifndef VEGAFEM_CLOTHBW_H
+#define VEGAFEM_CLOTHBW_H
 
 #include "sparseMatrix.h"
 #include "vec3d.h"

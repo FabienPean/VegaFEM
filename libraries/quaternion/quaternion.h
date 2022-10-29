@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _QUATERNION_H_
-#define _QUATERNION_H_
+#ifndef VEGAFEM_QUATERNION_H
+#define VEGAFEM_QUATERNION_H
 
 /*
   Quaternion C++ class.

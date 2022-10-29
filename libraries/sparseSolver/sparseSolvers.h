@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SPARSESOLVERS_H_
-#define _SPARSESOLVERS_H_
+#ifndef VEGAFEM_SPARSESOLVERS_H
+#define VEGAFEM_SPARSESOLVERS_H
 
 #include "PardisoSolver.h"
 #include "CGSolver.h"

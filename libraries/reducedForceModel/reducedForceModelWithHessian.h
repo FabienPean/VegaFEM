@@ -36,8 +36,8 @@
   Serves as a connecting class between reduced integrators and classes to calculate reduced internal forces and tangent stiffness matrices.
 */
 
-#ifndef _REDUCEDFORCEMODELWITHHESSIAN_H_
-#define _REDUCEDFORCEMODELWITHHESSIAN_H_
+#ifndef VEGAFEM_REDUCEDFORCEMODELWITHHESSIAN_H
+#define VEGAFEM_REDUCEDFORCEMODELWITHHESSIAN_H
 
 #include "reducedForceModel.h"
 

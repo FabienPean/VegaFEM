@@ -34,8 +34,8 @@
    Generates unique integer IDs. Makes it possible to release IDs.
 */
 
-#ifndef _UNIQUEINTEGERID_
-#define _UNIQUEINTEGERID_
+#ifndef VEGAFEM_UNIQUEINTEGERID
+#define VEGAFEM_UNIQUEINTEGERID
 
 #include <set>
 

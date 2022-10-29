@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _ISOTROPICHYPERELASTICFEM_STENCIL_FORCEMODEL_H_
-#define _ISOTROPICHYPERELASTICFEM_STENCIL_FORCEMODEL_H_
+#ifndef VEGAFEM_ISOTROPICHYPERELASTICFEM_STENCIL_FORCEMODEL_H
+#define VEGAFEM_ISOTROPICHYPERELASTICFEM_STENCIL_FORCEMODEL_H
 
 #include "isotropicHyperelasticFEM.h"
 #include "stencilForceModel.h"

@@ -39,8 +39,8 @@
   Proceedings of the 14th International Meshing Roundtable 2005, pp 203-219
 */
 
-#ifndef _ISOSURFACEMESHER_H_
-#define _ISOSURFACEMESHER_H_
+#ifndef VEGAFEM_ISOSURFACEMESHER_H
+#define VEGAFEM_ISOSURFACEMESHER_H
 
 #include <ctime>
 #include <vector>

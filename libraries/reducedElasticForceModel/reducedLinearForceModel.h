@@ -36,8 +36,8 @@
     f = K * u
 */
 
-#ifndef _REDUCEDLINEARFORCEMODEL_H_
-#define _REDUCEDLINEARFORCEMODEL_H_
+#ifndef VEGAFEM_REDUCEDLINEARFORCEMODEL_H
+#define VEGAFEM_REDUCEDLINEARFORCEMODEL_H
 
 #include <cmath>
 #include <cstdio>

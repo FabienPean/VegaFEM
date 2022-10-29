@@ -43,8 +43,8 @@
 
 */
 
-#ifndef _INTEGRATORMULTI1D_H_
-#define _INTEGRATORMULTI1D_H_
+#ifndef VEGAFEM_INTEGRATORMULTI1D_H
+#define VEGAFEM_INTEGRATORMULTI1D_H
 
 #include "integratorBaseDense.h"
 #include "reducedForceModel.h"

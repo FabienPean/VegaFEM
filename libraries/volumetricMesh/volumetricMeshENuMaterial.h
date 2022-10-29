@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _VOLUMETRICMESHENUMATERIAL_H_
-#define _VOLUMETRICMESHENUMATERIAL_H_
+#ifndef VEGAFEM_VOLUMETRICMESHENUMATERIAL_H
+#define VEGAFEM_VOLUMETRICMESHENUMATERIAL_H
 
 #include "volumetricMesh.h"
 

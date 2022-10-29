@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _RIGIDBODY_GENERAL_TENSOR_H_
-#define _RIGIDBODY_GENERAL_TENSOR_H_
+#ifndef VEGAFEM_RIGIDBODY_GENERAL_TENSOR_H
+#define VEGAFEM_RIGIDBODY_GENERAL_TENSOR_H
 
 /*
   Classes 'RigidBody' and 'RigidBody_GeneralTensor' 

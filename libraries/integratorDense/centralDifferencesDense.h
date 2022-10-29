@@ -63,8 +63,8 @@ take very small explicit timesteps, or use the ImplicitNewmark class.
 
 */
 
-#ifndef _CENTRALDIFFERENCESDENSE_H_
-#define _CENTRALDIFFERENCESDENSE_H_
+#ifndef VEGAFEM_CENTRALDIFFERENCESDENSE_H
+#define VEGAFEM_CENTRALDIFFERENCESDENSE_H
 
 #include "integratorBaseDense.h"
 

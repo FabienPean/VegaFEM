@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _MATRIX_SVD_H_
-#define _MATRIX_SVD_H_
+#ifndef VEGAFEM_MATRIX_SVD_H
+#define VEGAFEM_MATRIX_SVD_H
 
 /*
   Compute the first few principal components (the dominant column space) 

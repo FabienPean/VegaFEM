@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _ISOTROPICMATERIAL_H_
-#define _ISOTROPICMATERIAL_H_
+#ifndef VEGAFEM_ISOTROPICMATERIAL_H
+#define VEGAFEM_ISOTROPICMATERIAL_H
 
 class IsotropicMaterial
 {

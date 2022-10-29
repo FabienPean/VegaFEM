@@ -49,8 +49,8 @@
   Authors of this code: Jernej Barbic, Yili Zhao
 */
 
-#ifndef _POLARDECOMPOSITIONGRADIENT_H_
-#define _POLARDECOMPOSITIONGRADIENT_H_
+#ifndef VEGAFEM_POLARDECOMPOSITIONGRADIENT_H
+#define VEGAFEM_POLARDECOMPOSITIONGRADIENT_H
 
 #include <cstdlib>
 

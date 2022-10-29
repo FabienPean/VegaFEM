@@ -31,8 +31,8 @@
   (summation, normalization, dot product, cross product, etc.).
 */
 
-#ifndef _MINIVEC3_H_
-#define _MINIVEC3_H_
+#ifndef VEGAFEM_MINIVEC3_H
+#define VEGAFEM_MINIVEC3_H
 
 #include <cstdio>
 #include <cmath>

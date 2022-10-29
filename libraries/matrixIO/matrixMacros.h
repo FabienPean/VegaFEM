@@ -34,8 +34,8 @@
   Commonly used macros in the matrix library.
 */
 
-#ifndef _MATRIXMACROS_H_
-#define _MATRIXMACROS_H_
+#ifndef VEGAFEM_MATRIXMACROS_H
+#define VEGAFEM_MATRIXMACROS_H
 
 /*
    Returns the array offset index of element located in row i and column j (both 0-indexed). The matrix has "numRows" rows, and is stored in LAPACK-style column-major order.

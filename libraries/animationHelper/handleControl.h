@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef HANDLECONTROL_H
-#define HANDLECONTROL_H
+#ifndef VEGAFEM_HANDLECONTROL_H
+#define VEGAFEM_HANDLECONTROL_H
 
 #include "handleRender.h"
 #include "minivector.h"

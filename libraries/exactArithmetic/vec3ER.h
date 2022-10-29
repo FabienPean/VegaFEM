@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef VEC3ER_H
-#define VEC3ER_H
+#ifndef VEGAFEM_VEC3ER_H
+#define VEGAFEM_VEC3ER_H
 
 #include "er.h"
 

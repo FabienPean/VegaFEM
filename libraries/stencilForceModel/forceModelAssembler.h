@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _FORCEMODEL_ASSEMBLER_H_
-#define _FORCEMODEL_ASSEMBLER_H_
+#ifndef VEGAFEM_FORCEMODEL_ASSEMBLER_H
+#define VEGAFEM_FORCEMODEL_ASSEMBLER_H
 
 #include "forceModel.h"
 #include "stencilForceModel.h"

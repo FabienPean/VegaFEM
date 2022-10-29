@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef STOPWATCH_H
-#define STOPWATCH_H
+#ifndef VEGAFEM_STOPWATCH_H
+#define VEGAFEM_STOPWATCH_H
 
 /*
   === A stopwatch to measure code execution time. ===

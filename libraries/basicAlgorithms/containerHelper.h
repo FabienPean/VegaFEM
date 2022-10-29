@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef CONTAINERHELPER_H
-#define CONTAINERHELPER_H
+#ifndef VEGAFEM_CONTAINERHELPER_H
+#define VEGAFEM_CONTAINERHELPER_H
 
 #include <vector>
 #include <set>

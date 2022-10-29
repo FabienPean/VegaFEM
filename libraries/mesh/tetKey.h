@@ -46,8 +46,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TETKEYS_H
-#define TETKEYS_H
+#ifndef VEGAFEM_TETKEYS_H
+#define VEGAFEM_TETKEYS_H
 
 #include "triKey.h"
 #include "vec4i.h"

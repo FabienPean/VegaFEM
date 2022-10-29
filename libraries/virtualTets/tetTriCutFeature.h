@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TETTRICUTFEATURE_H
-#define TETTRICUTFEATURE_H
+#ifndef VEGAFEM_TETTRICUTFEATURE_H
+#define VEGAFEM_TETTRICUTFEATURE_H
 
 #include "triKey.h"
 #include "tetKey.h"

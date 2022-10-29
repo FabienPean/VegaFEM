@@ -35,8 +35,8 @@
   The specific algorithm is controlled using "SignedFieldCreationMode" (below).
 */
 
-#ifndef _DISTANCEFIELD_CREATOR_H_
-#define _DISTANCEFIELD_CREATOR_H_
+#ifndef VEGAFEM_DISTANCEFIELD_CREATOR_H
+#define VEGAFEM_DISTANCEFIELD_CREATOR_H
 
 #include <vector>
 #include "distanceField.h"

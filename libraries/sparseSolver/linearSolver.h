@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _LINEARSOLVER_H_
-#define _LINEARSOLVER_H_
+#ifndef VEGAFEM_LINEARSOLVER_H
+#define VEGAFEM_LINEARSOLVER_H
 
 /*
   Abstract class to solve

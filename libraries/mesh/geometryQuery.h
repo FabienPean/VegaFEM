@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef GEOMETRYQUERY_H
-#define GEOMETRYQUERY_H
+#ifndef VEGAFEM_GEOMETRYQUERY_H
+#define VEGAFEM_GEOMETRYQUERY_H
 
 #include "minivector.h"
 #include <cmath>

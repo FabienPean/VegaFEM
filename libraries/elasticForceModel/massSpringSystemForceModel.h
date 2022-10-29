@@ -34,8 +34,8 @@
   Force model for the mass-spring system material.
 */
 
-#ifndef _MASSSPRINGSYSTEMFORCEMODEL_H_
-#define _MASSSPRINGSYSTEMFORCEMODEL_H_
+#ifndef VEGAFEM_MASSSPRINGSYSTEMFORCEMODEL_H
+#define VEGAFEM_MASSSPRINGSYSTEMFORCEMODEL_H
 
 #include "massSpringSystem.h"
 #include "forceModel.h"

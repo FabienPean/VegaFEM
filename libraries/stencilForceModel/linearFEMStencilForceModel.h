@@ -31,8 +31,8 @@
  *************************************************************************/
 
 
-#ifndef _LINEARFEM_STENCIL_FORCEMODEL_H_
-#define _LINEARFEM_STENCIL_FORCEMODEL_H_
+#ifndef VEGAFEM_LINEARFEM_STENCIL_FORCEMODEL_H
+#define VEGAFEM_LINEARFEM_STENCIL_FORCEMODEL_H
 
 #include "stencilForceModel.h"
 

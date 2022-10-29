@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVKINTERNALFORCES_H_
-#define _STVKINTERNALFORCES_H_
+#ifndef VEGAFEM_STVKINTERNALFORCES_H
+#define VEGAFEM_STVKINTERNALFORCES_H
 
 /*
 

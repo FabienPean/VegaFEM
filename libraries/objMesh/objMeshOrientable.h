@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHORIENTABLE_H_
-#define _OBJMESHORIENTABLE_H_
+#ifndef VEGAFEM_OBJMESHORIENTABLE_H
+#define VEGAFEM_OBJMESHORIENTABLE_H
 
 #include "objMesh.h"
 

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef ALGORITHM_H
-#define ALGORITHM_H
+#ifndef VEGAFEM_ALGORITHM_H
+#define VEGAFEM_ALGORITHM_H
 
 #include "range.h"
 

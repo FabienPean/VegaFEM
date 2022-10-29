@@ -36,8 +36,8 @@
 */
 
 
-#ifndef _GLSLPHONG_H_
-#define _GLSLPHONG_H_
+#ifndef VEGAFEM_GLSLPHONG_H
+#define VEGAFEM_GLSLPHONG_H
 
 #include "openGL-headers.h"
 

@@ -35,8 +35,8 @@
   See also matrix.h.
 */
 
-#ifndef _EXPOKIT_H_
-#define _EXPOKIT_H_
+#ifndef VEGAFEM_EXPOKIT_H
+#define VEGAFEM_EXPOKIT_H
 
 #ifdef __APPLE__
   #define INTEGER long int

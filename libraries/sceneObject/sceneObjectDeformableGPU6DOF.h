@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SCENEOBJECTDEFORMABLEGPU6DOF_H_
-#define _SCENEOBJECTDEFORMABLEGPU6DOF_H_
+#ifndef VEGAFEM_SCENEOBJECTDEFORMABLEGPU6DOF_H
+#define VEGAFEM_SCENEOBJECTDEFORMABLEGPU6DOF_H
 
 #include "sceneObjectDeformableGPU.h"
 #include "sceneObjectDeformable6DOF.h"

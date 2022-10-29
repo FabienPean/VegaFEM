@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _MOONEYRIVLINISOTROPICMATERIAL_H_
-#define _MOONEYRIVLINISOTROPICMATERIAL_H_
+#ifndef VEGAFEM_MOONEYRIVLINISOTROPICMATERIAL_H
+#define VEGAFEM_MOONEYRIVLINISOTROPICMATERIAL_H
 
 #include "isotropicMaterialWithCompressionResistance.h"
 #include "tetMesh.h"

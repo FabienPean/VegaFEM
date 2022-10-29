@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _RENDER_VOLUMETRIC_MESH_
-#define _RENDER_VOLUMETRIC_MESH_
+#ifndef VEGAFEM_RENDER_VOLUMETRIC_MESH
+#define VEGAFEM_RENDER_VOLUMETRIC_MESH
 
 #include <set>
 #include "volumetricMesh.h"

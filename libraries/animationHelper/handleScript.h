@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef HANDLESCRIPT_H
-#define HANDLESCRIPT_H
+#ifndef VEGAFEM_HANDLESCRIPT_H
+#define VEGAFEM_HANDLESCRIPT_H
 
 #include "vec3d.h"
 #include <vector>

@@ -38,8 +38,8 @@
   See also matrix.h and expokit_xgpadm.h.
 */
 
-#ifndef _MATRIXEXP_H_
-#define _MATRIXEXP_H_
+#ifndef VEGAFEM_MATRIXEXP_H
+#define VEGAFEM_MATRIXEXP_H
 
 // computes exp(mtx*t)
 template<class real>

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHOCTREE_H_
-#define _OBJMESHOCTREE_H_
+#ifndef VEGAFEM_OBJMESHOCTREE_H
+#define VEGAFEM_OBJMESHOCTREE_H
 
 //  Jernej Barbic, CMU
 //  builds an octree on top of the geometry from a given obj file

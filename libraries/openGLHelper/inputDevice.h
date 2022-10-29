@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef INPUTDEVICE_H
-#define INPUTDEVICE_H 
+#ifndef VEGAFEM_INPUTDEVICE_H
+#define VEGAFEM_INPUTDEVICE_H
 
 // GLUT keyboard & mouse control
 class InputDevice

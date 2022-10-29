@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _GRAPH_H_
-#define _GRAPH_H_
+#ifndef VEGAFEM_GRAPH_H
+#define VEGAFEM_GRAPH_H
 
 #include <vector>
 #include <set>

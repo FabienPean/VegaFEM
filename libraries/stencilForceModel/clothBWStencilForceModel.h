@@ -31,8 +31,8 @@
  *************************************************************************/
 
 
-#ifndef _CLOTHBW_STENCIL_FORCEMODEL_H_
-#define _CLOTHBW_STENCIL_FORCEMODEL_H_
+#ifndef VEGAFEM_CLOTHBW_STENCIL_FORCEMODEL_H
+#define VEGAFEM_CLOTHBW_STENCIL_FORCEMODEL_H
 
 #include "clothBW.h"
 #include "stencilForceModel.h"

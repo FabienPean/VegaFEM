@@ -34,8 +34,8 @@
   Assorted OpenGL "helper" routines.
 */
 
-#ifndef _OPENGLHELPER_H_
-#define _OPENGLHELPER_H_
+#ifndef VEGAFEM_OPENGLHELPER_H
+#define VEGAFEM_OPENGLHELPER_H
 
 #include <cmath>
 #include <cstdio>

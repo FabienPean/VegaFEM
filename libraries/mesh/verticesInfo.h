@@ -47,8 +47,8 @@
  *************************************************************************/
 
 
-#ifndef VERTICESINFO_H
-#define VERTICESINFO_H
+#ifndef VEGAFEM_VERTICESINFO_H
+#define VEGAFEM_VERTICESINFO_H
 
 // handles floating-point queries among vertices
 #include "minivector.h"

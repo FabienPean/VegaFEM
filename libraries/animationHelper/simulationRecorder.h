@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef SIMULATIONRECORDER_H
-#define SIMULATIONRECORDER_H
+#ifndef VEGAFEM_SIMULATIONRECORDER_H
+#define VEGAFEM_SIMULATIONRECORDER_H
 #include <climits>
 #include <string>
 #include <vector>

@@ -41,8 +41,8 @@
   in the paper above; instead, it loops over all the triangles.
 */
 
-#ifndef _WINDINGNUMBER_H_
-#define _WINDINGNUMBER_H_
+#ifndef VEGAFEM_WINDINGNUMBER_H
+#define VEGAFEM_WINDINGNUMBER_H
 
 #include "objMesh.h"
 #include "minivector.h"

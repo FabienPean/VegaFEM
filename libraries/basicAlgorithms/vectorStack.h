@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef VECTORSTACK_H
-#define VECTORSTACK_H
+#ifndef VEGAFEM_VECTORSTACK_H
+#define VEGAFEM_VECTORSTACK_H
 
 #include <vector>
 

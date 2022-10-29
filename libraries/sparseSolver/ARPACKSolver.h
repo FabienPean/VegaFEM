@@ -42,8 +42,8 @@
   ACM Transactions on Graphics 35(4) (SIGGRAPH 2016), Anaheim, CA, USA
 */
 
-#ifndef _ARPACKSOLVER_H_
-#define _ARPACKSOLVER_H_
+#ifndef VEGAFEM_ARPACKSOLVER_H
+#define VEGAFEM_ARPACKSOLVER_H
 
 #include "sparseMatrix.h"
 

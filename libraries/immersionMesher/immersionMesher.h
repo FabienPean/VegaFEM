@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef IMMERSIONMESHER_H
-#define IMMERSIONMESHER_H
+#ifndef VEGAFEM_IMMERSIONMESHER_H
+#define VEGAFEM_IMMERSIONMESHER_H
 
 #include "triKey.h"
 #include "tetMeshGeo.h"

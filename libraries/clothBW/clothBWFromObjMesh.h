@@ -34,8 +34,8 @@
   Constructs a cloth model from an obj mesh.
 */
 
-#ifndef _CLOTHBWFROMOBJMESH_H_
-#define _CLOTHBWFROMOBJMESH_H_
+#ifndef VEGAFEM_CLOTHBWFROMOBJMESH_H
+#define VEGAFEM_CLOTHBWFROMOBJMESH_H
 
 #include "clothBW.h"
 #include "objMesh.h"

@@ -35,8 +35,8 @@
   The tetrahedralization can be updated incrementally by adding new points.
 */
 
-#ifndef _DELAUNAYMESHER_H_
-#define _DELAUNAYMESHER_H_
+#ifndef VEGAFEM_DELAUNAYMESHER_H
+#define VEGAFEM_DELAUNAYMESHER_H
 
 #include <cstddef>
 #include <cassert>

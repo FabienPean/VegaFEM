@@ -35,8 +35,8 @@
   Reduced linear StVK force model.
 */
 
-#ifndef _REDUCEDLINEARSTVKFORCEMODEL_H_
-#define _REDUCEDLINEARSTVKFORCEMODEL_H_
+#ifndef VEGAFEM_REDUCEDLINEARSTVKFORCEMODEL_H
+#define VEGAFEM_REDUCEDLINEARSTVKFORCEMODEL_H
 
 #include "reducedForceModel.h"
 #include "StVKReducedStiffnessMatrix.h"

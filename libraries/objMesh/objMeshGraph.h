@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHGRAPH_H_
-#define _OBJMESHGRAPH_H_
+#ifndef VEGAFEM_OBJMESHGRAPH_H
+#define VEGAFEM_OBJMESHGRAPH_H
 
 /*
    Jernej Barbic, CMU, MIT, USC, 2007-2012

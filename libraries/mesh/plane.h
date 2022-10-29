@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef PLANE_H
-#define PLANE_H
+#ifndef VEGAFEM_PLANE_H
+#define VEGAFEM_PLANE_H
 
 #include "vec3d.h"
 

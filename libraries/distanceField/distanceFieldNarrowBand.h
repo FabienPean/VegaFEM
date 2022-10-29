@@ -34,8 +34,8 @@
   Narrowband distance field computation.
 */
 
-#ifndef _DISTANCEFIELDNARROWBAND_H_
-#define _DISTANCEFIELDNARROWBAND_H_
+#ifndef VEGAFEM_DISTANCEFIELDNARROWBAND_H
+#define VEGAFEM_DISTANCEFIELDNARROWBAND_H
 
 #include "objMesh.h"
 #include "triple.h"

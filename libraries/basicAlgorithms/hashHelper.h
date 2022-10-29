@@ -3,8 +3,8 @@
 // Distributed under the Boost Software License, Version 1.0.
 //    (See accompanying file LICENSE_1_0.txt or copy at
 //          https://www.boost.org/LICENSE_1_0.txt)
-#ifndef HASHHELPER_H
-#define HASHHELPER_H
+#ifndef VEGAFEM_HASHHELPER_H
+#define VEGAFEM_HASHHELPER_H
 #include <cstddef>
 
 inline std::size_t hashCombine(std::size_t seed, std::size_t newValue)

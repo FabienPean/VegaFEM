@@ -35,8 +35,8 @@
   See also sceneObject.h . 
 */
 
-#ifndef _SCENEOBJECT6DOF_H_
-#define _SCENEOBJECT6DOF_H_
+#ifndef VEGAFEM_SCENEOBJECT6DOF_H
+#define VEGAFEM_SCENEOBJECT6DOF_H
 
 #include "sceneObjectWithRestPosition.h"
 

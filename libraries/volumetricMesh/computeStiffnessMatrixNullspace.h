@@ -35,8 +35,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _COMPUTESTIFFNESSMATRIXNULLSPACE_H_
-#define _COMPUTESTIFFNESSMATRIXNULLSPACE_H_
+#ifndef VEGAFEM_COMPUTESTIFFNESSMATRIXNULLSPACE_H
+#define VEGAFEM_COMPUTESTIFFNESSMATRIXNULLSPACE_H
 
 #include <cstdlib>
 #include <cstdio>

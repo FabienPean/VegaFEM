@@ -36,8 +36,8 @@
   (via cubic polynomials)
 */
 
-#ifndef _REDUCEDSTVKFORCE_MODEL_H_
-#define _REDUCEDSTVKFORCE_MODEL_H_
+#ifndef VEGAFEM_REDUCEDSTVKFORCE_MODEL_H
+#define VEGAFEM_REDUCEDSTVKFORCE_MODEL_H
 
 #include <cstdlib>
 #include "StVKReducedInternalForces.h"

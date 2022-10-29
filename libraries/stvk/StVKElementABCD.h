@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVKELEMENTABCD_H_
-#define _STVKELEMENTABCD_H_
+#ifndef VEGAFEM_STVKELEMENTABCD_H
+#define VEGAFEM_STVKELEMENTABCD_H
 
 #include "minivector.h"
 

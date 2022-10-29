@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _VOLUMETRICMESHPARSER_H_
-#define _VOLUMETRICMESHPARSER_H_
+#ifndef VEGAFEM_VOLUMETRICMESHPARSER_H
+#define VEGAFEM_VOLUMETRICMESHPARSER_H
 
 #include <cstdio>
 #include <cstdlib>

@@ -34,8 +34,8 @@
   Force model for the Corotational linear FEM material.
 */
 
-#ifndef _COROTATIONALLINEARFEMFORCEMODEL_H_
-#define _COROTATIONALLINEARFEMFORCEMODEL_H_
+#ifndef VEGAFEM_COROTATIONALLINEARFEMFORCEMODEL_H
+#define VEGAFEM_COROTATIONALLINEARFEMFORCEMODEL_H
 
 #include "corotationalLinearFEM.h"
 #include "forceModel.h"

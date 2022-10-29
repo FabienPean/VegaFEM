@@ -35,8 +35,8 @@
   This library depends on the "objMesh" library. See also objMesh.h.
 */
 
-#ifndef _SCENEOBJECT_H_
-#define _SCENEOBJECT_H_
+#ifndef VEGAFEM_SCENEOBJECT_H
+#define VEGAFEM_SCENEOBJECT_H
 
 #include "openGL-headers.h"
 

@@ -40,8 +40,8 @@
   See also integratorBase.h.
 */
 
-#ifndef _INTEGRATORBASEDENSE_H_
-#define _INTEGRATORBASEDENSE_H_
+#ifndef VEGAFEM_INTEGRATORBASEDENSE_H
+#define VEGAFEM_INTEGRATORBASEDENSE_H
 
 #include "integratorBase.h"
 #include "reducedForceModel.h"

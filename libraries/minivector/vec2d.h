@@ -32,8 +32,8 @@
   (summation, normalization, dot product, etc.).
 */
 
-#ifndef _MINIVEC2D_H_
-#define _MINIVEC2D_H_
+#ifndef VEGAFEM_MINIVEC2D_H
+#define VEGAFEM_MINIVEC2D_H
 
 #include <cmath>
 #include <ostream>

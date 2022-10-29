@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef ARAPDEFORMER_H
-#define ARAPDEFORMER_H
+#ifndef VEGAFEM_ARAPDEFORMER_H
+#define VEGAFEM_ARAPDEFORMER_H
 
 #include "sparseMatrix.h"
 #include "objMesh.h"

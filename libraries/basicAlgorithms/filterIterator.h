@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef FILTERITERATOR_H
-#define FILTERITERATOR_H
+#ifndef VEGAFEM_FILTERITERATOR_H
+#define VEGAFEM_FILTERITERATOR_H
 
 #include <iterator>
 #include <functional>

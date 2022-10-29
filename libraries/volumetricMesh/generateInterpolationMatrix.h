@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _GENERATEINTERPOLATIONMATRIX_H_
-#define _GENERATEINTERPOLATIONMATRIX_H_
+#ifndef VEGAFEM_GENERATEINTERPOLATIONMATRIX_H
+#define VEGAFEM_GENERATEINTERPOLATIONMATRIX_H
 
 #include "sparseMatrix.h"
 

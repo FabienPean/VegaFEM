@@ -35,8 +35,8 @@
   See also matrix.h.
 */
 
-#ifndef _MATRIX_BLAS_H_
-#define _MATRIX_BLAS_H_
+#ifndef VEGAFEM_MATRIX_BLAS_H
+#define VEGAFEM_MATRIX_BLAS_H
 
 #include <cstdlib>
 

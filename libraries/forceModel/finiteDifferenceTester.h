@@ -34,8 +34,8 @@
    Tests a Vega FEM force model, using two-point, or five-point finite differences.
 */
 
-#ifndef FINITEDIFFERENCETESTER_H
-#define FINITEDIFFERENCETESTER_H
+#ifndef VEGAFEM_FINITEDIFFERENCETESTER_H
+#define VEGAFEM_FINITEDIFFERENCETESTER_H
 
 #include "forceModel.h"
 #include "sparseMatrix.h"

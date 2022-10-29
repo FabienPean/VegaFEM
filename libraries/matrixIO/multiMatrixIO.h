@@ -34,8 +34,8 @@
   Load/save multiple binary matrices from a single file.
 */
 
-#ifndef _MULTIMATRIXIO_H_
-#define _MULTIMATRIXIO_H_
+#ifndef VEGAFEM_MULTIMATRIXIO_H
+#define VEGAFEM_MULTIMATRIXIO_H
 
 class MultiMatrixIO
 {

@@ -35,8 +35,8 @@
   See also StVKReducedInternalForces.h .
 */
 
-#ifndef _STVKELEMENTABCDLOADER_H_
-#define _STVKELEMENTABCDLOADER_H_
+#ifndef VEGAFEM_STVKELEMENTABCDLOADER_H
+#define VEGAFEM_STVKELEMENTABCDLOADER_H
 
 #include "volumetricMesh.h"
 #include "StVKElementABCD.h"

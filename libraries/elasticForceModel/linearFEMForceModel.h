@@ -36,8 +36,8 @@
   (but this choice of StVK vs some other model does not matter; due to linearity).
 */
 
-#ifndef _LINEARFEMFORCEMODEL_H_
-#define _LINEARFEMFORCEMODEL_H_
+#ifndef VEGAFEM_LINEARFEMFORCEMODEL_H
+#define VEGAFEM_LINEARFEMFORCEMODEL_H
 
 #include "StVKInternalForces.h"
 #include "forceModel.h"

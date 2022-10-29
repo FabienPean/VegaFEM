@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SCENEOBJECTREDUCED6DOF_H_
-#define _SCENEOBJECTREDUCED6DOF_H_
+#ifndef VEGAFEM_SCENEOBJECTREDUCED6DOF_H
+#define VEGAFEM_SCENEOBJECTREDUCED6DOF_H
 
 #include "sceneObject6DOF.h"
 #include "sceneObjectReduced.h"

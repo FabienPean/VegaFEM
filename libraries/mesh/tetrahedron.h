@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TETRAHEDRON_H
-#define TETRAHEDRON_H
+#ifndef VEGAFEM_TETRAHEDRON_H
+#define VEGAFEM_TETRAHEDRON_H
 
 #include "vec3d.h"
 #include <array>

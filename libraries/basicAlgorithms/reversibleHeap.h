@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef REVERSIBLEHEAP_H
-#define REVERSIBLEHEAP_H
+#ifndef VEGAFEM_REVERSIBLEHEAP_H
+#define VEGAFEM_REVERSIBLEHEAP_H
 
 #include <map>
 #include <set>

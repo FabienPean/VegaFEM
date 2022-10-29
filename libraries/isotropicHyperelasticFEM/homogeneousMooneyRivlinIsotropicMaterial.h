@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _HOMOGENEOUSMOONEYRIVLINISOTROPICMATERIAL_H_
-#define _HOMOGENEOUSMOONEYRIVLINISOTROPICMATERIAL_H_
+#ifndef VEGAFEM_HOMOGENEOUSMOONEYRIVLINISOTROPICMATERIAL_H
+#define VEGAFEM_HOMOGENEOUSMOONEYRIVLINISOTROPICMATERIAL_H
 
 #include "isotropicMaterialWithCompressionResistance.h"
 

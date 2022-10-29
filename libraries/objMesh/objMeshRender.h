@@ -33,8 +33,8 @@
 // Renders the obj mesh.
 // Written by Daniel Schroeder and Jernej Barbic, 2011
 
-#ifndef _OBJMESHRENDER_H_
-#define _OBJMESHRENDER_H_
+#ifndef VEGAFEM_OBJMESHRENDER_H
+#define VEGAFEM_OBJMESHRENDER_H
 
 #include <vector>
 #include <map>

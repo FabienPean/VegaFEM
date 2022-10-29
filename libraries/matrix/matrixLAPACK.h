@@ -35,8 +35,8 @@
   See also matrix.h.
 */
 
-#ifndef _MATRIX_LAPACK_H_
-#define _MATRIX_LAPACK_H_
+#ifndef VEGAFEM_MATRIX_LAPACK_H
+#define VEGAFEM_MATRIX_LAPACK_H
 
 #include <cstdlib>
 

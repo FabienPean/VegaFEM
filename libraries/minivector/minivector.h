@@ -29,8 +29,8 @@
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef _MINIVECTOR_H_
-#define _MINIVECTOR_H_
+#ifndef VEGAFEM_MINIVECTOR_H
+#define VEGAFEM_MINIVECTOR_H
 
 #include "vec2d.h"
 #include "vec3d.h"

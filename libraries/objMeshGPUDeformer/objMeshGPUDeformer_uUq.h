@@ -31,8 +31,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OBJMESHGPUDEFORMER_UUQ_H_
-#define _OBJMESHGPUDEFORMER_UUQ_H_
+#ifndef VEGAFEM_OBJMESHGPUDEFORMER_UUQ_H
+#define VEGAFEM_OBJMESHGPUDEFORMER_UUQ_H
 
 #include "objMeshGPUDeformer.h"
 

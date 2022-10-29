@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVK_FEM_H_
-#define _STVK_FEM_H_
+#ifndef VEGAFEM_STVK_FEM_H
+#define VEGAFEM_STVK_FEM_H
 
 #include "volumetricMesh.h"
 #include "StVKElementABCD.h"

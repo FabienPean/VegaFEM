@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef PROFILER_H
-#define PROFILER_H
+#ifndef VEGAFEM_PROFILER_H
+#define VEGAFEM_PROFILER_H
 
 #include "stopWatch.h"
 #include "averagingBuffer.h"

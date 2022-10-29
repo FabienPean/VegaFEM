@@ -34,8 +34,8 @@
   Force model corresponding to the StVK material.
 */
 
-#ifndef _STVKFORCEMODEL_H_
-#define _STVKFORCEMODEL_H_
+#ifndef VEGAFEM_STVKFORCEMODEL_H
+#define VEGAFEM_STVKFORCEMODEL_H
 
 #include "StVKInternalForces.h"
 #include "StVKStiffnessMatrix.h"

@@ -40,8 +40,8 @@
 e.
 */
 
-#ifndef _TRIBOX3_H_
-#define _TRIBOX3_H_
+#ifndef VEGAFEM_TRIBOX3_H
+#define VEGAFEM_TRIBOX3_H
 
 bool triBoxOverlap(const double boxcenter[3], const double boxhalfsize[3], const double trivert0[3], const double trivert1[3], const double trivert2[3] );
 

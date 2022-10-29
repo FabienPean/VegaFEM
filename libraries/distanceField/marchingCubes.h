@@ -43,8 +43,8 @@
   Technical Report CERN CN 95–17, CERN, 1995.
 */
 
-#ifndef _MARCHINGCUBES_H_
-#define _MARCHINGCUBES_H_
+#ifndef VEGAFEM_MARCHINGCUBES_H
+#define VEGAFEM_MARCHINGCUBES_H
 
 #include <vector>
 #include <map>

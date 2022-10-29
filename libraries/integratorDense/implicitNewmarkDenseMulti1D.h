@@ -34,8 +34,8 @@
   A class to timestep dense diagonal dynamics.
 */
 
-#ifndef _IMPLICITNEWMARKDENSEMULTI1D_H_
-#define _IMPLICITNEWMARKDENSEMULTI1D_H_
+#ifndef VEGAFEM_IMPLICITNEWMARKDENSEMULTI1D_H
+#define VEGAFEM_IMPLICITNEWMARKDENSEMULTI1D_H
 
 #include "integratorMulti1D.h"
 

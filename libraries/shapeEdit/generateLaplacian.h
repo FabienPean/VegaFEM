@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef GENERATELAPLACIAN_H
-#define GENERATELAPLACIAN_H
+#ifndef VEGAFEM_GENERATELAPLACIAN_H
+#define VEGAFEM_GENERATELAPLACIAN_H
 
 #include "sparseMatrix.h"
 #include "tetMesh.h"

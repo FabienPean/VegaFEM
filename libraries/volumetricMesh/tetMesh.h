@@ -36,8 +36,8 @@
   limited to only a few shapes).
 */
 
-#ifndef _TETMESH_H_
-#define _TETMESH_H_
+#ifndef VEGAFEM_TETMESH_H
+#define VEGAFEM_TETMESH_H
 
 #include "volumetricMesh.h"
 #include "vec4i.h"

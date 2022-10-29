@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef WINDINGNUMBERTREE_H
-#define WINDINGNUMBERTREE_H
+#ifndef VEGAFEM_WINDINGNUMBERTREE_H
+#define VEGAFEM_WINDINGNUMBERTREE_H
 
 // Winding number tree acceleration implementation from the paper:
 // Alec Jacobson, Ladislav Kavan, Olga Sorkine-Hornung:

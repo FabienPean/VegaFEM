@@ -42,8 +42,8 @@
 
 */
 
-#ifndef _CAMERA_H_
-#define _CAMERA_H_
+#ifndef VEGAFEM_CAMERA_H
+#define VEGAFEM_CAMERA_H
 
 class SphericalCamera
 {

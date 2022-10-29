@@ -2,8 +2,8 @@
   Virtual buffer object OpenGL extension function prototypes (under Windows)
 */
 
-#ifndef _VBO_H_
-#define _VBO_H_
+#ifndef VEGAFEM_VBO_H
+#define VEGAFEM_VBO_H
 
 #if defined(_WIN32) || defined(WIN32)
 

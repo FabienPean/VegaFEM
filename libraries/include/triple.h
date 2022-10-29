@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _TRIPLE_H_
-#define _TRIPLE_H_
+#ifndef VEGAFEM_TRIPLE_H
+#define VEGAFEM_TRIPLE_H
 
 // "triple" template, inspired by the STL pair template
 

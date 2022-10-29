@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _GENERATEGRADIENTMATRIX_H_
-#define _GENERATEGRADIENTMATRIX_H_
+#ifndef VEGAFEM_GENERATEGRADIENTMATRIX_H
+#define VEGAFEM_GENERATEGRADIENTMATRIX_H
 
 #include "sparseMatrix.h"
 #include "tetMesh.h"

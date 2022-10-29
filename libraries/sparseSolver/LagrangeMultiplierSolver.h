@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _LAGRANGEMULTIPLIERSOLVER_H_
-#define _LAGRANGEMULTIPLIERSOLVER_H_
+#ifndef VEGAFEM_LAGRANGEMULTIPLIERSOLVER_H
+#define VEGAFEM_LAGRANGEMULTIPLIERSOLVER_H
 
 /*
 

@@ -44,8 +44,8 @@
   You can use the class in "massSpringSystemFromTetMesh.h" to create the mass-spring system directly from a tetrahedral mesh.
 */
 
-#ifndef _MASS_SPRING_SYSTEM_H_
-#define _MASS_SPRING_SYSTEM_H_
+#ifndef VEGAFEM_MASS_SPRING_SYSTEM_H
+#define VEGAFEM_MASS_SPRING_SYSTEM_H
 
 #include "sparseMatrix.h"
 

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SCENEOBJECTREDUCEDGPU6DOF_H_
-#define _SCENEOBJECTREDUCEDGPU6DOF_H_
+#ifndef VEGAFEM_SCENEOBJECTREDUCEDGPU6DOF_H
+#define VEGAFEM_SCENEOBJECTREDUCEDGPU6DOF_H
 
 #include "sceneObjectReduced6DOF.h"
 #include "sceneObjectReducedGPU.h"

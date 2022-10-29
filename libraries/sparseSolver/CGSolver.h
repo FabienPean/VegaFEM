@@ -47,8 +47,8 @@
   See also sparseMatrix.h .
 */
 
-#ifndef _CGSOLVER_H_
-#define _CGSOLVER_H_
+#ifndef VEGAFEM_CGSOLVER_H
+#define VEGAFEM_CGSOLVER_H
 
 #include "linearSolver.h"
 #include "sparseMatrix.h"

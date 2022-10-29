@@ -35,8 +35,8 @@
   Jernej Barbic, 2009
 */
 
-#ifndef _OBJMESHBINARYLOADER_H_
-#define _OBJMESHBINARYLOADER_H_
+#ifndef VEGAFEM_OBJMESHBINARYLOADER_H
+#define VEGAFEM_OBJMESHBINARYLOADER_H
 
 #include "objMesh.h"
 #include <string>

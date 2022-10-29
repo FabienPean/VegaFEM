@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _ISOTROPICMATERIALWITHCOMPRESSIONRESISTANCE_H_
-#define _ISOTROPICMATERIALWITHCOMPRESSIONRESISTANCE_H_
+#ifndef VEGAFEM_ISOTROPICMATERIALWITHCOMPRESSIONRESISTANCE_H
+#define VEGAFEM_ISOTROPICMATERIALWITHCOMPRESSIONRESISTANCE_H
 
 #include "isotropicMaterial.h"
 

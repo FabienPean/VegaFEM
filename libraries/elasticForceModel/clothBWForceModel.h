@@ -34,8 +34,8 @@
   Cloth model from [Baraff Witkin 1998] 
 */
 
-#ifndef _CLOTHBWFORCEMODEL_H_
-#define _CLOTHBWFORCEMODEL_H_
+#ifndef VEGAFEM_CLOTHBWFORCEMODEL_H
+#define VEGAFEM_CLOTHBWFORCEMODEL_H
 
 #include "clothBW.h"
 #include "forceModel.h"

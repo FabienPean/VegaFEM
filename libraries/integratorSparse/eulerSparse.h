@@ -42,8 +42,8 @@
   x_{n+1} = x_n + h * v_{n+1}
 */
 
-#ifndef _EULERSPARSE_H_
-#define _EULERSPARSE_H_
+#ifndef VEGAFEM_EULERSPARSE_H
+#define VEGAFEM_EULERSPARSE_H
 
 #include "integratorSolverSelection.h"
 #include "integratorBaseSparse.h"

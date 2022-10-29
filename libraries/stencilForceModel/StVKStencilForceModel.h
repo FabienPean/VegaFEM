@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _STVK_STENCIL_FORCEMODEL_H_
-#define _STVK_STENCIL_FORCEMODEL_H_
+#ifndef VEGAFEM_STVK_STENCIL_FORCEMODEL_H
+#define VEGAFEM_STVK_STENCIL_FORCEMODEL_H
 
 #include "StVKFEM.h"
 #include "stencilForceModel.h"

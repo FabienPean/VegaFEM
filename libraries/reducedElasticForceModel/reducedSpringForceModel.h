@@ -36,8 +36,8 @@
   using dense matrices.
 */
 
-#ifndef _REDUCEDSPRINGFORCEMODEL_H_
-#define _REDUCEDSPRINGFORCEMODEL_H_
+#ifndef VEGAFEM_REDUCEDSPRINGFORCEMODEL_H
+#define VEGAFEM_REDUCEDSPRINGFORCEMODEL_H
 
 #include "reducedForceModelWithHessian.h"
 

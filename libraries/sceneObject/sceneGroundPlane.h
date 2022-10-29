@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef SCENEGROUNDPLANE_H
-#define SCENEGROUNDPLANE_H
+#ifndef VEGAFEM_SCENEGROUNDPLANE_H
+#define VEGAFEM_SCENEGROUNDPLANE_H
 
 #include <cstddef>
 #include "sceneObject.h"

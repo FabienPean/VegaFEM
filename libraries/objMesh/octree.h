@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _OCTREE_H_
-#define _OCTREE_H_
+#ifndef VEGAFEM_OCTREE_H
+#define VEGAFEM_OCTREE_H
 
 //  An octree storing triangles. Can be intersected with a sphere or a line segment.
 //  Jernej Barbic, CMU

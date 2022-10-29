@@ -1,5 +1,5 @@
-#ifndef _POLARDECOMPOSITION_H_
-#define _POLARDECOMPOSITION_H_
+#ifndef VEGAFEM_POLARDECOMPOSITION_H
+#define VEGAFEM_POLARDECOMPOSITION_H
 
 /*
   Polar decomposition of a general 3x3 matrix

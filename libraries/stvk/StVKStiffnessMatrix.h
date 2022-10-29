@@ -37,8 +37,8 @@
   See also StVKInternalForces.h .
 */
 
-#ifndef _STVKSTIFFNESSMATRIX_H_
-#define _STVKSTIFFNESSMATRIX_H_
+#ifndef VEGAFEM_STVKSTIFFNESSMATRIX_H
+#define VEGAFEM_STVKSTIFFNESSMATRIX_H
 
 #include "sparseMatrix.h"
 #include "StVKInternalForces.h"

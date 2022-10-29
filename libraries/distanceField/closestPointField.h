@@ -35,8 +35,8 @@
   except it also stores the nearest point, not just the distance to it.
 */
 
-#ifndef _CLOSEST_POINT_FIELD_H_
-#define _CLOSEST_POINT_FIELD_H_
+#ifndef VEGAFEM_CLOSEST_POINT_FIELD_H
+#define VEGAFEM_CLOSEST_POINT_FIELD_H
 
 #include "distanceField.h"
 

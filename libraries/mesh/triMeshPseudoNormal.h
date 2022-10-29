@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TRIMESHPSEUDONORMAL_H
-#define TRIMESHPSEUDONORMAL_H
+#ifndef VEGAFEM_TRIMESHPSEUDONORMAL_H
+#define VEGAFEM_TRIMESHPSEUDONORMAL_H
 
 #include "triMeshGeo.h"
 #include <map>

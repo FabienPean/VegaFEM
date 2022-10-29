@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _VOLUMETRICMESH_H_
-#define _VOLUMETRICMESH_H_
+#ifndef VEGAFEM_VOLUMETRICMESH_H
+#define VEGAFEM_VOLUMETRICMESH_H
 
 /*
   This abstract class can store a generic volumetric 3D mesh. 

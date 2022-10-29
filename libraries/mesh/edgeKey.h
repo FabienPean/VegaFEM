@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef EDGEKEY_H
-#define EDGEKEY_H
+#ifndef VEGAFEM_EDGEKEY_H
+#define VEGAFEM_EDGEKEY_H
 
 #include <ostream>
 #include <functional>

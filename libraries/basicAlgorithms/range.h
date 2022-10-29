@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef RANGE_H_
-#define RANGE_H_
+#ifndef VEGAFEM_RANGE_H
+#define VEGAFEM_RANGE_H
 
 // used when you don't have a container but begin(), end() are needed for a range for loop
 template<class InputIt>

@@ -37,8 +37,8 @@
   See also integratorBase.h .
 */
 
-#ifndef _INTEGRATORBASESPARSE_H_
-#define _INTEGRATORBASESPARSE_H_
+#ifndef VEGAFEM_INTEGRATORBASESPARSE_H
+#define VEGAFEM_INTEGRATORBASESPARSE_H
 
 #include "sparseMatrix.h"
 #include "forceModel.h"

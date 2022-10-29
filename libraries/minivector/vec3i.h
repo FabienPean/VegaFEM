@@ -31,8 +31,8 @@
  *************************************************************************/
 
 
-#ifndef VEC3I_H
-#define VEC3I_H
+#ifndef VEGAFEM_VEC3I_H
+#define VEGAFEM_VEC3I_H
 
 #include <cstdio>
 #include <cmath>

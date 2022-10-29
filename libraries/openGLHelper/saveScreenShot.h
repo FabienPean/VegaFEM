@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SAVESCREENSHOT_H_
-#define _SAVESCREENSHOT_H_
+#ifndef VEGAFEM_SAVESCREENSHOT_H
+#define VEGAFEM_SAVESCREENSHOT_H
 
 #include "imageIO.h"
 

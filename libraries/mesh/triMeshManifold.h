@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef TRIMESHMANIFOLD_H
-#define TRIMESHMANIFOLD_H
+#ifndef VEGAFEM_TRIMESHMANIFOLD_H
+#define VEGAFEM_TRIMESHMANIFOLD_H
 
 #include <map>
 #include <set>

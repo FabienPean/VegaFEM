@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _PARDISOSOLVER_H_
-#define _PARDISOSOLVER_H_
+#ifndef VEGAFEM_PARDISOSOLVER_H
+#define VEGAFEM_PARDISOSOLVER_H
 
 /*
   Solves A * x = rhs, where A is a sparse matrix. The following matrix types are supported:

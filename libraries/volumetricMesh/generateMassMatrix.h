@@ -35,8 +35,8 @@
   See also volumetricMesh.h .
 */
 
-#ifndef _GENERATEMASSMATRIX_H_
-#define _GENERATEMASSMATRIX_H_
+#ifndef VEGAFEM_GENERATEMASSMATRIX_H
+#define VEGAFEM_GENERATEMASSMATRIX_H
 
 #include "volumetricMesh.h"
 #include "sparseMatrix.h"

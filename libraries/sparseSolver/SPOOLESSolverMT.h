@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _SPOOLESSOLVERMT_H_
-#define _SPOOLESSOLVERMT_H_
+#ifndef VEGAFEM_SPOOLESSOLVERMT_H
+#define VEGAFEM_SPOOLESSOLVERMT_H
 
 /*
 

@@ -39,8 +39,8 @@
   where appropriate p is chosen automatically by the constructor.
 */
 
-#ifndef _HASHTABLE_H_
-#define _HASHTABLE_H_
+#ifndef VEGAFEM_HASHTABLE_H
+#define VEGAFEM_HASHTABLE_H
 
 #include <vector>
 #include <list>

@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef BARYCENTRICCOORDINATES_H
-#define BARYCENTRICCOORDINATES_H
+#ifndef VEGAFEM_BARYCENTRICCOORDINATES_H
+#define VEGAFEM_BARYCENTRICCOORDINATES_H
 
 #include "volumetricMesh.h"
 #include "interpolationCoordinates.h"

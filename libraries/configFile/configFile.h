@@ -1,5 +1,5 @@
-#ifndef _CONFIGFILE_H_
-#define _CONFIGFILE_H_
+#ifndef VEGAFEM_CONFIGFILE_H
+#define VEGAFEM_CONFIGFILE_H
 
 /*
 

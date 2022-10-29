@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _MACROS_H_
-#define _MACROS_H_
+#ifndef VEGAFEM_MACROS_H
+#define VEGAFEM_MACROS_H
 
 #ifndef PI
   #define PI 3.141592653589793238462643

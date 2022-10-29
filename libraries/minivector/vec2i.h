@@ -22,8 +22,8 @@
  *************************************************************************/
 
 
-#ifndef VEC2I_H
-#define VEC2I_H
+#ifndef VEGAFEM_VEC2I_H
+#define VEGAFEM_VEC2I_H
 
 #include <cstdio>
 #include <cmath>

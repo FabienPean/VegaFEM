@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef MESHINTERSECTION_H_
-#define MESHINTERSECTION_H_
+#ifndef VEGAFEM_MESHINTERSECTION_H
+#define VEGAFEM_MESHINTERSECTION_H
 
 #include "triMeshGeo.h"
 #include "tetMeshGeo.h"

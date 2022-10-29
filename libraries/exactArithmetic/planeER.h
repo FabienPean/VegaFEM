@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef PLANEER_H_
-#define PLANEER_H_
+#ifndef VEGAFEM_PLANEER_H
+#define VEGAFEM_PLANEER_H
 
 #include "vec3ER.h"
 

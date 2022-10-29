@@ -30,8 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
-#ifndef _MASS_SPRING_STENCIL_FORCEMODEL_H_
-#define _MASS_SPRING_STENCIL_FORCEMODEL_H_
+#ifndef VEGAFEM_MASS_SPRING_STENCIL_FORCEMODEL_H
+#define VEGAFEM_MASS_SPRING_STENCIL_FORCEMODEL_H
 
 #include "massSpringSystem.h"
 #include "stencilForceModel.h"
