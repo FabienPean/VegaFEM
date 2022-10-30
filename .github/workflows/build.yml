@@ -5,7 +5,7 @@ on: [push]
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
-  VCPKG_VERSION: 14e7bb4ae24616ec54ff6b2f6ef4e8659434ea44
+  VCPKG_VERSION: 94ce0dab56f4d8ba6bd631ba59ed682b02d45c46
 
 jobs:
   Linux:
@@ -48,8 +48,8 @@ jobs:
       with: 
         committish: ${{ env.VCPKG_VERSION }}
     - name: Run vcpkg
-      shell: bash
-      run: vcpkg install opengl glui glew cgal openblas eigen3 intel-mkl
+      run: |
+        ${{github.workspace}}/vcpkg/vcpkg install opengl glui glew cgal openblas eigen3 intel-mkl
     - name: Configure CMake
       env:
         CC: clang
@@ -59,7 +59,7 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake -DMKL_DIR=/opt/intel/oneapi/mkl/latest/lib/cmake/mkl/ -S ../ -B ./
+        cmake -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake -DMKL_DIR=/opt/intel/oneapi/mkl/latest/lib/cmake/mkl/ -S ../ -B ./
     - name: Build
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
@@ -113,7 +113,7 @@ jobs:
         REM call "C:\Program Files (x86)\Intel\oneAPI\setvars.bat"
         set "MKL_DIR=C:\Program Files (x86)\Intel\oneAPI\mkl\2022.0.3\lib\cmake\mkl"
         vcpkg.exe install intel-mkl 
-        vcpkg.exe install opengl glui glew cgal openblas eigen3 
+        ${{github.workspace}}\vcpkg\vcpkg.exe install opengl glui glew cgal openblas eigen3 intel-mkl
     - name: Setup MSVC
       uses: ilammy/msvc-dev-cmd@v1
     - name: Configure CMake
