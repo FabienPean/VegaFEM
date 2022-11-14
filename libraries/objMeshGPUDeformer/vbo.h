@@ -12,23 +12,17 @@
 #include <GL/gl.h>
 #include <GL/glext.h>
 
+#endif
+namespace vegafem
+{
+
 // call this to initialize the VBO extension
 // returns "true" on success and "false" on failure
 // if successful, you can then use "glBindBufferARB", 
 //   "glBufferDataARB" and "glGenBuffersARB", and "glDeleteBuffersARB"
 bool InitializeVBOs(void);
 
-// === no user-callable code below ===
-
-// external function pointers 
-//extern PFNGLBINDBUFFERARBPROC glBindBufferARB;
-//extern PFNGLBUFFERDATAARBPROC glBufferDataARB;
-//extern PFNGLGENBUFFERSARBPROC glGenBuffersARB;
-//extern PFNGLDELETEBUFFERSARBPROC glDeleteBuffersARB;
-
-#else
-  bool InitializeVBOs(void);
-#endif
+}//namespace vegafem
 
 #endif 
 

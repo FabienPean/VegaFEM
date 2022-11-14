@@ -42,6 +42,9 @@
 #include "tetMesh.h"
 #include "cubicMesh.h"
 
+namespace vegafem
+{
+
 /*
   As-rigid-as-possible model for obj meshes, tet meshes and cubic meshes.
 
@@ -147,4 +150,8 @@ protected:
   int n, n3;
 };
 
+
+}//namespace vegafem
+
 #endif
+

@@ -33,6 +33,9 @@
 #include <cstdlib>
 #include "StVKElementABCD.h"
 
+namespace vegafem
+{
+
 void StVKElementABCD::AllocateElementIterator(void ** elementIterator)
 {
   *elementIterator = (void*)(int*) malloc (sizeof(int));
@@ -48,3 +51,5 @@ void StVKElementABCD::PrepareElement(int el, void * elementIterator) // must cal
   *(int*) elementIterator = el;
 }
 
+
+}//namespace vegafem

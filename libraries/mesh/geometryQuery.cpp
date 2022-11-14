@@ -33,6 +33,9 @@
 #include "geometryQuery.h"
 #include "basicAlgorithms.h"
 #include <cassert>
+
+namespace vegafem
+{
 using namespace std;
 
 double getTriangleAngle(const Vec3d & v0, const Vec3d & v1, const Vec3d & v2)
@@ -299,3 +302,5 @@ double getSquaredDistanceToTet(const Vec3d & queryPoint, const Vec3d & a, const 
   d2 = min(d2, getSquaredDistanceToTriangle(queryPoint, a, c, b));
   return d2;
 }
+
+}//namespace vegafem

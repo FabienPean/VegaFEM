@@ -33,6 +33,9 @@
 #include <cmath>
 #include "homogeneousMooneyRivlinIsotropicMaterial.h"
 
+namespace vegafem
+{
+
 HomogeneousMooneyRivlinIsotropicMaterial::HomogeneousMooneyRivlinIsotropicMaterial(double mu01_, double mu10_, double v1_, int enableCompressionResistance_, double compressionResistance_) : IsotropicMaterialWithCompressionResistance(enableCompressionResistance_), mu01(mu01_), mu10(mu10_), v1(v1_), compressionResistance(compressionResistance_) 
 {
   // invert the following formulas to compute "pseudo" E and nu that correspond to this material
@@ -116,3 +119,5 @@ double HomogeneousMooneyRivlinIsotropicMaterial::GetCompressionResistanceFactor(
   return EdivNuFactor;
 }
 
+
+}//namespace vegafem

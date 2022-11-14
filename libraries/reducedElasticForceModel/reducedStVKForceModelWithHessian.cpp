@@ -33,6 +33,9 @@
 
 #include "reducedStVKForceModelWithHessian.h"
 
+namespace vegafem
+{
+
 ReducedStVKForceModelWithHessian::ReducedStVKForceModelWithHessian(StVKReducedInternalForces * stVKReducedInternalForces): ReducedStVKForceModel(stVKReducedInternalForces), ReducedForceModelWithHessian()
 {
   stVKReducedHessianTensor = new StVKReducedHessianTensor(stVKStiffnessMatrix);
@@ -48,3 +51,5 @@ void ReducedStVKForceModelWithHessian::GetTangentHessianTensor(double * q, doubl
   stVKReducedHessianTensor->Evaluate(q, tangentHessianTensor);
 }
 
+
+}//namespace vegafem

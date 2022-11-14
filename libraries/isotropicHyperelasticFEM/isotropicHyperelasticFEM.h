@@ -38,6 +38,9 @@
 #include "sparseMatrix.h"
 #include "isotropicMaterial.h"
 
+namespace vegafem
+{
+
 /*
   Implementation of hyperelastic isotropic nonlinear FEM elasticity, using
   linear tetrahedral elements. 
@@ -240,5 +243,9 @@ protected:
   void FixPositiveIndefiniteness(double & B11, double & B12);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

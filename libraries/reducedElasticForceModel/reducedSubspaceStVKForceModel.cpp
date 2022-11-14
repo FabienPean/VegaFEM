@@ -34,6 +34,9 @@
 #include "matrixMacros.h"
 #include "reducedSubspaceStVKForceModel.h"
 
+namespace vegafem
+{
+
 ReducedSubspaceStVKForceModel::ReducedSubspaceStVKForceModel(
                           StVKInternalForces * stVKInternalForces, 
                           StVKStiffnessMatrix * stVKStiffnessMatrix,
@@ -103,3 +106,5 @@ void ReducedSubspaceStVKForceModel::GetTangentStiffnessMatrixHelper(
   modalMatrix->ProjectMatrix(r, bufferMatrix, tangentStiffnessMatrix);
 }
 
+
+}//namespace vegafem

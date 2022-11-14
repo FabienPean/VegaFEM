@@ -43,6 +43,8 @@
 
 #include "vegalong.h"
 
+namespace vegafem
+{
 // transposes the matrix (without making a separate copy)
 template <class real>
 void InPlaceTransposeMatrix(int m, int n, real * mtx)
@@ -110,3 +112,5 @@ template void InPlaceTransposeMatrix<float>(int m, int n, float * U);
 
 template double VectorNorm<double>(int m, const double * vec);
 template float VectorNorm<float>(int m, const float * vec);
+
+}//namespace vegafem

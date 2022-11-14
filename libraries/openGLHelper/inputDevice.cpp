@@ -33,6 +33,9 @@
 #include "inputDevice.h"
 #include "openGLHelper.h"
 
+namespace vegafem
+{
+
 InputDevice::InputDevice()
 {
   memset(mousePos, 0, sizeof(mousePos));
@@ -66,3 +69,5 @@ void InputDevice::setModifiers()
   alt = (glutGetModifiers() == GLUT_ACTIVE_ALT);
   ctrl = (glutGetModifiers() == GLUT_ACTIVE_CTRL);
 }
+
+}//namespace vegafem

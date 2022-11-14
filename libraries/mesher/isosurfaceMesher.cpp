@@ -49,6 +49,8 @@ using namespace std;
   #define M_PI 3.1415926525897932384
 #endif
 
+namespace vegafem
+{
 IsosurfaceMesher::IsosurfaceMesher(DistanceFieldBase * f) : field(f)
 {
   delaunay.computeVoronoiEdgeModification(true);
@@ -699,3 +701,5 @@ ObjMesh * IsosurfaceMesher::getMesh(bool enforceManifold)
   return new ObjMesh(*isoMesh);
 }
 
+
+}//namespace vegafem

@@ -36,6 +36,9 @@
 
 #include "massSpringSystem.h"
 
+namespace vegafem
+{
+
 /*
   This class can generate a mass-spring system from the given tet mesh: 
   each tet mesh vertex becomes a mass point, and each edge becomes a spring.
@@ -51,5 +54,9 @@ public:
   static int GenerateMassSpringSystem(TetMesh * tetMesh, MassSpringSystem ** massSpringSystem, double density, double tensileStiffness, double damping, int addGravity=0);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

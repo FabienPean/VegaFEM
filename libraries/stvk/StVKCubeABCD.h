@@ -35,6 +35,9 @@
 
 #include "StVKElementABCD.h"
 
+namespace vegafem
+{
+
 /*
   This classes stores the St.Venant-Kirchhoff A,B,C,D coefficients for a cube element.
   See also StVKInternalForces.h .
@@ -61,5 +64,9 @@ protected:
   double D_[8][8][8][8];
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -36,6 +36,9 @@
 #include "massSpringSystemFromCubicMesh.h"
 #include "massSpringSystemFromCubicMeshConfigFile.h"
 
+namespace vegafem
+{
+
 char * MassSpringSystemFromCubicMeshConfigFile::DuplicateString(const char * s)
 {
   // strdup sometimes didn't work well, so we used this
@@ -100,3 +103,5 @@ int MassSpringSystemFromCubicMeshConfigFile::GenerateMassSpringSystem(const char
   return code;
 }
 
+
+}//namespace vegafem

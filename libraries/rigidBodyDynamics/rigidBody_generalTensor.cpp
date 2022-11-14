@@ -33,6 +33,9 @@
 #include "rigidBody_generalTensor.h"
 #include "matrixMultiplyMacros.h"
 
+namespace vegafem
+{
+
 RigidBody_GeneralTensor::RigidBody_GeneralTensor(double mass, double inertiaTensorAtRest[9]):
   RigidBody(mass,inertiaTensorAtRest[0],inertiaTensorAtRest[4],inertiaTensorAtRest[8])
 { 
@@ -170,3 +173,5 @@ void RigidBody_GeneralTensor::GetInverseInertiaTensorAtRest(double * inverseIner
   MATRIX_SET3X3(inverseInertiaTensorAtRest_, inverseInertiaTensorAtRest);
 }
 
+
+}//namespace vegafem

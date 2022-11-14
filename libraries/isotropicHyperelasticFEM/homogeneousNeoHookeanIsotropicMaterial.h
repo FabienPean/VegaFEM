@@ -35,6 +35,9 @@
 
 #include "isotropicMaterialWithCompressionResistance.h"
 
+namespace vegafem
+{
+
 /*
    Homogeneous neo-Hookean material. Material properties are constant throughout the mesh.
 
@@ -66,5 +69,9 @@ protected:
   virtual double GetCompressionResistanceFactor(int elementIndex);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -62,6 +62,8 @@
 #include "tetMesh.h"
 #include "delaunayMesher.h"
 
+namespace vegafem
+{
 class TetMesher
 {
 public:
@@ -248,6 +250,8 @@ protected:
   // recursion depth for face recovery;
   int faceRecoveryDepth;
 };
+
+}//namespace vegafem
 
 #endif /* TETMESHER_H_ */
 

@@ -33,6 +33,9 @@
 #include "corotationalLinearFEMStencilForceModel.h"
 #include <cassert>
 
+namespace vegafem
+{
+
 CorotationalLinearFEMStencilForceModel::CorotationalLinearFEMStencilForceModel(CorotationalLinearFEM * fem) : corotationalLinearFEM(fem)
 {
   n3 = corotationalLinearFEM->GetVolumetricMesh()->getNumVertices() * 3;
@@ -58,3 +61,5 @@ void CorotationalLinearFEMStencilForceModel::GetStencilLocalEnergyAndForceAndMat
 {
   corotationalLinearFEM->ComputeElementEnergyAndForceAndStiffnessMatrix(stencilId, u, energy, internalForces, tangentStiffnessMatrix, warp);
 }
+
+}//namespace vegafem

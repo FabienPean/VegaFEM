@@ -88,6 +88,9 @@
 #include <string>
 #include "vec3d.h"
 
+namespace vegafem
+{
+
 class ConfigFile
 {
 public:
@@ -191,5 +194,9 @@ protected:
   char stoppingString[32];
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

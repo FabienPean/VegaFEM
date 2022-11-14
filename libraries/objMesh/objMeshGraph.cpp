@@ -32,6 +32,9 @@
 
 #include <map>
 #include "objMeshGraph.h"
+
+namespace vegafem
+{
 using namespace std;
 
 ObjMeshGraph::ObjMeshGraph(ObjMesh * objMesh_): objMesh(objMesh_)
@@ -313,3 +316,5 @@ Graph * ObjMeshGraph::GenerateVertexGraph(const ObjMesh * objMesh, int faceCliqu
   #undef SORTED
 }
 
+
+}//namespace vegafem

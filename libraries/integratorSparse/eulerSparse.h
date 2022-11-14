@@ -58,7 +58,8 @@
   #include "CGSolver.h"
 #endif
 
-
+namespace vegafem
+{
 class EulerSparse : public IntegratorBaseSparse
 {
 public:
@@ -94,5 +95,6 @@ protected:
   #endif
 };
 
+}//namespace vegafem
 #endif
 

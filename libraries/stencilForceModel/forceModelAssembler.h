@@ -40,6 +40,9 @@
   #include <tbb/tbb.h>
 #endif
 
+namespace vegafem
+{
+
 /*
   For each stencil type, this class assembles values at individual stencils into global object quantities.
   E.g., form the global internal force vector from stencil force vectors, or form the global tangent stiffness matrix
@@ -93,6 +96,9 @@ protected:
 
   std::vector<Buffer> bufferExamplars;
 };
+
+
+}//namespace vegafem
 
 #endif
 

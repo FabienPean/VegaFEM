@@ -32,6 +32,9 @@
 
 #include "matrix.h"
 
+namespace vegafem
+{
+
 /*
   A simple example using the matrix class.
 */
@@ -59,3 +62,5 @@ int main()
   return 0;
 }
 
+
+}//namespace vegafem

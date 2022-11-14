@@ -44,6 +44,9 @@
 #include "simpleSphere.h"
 #include "openGL-headers.h"
 
+namespace vegafem
+{
+
 template<class TriangleClass>
 class Octree
 {
@@ -445,5 +448,9 @@ void Octree<TriangleClass>::removeChild(const int i)
     childrenNodes[i] = NULL;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

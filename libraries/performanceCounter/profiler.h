@@ -38,6 +38,9 @@
 #include <map>
 #include <string>
 
+namespace vegafem
+{
+
 // a profiling tool that can record timings in multiple parts of the code
 class Profiler
 {
@@ -157,4 +160,8 @@ protected:
   Profiler * p;
   std::string name;
 };
+
+}//namespace vegafem
+
 #endif
+

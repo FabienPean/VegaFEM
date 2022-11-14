@@ -42,6 +42,9 @@
 #include "StVKInternalForces.h"
 #include "forceModel.h"
 
+namespace vegafem
+{
+
 class LinearFEMForceModel : public ForceModel
 {
 public:
@@ -57,5 +60,9 @@ protected:
   SparseMatrix * K;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

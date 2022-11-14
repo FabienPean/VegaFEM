@@ -41,6 +41,9 @@
 #include "lighting.h"
 #include "sceneObjectWithRestPosition.h"
 
+namespace vegafem
+{
+
 class SceneObjectDeformable : public virtual SceneObjectWithRestPosition
 {
 public:
@@ -101,5 +104,9 @@ inline Vec3d SceneObjectDeformable::GetSingleVertexRestPosition(int vertex) cons
   return Vec3d(&restPosition[3*vertex]);
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

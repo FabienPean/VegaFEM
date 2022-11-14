@@ -37,6 +37,9 @@
 #include "cubicMesh.h"
 #include "tetMesh.h"
 
+namespace vegafem
+{
+
 StVKElementABCD * StVKElementABCDLoader::load(VolumetricMesh * volumetricMesh, unsigned int loadingFlag)
 {
   if (volumetricMesh == NULL)
@@ -80,3 +83,5 @@ StVKElementABCD * StVKElementABCDLoader::load(VolumetricMesh * volumetricMesh, u
   return stVKElementABCD;
 }
 
+
+}//namespace vegafem

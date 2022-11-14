@@ -36,6 +36,9 @@
 
 #include "massSpringSystem.h"
 
+namespace vegafem
+{
+
 /*
   Renders the mass spring system, using OpenGL.
 */
@@ -49,4 +52,8 @@ protected:
   void JetColorMap(double x, double color[3]);
 };
 
+
+}//namespace vegafem
+
 #endif
+

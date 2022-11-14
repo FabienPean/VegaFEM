@@ -36,6 +36,9 @@
 #include <string>
 #include <sstream>
 #include <cassert>
+
+namespace vegafem
+{
 using namespace std;
 
 const string HandleScript::commandName[HandleScript::NUM_COMMANDS] = {
@@ -183,3 +186,5 @@ bool HandleScript::save(const char * filename)
   fout.close();
   return true;
 }
+
+}//namespace vegafem

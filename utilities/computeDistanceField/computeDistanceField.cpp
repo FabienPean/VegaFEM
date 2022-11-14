@@ -45,6 +45,7 @@ using namespace std;
 #include "closestPointField.h"
 #include "objMesh.h"
 #include "getopts.h"
+using namespace vegafem;
 
 /*
   Computes signed or unsigned distance field for a given triangle mesh,

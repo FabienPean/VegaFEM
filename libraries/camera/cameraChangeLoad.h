@@ -37,6 +37,9 @@
 #include <string>
 #include <vector>
 
+namespace vegafem
+{
+
 // load a script to control camera from disk
 
 // file format
@@ -70,4 +73,8 @@ protected:
   std::vector<Entry> entries;
 };
 
+
+}//namespace vegafem
+
 #endif
+

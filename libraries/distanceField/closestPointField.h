@@ -40,6 +40,9 @@
 
 #include "distanceField.h"
 
+namespace vegafem
+{
+
 class ClosestPointField : public DistanceField
 {
 public:
@@ -72,5 +75,9 @@ protected:
   virtual int ZigZagUnsigned(void * objMeshOctree, void * meshGraph, int zLo, int zHi, int asterisk=0);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -54,6 +54,9 @@ However, for very large systems (e.g. 200,000 x 200,000 matrices on a
 #include "sparseMatrix.h"
 #include "linearSolver.h"
 
+namespace vegafem
+{
+
 class SPOOLESSolverMT : public LinearSolver
 {
 public:
@@ -81,5 +84,9 @@ protected:
   static void DisabledSolverError();
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

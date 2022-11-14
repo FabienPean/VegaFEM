@@ -43,6 +43,9 @@
 #include <vector>
 #include <map>
 
+namespace vegafem
+{
+
 /*
   Represents one "piece" (a contiguous parts of a triangle belonging to one tet), as defined in our paper submission.
 */
@@ -96,5 +99,9 @@ protected:
 TetTriPiece mergePiece(const TetTriPiece & comp0, const TetTriPiece & comp1, int tet, const TetTriMeshCutting::CutTriGroup & group,
     const TetTriCuttingData & cutting, const TriMeshPseudoNormal & oriMeshNormal, const TetShape & tetShape);
 
+
+}//namespace vegafem
+
 #endif
+
 

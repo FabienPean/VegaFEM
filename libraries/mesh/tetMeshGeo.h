@@ -42,6 +42,9 @@
 #include <map>
 #include <cmath>
 
+namespace vegafem
+{
+
 // class to reference an external triangle mesh
 class TetMeshRef
 {
@@ -199,4 +202,8 @@ TetMeshGeo getSubTetMeshWithSameVertices(const TetMeshRef & tetMesh, const TetID
   return TetMeshGeo(tetMesh.numVertices(), tetMesh.positions(), move(subTets));
 }
 
+
+}//namespace vegafem
+
 #endif
+

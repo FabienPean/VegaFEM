@@ -39,6 +39,9 @@
 
 #include "implicitNewmarkSparse.h"
 
+namespace vegafem
+{
+
 class ImplicitBackwardEulerSparse : public ImplicitNewmarkSparse
 {
 public:
@@ -58,5 +61,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

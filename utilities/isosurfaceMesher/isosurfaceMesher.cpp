@@ -53,6 +53,7 @@
 #include "matrixIO.h"
 #include "predicates.h"
 using namespace std;
+using namespace vegafem;
 
 int main(int argc, char **argv)
 {

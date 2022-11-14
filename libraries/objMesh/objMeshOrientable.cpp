@@ -48,6 +48,8 @@
 using namespace std;
 #include "objMeshOrientable.h"
 
+namespace vegafem
+{
 /*
   Generates a half edge datastructure, assuming tha the given obj mesh is orientable.
   Author: Jernej Barbic, 2004
@@ -694,3 +696,5 @@ ObjMesh * ObjMeshOrientable::GenerateOrientedMesh() const
 
   return outputObjMesh;
 }
+
+}//namespace vegafem

@@ -35,6 +35,9 @@
 #include <cmath>
 #include <cassert>
 #include <numeric>
+
+namespace vegafem
+{
 #ifdef USE_TBB
   #include <tbb/tbb.h>
 #endif
@@ -231,3 +234,5 @@ double FiniteDifferenceTester::testStiffnessMatrix(const double * u, double * re
   return relErr;
 }
 
+
+}//namespace vegafem

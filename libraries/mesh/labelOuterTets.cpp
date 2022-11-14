@@ -32,6 +32,9 @@
 
 #include "labelOuterTets.h"
 #include <cassert>
+
+namespace vegafem
+{
 using namespace std;
 
 vector<bool> labelOuterTets(const TetMeshRef & tetMesh, const TetNeighbor & tetNeighbor,
@@ -140,3 +143,5 @@ vector<bool> labelOuterTets(const TetMeshRef & tetMesh, const TetNeighbor & tetN
 
   return ret;
 }
+
+}//namespace vegafem

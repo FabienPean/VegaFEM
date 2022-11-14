@@ -37,6 +37,9 @@
 #include "implicitBackwardEulerDense.h"
 #include "IPIVC.h"
 
+namespace vegafem
+{
+
 ImplicitBackwardEulerDense::ImplicitBackwardEulerDense(int r, double timestep, double * massMatrix, ReducedForceModel * reducedForceModel, solverType solver, double dampingMassCoef, double dampingStiffnessCoef, int maxIterations, double epsilon): IntegratorBaseDense(r, timestep, massMatrix, reducedForceModel, dampingMassCoef, dampingStiffnessCoef)
 {
   this->solver = solver;
@@ -378,3 +381,5 @@ int ImplicitBackwardEulerDense::DoTimestep()
   return 0;
 }
 
+
+}//namespace vegafem

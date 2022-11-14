@@ -42,6 +42,9 @@
 #include "volumetricMesh.h"
 #include "vec4i.h"
 
+namespace vegafem
+{
+
 // see also volumetricMesh.h for a description of the routines
 
 class TetMesh : public VolumetricMesh
@@ -144,5 +147,9 @@ protected:
   friend class VolumetricMeshExtensions;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

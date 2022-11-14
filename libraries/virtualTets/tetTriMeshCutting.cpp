@@ -50,6 +50,8 @@
   #include <tbb/tbb.h>
 #endif
 
+namespace vegafem
+{
 using namespace std;
 
 //static int debugInt = 0;
@@ -570,3 +572,5 @@ TriMeshGeo TetTriMeshCutting::exportCutTriMesh() const
   return TriMeshGeo(cutTriVtxPos, allTris);
 }
 
+
+}//namespace vegafem

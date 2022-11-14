@@ -38,12 +38,14 @@
 #include <vector>
 #include <iostream>
 #include <cassert>
-using namespace std;
 
 #include "boundingBox.h"
 #include "triangle.h"
 #include "valueIndex.h"
 
+using namespace std;
+namespace vegafem
+{
 BoundingBox::BoundingBox(int numVertices, const Vec3d * vertices)
 {
   bmin_ = Vec3d(+DBL_MAX, +DBL_MAX, +DBL_MAX);
@@ -431,3 +433,5 @@ template void BoundingBox::buildFromTriangles(const vector<TriangleWithCollision
 template void BoundingBox::buildFromTriangles(const vector<TriangleWithCollisionInfoAndPseudoNormals> & tripool);
 
 
+
+}//namespace vegafem

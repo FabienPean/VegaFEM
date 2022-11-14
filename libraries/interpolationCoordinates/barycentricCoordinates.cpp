@@ -44,6 +44,8 @@
 #include <climits>
 using namespace std;
 
+namespace vegafem
+{
 BarycentricCoordinates::BarycentricCoordinates(int numLocations_, int numElementVertices_, const int* indices_, const double* weights_,
   const int * elementIndices_)
 {
@@ -296,3 +298,5 @@ BarycentricCoordinates::BarycentricCoordinates(const std::string & filename)
   assert((int)indices.size() == numLocations * numElementVertices);
   assert((int)weights.size() == numLocations * numElementVertices);
 }
+
+}//namespace vegafem

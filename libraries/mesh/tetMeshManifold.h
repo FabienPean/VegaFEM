@@ -36,6 +36,9 @@
 #include <set>
 #include "tetKey.h"
 
+namespace vegafem
+{
+
 // maintain a tet mesh to enfore manifoldness on tet-face connection
 // it can also query neighboring relationship on tets
 // note that it only detects non-manifoldness created by one face shared by more than two tets,
@@ -131,4 +134,8 @@ protected:
   std::map<OTriKey, Tetrahedron *> surface;
 };
 
+
+}//namespace vegafem
+
 #endif
+

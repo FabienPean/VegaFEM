@@ -105,6 +105,9 @@
 #include <vector>
 #include <map>
 
+namespace vegafem
+{
+
 class SparseMatrix;
 
 class SparseMatrixOutline
@@ -429,5 +432,9 @@ protected:
   void FreeAuxiliaryData();
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

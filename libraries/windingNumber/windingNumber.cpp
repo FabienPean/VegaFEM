@@ -33,6 +33,9 @@
 #include "windingNumber.h"
 #include "macros.h"
 
+namespace vegafem
+{
+
 double WindingNumber::computeWindingNumber(ObjMesh * objMesh, const Vec3d & p) 
 {
   assert(objMesh->isTriangularMesh());
@@ -74,3 +77,5 @@ double WindingNumber::computeWindingNumber(ObjMesh * objMesh, const Vec3d & p)
   return w;
 }
 
+
+}//namespace vegafem

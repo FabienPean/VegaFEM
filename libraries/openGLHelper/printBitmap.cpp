@@ -33,6 +33,9 @@
 #include "printBitmap.h"
 #include "openGL-headers.h"
 
+namespace vegafem
+{
+
 void print_bitmap_string(float x, float y, float z, const char * s)
 {
   glRasterPos3f(x,y,z);
@@ -53,3 +56,5 @@ void print_bitmap_integer(float x,float y, float z, int i)
   print_bitmap_string(x,y,z,s);
 }
 
+
+}//namespace vegafem

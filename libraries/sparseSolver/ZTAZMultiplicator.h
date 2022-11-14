@@ -40,6 +40,9 @@
 #include "sparseMatrix.h"
 #include "matrix.h"
 
+namespace vegafem
+{
+
 /*
   computes x |--> Z^T A Z x
 
@@ -65,5 +68,9 @@ protected:
   double * buffer2;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

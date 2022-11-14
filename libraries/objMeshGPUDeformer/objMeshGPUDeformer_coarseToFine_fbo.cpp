@@ -45,6 +45,8 @@
   GLAPI GLenum APIENTRY glCheckFramebufferStatusEXT (GLenum);
 #endif
 
+namespace vegafem
+{
 
 ObjMeshGPUDeformer_coarseToFine_fbo::~ObjMeshGPUDeformer_coarseToFine_fbo() {}
 
@@ -159,3 +161,5 @@ void ObjMeshGPUDeformer_coarseToFine_fbo::SetDerivedData(void * data)
   BindDynamicTextureToFBO();
 }
 
+
+}//namespace vegafem

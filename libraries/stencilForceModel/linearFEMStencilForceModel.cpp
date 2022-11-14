@@ -42,6 +42,9 @@
 
 using namespace std;
 
+namespace vegafem
+{
+
 LinearFEMStencilForceModel::LinearFEMStencilForceModel(StencilForceModel * fem): stencilForceModel(fem)
 {
   assert(dynamic_cast<LinearFEMStencilForceModel*>(stencilForceModel) == nullptr);
@@ -117,3 +120,5 @@ const int *LinearFEMStencilForceModel::GetStencilVertexIndices(int stencilType, 
 {
   return stencilForceModel->GetStencilVertexIndices(stencilType, stencilId);
 }
+
+}//namespace vegafem

@@ -35,6 +35,9 @@
 #include <cstdio>
 #include "reducedForceModel.h"
 
+namespace vegafem
+{
+
 void ReducedForceModel::GetForceAndMatrix(double * u, double * internalForces, double * tangentStiffnessMatrix)
 {
   GetInternalForce(u, internalForces);
@@ -100,3 +103,5 @@ void ReducedForceModel::TestStiffnessMatrix(int numTests, double qAmplitude)
   free(f1);
 }
 
+
+}//namespace vegafem

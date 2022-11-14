@@ -35,6 +35,9 @@
 #include <iostream>
 #include <algorithm>
 #include "matrixMultiplyMacros.h"
+
+namespace vegafem
+{
 using namespace std;
 
 /*
@@ -196,3 +199,5 @@ bool triBoxOverlap(const double boxcenter[3], const double boxhalfsize[3], const
   return overlap;
 }
 
+
+}//namespace vegafem

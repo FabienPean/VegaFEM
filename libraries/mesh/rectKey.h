@@ -39,6 +39,8 @@
 #include "vec4i.h"
 #include "edgeKey.h"
 
+namespace vegafem
+{
 
 // unoriented rectangle key based on vtx indices
 // v[0], v[1], v[2] and v[3] will be sorted to ensure v[0] <= v[1] <= v[2] <= v[3]
@@ -267,4 +269,5 @@ inline std::ostream & operator << (std::ostream & s, const ORectKey & v)
   return s << '(' << v[0] << ' ' << v[1] << ' '  << v[2] << ' ' << v[3] << ')';
 }
 
+}//namespace vegafem
 #endif

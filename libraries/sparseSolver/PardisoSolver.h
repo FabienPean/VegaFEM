@@ -54,6 +54,9 @@
 #include "linearSolver.h"
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 #define MKL_INT int
 
 class PardisoSolver : public LinearSolver
@@ -127,5 +130,9 @@ protected:
   static void DisabledSolverError();
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

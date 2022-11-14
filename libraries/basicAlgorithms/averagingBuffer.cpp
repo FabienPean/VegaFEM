@@ -37,6 +37,9 @@
 #include <cmath>
 #include <algorithm>
 #include "averagingBuffer.h"
+
+namespace vegafem
+{
 using namespace std;
 
 AveragingBuffer::AveragingBuffer(int size_) : size(size_), index(0)
@@ -94,3 +97,5 @@ void AveragingBuffer::setBufferSize(int newSize)
   numValuesAdded = numToCopy;
   average /= numValuesAdded;
 }
+
+}//namespace vegafem

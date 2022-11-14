@@ -39,8 +39,15 @@
 
 #include "StVKReducedInternalForces.h"
 
+namespace vegafem
+{
+
 int StVKReducedInternalForcesMultiLoad(const char * filename, int * numModels, StVKReducedInternalForces *** stVKReducedInternalForces, int verbose=0);
 int StVKReducedInternalForcesMultiSave(const char * filename, int numModels, StVKReducedInternalForces ** stVKReducedInternalForces, int verbose=0);
 
+
+}//namespace vegafem
+
 #endif
+
 

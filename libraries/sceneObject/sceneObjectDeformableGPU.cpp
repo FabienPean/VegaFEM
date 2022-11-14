@@ -32,6 +32,9 @@
 
 #include "sceneObjectDeformableGPU.h"
 
+namespace vegafem
+{
+
 SceneObjectDeformableGPU::SceneObjectDeformableGPU(const char * filenameOBJ) : SceneObjectWithRestPosition(filenameOBJ), SceneObjectDeformable(filenameOBJ)
 {
   try
@@ -93,3 +96,5 @@ void SceneObjectDeformableGPU::Getu(double * u)
   render_coarseToFine->ReadBack_u(u);
 }
 
+
+}//namespace vegafem

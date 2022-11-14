@@ -41,6 +41,9 @@
 
 #include "reducedForceModel.h"
 
+namespace vegafem
+{
+
 class ReducedForceModelWithHessian : public virtual ReducedForceModel
 {
 public:
@@ -58,5 +61,9 @@ protected:
   static void ContractTensorWithVector(int r, double * Hq, double * q, double * A);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

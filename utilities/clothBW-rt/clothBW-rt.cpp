@@ -51,6 +51,8 @@
 #include "saveScreenShot.h"
 #include <GL/glui.h>
 
+using namespace vegafem;
+
 /*
   Driver for cloth simulation. Cloth is implemented using:
 

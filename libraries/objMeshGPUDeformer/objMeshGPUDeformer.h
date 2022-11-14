@@ -56,6 +56,8 @@
 
 #define OBJMESHGPUDEFORMER_USING_VBOS
 
+namespace vegafem
+{
 // abstract virtual class, do not initialize directly
 class ObjMeshGPUDeformer
 {
@@ -188,6 +190,8 @@ protected:
   // pass 2 fragment shader parameters
   static CGparameter texPass2Param;
 };
+
+}//namespace vegafem
 
 #endif
 

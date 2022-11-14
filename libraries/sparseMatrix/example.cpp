@@ -39,6 +39,9 @@
 #include "sparseMatrix.h"
 #include "CGSolver.h"
 
+namespace vegafem
+{
+
 int main()
 {
   /*
@@ -171,3 +174,5 @@ int main()
   return 0;
 }
 
+
+}//namespace vegafem

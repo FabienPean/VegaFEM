@@ -35,6 +35,9 @@
 
 #include "imageIO.h"
 
+namespace vegafem
+{
+
 /* Write a screenshot to the specified filename */
 
 class Screenshot
@@ -44,5 +47,9 @@ public:
   static void SaveStencilBuffer(const char * filename, ImageIO::fileFormatType fileFormat, int windowWidth, int windowHeight, int rescale=0);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

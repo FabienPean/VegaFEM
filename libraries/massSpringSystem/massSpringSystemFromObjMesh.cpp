@@ -34,6 +34,9 @@
 #include "objMesh.h"
 #include "massSpringSystemFromObjMesh.h"
 
+namespace vegafem
+{
+
 int MassSpringSystemFromObjMesh::GenerateMassSpringSystem(ObjMesh * quadMesh, MassSpringSystem ** massSpringSystem, double surfaceDensity, double tensileStiffness, double shearStiffness, double bendStiffness, double damping, int addGravity)
 {
   if (!quadMesh->isQuadrilateralMesh())
@@ -58,3 +61,5 @@ int MassSpringSystemFromObjMesh::GenerateMassSpringSystem(ObjMesh * quadMesh, Ma
 
   return 0;
 }
+
+}//namespace vegafem

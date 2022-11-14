@@ -47,6 +47,9 @@
 #include "graph.h"
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 class ObjMeshGraph : public Graph
 {
 public:
@@ -101,5 +104,9 @@ inline int ObjMeshGraph::GetFaceID(int face)
   return nObj + eObj + face;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

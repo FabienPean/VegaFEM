@@ -40,6 +40,9 @@
 #include <ostream>
 #include <algorithm>
 
+namespace vegafem
+{
+
 class Vec4i
 {
 public:
@@ -385,4 +388,8 @@ inline bool Vec4i::intersect(const Vec4i & vec2) const
   return false;
 }
 
+
+}//namespace vegafem
+
 #endif
+

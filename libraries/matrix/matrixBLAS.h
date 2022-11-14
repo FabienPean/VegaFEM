@@ -40,6 +40,9 @@
 
 #include <cstdlib>
 
+namespace vegafem
+{
+
 template<class real>
 real * SumMatrices(int m, int n, const real * mtx1, const real * mtx2, real * output = NULL);
 
@@ -81,5 +84,9 @@ void InPlaceTransposeMatrix(int m, int n, real * mtx);
 template <class real>
 real VectorNorm(int m, const real * vec);
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -33,37 +33,40 @@
 #ifndef VEGAFEM_INPUTDEVICE_H
 #define VEGAFEM_INPUTDEVICE_H
 
-// GLUT keyboard & mouse control
-class InputDevice
-{ 
-public:
-  InputDevice();
-  virtual ~InputDevice() {}
+namespace vegafem
+{
+	// GLUT keyboard & mouse control
+	class InputDevice
+	{
+	public:
+		InputDevice();
+		virtual ~InputDevice() {}
 
-  // called in mouseButtonActivity(int button, int state, int x, int y), mouseDrag(int x, int y) and mouseNoDrag(int x, int y), set mousePos
-  void setMousePos(int x, int y) { mousePos[0] = x; mousePos[1] = y; }
+		// called in mouseButtonActivity(int button, int state, int x, int y), mouseDrag(int x, int y) and mouseNoDrag(int x, int y), set mousePos
+		void setMousePos(int x, int y) { mousePos[0] = x; mousePos[1] = y; }
 
-  // called in mouseButtonActivity(int button, int state, int x, int y), set mouse button and shift/alt/ctrl
-  void setButton(int button, int state);
+		// called in mouseButtonActivity(int button, int state, int x, int y), set mouse button and shift/alt/ctrl
+		void setButton(int button, int state);
 
-  // called in SpecialKeysFunc, set shift/alt/ctrl
-  void setModifiers();
+		// called in SpecialKeysFunc, set shift/alt/ctrl
+		void setModifiers();
 
-  // get keyboard & mouse control
-  int getMousePosX() const { return mousePos[0]; }
-  int getMousePosY() const { return mousePos[1]; }
-  bool leftMouseButtonDown() const { return leftMouseButton; }
-  bool middleMouseButtonDown() const { return middleMouseButton; }
-  bool rightMouseButtonDown() const { return rightMouseButton; }
-  bool shiftPressed() const { return shift; }
-  bool altPressed() const { return alt; }
-  bool ctrlPressed() const { return ctrl; }
+		// get keyboard & mouse control
+		int getMousePosX() const { return mousePos[0]; }
+		int getMousePosY() const { return mousePos[1]; }
+		bool leftMouseButtonDown() const { return leftMouseButton; }
+		bool middleMouseButtonDown() const { return middleMouseButton; }
+		bool rightMouseButtonDown() const { return rightMouseButton; }
+		bool shiftPressed() const { return shift; }
+		bool altPressed() const { return alt; }
+		bool ctrlPressed() const { return ctrl; }
 
-protected:
-  int mousePos[2];
-  bool leftMouseButton, middleMouseButton, rightMouseButton;
-  bool shift, alt, ctrl;
-};
+	protected:
+		int mousePos[2];
+		bool leftMouseButton, middleMouseButton, rightMouseButton;
+		bool shift, alt, ctrl;
+	};
 
+}//namespace vegafem
 
 #endif

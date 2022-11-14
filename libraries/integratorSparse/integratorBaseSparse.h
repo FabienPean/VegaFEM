@@ -44,6 +44,9 @@
 #include "forceModel.h"
 #include "integratorBase.h"
 
+namespace vegafem
+{
+
 class IntegratorBaseSparse : public IntegratorBase
 {
 public:
@@ -91,5 +94,9 @@ protected:
   double forceAssemblyTime;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

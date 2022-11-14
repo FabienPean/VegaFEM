@@ -46,6 +46,9 @@ values of r, there will be a computational slowdown.
 
 #include "integratorBaseDense.h"
 
+namespace vegafem
+{
+
 class ImplicitNewmarkDense : public virtual IntegratorBaseDense
 {
 public:
@@ -91,5 +94,9 @@ protected:
   void UpdateAlphas();
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

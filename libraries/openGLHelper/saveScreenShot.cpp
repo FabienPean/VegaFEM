@@ -36,6 +36,9 @@
 #include "openGL-headers.h"
 #include "saveScreenShot.h"
 
+namespace vegafem
+{
+
 /* Write a screenshot to the specified filename */
 
 void Screenshot::SaveScreenshot(const char * filename, ImageIO::fileFormatType fileFormat, int windowWidth, int windowHeight)
@@ -117,3 +120,5 @@ void Screenshot::SaveStencilBuffer(const char *filename, ImageIO::fileFormatType
   free(buffer3);
 }
 
+
+}//namespace vegafem

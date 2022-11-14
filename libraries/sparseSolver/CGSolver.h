@@ -53,6 +53,9 @@
 #include "linearSolver.h"
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 class CGSolver : public LinearSolver
 {
 public:
@@ -112,5 +115,9 @@ protected:
   void InitBuffers();
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -34,6 +34,9 @@
 #include "invZTAZSolver.h"
 #include "performanceCounter.h"
 
+namespace vegafem
+{
+
 InvZTAZSolver::InvZTAZSolver(SparseMatrix * A, PardisoSolver * ZTAZPardisoSolver_, SparseMatrix * P, Matrix<double> * invCp, Matrix<double> * Cn):ZTAZPardisoSolver(ZTAZPardisoSolver_)
 {
   int n3 = A->Getn();
@@ -64,3 +67,5 @@ void InvZTAZSolver::ComputeInvZTAZ(double * x, double * output)
  // cgSolver->SolveLinearSystemWithoutPreconditioner(x, output, 1E-3, 200, 0);
 }
 
+
+}//namespace vegafem

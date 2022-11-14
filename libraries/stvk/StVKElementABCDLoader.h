@@ -41,6 +41,9 @@
 #include "volumetricMesh.h"
 #include "StVKElementABCD.h"
 
+namespace vegafem
+{
+
 class StVKElementABCDLoader
 {
 public:
@@ -51,5 +54,9 @@ public:
   static StVKElementABCD * load(VolumetricMesh * volumetricMesh, unsigned int loadingFlag=0); 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

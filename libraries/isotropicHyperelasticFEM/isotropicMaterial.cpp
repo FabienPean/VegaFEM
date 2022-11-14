@@ -32,7 +32,12 @@
 
 #include "isotropicMaterial.h"
 
+namespace vegafem
+{
+
 IsotropicMaterial::IsotropicMaterial() {}
 
 IsotropicMaterial::~IsotropicMaterial() {}
 
+
+}//namespace vegafem

@@ -37,6 +37,9 @@
 #include <cassert>
 #include <cmath>
 
+namespace vegafem
+{
+
 // Modified Bridson's code to use Shewchuk's orient2/3d because the later is faster
 double orient2d(const double pa[2], const double pb[2], const double pc[2]);
 double orient3d(const double pa[3], const double pb[3], const double pc[3], const double pd[3]);
@@ -1069,3 +1072,5 @@ simplex_intersection4d(int k,
    }
 }
 */
+
+}//namespace vegafem

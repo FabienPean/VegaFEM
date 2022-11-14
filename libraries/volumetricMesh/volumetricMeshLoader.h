@@ -40,6 +40,9 @@
 
 #include "volumetricMesh.h"
 
+namespace vegafem
+{
+
 class VolumetricMeshLoader
 {
 public:
@@ -64,5 +67,9 @@ protected:
   static int load(FILE * fin, int * numVolumetricMeshes, VolumetricMesh *** volumetricMeshes, int verbose=1);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

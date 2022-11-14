@@ -42,6 +42,9 @@
 #include "geometryQuery.h"
 #include "basicAlgorithms.h"
 #include "containerHelper.h"
+
+namespace vegafem
+{
 using namespace std;
 
 // the direction that is perpendicular to the line (start, dir) and go from the line to an external point p
@@ -322,3 +325,5 @@ double testLinearPrecision(const SparseMatrix * A, const VolumetricMesh * mesh)
   return EuclideanNorm(3*n, &result[0]);
 }
 
+
+}//namespace vegafem

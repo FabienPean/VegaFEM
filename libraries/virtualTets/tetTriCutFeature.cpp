@@ -33,6 +33,9 @@
 #include "tetTriCutFeature.h"
 #include <cassert>
 #include <array>
+
+namespace vegafem
+{
 using namespace std;
 
 TetShape::TetShape(const TetMeshRef & tetMesh, int tetID) : tetID(tetID)
@@ -144,3 +147,5 @@ vector<UTriKey> TetTriCutFeature::getTouchingTetFaces(const TetShape & tetShape)
   auto faces = tetShape.getNeighboringFace(getTetVertex());
   return { faces[0], faces[1], faces[2] };
 }
+
+}//namespace vegafem

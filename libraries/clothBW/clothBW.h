@@ -51,6 +51,9 @@
 #include "sparseMatrix.h"
 #include "vec3d.h"
 
+namespace vegafem
+{
+
 class ClothBW
 {
 public:
@@ -229,5 +232,9 @@ protected:
   bool useRestAnglesForBendingForces;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

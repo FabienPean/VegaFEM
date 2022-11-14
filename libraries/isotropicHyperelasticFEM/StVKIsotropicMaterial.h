@@ -36,6 +36,9 @@
 #include "isotropicMaterialWithCompressionResistance.h"
 #include "tetMesh.h"
 
+namespace vegafem
+{
+
 /*
    StVK material. Material properties are read from the tet mesh, and can be heterogeneous.
 
@@ -65,5 +68,9 @@ protected:
   virtual double GetCompressionResistanceFactor(int elementIndex);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -41,6 +41,9 @@
 #include "minivector.h"
 #include "boundingBox.h"
 
+namespace vegafem
+{
+
 class SimpleSphere
 {
 public:
@@ -63,5 +66,9 @@ private:
   double radius_;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

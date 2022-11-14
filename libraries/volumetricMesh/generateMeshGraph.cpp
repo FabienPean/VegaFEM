@@ -34,6 +34,9 @@
 using namespace std;
 #include "generateMeshGraph.h"
 
+namespace vegafem
+{
+
 Graph * GenerateMeshGraph::Generate(const VolumetricMesh * volumetricMesh)
 {
   // Generate springs:
@@ -76,3 +79,5 @@ Graph * GenerateMeshGraph::Generate(const VolumetricMesh * volumetricMesh)
   return graph;
 }
 
+
+}//namespace vegafem

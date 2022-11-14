@@ -32,6 +32,9 @@
 
 #include "rigidBody.h"
 
+namespace vegafem
+{
+
 RigidBody::RigidBody(double mass, double inertiaTensorAtRestX, double inertiaTensorAtRestY, double inertiaTensorAtRestZ)
 {
   this->mass=mass;
@@ -232,3 +235,5 @@ void RigidBody::SetRotationalDamping(double rotationalDampingCoef)
   this->rotationalDampingCoef = rotationalDampingCoef;
 }
 
+
+}//namespace vegafem

@@ -36,6 +36,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <vector>
+
+namespace vegafem
+{
 using namespace std;
 
 /*
@@ -75,5 +78,9 @@ protected:
   int includeTokenLength; // normally 9
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -41,6 +41,8 @@
 #include <vector>
 #include <cmath>
 
+namespace vegafem
+{
 template<class Container>
 int sizei(const Container & c) { return (int)c.size(); }
 
@@ -225,4 +227,8 @@ ForwardIt reduceDuplicates(ForwardIt first, ForwardIt last, BinaryReduce reduce)
   return reduceDuplicates(first, last ,reduce, std::equal_to<const T &>());
 }
 
+
+}//namespace vegafem
+
 #endif
+

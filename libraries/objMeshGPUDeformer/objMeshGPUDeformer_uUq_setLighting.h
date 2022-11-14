@@ -37,11 +37,18 @@
 #include "objMeshGPUDeformer_uUq.h"
 #include "lighting.h"
 
+namespace vegafem
+{
+
 class ObjMeshGPUDeformer_uUq_setLighting
 {
 public:
   static void SetLighting(ObjMeshGPUDeformer_uUq * renderGPUObject, Lighting * lighting);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

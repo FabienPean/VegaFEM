@@ -39,6 +39,9 @@
 
 #include "volumetricMesh.h"
 
+namespace vegafem
+{
+
 // stores an orthotropic material
 class VolumetricMesh::OrthotropicMaterial : public VolumetricMesh::Material
 {
@@ -100,5 +103,9 @@ inline void VolumetricMesh::OrthotropicMaterial::setG31(double G31) { G31_ = G31
 // obtain pointer to OrthotropicMaterial (necessary inside classes that assume ENu material)
 VolumetricMesh::OrthotropicMaterial * downcastOrthotropicMaterial(VolumetricMesh::Material * material); // performs a check via getType and returns NULL if material is not Orthotropic
 
+
+}//namespace vegafem
+
 #endif
+
 

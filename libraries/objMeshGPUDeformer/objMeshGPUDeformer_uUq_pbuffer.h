@@ -47,6 +47,9 @@
 #include "objMeshGPUDeformer_uUq.h"
 #include <GL/wglext.h>
 
+namespace vegafem
+{
+
 class ObjMeshGPUDeformer_uUq_pbuffer : public ObjMeshGPUDeformer_uUq
 {
 public:
@@ -98,6 +101,10 @@ protected:
   static PFNWGLSETPBUFFERATTRIBARBPROC wglSetPbufferAttribARB;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 
 #endif

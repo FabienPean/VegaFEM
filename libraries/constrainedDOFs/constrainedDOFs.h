@@ -33,6 +33,8 @@
 #ifndef VEGAFEM_CONSTRAINED_DOFS_H
 #define VEGAFEM_CONSTRAINED_DOFS_H
 
+namespace vegafem
+{
 /*
   Insert or remove given components from a linear array.
   The dynamic solver uses these routines to fix the specified vertices and remove
@@ -72,5 +74,7 @@ public:
   static bool CheckValidSortedDOFs(int mFull, int numDOFs, const int * DOFs, int oneIndexed=0);
 
 };
+
+}//namespace vegafem
 #endif
 

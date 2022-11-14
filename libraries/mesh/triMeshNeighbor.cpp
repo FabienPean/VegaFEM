@@ -38,7 +38,7 @@
 #include <set>
 #include <iostream>
 using namespace std;
-
+using namespace vegafem;
 namespace
 {
 
@@ -121,7 +121,8 @@ vector<pair<int, OEdgeKey>> findBoundaryTriangles(const std::vector<Vec3i> & tri
 } // end anonymous namespace
 
 
-
+namespace vegafem
+{
 TriangleNeighbor::TriangleNeighbor(const vector<Vec3i> & triangles) : numTriangles(triangles.size()),
     triNbrs(triangles.size(), Vec3i(-1))
 {
@@ -668,3 +669,5 @@ vector<OEdgeKey> getExteriorEdges(int numTriangles, const Vec3i * triangles)
   }
   return ret;
 }
+
+}//namespace vegafem

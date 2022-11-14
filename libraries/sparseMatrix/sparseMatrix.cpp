@@ -39,6 +39,9 @@
 #include <limits>
 #include "sparseMatrix.h"
 #include "constrainedDOFs.h"
+
+namespace vegafem
+{
 using namespace std;
 
 SparseMatrixOutline::SparseMatrixOutline(int numRows_): numRows(numRows_)
@@ -2201,3 +2204,5 @@ SparseMatrix * SparseMatrix::CreateIdentityMatrix(int numRows)
   delete outline;
   return mat;
 }
+
+}//namespace vegafem

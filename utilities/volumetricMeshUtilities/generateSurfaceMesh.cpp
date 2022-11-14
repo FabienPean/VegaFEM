@@ -41,6 +41,8 @@
 #include "volumetricMeshLoader.h"
 #include "generateSurfaceMesh.h"
 
+using namespace vegafem;
+
 /*
   Creates the surface mesh of the given volumetric mesh.
   Note: interior volumetric mesh vertices are kept in the surface mesh (as isolated vertices).

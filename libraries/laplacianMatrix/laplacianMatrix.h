@@ -42,6 +42,9 @@
 #include "sparseMatrix.h"
 #include "tetMesh.h"
 
+namespace vegafem
+{
+
 class LaplacianMatrix
 {
 public:
@@ -75,5 +78,9 @@ public:
   static void ExtrapolateScalarField(const SparseMatrix * L, int numSelectedTets, const int * selectedTets, const double * Sbar, double * x, int numThreads = 0);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -33,6 +33,9 @@
 #include "StVKStiffnessMatrix.h"
 #include "volumetricMeshENuMaterial.h"
 
+namespace vegafem
+{
+
 StVKStiffnessMatrix::StVKStiffnessMatrix(StVKInternalForces *  stVKInternalForces)
 {
   precomputedIntegrals = stVKInternalForces->GetPrecomputedIntegrals();
@@ -347,3 +350,5 @@ void StVKStiffnessMatrix::AddCubicTermsContribution(const double * vertexDisplac
   precomputedIntegrals->ReleaseElementIterator(elIter);
 }
 
+
+}//namespace vegafem

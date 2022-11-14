@@ -36,6 +36,9 @@
 #include "corotationalLinearFEM.h"
 #include "stencilForceModel.h"
 
+namespace vegafem
+{
+
 // Stencils for corotational linear FEM.
 // A stencil is one FEM element.
 // See comments in the parent class.
@@ -56,5 +59,9 @@ protected:
   int warp;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

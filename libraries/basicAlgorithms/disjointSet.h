@@ -48,6 +48,9 @@
 #include <vector>
 #include <map>
 
+namespace vegafem
+{
+
 // implementation of a disjoint set on a fixed array of elements with continuous IDs
 class DisjointSet
 {
@@ -128,4 +131,8 @@ void DisjointSet::unionRange(IntIterator itBegin, IntIterator itEnd)
     unionSet(*itBegin, *jt);
 }
 
+
+}//namespace vegafem
+
 #endif
+

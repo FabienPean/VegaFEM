@@ -50,6 +50,9 @@
 #include <functional>
 #include <cfloat>
 
+namespace vegafem
+{
+
 // Base class for exact octrees
 // defines node struct inside the tree
 // defines range query and nearest query algorithm
@@ -247,5 +250,9 @@ inline void ExactOctreeBase::rangeQuery(BBFilter toBB, ElementFilter toEle, std:
 }
 
 
+
+}//namespace vegafem
+
 #endif
+
 

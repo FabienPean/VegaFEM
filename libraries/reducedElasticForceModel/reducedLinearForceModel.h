@@ -47,6 +47,8 @@
 
 #include "reducedForceModel.h"
 
+namespace vegafem
+{
 class ReducedLinearForceModel : public ReducedForceModel
 {
 public:
@@ -61,5 +63,8 @@ protected:
   double * stiffnessMatrix; 
 };
 
+}//namespace vegafem
+
 #endif
+
 

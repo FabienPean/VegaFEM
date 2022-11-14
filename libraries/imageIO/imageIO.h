@@ -42,6 +42,8 @@
 #ifndef VEGAFEM_IMAGEIO_H
 #define VEGAFEM_IMAGEIO_H
 
+namespace vegafem
+{
 class ImageIO
 {
 public:
@@ -107,5 +109,6 @@ protected:
   errorType saveNONE(const char * filename);
 };
 
+}//namespace vegafem
 #endif
 

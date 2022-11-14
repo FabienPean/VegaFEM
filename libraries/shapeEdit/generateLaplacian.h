@@ -37,6 +37,9 @@
 #include "tetMesh.h"
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 // generate Laplacian matrix for tet mesh [Wang 2015 Linear Subspace Design for Real-Time Shape Deformation]
 SparseMatrix * generateLaplacian(const TetMesh * tetMesh, bool linearlyPrecise);
 
@@ -51,4 +54,8 @@ double testConstantPrecision(const SparseMatrix * A);
 double testLinearPrecision(const SparseMatrix * A, const VolumetricMesh * mesh);
 //double testLinearPrecision(const SparseMatrix * A, const ObjMesh * mesh);
 
+
+}//namespace vegafem
+
 #endif
+

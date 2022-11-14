@@ -59,6 +59,9 @@
 #define VEGAFEM_CUBICMESH_H
 
 #include "volumetricMesh.h"
+
+namespace vegafem
+{
 // see also volumetricMesh.h for a description of the routines
 
 class CubicMesh : public VolumetricMesh
@@ -169,5 +172,9 @@ protected:
   friend class VolumetricMeshExtensions;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -38,6 +38,9 @@
 #include "constrainedDOFs.h"
 #include "implicitNewmarkSparse.h"
 
+namespace vegafem
+{
+
 ImplicitNewmarkSparse::ImplicitNewmarkSparse(int r, double timestep, SparseMatrix * massMatrix_, ForceModel * forceModel_, int numConstrainedDOFs_, int * constrainedDOFs_, double dampingMassCoef, double dampingStiffnessCoef, int maxIterations, double epsilon, double NewmarkBeta, double NewmarkGamma, int numSolverThreads_): IntegratorBaseSparse(r, timestep, massMatrix_, forceModel_, numConstrainedDOFs_, constrainedDOFs_, dampingMassCoef, dampingStiffnessCoef), numSolverThreads(numSolverThreads_)
 {
   this->maxIterations = maxIterations; // maxIterations = 1 for semi-implicit
@@ -418,3 +421,5 @@ void ImplicitNewmarkSparse::SetTangentStiffnessMatrixOffset(SparseMatrix * tange
     tangentStiffnessMatrix->BuildSubMatrixIndices(*tangentStiffnessMatrixOffset, 2);
 }
 
+
+}//namespace vegafem

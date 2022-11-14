@@ -35,6 +35,9 @@
 
 #include <cfloat>
 
+namespace vegafem
+{
+
 // a simple struct to find the index of an entry with min/max value in a search algorithm
 
 struct MaxValueIndex
@@ -79,4 +82,8 @@ struct MinValueKey
   T key;
 };
 
+
+}//namespace vegafem
+
 #endif
+

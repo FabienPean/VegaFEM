@@ -49,6 +49,8 @@ using namespace std;
 
 //#define VERBOSE
 
+namespace vegafem
+{
 int ObjMeshBinaryLoader::readStringFromBinary(std::string & name, std::ifstream * fin)
 {
   #ifdef VERBOSE
@@ -368,3 +370,5 @@ int ObjMeshBinaryLoader::writeToBinary(ObjMesh::Material * material, std::ofstre
   return 0;
 }
 
+
+}//namespace vegafem

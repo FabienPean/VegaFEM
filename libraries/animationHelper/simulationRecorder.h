@@ -36,6 +36,9 @@
 #include <string>
 #include <vector>
 
+namespace vegafem
+{
+
 // record frames of data and save to disk
 class FrameRecorder
 {
@@ -99,4 +102,8 @@ protected:
   FrameRecorder uFrames, vFrames, fFrames;
 };
 
+
+}//namespace vegafem
+
 #endif
+

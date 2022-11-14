@@ -1,6 +1,8 @@
 #ifndef VEGAFEM_POLARDECOMPOSITION_H
 #define VEGAFEM_POLARDECOMPOSITION_H
 
+namespace vegafem
+{
 /*
   Polar decomposition of a general 3x3 matrix
 
@@ -53,6 +55,8 @@ inline void PolarDecomposition::crossProduct(const double * a, const double * b,
   c[1] = a[2] * b[0] - a[0] * b[2];
   c[2] = a[0] * b[1] - a[1] * b[0];
 }
+
+}//namespace vegafem
 
 #endif
 

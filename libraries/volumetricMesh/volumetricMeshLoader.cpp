@@ -41,6 +41,8 @@
   #include "range.h"
 #endif
 
+namespace vegafem
+{
 using namespace std;
 
 
@@ -237,3 +239,5 @@ int VolumetricMeshLoader::save(const char * filename, int numVolumetricMeshes, V
   return 0;
 }
 
+
+}//namespace vegafem

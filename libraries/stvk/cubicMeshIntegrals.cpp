@@ -30,6 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
+namespace vegafem
+{
 // precomputed A,B,C,D integrals for a trilinear cube element
 
 static double cubicMeshIntegrals[6272] =
@@ -6308,3 +6310,4 @@ static double cubicMeshIntegrals[6272] =
   0.2533333333333334
 };
 
+}//namespace vegafem

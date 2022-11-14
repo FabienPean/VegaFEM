@@ -44,6 +44,9 @@
 #include "StVKElementABCD.h"
 #include "StVKStiffnessMatrix.h"
 
+namespace vegafem
+{
+
 class StVKHessianTensor
 {
 public:
@@ -97,5 +100,9 @@ protected:
   double * muLame;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

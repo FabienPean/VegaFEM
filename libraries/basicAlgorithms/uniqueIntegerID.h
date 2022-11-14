@@ -39,6 +39,9 @@
 
 #include <set>
 
+namespace vegafem
+{
+
 class UniqueIntegerID
 {
 public:
@@ -63,5 +66,9 @@ protected:
   std::set<unsigned int> deletedIDs;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

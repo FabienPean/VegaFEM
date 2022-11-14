@@ -29,6 +29,9 @@
 #include <cmath>
 #include <ostream>
 
+namespace vegafem
+{
+
 class Vec2i
 {
 public:
@@ -304,4 +307,8 @@ inline bool Vec2i::intersect(const Vec2i & vec2) const
   return false;
 }
 
+
+}//namespace vegafem
+
 #endif
+

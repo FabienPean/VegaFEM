@@ -34,6 +34,9 @@
 #include <cassert>
 #include <sstream>
 #include "configFile.h"
+
+namespace vegafem
+{
 using namespace std;
 
 #define OPT_INT 0
@@ -657,3 +660,5 @@ template int ConfigFile::addOptionOptional<Vec3d>(const char * optionName, Vec3d
 template int ConfigFile::addOptionOptional<string>(const char * optionName, string * destLocation, const string & defaultValue);
 template int ConfigFile::addOptionOptional<vector<string> >(const char * optionName, vector<string> * destLocation, const vector<string> & defaultValue);
 
+
+}//namespace vegafem

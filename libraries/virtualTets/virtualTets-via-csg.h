@@ -40,6 +40,9 @@
 #include "tetTriCuttingData.h"
 #include "profiler.h"
 
+namespace vegafem
+{
+
 /*
   This file implements "virtual tets" using constructive solid geometry, as described in:
 
@@ -80,5 +83,9 @@ TetMeshGeo createVirtualTetsMeshViaCSG(
     std::vector<std::vector<int>> * tetTris = nullptr,
     bool verbose = false, Profiler * profiler = nullptr);
 
+
+}//namespace vegafem
+
 #endif
+
 

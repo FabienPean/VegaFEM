@@ -51,6 +51,9 @@
 #include <cstring>
 #include <iostream>
 #include <cmath>
+
+namespace vegafem
+{
 using namespace std;
 
 VerticesInformation getVerticesInformation(const std::vector<Vec3d> & vertices, double epsilon)
@@ -125,7 +128,7 @@ VerticesInformation getVerticesInformation(const std::vector<Vec3d> & vertices, 
   for(size_t i = 0; i < vertices.size(); ++i)
   {
     Vec3d diff = vertices[i] - info.origin;
-    double dotProduct = ::dot(info.direction[0], diff);
+    double dotProduct = dot(info.direction[0], diff);
     Vec3d proj = diff - dotProduct * info.direction[0];
     double distance = len(proj);
     if (distance > maxDistance)
@@ -145,7 +148,7 @@ VerticesInformation getVerticesInformation(const std::vector<Vec3d> & vertices, 
 
   // Test whether the point set is (nearly) a planar polygon.
   info.direction[1] = vertices[info.extreme[2]] - info.origin;
-  info.direction[1] -= ::dot(info.direction[0], info.direction[1]) * info.direction[0];
+  info.direction[1] -= dot(info.direction[0], info.direction[1]) * info.direction[0];
   info.direction[1].normalize();
   info.direction[2] = cross(info.direction[0], info.direction[1]);
   maxDistance = 0;
@@ -154,7 +157,7 @@ VerticesInformation getVerticesInformation(const std::vector<Vec3d> & vertices, 
   for(size_t i = 0; i < vertices.size(); ++i)
   {
     Vec3d diff = vertices[i] - info.origin;
-    double distance = ::dot(info.direction[2],diff);
+    double distance = dot(info.direction[2],diff);
     int sign = distance >= 0 ? 1 : -1;
     distance = fabs(distance);
     if (distance > maxDistance)
@@ -178,3 +181,5 @@ VerticesInformation getVerticesInformation(const std::vector<Vec3d> & vertices, 
 
   return info;
 }
+
+}//namespace vegafem

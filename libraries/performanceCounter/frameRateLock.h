@@ -33,6 +33,8 @@
 #include "performanceCounter.h"
 #include <cassert>
 
+namespace vegafem
+{
 // used to lock frame-rate
 class FrameRateLock
 {
@@ -64,3 +66,5 @@ inline void FrameRateLock::lock()
 
   counter.StartCounter();
 }
+
+}//namespace vegafem

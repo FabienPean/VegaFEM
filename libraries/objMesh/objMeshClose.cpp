@@ -38,6 +38,8 @@ using namespace std;
 #include "objMeshClose.h"
 #include "objMeshOrientable.h"
 
+namespace vegafem
+{
 int ObjMeshClose::Close(ObjMesh * objMesh)
 {
   ObjMeshOrientable * objMeshOrientable = NULL;
@@ -140,3 +142,5 @@ int ObjMeshClose::Close(ObjMesh * objMesh)
   return 0;
 }
 
+
+}//namespace vegafem

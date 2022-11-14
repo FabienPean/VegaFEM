@@ -37,6 +37,9 @@
 #include <set>
 #include "volumetricMesh.h"
 
+namespace vegafem
+{
+
 class RenderVolumetricMesh
 {
 public:
@@ -118,4 +121,8 @@ protected:
   void DetermineMaxMin(VolumetricMesh * volumetricMesh);
 };
 
+
+}//namespace vegafem
+
 #endif
+

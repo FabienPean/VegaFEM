@@ -36,7 +36,14 @@
 #include "triMeshGeo.h"
 #include "tetMeshGeo.h"
 
+namespace vegafem
+{
+
 // return a vector of size #tets, each element is the sorted triangleIDs that intersect this tet
 std::vector<std::vector<int>> computeTrianglesIntersectingEachTetExact(const TetMeshRef tetMesh, const TriMeshRef triMesh);
 
+
+}//namespace vegafem
+
 #endif
+

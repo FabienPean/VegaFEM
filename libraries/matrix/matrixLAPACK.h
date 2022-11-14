@@ -40,6 +40,9 @@
 
 #include <cstdlib>
 
+namespace vegafem
+{
+
 template<class real>
 real * InverseMatrix(int m, const real * mtx, real * output = NULL);
 
@@ -71,5 +74,9 @@ int MatrixEigenDecomposition(int m, real * mtx, real * EigenVectors, real * Lamb
 template<class real> 
 void MatrixSVD(int m, int n, real * mtx, real * U, real * Sigma, real * VT);
 
+
+}//namespace vegafem
+
 #endif
+
 

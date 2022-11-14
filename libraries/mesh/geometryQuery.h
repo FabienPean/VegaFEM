@@ -36,6 +36,9 @@
 #include "minivector.h"
 #include <cmath>
 
+namespace vegafem
+{
+
 inline double rad2deg(double x) { return x * (180.0 / M_PI); }
 inline double deg2rad(double x) { return x * (M_PI / 180.0); }
 
@@ -124,4 +127,8 @@ void getTetBarycentricWeights(const Vec3d & queryPoint, const Vec3d & a, const V
 
 double getSquaredDistanceToTet(const Vec3d & queryPoint, const Vec3d & a, const Vec3d & b, const Vec3d & c, const Vec3d & d);
 
+
+}//namespace vegafem
+
 #endif
+

@@ -36,6 +36,9 @@
 #include "sceneObject6DOF.h"
 #include "sceneObjectDeformable.h"
 
+namespace vegafem
+{
+
 class SceneObjectDeformable6DOF : public virtual SceneObjectDeformable, public SceneObject6DOF
 {
 public:
@@ -58,5 +61,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -32,6 +32,9 @@
 
 #include "clothBWForceModel.h"
 
+namespace vegafem
+{
+
 ClothBWForceModel::ClothBWForceModel(ClothBW * clothBW_): clothBW(clothBW_)
 { 
   r = 3 * clothBW->GetNumVertices(); 
@@ -65,3 +68,5 @@ void ClothBWForceModel::GetForceAndMatrix(const double * u, double * internalFor
 {
   clothBW->ComputeForceAndMatrix(u, internalForces, tangentStiffnessMatrix);
 }
+
+}//namespace vegafem

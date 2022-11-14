@@ -35,6 +35,9 @@
 #include <functional>
 #include <cstring>
 #include <algorithm>
+
+namespace vegafem
+{
 using namespace std;
 
 // use predicates from Shewchuk's predicates
@@ -510,3 +513,5 @@ bool intersectSegSeg2d(const double sa[2], const double sb[2], const double ta[2
   return simplex_intersection2d(2, sa, sb, ta, tb, sw, sw+1, tw, tw+1);
 }
 
+
+}//namespace vegafem

@@ -34,6 +34,9 @@
 #define VEGAFEM_AVERAGING_BUFFER_H
 
 #include <vector>
+
+namespace vegafem
+{
 // FIFO averaging buffer
 
 class AveragingBuffer
@@ -59,5 +62,9 @@ protected:
   int numValuesAdded; // #values stored in the buffer
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

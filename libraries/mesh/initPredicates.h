@@ -33,7 +33,9 @@
 #ifndef VEGAFEM_INITPREDICATES_H
 #define VEGAFEM_INITPREDICATES_H
 
+namespace vegafem
+{
 // Initialize the variables used for exact arithmetic.
 void initPredicates();
-
+}//namespace vegafem
 #endif

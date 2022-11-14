@@ -43,6 +43,9 @@
 
 #include "matrixIO.h"
 
+namespace vegafem
+{
+
 // specifies how to discard statistically insignificant components
 typedef struct
 {
@@ -66,5 +69,9 @@ typedef struct
 int MatrixPCA(ThresholdingSpecification * thresholdingSpecification,
               int m, int n, double * A, int * r, double * weights=NULL);
 
+
+}//namespace vegafem
+
 #endif
+
 

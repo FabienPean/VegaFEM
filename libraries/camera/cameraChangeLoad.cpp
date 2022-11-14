@@ -35,6 +35,9 @@
 #include <sstream>
 #include <fstream>
 #include <cmath>
+
+namespace vegafem
+{
 using namespace std;
 
 #define CHECK_FAILURE(cond) \
@@ -110,3 +113,5 @@ void CameraChangeLoad::controlCamera(int timestepCount, SphericalCamera & camera
   }
 }
 
+
+}//namespace vegafem

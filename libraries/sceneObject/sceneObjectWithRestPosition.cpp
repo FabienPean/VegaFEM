@@ -34,6 +34,9 @@
 #include <cstdlib>
 #include "sceneObjectWithRestPosition.h"
 
+namespace vegafem
+{
+
 SceneObjectWithRestPosition::SceneObjectWithRestPosition(const char * filename): SceneObject(filename) 
 {
   Construct();
@@ -89,3 +92,5 @@ void SceneObjectWithRestPosition::TransformRigidly(double * centerOfMass, double
   }
 }
 
+
+}//namespace vegafem

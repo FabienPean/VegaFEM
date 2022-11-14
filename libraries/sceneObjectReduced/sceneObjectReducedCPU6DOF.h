@@ -36,6 +36,9 @@
 #include "sceneObjectReduced6DOF.h"
 #include "sceneObjectReducedCPU.h"
 
+namespace vegafem
+{
+
 class SceneObjectReducedCPU6DOF : public SceneObjectReducedCPU, public SceneObjectReduced6DOF
 {
 public:
@@ -56,5 +59,9 @@ protected:
   double scale;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -36,6 +36,9 @@
 #include "StVKElementABCD.h"
 #include "tetMesh.h"
 
+namespace vegafem
+{
+
 /*
   Class "StVKTetHighMemoryABCD" stores (explicitly) the St.Venant-Kirchhoff 
   A,B,C,D coefficients for a tetrahedron (high-memory version).
@@ -68,5 +71,9 @@ protected:
   void StVKSingleTetABCD(Vec3d vertices[4], Mat3d A[4][4], double B[4][4], Vec3d C[4][4][4], double D[4][4][4][4]);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

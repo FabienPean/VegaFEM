@@ -40,6 +40,9 @@
 #include "octree.h"
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 template<class TriangleClass>
 class ObjMeshOctree
 {
@@ -80,5 +83,9 @@ protected:
   static const double bboxExpansionRatio;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

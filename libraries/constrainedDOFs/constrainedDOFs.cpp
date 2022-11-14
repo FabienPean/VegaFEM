@@ -35,6 +35,9 @@
 #include <cstdlib>
 #include <cassert>
 
+namespace vegafem
+{
+
 void ConstrainedDOFs::InsertDOFs(int mFull, const double * xConstrained, double * x, int numFixedRows, const int * fixedRows, int oneIndexed)
 {
   int destRow = 0; // current row in the dest matrix
@@ -197,3 +200,5 @@ bool ConstrainedDOFs::CheckValidSortedDOFs(int mFull, int numDOFs, const int * D
   return true;
 }
 
+
+}//namespace vegafem

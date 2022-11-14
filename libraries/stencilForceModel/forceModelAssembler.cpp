@@ -33,6 +33,9 @@
 #include "forceModelAssembler.h"
 #include <cassert>
 
+namespace vegafem
+{
+
 using namespace std;
 
 ForceModelAssembler::ForceModelAssembler(StencilForceModel *eleFM) : stencilForceModel(eleFM)
@@ -326,3 +329,5 @@ void ForceModelAssembler::GetForceAndMatrix(const double * u, double * internalF
 {
   GetEnergyAndForceAndMatrix(u, nullptr, internalForces, tangentStiffnessMatrix);
 }
+
+}//namespace vegafem

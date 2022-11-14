@@ -48,6 +48,9 @@
 
 #include "rigidBody.h"
 
+namespace vegafem
+{
+
 class RigidBody_GeneralTensor : public RigidBody
 {
 public:
@@ -79,5 +82,9 @@ protected:
 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

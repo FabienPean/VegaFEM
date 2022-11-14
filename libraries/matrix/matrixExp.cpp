@@ -76,6 +76,8 @@ public:
     }
 };
 
+namespace vegafem
+{
 // computes output = exp(mtx*t)
 template<class real>
 int MatrixExp(int m, real * mtx, real t, real * output, int ideg_)
@@ -175,3 +177,5 @@ template int MatrixExpv(int m, double * mtx, double t, double * v, double * w, i
 
 template int MatrixExp(int m, float * mtx, float t, float * output, int ideg_);
 template int MatrixExp(int m, double * mtx, double t, double * output, int ideg_);
+
+}//namespace vegafem

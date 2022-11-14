@@ -45,6 +45,8 @@
 #ifndef VEGAFEM_CAMERA_H
 #define VEGAFEM_CAMERA_H
 
+namespace vegafem
+{
 class SphericalCamera
 {
 public:
@@ -192,5 +194,6 @@ protected:
   } savedState;
 };
 
+}//namespace vegafem
 #endif
 

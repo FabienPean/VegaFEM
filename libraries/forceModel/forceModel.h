@@ -41,6 +41,9 @@
 #include <cstdlib>
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 class ForceModel
 {
 public:
@@ -64,5 +67,9 @@ protected:
   int r;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

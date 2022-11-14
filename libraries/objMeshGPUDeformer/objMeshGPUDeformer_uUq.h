@@ -36,6 +36,9 @@
 
 #include "objMeshGPUDeformer.h"
 
+namespace vegafem
+{
+
 class ObjMeshGPUDeformer_uUq : public ObjMeshGPUDeformer
 {
 public:
@@ -79,5 +82,9 @@ protected:
   CGparameter SIZEdivRParam;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

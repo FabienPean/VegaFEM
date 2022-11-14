@@ -41,6 +41,9 @@
 #include <algorithm>
 #include <map>
 
+namespace vegafem
+{
+
 // a triangle struct to hold triangle index, its vertex indices and positions
 struct IndexedTriangle
 {
@@ -375,4 +378,8 @@ TriMeshGeo getSubTriMesh(const TriMeshRef & mesh, const TriangleIDContainer & su
   return TriMeshGeo(move(newPos), move(newTris));
 }
 
+
+}//namespace vegafem
+
 #endif
+

@@ -44,6 +44,9 @@
 #include "boundingBox.h"
 #include "minivector.h"
 
+namespace vegafem
+{
+
 class TriangleBasic
 {
 public:
@@ -154,5 +157,9 @@ protected:
 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

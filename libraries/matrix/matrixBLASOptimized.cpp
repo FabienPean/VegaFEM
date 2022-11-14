@@ -34,6 +34,9 @@
 #include "matrixBLAS.h"
 #include "lapack-headers.h"
 
+namespace vegafem
+{
+
 //void cblas_scopy(const int N, const float *X, const int incX, float *Y, const int incY); 
 template<bool C>
 class _xcopy {};
@@ -281,3 +284,5 @@ real VectorNorm(int m, const real * vec)
   return _xnrm2<sizeof(real)==sizeof(float)>::f(m, vec, 1);
 }
 
+
+}//namespace vegafem

@@ -32,6 +32,9 @@
 
 #include "massSpringSystemForceModel.h"
 
+namespace vegafem
+{
+
 MassSpringSystemForceModel::MassSpringSystemForceModel(MassSpringSystem * massSpringSystem_): massSpringSystem(massSpringSystem_)
 { 
   r = 3 * massSpringSystem->GetNumParticles(); 
@@ -57,3 +60,5 @@ void MassSpringSystemForceModel::GetTangentStiffnessMatrix(const double * u, Spa
   massSpringSystem->ComputeStiffnessMatrix(u, tangentStiffnessMatrix);
 } 
 
+
+}//namespace vegafem

@@ -1,6 +1,9 @@
 #include <cstdio>
 #include "rigidBody.h"
 
+namespace vegafem
+{
+
 // This example demonstrates how to use the rigidBody.h class
 // Example author: Jernej Barbic
 
@@ -114,3 +117,5 @@ int main()
   return 0;
 }
 
+
+}//namespace vegafem

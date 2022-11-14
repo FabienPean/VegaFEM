@@ -34,6 +34,9 @@
 #define VEGAFEM_IPIVC_H
 #include <cstdlib>
 
+namespace vegafem
+{
+
 // a buffer to hold r integers
 // a special buffer is necessary because INTEGER can be architecture-dependent
 class IPIVC
@@ -47,5 +50,9 @@ protected:
   INTEGER * buf;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -53,6 +53,9 @@
 #endif
 using namespace std;
 
+namespace vegafem
+{
+
 // The simplest routine with minimal input.
 TetMeshGeo createVirtualTetsMesh(const TetMeshGeo & tetMesh, const TriMeshGeo & triMesh, BarycentricCoordinates * coord,
     vector<int> * newTetVtxID2OldTetVtxID, vector<int> * newTetID2OldTetID, vector<vector<int>> * tetTris,
@@ -815,7 +818,7 @@ TetMeshGeo createVirtualTetsMesh(const TetMeshGeo & tetMesh, const TriMeshGeo & 
 
         assert(vi.index >= 0);
         newTetMeshRef.computeTetBarycentricWeights(vi.index, pos, &weights[4*triVtxID]);
-        memcpy(&tetVtxIndices[4*triVtxID], newTetMesh.tet(vi.index).data(), sizeof(int) * 4);
+        std::memcpy(&tetVtxIndices[4*triVtxID], newTetMesh.tet(vi.index).data(), sizeof(int) * 4);
         embeddingTetIndices[triVtxID] = vi.index;
   #ifdef USE_TBB
       });
@@ -843,3 +846,5 @@ TetMeshGeo createVirtualTetsMesh(const TetMeshGeo & tetMesh, const TriMeshGeo & 
 
   return newTetMesh;
 }
+
+}//namespace vegafem

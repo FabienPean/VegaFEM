@@ -53,6 +53,8 @@ enum ImmOwnership
 
 std::ostream & operator << (std::ostream & o, ImmOwnership os);
 
+namespace vegafem
+{
 // whether the owerships of the two geometric neighboring B-patches on a node is compatible by Rule 5
 inline bool neighboringOwernshipValid(ImmOwnership o1, ImmOwnership o2)
 {
@@ -128,5 +130,9 @@ struct ImmStackEntry
   std::set<std::tuple<int,int,int>> triedDirections; // the search direction already tried at the state when this data is pushed to the stack
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

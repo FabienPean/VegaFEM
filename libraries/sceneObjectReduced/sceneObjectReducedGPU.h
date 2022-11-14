@@ -44,6 +44,9 @@
 #include "objMeshGPUDeformer_uUq_fbo.h"
 #include "objMeshGPUDeformer_uUq_setLighting.h"
 
+namespace vegafem
+{
+
 class SceneObjectReducedGPU : virtual public SceneObjectReduced
 {
 public:
@@ -85,5 +88,9 @@ protected:
   ObjMeshGPUDeformer_uUq_setLighting setGPULighting;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

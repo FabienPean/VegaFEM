@@ -77,6 +77,9 @@
 #include "objMeshOrientable.h"
 #include "objMeshOctree.h"
 #include "distanceFieldBase.h"
+
+namespace vegafem
+{
 using namespace std;
 
 DistanceFieldBase::DistanceFieldBase() 
@@ -149,3 +152,5 @@ void DistanceFieldBase::computeBoundingBox(ObjMesh * objMesh, int resolutionX, i
   bboxComputed = true;
 }
 
+
+}//namespace vegafem

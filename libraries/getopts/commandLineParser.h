@@ -37,6 +37,9 @@
 #include <string>
 #include <vector>
 
+namespace vegafem
+{
+
 // parser for command line arguments
 // same argument syntax as in getopts.h:
 //
@@ -105,4 +108,8 @@ protected:
 
 
 
+
+}//namespace vegafem
+
 #endif
+

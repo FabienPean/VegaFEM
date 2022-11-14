@@ -35,6 +35,9 @@
 
 #include "StVKReducedStiffnessMatrix.h"
 
+namespace vegafem
+{
+
 /*
   This class computes the reduced Hessian tensor (gradient of the reduced stiffness matrix),
   for a reduced St. Venant Kirchhoff deformable model.
@@ -163,5 +166,9 @@ inline int StVKReducedHessianTensor::tensorPosition(int i, int j, int k)
   return (i * r - i * (i+1) / 2 + j) * r + k;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

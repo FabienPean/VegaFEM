@@ -51,6 +51,9 @@
 #include "linearSolver.h"
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 class SPOOLESSolver : public LinearSolver
 {
 public:
@@ -77,5 +80,9 @@ protected:
   static void DisabledSolverError();
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

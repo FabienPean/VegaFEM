@@ -33,6 +33,9 @@
 #include "quaternion.h"
 #include <cstdio>
 
+namespace vegafem
+{
+
 #define PI 3.141592653589793238462643
 
 // This is example code that demonstrates how to use the Quaternion class.
@@ -128,3 +131,5 @@ int main()
   return 0;
 }
 
+
+}//namespace vegafem

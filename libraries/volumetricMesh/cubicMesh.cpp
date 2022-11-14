@@ -41,6 +41,9 @@
 #include "matrixMacros.h"
 #include "matrixMultiplyMacros.h"
 #include "triple.h"
+
+namespace vegafem
+{
 using namespace std;
 
 const VolumetricMesh::elementType CubicMesh::elementType_ = CUBIC;
@@ -778,3 +781,5 @@ void CubicMesh::setParallelepipedMode(int parallelepipedMode_)
   parallelepipedMode = parallelepipedMode_;
 }
 
+
+}//namespace vegafem

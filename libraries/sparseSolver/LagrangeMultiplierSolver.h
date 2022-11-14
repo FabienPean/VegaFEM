@@ -50,6 +50,9 @@
 
 #include "PardisoSolver.h"
 
+namespace vegafem
+{
+
 class LagrangeMultiplierSolver
 {
 public:
@@ -108,6 +111,10 @@ protected:
   int mFree;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 
 

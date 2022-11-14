@@ -35,6 +35,9 @@
 
 #include "vec3ER.h"
 
+namespace vegafem
+{
+
 /*
   Helper functions for exact geometry operations.
 */
@@ -51,5 +54,9 @@ ER squaredDistanceToTriangle(const Vec3ER & queryPoint, const Vec3ER & vertex0, 
 
 Vec3ER getClosestPointToTriangleWithFeature(const Vec3ER & queryPoint, const Vec3ER & vertex0, const Vec3ER & vertex1, const Vec3ER & vertex2, int feature);
 
+
+}//namespace vegafem
+
 #endif
+
 

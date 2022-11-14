@@ -37,6 +37,9 @@
 
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 class ObjMeshClose
 {
 public:
@@ -48,5 +51,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

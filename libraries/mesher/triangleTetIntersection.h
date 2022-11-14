@@ -39,6 +39,9 @@
 
 #include "vec3d.h"
 
+namespace vegafem
+{
+
 // This class computes whether a tetrahedron intersects a triangle, excluding just touching.
 class TriangleTetIntersection
 {
@@ -90,5 +93,9 @@ private:
   TriangleTetIntersection();
 };
 
-#endif /* INTERSECTION_H_ */
+
+}//namespace vegafem
+
+#endif
+ /* INTERSECTION_H_ */
 

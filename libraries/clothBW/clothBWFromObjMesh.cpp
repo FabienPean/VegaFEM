@@ -33,6 +33,9 @@
 #include "macros.h"
 #include "clothBWFromObjMesh.h"
 
+namespace vegafem
+{
+
 using namespace std;
 
 ClothBW * ClothBWFromObjMesh::GenerateClothBW(const ObjMesh * mesh, double surfaceDensity, const ClothBW::MaterialGroup & material, int addGravity)
@@ -85,3 +88,5 @@ ClothBW * ClothBWFromObjMesh::GenerateClothBW(const ObjMesh * mesh, int numMater
   free(triangleGroups);
   return clothBW;
 }
+
+}//namespace vegafem

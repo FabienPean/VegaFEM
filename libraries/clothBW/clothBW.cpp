@@ -49,7 +49,8 @@
 #include <cmath>
 #include <cassert>
 
-
+namespace vegafem
+{
 using namespace std;
 
 // constructor without triangleUVs
@@ -865,3 +866,5 @@ void ClothBW::ComputeForceAndMatrix(const double * u, double * f, SparseMatrix *
     ComputeGravity(f);
 }
 
+
+}//namespace vegafem

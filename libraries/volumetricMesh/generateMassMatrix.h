@@ -41,6 +41,9 @@
 #include "volumetricMesh.h"
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 class GenerateMassMatrix
 {
 public:
@@ -59,5 +62,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

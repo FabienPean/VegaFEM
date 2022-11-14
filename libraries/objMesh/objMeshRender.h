@@ -42,6 +42,9 @@
 #include <cassert>
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 //flags for ObjMeshRender:
 //geometry mode
 #define OBJMESHRENDER_TRIANGLES (1 << 0)
@@ -179,5 +182,9 @@ protected:
   std::map<int, std::set<int>> hiddenFaces;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

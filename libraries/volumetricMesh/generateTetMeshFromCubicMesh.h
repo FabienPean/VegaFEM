@@ -36,6 +36,9 @@
 #include "cubicMesh.h"
 #include "tetMesh.h"
 
+namespace vegafem
+{
+
 // converts a cubic mesh into a tet mesh
 // only supports uniform material properties
 
@@ -45,5 +48,9 @@ public:
   static TetMesh * Generate(CubicMesh * cubicMesh, double E=1E9, double nu=0.45, double density=1000);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

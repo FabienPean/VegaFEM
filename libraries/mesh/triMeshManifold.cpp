@@ -35,6 +35,9 @@
 #include <iostream>
 #include <cstring>
 #include <cassert>
+
+namespace vegafem
+{
 using namespace std;
 
 TriMeshManifold::TriMeshManifold() {}
@@ -251,3 +254,5 @@ TriMeshManifold::Triangle::Triangle(const OTriKey & key) : OTriKey(key)
   memset(nbr, 0, sizeof(nbr));
   memset(edge, 0, sizeof(edge));
 }
+
+}//namespace vegafem

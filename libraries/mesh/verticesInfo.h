@@ -54,6 +54,9 @@
 #include "minivector.h"
 #include <vector>
 
+namespace vegafem
+{
+
 
 struct VerticesInformation
 {
@@ -98,4 +101,8 @@ struct VerticesInformation
 
 VerticesInformation getVerticesInformation(const std::vector<Vec3d> & vertices, double epsilon);
 
+
+}//namespace vegafem
+
 #endif
+

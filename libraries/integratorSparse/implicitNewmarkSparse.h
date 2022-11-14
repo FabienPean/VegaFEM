@@ -73,6 +73,8 @@
   #include "CGSolver.h"
 #endif
 
+namespace vegafem
+{
 class ImplicitNewmarkSparse : public IntegratorBaseSparse
 {
 public:
@@ -131,6 +133,6 @@ protected:
     CGSolver * jacobiPreconditionedCGSolver;
   #endif
 };
-
+}//namespace vegafem
 #endif
 

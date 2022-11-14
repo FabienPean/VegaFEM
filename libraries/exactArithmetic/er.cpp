@@ -49,6 +49,8 @@ namespace
   }
 }
 
+namespace vegafem
+{
 ER::ER(double s)
 {
   p = new K::RT(s);
@@ -218,6 +220,7 @@ ER assignCGALToER(const CGAL_Kernel_RT & cgal)
 
 template ER assignCGALToER<K::RT>(const K::RT & cgal);
 
+}//namespace vegafem
 #endif
 
 

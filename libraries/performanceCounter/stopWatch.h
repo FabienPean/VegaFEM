@@ -59,6 +59,8 @@
 #include <sys/time.h>
 #endif
 
+namespace vegafem
+{
 class StopWatch
 {
 public:
@@ -198,5 +200,6 @@ inline double StopWatch::getTime()
 #endif
 }
 
+}//namespace vegafem
 
 #endif /* STOPWATCH_H */

@@ -35,6 +35,9 @@
 
 #include <string>
 
+namespace vegafem
+{
+
 // check with str ends with substr
 bool endWith(const std::string & str, const std::string & substr);
 // version with case-insensitive comparison
@@ -60,4 +63,8 @@ inline void skipSpace(char * & s)
 void upperCase(char * s);
 void upperCase(std::string & s);
 
+
+}//namespace vegafem
+
 #endif
+

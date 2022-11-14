@@ -48,6 +48,9 @@
 
 #include "triKey.h"
 
+namespace vegafem
+{
+
 const int UTriKey::triEdgeIndex[3][2] =  { { 1, 2 }, { 0, 2 }, { 0, 1 } };
 
 const int OTriKey::triEdgeIndex[3][2] =  { { 1, 2 }, { 2, 0 }, { 0, 1 } };
@@ -78,3 +81,5 @@ void OTriKey::permute(int v0, int v1, int v2, int & r0, int & r1, int & r2)
   }
 }
 
+
+}//namespace vegafem

@@ -33,6 +33,9 @@
 #include <cstring>
 #include "volumetricMeshParser.h"
 
+namespace vegafem
+{
+
 VolumetricMeshParser::VolumetricMeshParser(const char * includeToken_)
 {
   fin = NULL;
@@ -256,3 +259,5 @@ void VolumetricMeshParser::removeWhitespace(char * s, int numRetainedSpaces)
   }
 }
 
+
+}//namespace vegafem

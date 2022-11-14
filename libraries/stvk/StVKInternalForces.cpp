@@ -33,6 +33,9 @@
 #include "StVKInternalForces.h"
 #include "volumetricMeshENuMaterial.h"
 
+namespace vegafem
+{
+
 StVKInternalForces::StVKInternalForces(VolumetricMesh * volumetricMesh_, StVKElementABCD * precomputedABCDIntegrals_, bool addGravity_, double g_): volumetricMesh(volumetricMesh_), precomputedIntegrals(precomputedABCDIntegrals_), gravityForce(NULL), addGravity(addGravity_), g(g_) 
 {
   int numElements = volumetricMesh->getNumElements();
@@ -342,3 +345,5 @@ void StVKInternalForces::ResetVector(double * vec)
   memset(vec, 0, sizeof(double) * 3 * volumetricMesh->getNumVertices());
 }
 
+
+}//namespace vegafem

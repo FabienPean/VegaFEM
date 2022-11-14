@@ -35,6 +35,9 @@
 
 #include "er.h"
 
+namespace vegafem
+{
+
 // vector of 3 ES
 class Vec3ER
 {
@@ -322,6 +325,6 @@ inline Vec3ER::Vec3ER(ER::UninitializedLabel) : elt {ER::UninitializedLabel(), E
 }
 #endif
 
-
+}//namespace vegafem
 
 #endif

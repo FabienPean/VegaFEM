@@ -37,6 +37,9 @@
 #include <cassert>
 #include <cstring>
 #include <algorithm>
+
+namespace vegafem
+{
 using namespace std;
 
 
@@ -292,3 +295,5 @@ bool IterationProfiler::saveHistory(const std::string & filename) const
   int ret = WriteMatrixToDisk(filename.c_str(), m, n, &matrix[0]);
   return ret == 0;
 }
+
+}//namespace vegafem

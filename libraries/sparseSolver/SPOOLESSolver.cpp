@@ -41,6 +41,9 @@ extern "C" {
   #include "LinSol/Bridge.h"
 }
 
+namespace vegafem
+{
+
 SPOOLESSolver::SPOOLESSolver(const SparseMatrix * A, int verbose)
 {
   n = A->Getn();
@@ -168,9 +171,10 @@ int SPOOLESSolver::SolveLinearSystem(double * x, const double * rhs)
 
   return 0;
 }
-
+}//namespace vegafem
 #else
-
+namespace vegafem
+{
 // SPOOLES Solver is not available
 
 SPOOLESSolver::SPOOLESSolver(const SparseMatrix * A, int verbose)
@@ -193,6 +197,5 @@ int SPOOLESSolver::SolveLinearSystem(double * x, const double * rhs)
   DisabledSolverError();
   return 1;
 }
-
+}//namespace vegafem
 #endif
-

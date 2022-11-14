@@ -61,6 +61,9 @@
 #include <vector>
 #include "matrixMacros.h"
 
+namespace vegafem
+{
+
 // === matrix input/output routines ===
 
 // function ending with "_" will abort if fails to read/write
@@ -177,5 +180,9 @@ int ReadVectorFromDisk(const char * filename, int & m, std::vector<real> & vec)
   return ret;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

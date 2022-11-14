@@ -36,6 +36,9 @@
 #include "isotropicMaterialWithCompressionResistance.h"
 #include "tetMesh.h"
 
+namespace vegafem
+{
+
 /*
   The implemented compressible Mooney-Rivlin material has the following energy function:
 
@@ -75,5 +78,9 @@ protected:
   virtual double GetCompressionResistanceFactor(int elementIndex);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -42,6 +42,7 @@
 
 #include "macros.h"
 #include "initGraphics.h"
+using namespace vegafem;
 
 extern void displayFunction(void);
 extern void idleFunction(void);

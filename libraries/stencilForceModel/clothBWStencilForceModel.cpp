@@ -34,6 +34,9 @@
 #include <iostream>
 #include <cstdlib>
 
+namespace vegafem
+{
+
 ClothBWStencilForceModel::ClothBWStencilForceModel(ClothBW * clothBW_): clothBW(clothBW_)
 { 
   numStencilsInDifferentTypes.push_back(clothBW->GetNumTriangles());
@@ -80,3 +83,5 @@ void ClothBWStencilForceModel::GetVertexGravityForce(int vid, double gravity[3])
   clothBW->ComputeVertexGravity(vid, gravity);
 }
 
+
+}//namespace vegafem

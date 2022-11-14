@@ -32,6 +32,9 @@
 
 #include "quaternion.h"
 
+namespace vegafem
+{
+
 /*
   See David Baraff's SIGGRAPH course notes for the description of the method below:
   "An Introduction to Physically Based Modeling:
@@ -112,3 +115,5 @@ Quaternion<real> Quaternion<real>::Matrix2Quaternion(const real R[9])
 template Quaternion<double> Quaternion<double>::Matrix2Quaternion(const double R[9]);
 template Quaternion<float> Quaternion<float>::Matrix2Quaternion(const float R[9]);
 
+
+}//namespace vegafem

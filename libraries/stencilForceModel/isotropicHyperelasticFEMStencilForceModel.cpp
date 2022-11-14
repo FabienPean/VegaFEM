@@ -33,6 +33,9 @@
 #include "isotropicHyperelasticFEMStencilForceModel.h"
 #include <cassert>
 
+namespace vegafem
+{
+
 using namespace std;
 
 IsotropicHyperelasticFEMStencilForceModel::IsotropicHyperelasticFEMStencilForceModel(IsotropicHyperelasticFEM * isotropicHyperelasticFEM_): isotropicHyperelasticFEM(isotropicHyperelasticFEM_)
@@ -58,3 +61,5 @@ const int *IsotropicHyperelasticFEMStencilForceModel::GetStencilVertexIndices(in
   return isotropicHyperelasticFEM->GetTetMesh()->getVertexIndices(stencilId);
 }
 
+
+}//namespace vegafem

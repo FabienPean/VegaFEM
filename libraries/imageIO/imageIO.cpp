@@ -77,6 +77,8 @@ extern "C"
 #define IMAGE_IO_HORIZONTAL_DIFFERENCING 2
 #define IMAGE_IO_UNCOMPRESSED_RGB 2
 
+namespace vegafem
+{
 ImageIO::ImageIO()
 {
   width = 0;
@@ -1043,3 +1045,5 @@ void ImageIO::flipVertically()
   free(rowBuffer);
 }
 
+
+}//namespace vegafem

@@ -32,6 +32,9 @@
 
 #include "corotationalLinearFEMForceModel.h"
 
+namespace vegafem
+{
+
 CorotationalLinearFEMForceModel::CorotationalLinearFEMForceModel(CorotationalLinearFEM * corotationalLinearFEM_, int warp_): corotationalLinearFEM(corotationalLinearFEM_), warp(warp_)
 {
   r = 3 * corotationalLinearFEM->GetVolumetricMesh()->getNumVertices();
@@ -66,3 +69,5 @@ void CorotationalLinearFEMForceModel::GetForceAndMatrix(const double * u, double
   corotationalLinearFEM->ComputeEnergyAndForceAndStiffnessMatrix(u, NULL, internalForces, tangentStiffnessMatrix, warp);
 }
 
+
+}//namespace vegafem

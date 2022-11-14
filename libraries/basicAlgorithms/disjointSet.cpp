@@ -35,6 +35,9 @@
 #include <iostream>
 #include <cassert>
 #include "disjointSet.h"
+
+namespace vegafem
+{
 using namespace::std;
 
 void DisjointSet::makeSet(void)
@@ -181,3 +184,5 @@ vector<vector<int>> DisjointSetDynamic::getAllSets() const
 
   return ret;
 }
+
+}//namespace vegafem

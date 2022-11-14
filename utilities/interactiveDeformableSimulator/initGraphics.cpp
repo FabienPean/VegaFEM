@@ -35,6 +35,7 @@
 #include "initGraphics.h"
 
 #include <cmath>
+using namespace vegafem;
 
 #ifndef M_PI
   #define M_PI 3.141592653589793238462643

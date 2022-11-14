@@ -36,6 +36,9 @@
   Carnegie Mellon University, 2003-2007
 */
 #include "triangle.h"
+
+namespace vegafem
+{
 #ifdef __VERSION_WITH_BARYCENTRIC_COORDS_JNB_CMU__
 double TriangleWithCollisionInfo::distanceToPoint2(const Vec3d & point, int * closestFeature, double * alpha, double * beta, double * gamma) const
 #else
@@ -291,3 +294,5 @@ double TriangleWithCollisionInfo::distanceToPoint2(const Vec3d & point, int * cl
   }
 
 }
+
+}//namespace vegafem

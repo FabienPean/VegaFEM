@@ -42,6 +42,9 @@
 #include <cstdio>
 #include <cmath>
 
+namespace vegafem
+{
+
 /*
   Computes the nullspace of the tangent stiffness matrix at the specified deformation. At the origin (u=0), stiffness matrix has nullspace of dimension 6, elsewhere, it has nullspace of dimension 3.
 
@@ -60,5 +63,9 @@ public:
 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

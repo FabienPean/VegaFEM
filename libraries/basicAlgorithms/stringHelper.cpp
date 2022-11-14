@@ -34,6 +34,9 @@
 #include <string>
 #include <algorithm>
 #include <cstring>
+
+namespace vegafem
+{
 using namespace std;
 
 bool endWith(const string & str, const string & substr)
@@ -127,3 +130,5 @@ void upperCase(string & s)
   for(size_t i = 0, num = s.size(); i < num; i++)
     s[i] = toupper(s[i]);
 }
+
+}//namespace vegafem

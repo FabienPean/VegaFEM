@@ -38,6 +38,9 @@
   #include "mkl_spblas.h"
 #endif
 
+namespace vegafem
+{
+
 ReducedMassSpringSystemForceModelWithHessian::ReducedMassSpringSystemForceModelWithHessian(MassSpringSystem * massSpringSystem, ModalMatrix * modalMatrix): ReducedMassSpringSystemForceModel(massSpringSystem, modalMatrix), ReducedForceModelWithHessian()
 {
   bufferTangentMatrix = (double*) malloc (sizeof(double) * r * r);
@@ -120,3 +123,4 @@ void ReducedMassSpringSystemForceModelWithHessian::GetStiffnessMatrixCorrection(
     dK[j] *= -1;
 }
 
+}//namespace vegafem

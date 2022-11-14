@@ -72,6 +72,7 @@
 #include "cameraLighting.h"
 #include "inputDevice.h"
 #include "cameraChangeLoad.h"
+using namespace vegafem;
 
 #include <cstdlib>
 #include <iostream>

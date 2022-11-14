@@ -36,6 +36,9 @@
 #include "isotropicMaterialWithCompressionResistance.h"
 #include "tetMesh.h"
 
+namespace vegafem
+{
+
 /*
    Homogeneous StVK material. Material properties are constant throughout the mesh.
  
@@ -67,5 +70,9 @@ protected:
   virtual double GetCompressionResistanceFactor(int elementIndex);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

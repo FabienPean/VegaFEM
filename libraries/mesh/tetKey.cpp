@@ -48,6 +48,9 @@
 
 #include "tetKey.h"
 
+namespace vegafem
+{
+
 const int OTetKey::tetFaceIndex[4][3] =  { { 1, 2, 3 }, { 0, 3, 2 }, { 0, 1, 3 }, { 0, 2, 1 } };
 
 const int OTetKey::tetEdgeIndex[6][2] =
@@ -86,3 +89,5 @@ void OTetKey::permute(int v0, int v1, int v2, int v3, int & r0, int & r1, int & 
       OTriKey::permute(v0, v2, v1, r1, r2, r3);
 }
 
+
+}//namespace vegafem

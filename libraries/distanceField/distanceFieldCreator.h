@@ -44,6 +44,9 @@
 #include "closestPointField.h"
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 class DistanceFieldCreator
 {
 public:
@@ -88,5 +91,9 @@ protected:
   void setBoundingBox(DistanceFieldBase* field, int resolutionX, int resolutionY, int resolutionZ);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

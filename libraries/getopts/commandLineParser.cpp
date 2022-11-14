@@ -37,6 +37,9 @@
 #include <cstring>
 #include <cerrno>
 #include <cstdio>
+
+namespace vegafem
+{
 using namespace std;
 
 CommandLineParser::CommandLineParser() {}
@@ -215,3 +218,5 @@ int CommandLineParser::parse(int argc, const char ** argv, int numSkipArg)
 }
 
 CommandLineParser::Entry::Entry(const std::string & n, Type t, void * v) : name(n), type(t), value(v) {}
+
+}//namespace vegafem

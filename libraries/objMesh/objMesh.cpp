@@ -54,6 +54,8 @@
 #include "macros.h"
 #include "disjointSet.h"
 #include "objMesh.h"
+
+
 using namespace std;
 
 // for faster parallel loading of multimesh binary files, enable the -DUSE_TBB macro line in the Makefile-header file (see also documentation)
@@ -103,6 +105,8 @@ void removeByIndices(InputVector & inputVector, const IndexRange & indices)
 
 } // end anonymous namespace
 
+namespace vegafem
+{
 ObjMesh::ObjMesh(const std::string & filename_, fileFormatType fileFormat, int verbose) : filename(filename_)
 {
   switch (fileFormat)
@@ -4956,3 +4960,5 @@ void ObjMesh::removeAllTextureCoordinates()
       f.getVertex(i).removeTextureCoordinateIndex();
   });
 }
+
+}//namespace vegafem

@@ -37,6 +37,9 @@
 #include <algorithm>
 #include "matrixIO.h"
 #include "graph.h"
+
+namespace vegafem
+{
 using namespace std;
 
 Graph::Graph() 
@@ -612,3 +615,5 @@ void Graph::GetConnectedComponent(int vtx, std::set<int> &connectedVertices) con
 
   connectedVertices = visited;
 }
+
+}//namespace vegafem

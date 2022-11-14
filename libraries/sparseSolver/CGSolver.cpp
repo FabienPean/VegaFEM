@@ -35,6 +35,9 @@
 #include <cstdio>
 #include "CGSolver.h"
 
+namespace vegafem
+{
+
 CGSolver::CGSolver(SparseMatrix * A_): A(A_) 
 {
   numRows = A->GetNumRows();
@@ -285,3 +288,5 @@ double CGSolver::ComputeTriDotProduct(double * x, double * y, double * z)
   return result;
 }
 
+
+}//namespace vegafem

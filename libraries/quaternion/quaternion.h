@@ -54,6 +54,9 @@
 #include <cstdio>
 #include <cmath>
 
+namespace vegafem
+{
+
 // forward declarations for the friend template
 template <typename real> class Quaternion;
 template <typename real> Quaternion<real> operator* (real alpha, Quaternion<real> q2);
@@ -397,5 +400,9 @@ inline void Quaternion<real>::Print() const
   printf("%f + %fi + %fj + %fk\n",s,x,y,z);
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

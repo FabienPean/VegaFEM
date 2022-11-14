@@ -39,6 +39,9 @@
 
 #include "vec3d.h"
 
+namespace vegafem
+{
+
 class Mat3d {
 public:
   
@@ -516,5 +519,9 @@ inline bool Mat3d::hasNaN() const
   return elt[0].hasNaN() || elt[1].hasNaN() || elt[2].hasNaN();
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

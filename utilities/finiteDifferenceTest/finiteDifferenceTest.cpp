@@ -81,6 +81,8 @@
 #include <numeric>
 
 using namespace std;
+using namespace vegafem;
+
 
 #define ADD_CONFIG(v) config.addOptionOptional(#v, &v, v)
 

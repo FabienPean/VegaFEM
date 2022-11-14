@@ -34,6 +34,9 @@
 #include "volumetricMeshParser.h"
 #include "geometryQuery.h"
 
+namespace vegafem
+{
+
 const VolumetricMesh::elementType TetMesh::elementType_ = TET;
 
 TetMesh::TetMesh(const char * filename, fileFormatType fileFormat, int verbose) : VolumetricMesh(filename, fileFormat, 4, &temp, verbose)
@@ -337,7 +340,7 @@ void TetMesh::computeBarycentricWeights(int el, const Vec3d & pos, double * weig
 
 double TetMesh::getTetDeterminant(const Vec3d & a, const Vec3d & b, const Vec3d & c, const Vec3d & d)
 {
-  return ::getTetDeterminant(a, b, c, d);
+  return getTetDeterminant(a, b, c, d);
 }
 
 void TetMesh::interpolateGradient(int element, const double * U, int numFields, Vec3d pos, double * grad) const
@@ -448,3 +451,5 @@ void TetMesh::orient()
   }
 }
 
+
+}//namespace vegafem

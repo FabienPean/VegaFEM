@@ -36,6 +36,9 @@
 
 #include "objMeshGPUDeformer.h"
 
+namespace vegafem
+{
+
 class ObjMeshGPUDeformer_coarseToFine : public ObjMeshGPUDeformer
 {
 public:
@@ -89,6 +92,8 @@ protected:
 
   int internalFormat;
 };
+
+}//namespace vegafem
 
 #endif
 

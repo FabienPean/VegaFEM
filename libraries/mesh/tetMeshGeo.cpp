@@ -39,6 +39,9 @@
 #include <cassert>
 #include <iostream>
 #include <string>
+
+namespace vegafem
+{
 using namespace std;
 
 TetMeshRef::TetMeshRef(int numVertices, const double * vertices, int numTets, const int * t) :
@@ -131,8 +134,8 @@ bool TetMeshRef::save(const std::string & filename) const
 TetMeshGeo::TetMeshGeo(int numVertices, const double * vertices, int numTets, const int * t) :
     positions_(numVertices), tets_(numTets)
 {
-  memcpy(&positions_[0][0], vertices, sizeof(double) * numVertices * 3);
-  memcpy(&tets_[0][0], t, sizeof(int) * numTets * 4);
+  std::memcpy(&positions_[0][0], vertices, sizeof(double) * numVertices * 3);
+  std::memcpy(&tets_[0][0], t, sizeof(int) * numTets * 4);
 }
 
 TetMeshGeo::TetMeshGeo(std::vector<Vec3d> vertices, std::vector<Vec4i> tets) :
@@ -142,7 +145,7 @@ TetMeshGeo::TetMeshGeo(std::vector<Vec3d> vertices, std::vector<Vec4i> tets) :
 TetMeshGeo::TetMeshGeo(int numVertices, const Vec3d * vertices, std::vector<Vec4i> tets) : 
     positions_(numVertices), tets_(move(tets))
 {
-  memcpy(&positions_[0][0], vertices, sizeof(double) * numVertices * 3);
+  std::memcpy(&positions_[0][0], vertices, sizeof(double) * numVertices * 3);
 }
 
 
@@ -296,3 +299,5 @@ double TetMeshRef::computeSquaredDistanceToTet(int tetID, const Vec3d & queryPos
 {
   return getSquaredDistanceToTet(queryPos, pos(tetID, 0), pos(tetID, 1), pos(tetID, 2), pos(tetID, 3));
 }
+
+}//namespace vegafem

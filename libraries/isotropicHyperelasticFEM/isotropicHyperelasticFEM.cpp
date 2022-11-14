@@ -34,6 +34,9 @@
 #include "matrixIO.h"
 #include "mat3d.h"
 
+namespace vegafem
+{
+
 #define SVD_singularValue_eps 1e-8
 
 IsotropicHyperelasticFEM::IsotropicHyperelasticFEM(TetMesh * tetMesh_, IsotropicMaterial * isotropicMaterial_, double inversionThreshold_, bool addGravity_, double g_) :
@@ -1253,3 +1256,5 @@ void IsotropicHyperelasticFEM::ComputeDampingForces(double dampingPsi, double da
 
 #undef modifiedSVD_singularValue_eps
 
+
+}//namespace vegafem

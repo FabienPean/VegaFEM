@@ -37,6 +37,9 @@
 #include "ZTAZMultiplicator.h"
 #include "performanceCounter.h"
 
+namespace vegafem
+{
+
 ZTAZMultiplicator::ZTAZMultiplicator(SparseMatrix * A_, SparseMatrix * P_, Matrix<double> * invCp_, Matrix<double> * Cn_): A(A_), P(P_), invCp(invCp_), Cn(Cn_)
 {
   buffer1 = (double*) malloc (sizeof(double) * A->Getn());
@@ -81,3 +84,5 @@ void ZTAZMultiplicator::Multiply(const double * x, double * output)
     output[i] += buffer2[i+c];
 }
 
+
+}//namespace vegafem

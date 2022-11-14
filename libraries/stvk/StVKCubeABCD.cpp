@@ -33,6 +33,9 @@
 #include "StVKCubeABCD.h"
 #include "cubicMeshIntegrals.cpp"
 
+namespace vegafem
+{
+
 StVKCubeABCD::StVKCubeABCD(double cubeSize)
 {
   double * rawIntegrals = cubicMeshIntegrals;
@@ -78,3 +81,5 @@ StVKCubeABCD::StVKCubeABCD(double cubeSize)
         }
 }
 
+
+}//namespace vegafem

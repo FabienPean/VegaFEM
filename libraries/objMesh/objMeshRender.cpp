@@ -42,6 +42,9 @@
 #include "objMeshRender.h"
 #include "openGLHelper.h"
 #include "imageIO.h"
+
+namespace vegafem
+{
 using namespace std;
 
 // this file (in the imageIO library) defines what image file formats are supported
@@ -911,3 +914,5 @@ bool ObjMeshRender::isFaceHidden(int groupID, int faceID) const
   if (it == hiddenFaces.end()) return false;
   return it->second.find(faceID) != it->second.end();
 }
+
+}//namespace vegafem

@@ -41,6 +41,8 @@
 
 #include "lapack-headers.h"
 
+namespace vegafem
+{
 void DoTresholding_Epsilon(double * singularValues, int numberOfSingularValues, int * r, double epsilon)
 {
   // r = number of retained components
@@ -247,3 +249,5 @@ int MatrixPCA(ThresholdingSpecification * thresholdingSpecification,
   return 0;
 }
 
+
+}//namespace vegafem

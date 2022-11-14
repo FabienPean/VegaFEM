@@ -33,6 +33,9 @@
 #include "massSpringStencilForceModel.h"
 #include <cassert>
 
+namespace vegafem
+{
+
 using namespace std;
 
 MassSpringStencilForceModel::MassSpringStencilForceModel(MassSpringSystem *system) : massSpringSystem(system)
@@ -56,3 +59,5 @@ const int * MassSpringStencilForceModel::GetStencilVertexIndices(int stencilType
 
   return massSpringSystem->GetEdges() + stencilId * 2;
 }
+
+}//namespace vegafem

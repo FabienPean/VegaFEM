@@ -34,6 +34,9 @@
 #include "StVKReducedHessianTensor.h"
 #include "lapack-headers.h"
 
+namespace vegafem
+{
+
 StVKReducedHessianTensor::StVKReducedHessianTensor(StVKReducedStiffnessMatrix * stVKReducedStiffnessMatrix) : shallowCopy(0)
 {
   r = stVKReducedStiffnessMatrix->Getr();
@@ -540,3 +543,5 @@ StVKReducedHessianTensor * StVKReducedHessianTensor::ShallowClone()
   return output;
 }
 
+
+}//namespace vegafem

@@ -40,6 +40,9 @@
 #include "ZTAZMultiplicator.h"
 #include "CGSolver.h"
 #include "PardisoSolver.h"
+
+namespace vegafem
+{
 /*
   Given a vector rhs, compute (Z^T A Z)^{-1} rhs
   Z = P [ -C_p^{-1} C_n  ]
@@ -65,5 +68,9 @@ protected:
 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

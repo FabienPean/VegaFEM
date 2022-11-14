@@ -36,6 +36,9 @@
 
 #include "objMeshGPUDeformer_uUq.h"
 
+namespace vegafem
+{
+
 class ObjMeshGPUDeformer_uUq_fbo : public ObjMeshGPUDeformer_uUq
 {
 public:
@@ -59,5 +62,9 @@ protected:
   int InitExtensions();     
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

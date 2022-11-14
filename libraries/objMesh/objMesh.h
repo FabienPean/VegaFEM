@@ -47,6 +47,9 @@
 #include <functional>
 #include "minivector.h"
 
+namespace vegafem
+{
+
 /*
    This class stores a 3D surface mesh, loaded from an .obj file.
    It makes it possible to access the mesh geometric primitives and perform
@@ -700,5 +703,9 @@ inline void ObjMesh::forEachFace(std::function<void(int gID, int fID, const ObjM
       f(i, j, face);
     }
 }
+
+}//namespace vegafem
+
 #endif
+
 

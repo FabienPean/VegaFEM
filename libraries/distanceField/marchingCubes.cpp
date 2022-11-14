@@ -62,6 +62,8 @@ using namespace std;
   #include "range.h"
 #endif
 
+namespace vegafem
+{
 static const unsigned char edge_vertices[12][2] =
 {
   { 0, 1 },
@@ -184,10 +186,12 @@ static const unsigned char edge_vertex[3][14] =
   { 1, 2, 0, 3, 4, 7, 5, 6, 1, 2, 0, 3, 4, 7 },  // Y direction
   { 0, 4, 3, 7, 2, 6, 1, 5, 0, 4, 3, 7, 2, 6 }   // Z direction
 };
-
+}//namespace vegafem
 #ifdef USE_STATIC_TABLE
   #include "marchingCubesTable.h"
 #else
+namespace vegafem
+{
   static char cubeSymmetryEdges[25][13]; // determined algorithmically from cubeSymmetryVertices
 
   static char cubeSymmetryFaces[24][6]; // determined algorithmically from cubeSymmetryVertices
@@ -288,8 +292,10 @@ static const unsigned char edge_vertex[3][14] =
 
   // Whether the look up tables have been loaded. Only need to be loaded once. 
   static bool tableLoaded = false;
+}//namespace vegafem
 #endif
-
+namespace vegafem
+{
 MarchingCubes::MarchingCubes(const DistanceFieldBase * field, float iv) : distanceFieldBase(field), isoValue(iv)
 {
   resolutionX = distanceFieldBase->getResolutionX();
@@ -1364,3 +1370,5 @@ ObjMesh * MarchingCubes::compute(const DistanceFieldBase * distanceFieldBase, fl
     //exit(0);
   }
 #endif
+
+}//namespace vegafem

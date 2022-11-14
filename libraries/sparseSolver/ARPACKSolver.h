@@ -47,6 +47,9 @@
 
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 class ARPACKSolver
 {
 public:
@@ -85,5 +88,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

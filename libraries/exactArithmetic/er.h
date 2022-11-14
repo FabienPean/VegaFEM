@@ -45,6 +45,8 @@
 #ifdef VEGA_USE_CGAL_HEADER
 #include <CGAL/Exact_predicates_exact_constructions_kernel.h>
 
+namespace vegafem
+{
 
 #ifdef VEGA_ER_INHERIT_FROM_CGAL
 
@@ -185,5 +187,5 @@ template <class CGAL_Kernel_RT>
 ER assignCGALToER(const CGAL_Kernel_RT & cgal);
 
 #endif
-
+}//namespace vegafem
 #endif

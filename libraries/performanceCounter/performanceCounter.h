@@ -62,6 +62,9 @@ Version: 1.0
 #include <cstdlib>
 #include <sys/time.h>
 
+namespace vegafem
+{
+
 class PerformanceCounter
 {
 public:
@@ -107,7 +110,11 @@ inline double PerformanceCounter::GetElapsedTime()
   return elapsedTime;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 
 #if defined(_WIN32) || defined(WIN32)
 
@@ -115,6 +122,8 @@ inline double PerformanceCounter::GetElapsedTime()
 
 #include <windows.h>
 
+namespace vegafem
+{
 class PerformanceCounter
 {
 public:
@@ -153,7 +162,7 @@ inline double PerformanceCounter::GetElapsedTime()
   return ((double)(stopCount.QuadPart - startCount.QuadPart))
     / ((double)timerFrequency.QuadPart);
 }
-
+}//namespace vegafem
 #endif
 #endif
 

@@ -45,6 +45,8 @@
 #include "objMeshRender.h"
 #include "minivector.h"
 
+namespace vegafem
+{
 class SceneObject
 {
 public:
@@ -186,4 +188,8 @@ protected:
   bool hasTextures_;
 };
 
+
+}//namespace vegafem
+
 #endif
+

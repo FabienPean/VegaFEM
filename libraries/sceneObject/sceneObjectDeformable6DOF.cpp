@@ -37,6 +37,9 @@
 #include <cfloat>
 #include "sceneObjectDeformable6DOF.h"
 
+namespace vegafem
+{
+
 SceneObjectDeformable6DOF::SceneObjectDeformable6DOF(const char * filenameOBJ): SceneObjectWithRestPosition(filenameOBJ), SceneObjectDeformable(filenameOBJ), SceneObject6DOF(filenameOBJ)
 {
 }
@@ -77,3 +80,5 @@ int SceneObjectDeformable6DOF::GetClosestVertex(Vec3d & queryPos, double * dista
   return SceneObjectDeformable::GetClosestVertex(localQueryPos, distance, auxVertexBuffer);
 }
 
+
+}//namespace vegafem

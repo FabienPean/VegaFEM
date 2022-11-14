@@ -32,6 +32,9 @@
 
 #include "triangleTetIntersection.h"
 
+namespace vegafem
+{
+
 bool TriangleTetIntersection::tetrahedronIntersectTriangle(const Vec3d & v1, const Vec3d & v2, const Vec3d & v3, const Vec3d & v4, const Vec3d & t1, const Vec3d & t2, const Vec3d & t3)
 {
   Tetrahedron tet(v1, v2, v3, v4);
@@ -144,3 +147,5 @@ bool TriangleTetIntersection::Triangle::intersect(const Vec3d & l0, const Vec3d 
   return contains(l0 * (1 - t) + l1 * t);
 }
 
+
+}//namespace vegafem

@@ -47,6 +47,8 @@ using namespace std;
   #define M_PI 3.1415926525897932384
 #endif
 
+namespace vegafem
+{
 DelaunayMesher::DelaunayBallCompare TetMesher::TetMeshWithRefineInfo::defaultComparor;
 
 TetMesher::TetMesher() : resultTetMesh(delaunay)
@@ -1359,3 +1361,5 @@ int TetMesher::flipSurface()
   //objMesh->addGroup(group);
   //objMesh->save("flipped.obj");
 }
+
+}//namespace vegafem

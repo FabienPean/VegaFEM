@@ -35,6 +35,9 @@
 
 #include "triMeshGeo.h"
 #include "vec3ER.h"
+
+namespace vegafem
+{
 namespace iglInterface
 {
 
@@ -61,4 +64,8 @@ SelfCutMeshData remeshSelfIntersection(TriMeshRef mesh, bool stitch = true, bool
 
 }
 
+
+}//namespace vegafem
+
 #endif
+

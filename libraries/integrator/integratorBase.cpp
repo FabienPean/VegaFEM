@@ -37,6 +37,9 @@
 #include <cstring>
 #include <cfloat>
 
+namespace vegafem
+{
+
 IntegratorBase::IntegratorBase(int r, double timestep, double dampingMassCoef, double dampingStiffnessCoef)
 {
   this->r = r;
@@ -154,3 +157,5 @@ void IntegratorBase::ConstrainToSphere(double R2)
   }
 }
 
+
+}//namespace vegafem

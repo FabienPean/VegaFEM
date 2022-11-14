@@ -32,6 +32,9 @@
 
 #include "generateInterpolationMatrix.h"
 
+namespace vegafem
+{
+
 void GenerateInterpolationMatrix::generate(int numTargetLocations, int numElementVertices, const int * vertices, const double * weights, SparseMatrix ** A, int numSourceVertices)
 {
   SparseMatrixOutline outline(3*numTargetLocations);
@@ -52,3 +55,5 @@ void GenerateInterpolationMatrix::generate(int numTargetLocations, int numElemen
   *A = new SparseMatrix(&outline);
 }
 
+
+}//namespace vegafem

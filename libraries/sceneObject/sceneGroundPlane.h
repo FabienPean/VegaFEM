@@ -36,6 +36,9 @@
 #include <cstddef>
 #include "sceneObject.h"
 
+namespace vegafem
+{
+
 // render ground plane and shadow for SceneObject
 
 class SceneGroundPlane
@@ -71,4 +74,8 @@ protected:
 
 
 
+
+}//namespace vegafem
+
 #endif
+

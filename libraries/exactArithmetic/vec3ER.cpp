@@ -32,6 +32,9 @@
 
 #include "vec3ER.h"
 
+namespace vegafem
+{
+
 #include <CGAL/Exact_predicates_exact_constructions_kernel.h>
 #include <CGAL/intersections.h>
 
@@ -134,3 +137,5 @@ bool intersectTriAABB(const Vec3ER & ta, const Vec3ER tb, const Vec3ER tc, const
   return false;
 }
 
+
+}//namespace vegafem

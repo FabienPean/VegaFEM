@@ -36,6 +36,9 @@
 #include "lapack-headers.h"
 #include "matrixMacros.h"
 
+namespace vegafem
+{
+
 ReducedForceModelWithHessian::ReducedForceModelWithHessian()
 {
   hessianBuffer = (double*) malloc (sizeof(double) * r * r * (r+1) / 2);
@@ -129,3 +132,5 @@ void ReducedForceModelWithHessian::TestHessian(int numTests, double qAmplitude)
   free(q);
 }
 
+
+}//namespace vegafem

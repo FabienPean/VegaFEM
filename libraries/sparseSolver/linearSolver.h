@@ -43,6 +43,9 @@
 #include <cstdio>
 #include <cstdlib>
 
+namespace vegafem
+{
+
 class LinearSolver
 {
 public:
@@ -55,5 +58,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

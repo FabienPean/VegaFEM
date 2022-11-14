@@ -69,6 +69,8 @@
   #include "matrixExp.h"
 #endif
 
+namespace vegafem
+{
 template<class real>
 class Matrix
 {
@@ -317,6 +319,8 @@ inline const Matrix<real> MExp(real t, const Matrix<real> & mtx, int * code)
     return Matrix<real>();
   #endif
 }
+
+}//namespace vegafem
 
 #endif
 

@@ -3,6 +3,9 @@
 #include "polarDecomposition.h"
 #include "mat3d.h"
 
+namespace vegafem
+{
+
 /*
   See polarDecomposition.h for license information.
 */
@@ -133,3 +136,5 @@ double PolarDecomposition::Compute(const double * M, double * Q, double * S, dou
   return det;
 }
 
+
+}//namespace vegafem

@@ -32,6 +32,9 @@
 #include "mat3d.h"
 #include "eig3.h"
 
+namespace vegafem
+{
+
 const Mat3d Mat3d::Identity(1.0);
 const Mat3d Mat3d::Zero(0.0);
 
@@ -275,3 +278,5 @@ bool eigen_sym_NR(Mat3d & M, Vec3d & eig_val, Vec3d eig_vec[3], int maxIteration
   return false;
 }
 
+
+}//namespace vegafem

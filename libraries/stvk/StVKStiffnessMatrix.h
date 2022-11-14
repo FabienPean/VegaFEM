@@ -43,6 +43,9 @@
 #include "sparseMatrix.h"
 #include "StVKInternalForces.h"
 
+namespace vegafem
+{
+
 class StVKStiffnessMatrix
 {
 public:
@@ -103,5 +106,9 @@ inline void StVKStiffnessMatrix::AddMatrix3x3Block(int c, int a, int element, Ma
       sparseMatrix->AddEntry(3*row[c]+k, 3*column[numElementVertices*c+a]+l, matrix[k][l]);
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

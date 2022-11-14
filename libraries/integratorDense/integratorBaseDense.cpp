@@ -40,6 +40,9 @@
 #include "integratorBaseDense.h"
 #include "IPIVC.h"
 
+namespace vegafem
+{
+
 IntegratorBaseDense::IntegratorBaseDense(int r, double timestep, double * massMatrix, ReducedForceModel * reducedForceModel, double dampingMassCoef, double dampingStiffnessCoef) : IntegratorBase(r, timestep, dampingMassCoef, dampingStiffnessCoef), useStaticSolver(0), usePlasticDeformations(0), plasticThreshold2(DBL_MAX), plasticfq(NULL), totalfq(NULL)
 {
   r2 = r * r;
@@ -284,3 +287,5 @@ void IntegratorBaseDense::SetTotalForces(double * totalfq_)
   memcpy(totalfq, totalfq_, sizeof(double) * r);
 }
 
+
+}//namespace vegafem

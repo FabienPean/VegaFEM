@@ -36,6 +36,9 @@
 #include <cstring>
 #include "invMKSolver.h"
 
+namespace vegafem
+{
+
 InvMKSolver::InvMKSolver(LinearSolver * invMSolver, SparseMatrix * K)
 {
   this->invMSolver = invMSolver;
@@ -55,3 +58,5 @@ void InvMKSolver::ComputeInvMK(double * x, double * output)
   memcpy(x, buffer, sizeof(double) * K->Getn());
   invMSolver->SolveLinearSystem(output, buffer);
 }
+
+}//namespace vegafem

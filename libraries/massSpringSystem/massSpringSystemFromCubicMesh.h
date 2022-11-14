@@ -36,6 +36,9 @@
 
 #include "massSpringSystem.h"
 
+namespace vegafem
+{
+
 /*
   This class can generate a mass-spring system from the given cube mesh: 
   each cube mesh vertex becomes a mass point, and each pair of vertices
@@ -52,5 +55,9 @@ public:
   static int GenerateMassSpringSystem(CubicMesh * CubicMesh, MassSpringSystem ** massSpringSystem, double density, double tensileStiffness, double damping, int addGravity=0);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -39,6 +39,9 @@
 #include <set>
 #include "macros.h"
 #include "massSpringSystem.h"
+
+namespace vegafem
+{
 using namespace std;
 
 MassSpringSystem::MassSpringSystem(int numParticles_, double * masses_, double * restPositions_, int numEdges_, int * edges_, int * edgeGroups_, int numMaterialGroups_, double * groupStiffness_, double * groupDamping_, int addGravity_) : addGravity(addGravity_), g(9.81)
@@ -904,3 +907,5 @@ void MassSpringSystem::CreateObjMesh(const char * filename, double * u)
   fclose(fout);
 }
 
+
+}//namespace vegafem

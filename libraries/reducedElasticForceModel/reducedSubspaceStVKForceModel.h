@@ -54,6 +54,9 @@
 #include "modalMatrix.h"
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 class ReducedSubspaceStVKForceModel : public ReducedForceModel
 {
 public:
@@ -84,5 +87,8 @@ protected:
   double * bufferMatrix; 
 };
 
+}//namespace vegafem
+
 #endif
+
 

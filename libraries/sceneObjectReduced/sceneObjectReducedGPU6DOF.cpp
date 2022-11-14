@@ -32,6 +32,9 @@
 
 #include "sceneObjectReducedGPU6DOF.h"
 
+namespace vegafem
+{
+
 SceneObjectReducedGPU6DOF::SceneObjectReducedGPU6DOF(const char * filenameOBJ, ModalMatrix * modalMatrix, int GPUMethod): SceneObjectWithRestPosition(filenameOBJ), SceneObjectReduced(filenameOBJ, modalMatrix), SceneObjectReducedGPU(filenameOBJ, modalMatrix, GPUMethod), SceneObjectReduced6DOF(filenameOBJ, modalMatrix) 
 {
 }
@@ -147,3 +150,5 @@ int SceneObjectReducedGPU6DOF::GetClosestVertex(Vec3d & queryPos, double * dista
   return SceneObjectReducedGPU::GetClosestVertex(localQueryPos, distance, auxVertexBuffer);
 }
 
+
+}//namespace vegafem

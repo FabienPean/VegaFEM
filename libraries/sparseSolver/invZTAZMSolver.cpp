@@ -33,6 +33,9 @@
 
 #include "invZTAZMSolver.h"
 
+namespace vegafem
+{
+
 InvZTAZMSolver::InvZTAZMSolver(SparseMatrix * A, SparseMatrix * M, PardisoSolver * ZTAZPardisoSolver, SparseMatrix * P, Matrix<double> * invCp, Matrix<double> * Cn)
 {
   zTMZMultiplicator = new ZTAZMultiplicator(M, P, invCp, Cn);
@@ -60,3 +63,5 @@ void InvZTAZMSolver::ComputeInvZTAZM(double * x, double * output)
   invZTAZSolver->ComputeInvZTAZ(output, buffer);
 }
 
+
+}//namespace vegafem

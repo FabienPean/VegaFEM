@@ -41,6 +41,9 @@
 #include "implicitNewmarkDenseMulti1D.h"
 #include "IPIVC.h"
 
+namespace vegafem
+{
+
 ImplicitNewmarkDenseMulti1D::ImplicitNewmarkDenseMulti1D(int r_, double timestep_, double * massMatrix_, double * tangentStiffnessMatrix_, double dampingMassCoef_, double dampingStiffnessCoef_, double NewmarkBeta_, double NewmarkGamma_):
   IntegratorBaseDense(r_, timestep_, dampingMassCoef_, dampingStiffnessCoef_),
   IntegratorMulti1D(r_, timestep_, massMatrix_, tangentStiffnessMatrix_, dampingMassCoef_, dampingStiffnessCoef_),
@@ -146,3 +149,5 @@ void ImplicitNewmarkDenseMulti1D::SetDampingStiffnessCoef(double dampingStiffnes
   UpdateCoefs();
 }
 
+
+}//namespace vegafem

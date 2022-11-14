@@ -32,6 +32,9 @@
 
 #include "StVKTetABCD.h"
 
+namespace vegafem
+{
+
 StVKTetABCD::StVKTetABCD(TetMesh * tetMesh)
 {
   int numElements = tetMesh->getNumElements();
@@ -131,3 +134,5 @@ double StVKTetABCD::D(void * elementIterator, int i, int j, int k, int l)
   return cache->elementPointer->volume * cache->dots[i][j] * cache->dots[k][l]; 
 }
 
+
+}//namespace vegafem

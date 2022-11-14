@@ -33,6 +33,9 @@
 #include <cmath>
 #include "isotropicMaterialWithCompressionResistance.h"
 
+namespace vegafem
+{
+
 IsotropicMaterialWithCompressionResistance::IsotropicMaterialWithCompressionResistance(int enableCompressionResistance_) : IsotropicMaterial(), enableCompressionResistance(enableCompressionResistance_)
 {
 }
@@ -89,3 +92,5 @@ double IsotropicMaterialWithCompressionResistance::GetCompressionResistanceFacto
   return 1.0; // generic
 }
 
+
+}//namespace vegafem

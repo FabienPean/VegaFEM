@@ -60,6 +60,9 @@
 #include "minivector.h"
 #include "boundingBox.h"
 
+namespace vegafem
+{
+
 class VolumetricMesh
 {
 public:
@@ -421,5 +424,9 @@ inline int VolumetricMesh::Region::getSetIndex() const { return setIndex; }
 inline void VolumetricMesh::Region::setMaterialIndex(int index) { materialIndex = index; }
 inline void VolumetricMesh::Region::setSetIndex(int index) { setIndex = index; }
 
+
+}//namespace vegafem
+
 #endif
+
 

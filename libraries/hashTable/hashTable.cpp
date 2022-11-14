@@ -34,6 +34,9 @@
 #include <cstdio>
 #include <cmath>
 #include <set>
+
+namespace vegafem
+{
 using namespace std;
 
 template<class Data>
@@ -167,3 +170,5 @@ template class HashTable<set<unsigned int>>;
 template class HashTable<set<int>>;
 template class HashTable<unsigned int>;
 template class HashTable<int>;
+
+}//namespace vegafem

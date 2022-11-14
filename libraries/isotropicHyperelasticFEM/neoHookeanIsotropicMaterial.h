@@ -36,6 +36,9 @@
 #include "tetMesh.h"
 #include "isotropicMaterialWithCompressionResistance.h"
 
+namespace vegafem
+{
+
 /*
    Neo-Hookean material. Material properties are read from the tet mesh, and can be heterogeneous.
 
@@ -64,5 +67,9 @@ protected:
   virtual double GetCompressionResistanceFactor(int elementIndex);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

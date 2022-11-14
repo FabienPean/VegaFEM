@@ -32,6 +32,9 @@
 
 #include "StVKForceModel.h"
 
+namespace vegafem
+{
+
 StVKForceModel::StVKForceModel(StVKInternalForces * stVKInternalForces_, StVKStiffnessMatrix * stVKStiffnessMatrix_): stVKInternalForces(stVKInternalForces_), stVKStiffnessMatrix(stVKStiffnessMatrix_)
 {
   r = 3 * stVKInternalForces->GetVolumetricMesh()->getNumVertices();
@@ -69,3 +72,5 @@ void StVKForceModel::GetTangentStiffnessMatrix(const double * u, SparseMatrix * 
   stVKStiffnessMatrix->ComputeStiffnessMatrix(u, tangentStiffnessMatrix);
 } 
 
+
+}//namespace vegafem

@@ -44,6 +44,9 @@
 #include <map>
 #include <cfloat>
 
+namespace vegafem
+{
+
 class DistanceFieldNarrowBand : public DistanceFieldBase
 {
 public:
@@ -150,5 +153,9 @@ inline void DistanceFieldNarrowBand::setDistance(int i, int j, int k, float valu
     it->second = value;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

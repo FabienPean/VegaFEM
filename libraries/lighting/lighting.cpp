@@ -35,6 +35,9 @@
 #include "lighting.h"
 #include "openGL-headers.h"
 
+namespace vegafem
+{
+
 
 void Lighting::initialize()
 {
@@ -353,3 +356,5 @@ bool Lighting::HasLightDisabled() const
       return true;
   return false; 
 }
+
+}//namespace vegafem

@@ -39,6 +39,9 @@
 #include "matrixLAPACK.h"
 #include "matrixBLAS.h"
 
+namespace vegafem
+{
+
 #ifdef __APPLE__
   #define DGETRF dgetrf_
   #define DGETRI dgetri_
@@ -833,3 +836,5 @@ template void MatrixSVD(int m, int n, double * mtx, double * U, double * Sigma, 
 template void MatrixLUSolve(int n, int nRhs, const float * mtx, float * x, const float * b);
 template void MatrixLUSolve(int n, int nRhs, const double * mtx, double * x, const double * b);
 
+
+}//namespace vegafem

@@ -40,6 +40,9 @@
 #include "minivector.h"
 #include "computeStiffnessMatrixNullspace.h"
 
+namespace vegafem
+{
+
 void ComputeStiffnessMatrixNullspace::ComputeNullspace(int n, const double * vertexPos, double * basis, int includeRotationalNullspace, int generateOrthogonalBasis)
 {
   int basisSize = (includeRotationalNullspace ? 6 : 3);
@@ -122,3 +125,5 @@ void ComputeStiffnessMatrixNullspace::RemoveNullspaceComponent(int n, int nullsp
   }
 }
 
+
+}//namespace vegafem

@@ -41,6 +41,9 @@
 #include <vector>
 #include <set>
 
+namespace vegafem
+{
+
 class ListIO
 {
 public:
@@ -74,5 +77,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

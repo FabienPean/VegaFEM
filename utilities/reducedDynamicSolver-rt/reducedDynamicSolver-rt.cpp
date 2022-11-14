@@ -79,6 +79,7 @@ using namespace std;
 #include <GL/glui.h>
 #include "lighting.h"
 #include "matrixIO.h"
+using namespace vegafem;
 
 char windowTitleBase[4096] = "Reduced StVK Demo";
 void displayFunction(void);

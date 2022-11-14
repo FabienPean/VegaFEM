@@ -46,6 +46,9 @@
 #include "boundingBox.h"
 #include "minivector.h"
 
+namespace vegafem
+{
+
 class ObjMeshOffsetVoxels
 {
 public:
@@ -139,5 +142,9 @@ protected:
   void init(const int resolution[3], int depth, Vec3d bmin, Vec3d bmax);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -46,6 +46,9 @@
 #include <fstream>
 #include <iomanip>
 #include <cstring>
+
+namespace vegafem
+{
 using namespace std;
 
 ObjMeshOffsetVoxels::ObjMeshOffsetVoxels(const ObjMesh * objMesh_, const int resolution_[3], int depth_, Vec3d bmin_, Vec3d bmax_ )
@@ -1444,3 +1447,5 @@ void ObjMeshOffsetVoxels::generateNormalCorrectionMatrix(const string filenameCo
   free(outputMatrix);
   free(voxelModalMatrix);
 }
+
+}//namespace vegafem

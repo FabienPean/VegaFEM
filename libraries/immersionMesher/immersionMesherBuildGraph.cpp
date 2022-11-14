@@ -38,6 +38,9 @@
 #include <cassert>
 #include "immersionMesher.h"
 #include "immersionGraphNode.h"
+
+namespace vegafem
+{
 using namespace std;
 
 // update patch owership and connection of nodeA based on some prior changes, according to several rules
@@ -1065,3 +1068,5 @@ void ImmersionMesher::runNodeSearchMethod(vector<vector<ImmersionGraphNode>> & g
   if (graphs.size() == 0) { cout << "Found no immersion!" << endl; }
   else { cout << "Found " << graphs.size() << " possible immersion graph" << (graphs.size() == 1 ? "" : "s") << "." << endl; }
 }
+
+}//namespace vegafem

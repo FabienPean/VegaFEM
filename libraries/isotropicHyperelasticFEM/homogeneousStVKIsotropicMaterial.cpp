@@ -33,6 +33,9 @@
 #include <cmath>
 #include "homogeneousStVKIsotropicMaterial.h"
 
+namespace vegafem
+{
+
 HomogeneousStVKIsotropicMaterial::HomogeneousStVKIsotropicMaterial(double E_, double nu_, int enableCompressionResistance_, double compressionResistance_) : IsotropicMaterialWithCompressionResistance(enableCompressionResistance_), compressionResistance(compressionResistance_)
 {
   SetYoungModulusAndPoissonRatio(E_, nu_);
@@ -101,3 +104,5 @@ double HomogeneousStVKIsotropicMaterial::GetCompressionResistanceFactor(int elem
   return EdivNuFactor;
 }
 
+
+}//namespace vegafem

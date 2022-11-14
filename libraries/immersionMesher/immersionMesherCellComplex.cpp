@@ -38,6 +38,9 @@
 #include "geometryQuery.h"
 #include <iostream>
 #include <fstream>
+
+namespace vegafem
+{
 using namespace std;
 
 ImmersionMesher::ImmersionMesher()
@@ -911,3 +914,5 @@ void ImmersionMesher::prepareDataForSolve()
   } // end loop on cellID
 }
 
+
+}//namespace vegafem

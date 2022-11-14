@@ -31,6 +31,9 @@
  *************************************************************************/
 
 #include "objMesh.h"
+
+namespace vegafem
+{
 using namespace std;
 
 // create a cylinder without cap, centered at origin and axis at y-direction
@@ -125,3 +128,5 @@ ObjMesh createBoundingBoxObjMesh(Vec3d bmin, Vec3d bmax)
     mesh.addFaceToGroup(ObjMesh::Face(faces[i]), 0);
   return mesh;
 }
+
+}//namespace vegafem

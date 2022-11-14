@@ -36,6 +36,9 @@
 #include <iterator>
 #include <functional>
 
+namespace vegafem
+{
+
 template <class BaseIterator>
 struct FilterIterator
 {
@@ -92,4 +95,8 @@ FilterIterator<BaseIterator> makeFilterIterator(typename FilterIterator<BaseIter
   return { f, base, end };
 }
 
+
+}//namespace vegafem
+
 #endif
+

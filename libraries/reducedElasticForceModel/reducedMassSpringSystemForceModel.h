@@ -47,6 +47,9 @@
 #include "massSpringSystem.h"
 #include "reducedForceModel.h"
 
+namespace vegafem
+{
+
 class ReducedMassSpringSystemForceModel : public virtual ReducedForceModel
 {
 public:
@@ -80,6 +83,8 @@ protected:
     int * csr_pointerE;
   #endif
 };
+
+}//namespace vegafem
 
 #endif
 

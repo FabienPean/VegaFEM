@@ -54,7 +54,8 @@
 #include "vec3i.h"
 #include "edgeKey.h"
 
-
+namespace vegafem
+{
 
 // unoriented triangle key based on vtx indices
 // v[0], v[1] and v[2] will be sorted to ensure v[0] <= v[1] <= v[2]
@@ -424,5 +425,9 @@ inline std::ostream & operator << (std::ostream & s, const OTriKey & v)
 {
   return s << '(' << v[0] << ' ' << v[1] << ' '  << v[2] << ')';
 }
+
+}//namespace vegafem
+
+
 
 #endif

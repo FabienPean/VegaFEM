@@ -41,6 +41,9 @@
 #include "volumetricMeshOrthotropicMaterial.h"
 #include "volumetricMeshMooneyRivlinMaterial.h"
 #include "range.h"
+
+namespace vegafem
+{
 using namespace std;
 
 double VolumetricMesh::density_default = 1000;
@@ -3124,3 +3127,5 @@ void VolumetricMesh::addMaterial(const Material * material, const Set & newSet, 
   } // end if (removeEmptyMaterials)
 }
 
+
+}//namespace vegafem

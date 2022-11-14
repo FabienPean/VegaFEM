@@ -32,6 +32,9 @@
 
 #include "simpleSphere.h"
 
+namespace vegafem
+{
+
 /*
   A sphere
   Author: Jernej Barbic, CMU
@@ -73,3 +76,5 @@ double SimpleSphere::signedDistance(const Vec3d & queryPoint) const
 {
   return len(center_ - queryPoint) - radius_;
 }
+
+}//namespace vegafem

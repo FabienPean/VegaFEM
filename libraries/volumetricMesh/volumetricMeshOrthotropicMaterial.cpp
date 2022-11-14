@@ -32,6 +32,9 @@
 
 #include "volumetricMeshOrthotropicMaterial.h"
 
+namespace vegafem
+{
+
 VolumetricMesh::OrthotropicMaterial::OrthotropicMaterial(std::string name, double density, double E1, double E2, double E3, double nu12, double nu23, double nu31, double G12, double G23, double G31, double * R): VolumetricMesh::Material(name, density), E1_(E1), E2_(E2), E3_(E3), nu12_(nu12), nu23_(nu23), nu31_(nu31), G12_(G12), G23_(G23), G31_(G31)
 {
   memcpy(R_, R, sizeof(double) * 9);
@@ -80,3 +83,5 @@ void VolumetricMesh::OrthotropicMaterial::getR(double * R) const
   memcpy(R, R_, sizeof(double) * 9);
 }
 
+
+}//namespace vegafem

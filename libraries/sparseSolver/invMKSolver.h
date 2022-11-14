@@ -41,6 +41,9 @@
 #include "linearSolver.h"
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 // computes x |--> M^{-1} K x
 class InvMKSolver
 {
@@ -55,4 +58,8 @@ protected:
   SparseMatrix * K;
 };
 
+
+}//namespace vegafem
+
 #endif
+

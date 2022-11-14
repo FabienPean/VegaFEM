@@ -36,6 +36,9 @@
 
 #include "objMeshGPUDeformer_coarseToFine.h"
 
+namespace vegafem
+{
+
 class ObjMeshGPUDeformer_coarseToFine_fbo : public ObjMeshGPUDeformer_coarseToFine
 {
 public:
@@ -59,5 +62,9 @@ protected:
   int InitExtensions();     
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -37,6 +37,9 @@
 #include "containerHelper.h"
 #include <stack>
 #include <cassert>
+
+namespace vegafem
+{
 using namespace std;
 
 static vector<Vec3i> buildBoundary(const vector<Vec3i> & triangles)
@@ -188,3 +191,5 @@ void WindingNumberTree::print() const
   }
 }
 
+
+}//namespace vegafem

@@ -35,6 +35,9 @@
 #define VEGAFEM_MASSSPRINGSYSTEMFROMOBJMESH_H
 
 #include "massSpringSystem.h"
+
+namespace vegafem
+{
 class ObjMesh;
 
 class MassSpringSystemFromObjMesh
@@ -45,5 +48,9 @@ public:
   int GenerateMassSpringSystem(ObjMesh * quadMesh, MassSpringSystem ** massSpringSystem, double surfaceDensity, double tensileStiffness, double shearStiffness, double bendStiffness, double damping, int addGravity=0);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

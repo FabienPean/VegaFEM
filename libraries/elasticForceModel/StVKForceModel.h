@@ -41,6 +41,9 @@
 #include "StVKStiffnessMatrix.h"
 #include "forceModel.h"
 
+namespace vegafem
+{
+
 class StVKForceModel : public ForceModel
 {
 public:
@@ -58,5 +61,9 @@ protected:
   bool ownStiffnessMatrix;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

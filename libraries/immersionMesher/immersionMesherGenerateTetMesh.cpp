@@ -42,6 +42,7 @@
 #include "windingNumberTree.h"
 #include "labelOuterTets.h"
 using namespace std;
+using namespace vegafem;
 
 namespace
 {
@@ -65,7 +66,9 @@ PointInTet getPointInTet(const BarycentricCoordinates & bc, int pointID)
 }
 
 }
-
+    
+namespace vegafem
+{
 void ImmersionMesher::buildCellSurfaceMeshes()
 {
   const auto & cutMesh = selfCutMesh.cutMesh;
@@ -1174,3 +1177,5 @@ void ImmersionMesher::generateImmersedTetMesh(vector<TetMeshGeo> & tetMeshes, ve
   }
 }
 
+
+}//namespace vegafem

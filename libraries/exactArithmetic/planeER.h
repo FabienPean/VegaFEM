@@ -35,6 +35,9 @@
 
 #include "vec3ER.h"
 
+namespace vegafem
+{
+
 struct FastPlaneER
 {
   FastPlaneER(const Vec3ER & v0, const Vec3ER & v1, const Vec3ER & v2);
@@ -45,6 +48,7 @@ struct FastPlaneER
   ER d;
 };
 
-
+}//namespace vegafem
 
 #endif
+

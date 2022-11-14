@@ -36,6 +36,9 @@
 #include "range.h"
 #include <list>
 
+namespace vegafem
+{
+
 template<class T>
 class UniqueRecentQueue
 {
@@ -103,4 +106,8 @@ Range<typename std::list<T>::const_iterator> UniqueRecentQueue<T>::last(int numE
   return { it, l.end() };
 }
 
-#endif /* UNIQUERECENTQUEUE_H_ */
+
+}//namespace vegafem
+
+#endif
+ /* UNIQUERECENTQUEUE_H_ */

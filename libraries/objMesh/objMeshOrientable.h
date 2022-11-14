@@ -35,6 +35,9 @@
 
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 /*
   Generates a half-edge datastructure, assuming tha the given obj mesh is orientable.
   Author: Jernej Barbic, 2004
@@ -197,5 +200,9 @@ public:
   int internalAllocation = 0;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

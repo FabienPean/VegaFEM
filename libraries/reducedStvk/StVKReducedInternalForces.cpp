@@ -44,6 +44,8 @@
 #endif
 using namespace std;
 
+namespace vegafem
+{
 StVKReducedInternalForces::StVKReducedInternalForces(int r, double * U, VolumetricMesh * volumetricMesh, StVKElementABCD * precomputedABCDIntegrals, bool addGravity_, double g_, int verbose_): precomputedIntegrals(precomputedABCDIntegrals), unitReducedGravityForce(NULL), reducedGravityForce(NULL), addGravity(addGravity_), g(g_), useSingleThread(0), shallowCopy(0), verbose(verbose_)
 {
   int numElements = volumetricMesh->getNumElements();
@@ -1438,3 +1440,5 @@ int StVKReducedInternalForces::SaveEmptyCub(FILE * fout)
   }
   */
 
+
+}//namespace vegafem

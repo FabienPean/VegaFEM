@@ -34,6 +34,9 @@
 #include "MooneyRivlinIsotropicMaterial.h"
 #include "volumetricMeshMooneyRivlinMaterial.h"
 
+namespace vegafem
+{
+
 MooneyRivlinIsotropicMaterial::MooneyRivlinIsotropicMaterial(TetMesh * tetMesh, int enableCompressionResistance_, double compressionResistance_) : IsotropicMaterialWithCompressionResistance(enableCompressionResistance_), compressionResistance(compressionResistance_)
 {
   int numElements = tetMesh->getNumElements();
@@ -166,3 +169,5 @@ double MooneyRivlinIsotropicMaterial::GetCompressionResistanceFactor(int element
   return EdivNuFactor[elementIndex];
 }
 
+
+}//namespace vegafem

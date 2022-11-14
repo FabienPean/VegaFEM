@@ -32,6 +32,9 @@
 
 #include "generateTetMeshFromCubicMesh.h"
 
+namespace vegafem
+{
+
 TetMesh * GenerateTetMeshFromCubicMesh::Generate(CubicMesh * cubicMesh, double E, double nu, double density)
 {
   int numVertices;
@@ -77,3 +80,5 @@ TetMesh * GenerateTetMeshFromCubicMesh::Generate(CubicMesh * cubicMesh, double E
   return tetMesh;
 }
 
+
+}//namespace vegafem

@@ -37,6 +37,9 @@
 #include "clothBW.h"
 #include "stencilForceModel.h"
 
+namespace vegafem
+{
+
 // Stencils for cloth simulation. There are two different stencils here.
 // One is a triangle (# vertices = 3) (for in-place stretch and shear);
 // and the other is an edge joining two triangles (# vertices = 4) (for bending).
@@ -57,5 +60,9 @@ protected:
   ClothBW * clothBW;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

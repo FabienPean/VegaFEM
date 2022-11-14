@@ -33,6 +33,9 @@
 
 #include "reducedSpringForceModel.h"
 
+namespace vegafem
+{
+
 ReducedSpringForceModel::ReducedSpringForceModel(double k_): k(k_)
 {
   r = 1;
@@ -53,3 +56,5 @@ void ReducedSpringForceModel::GetTangentHessianTensor(double * u, double * tange
   *tangentHessianTensor = 0;
 }
 
+
+}//namespace vegafem

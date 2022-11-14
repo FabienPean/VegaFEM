@@ -34,6 +34,9 @@
 #include "cubicMesh.h"
 #include "massSpringSystemFromCubicMesh.h"
 
+namespace vegafem
+{
+
 int MassSpringSystemFromCubicMesh::GenerateMassSpringSystem(CubicMesh * cubicMesh, MassSpringSystem ** massSpringSystem, double density, double tensileStiffness, double damping, int addGravity)
 {
   int numParticles;
@@ -58,3 +61,5 @@ int MassSpringSystemFromCubicMesh::GenerateMassSpringSystem(CubicMesh * cubicMes
   return 0;
 }
 
+
+}//namespace vegafem

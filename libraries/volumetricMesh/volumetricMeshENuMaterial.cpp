@@ -32,6 +32,9 @@
 
 #include "volumetricMeshENuMaterial.h"
 
+namespace vegafem
+{
+
 VolumetricMesh::Material::materialType VolumetricMesh::ENuMaterial::getType() 
 { 
   return VolumetricMesh::Material::ENU; 
@@ -51,3 +54,5 @@ VolumetricMesh::ENuMaterial * downcastENuMaterial(VolumetricMesh::Material * mat
   return (VolumetricMesh::ENuMaterial*) material;
 }
 
+
+}//namespace vegafem

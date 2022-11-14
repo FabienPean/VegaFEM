@@ -79,7 +79,8 @@ See also integratorBase.h .
 #ifdef PCG
   #include "CGSolver.h"
 #endif
-
+namespace vegafem
+{
 class CentralDifferencesSparse : public IntegratorBaseSparse
 {
 public:
@@ -130,6 +131,6 @@ protected:
     CGSolver * jacobiPreconditionedCGSolver;
   #endif
 };
-
+}//namespace vegafem
 #endif
 

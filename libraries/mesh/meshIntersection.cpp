@@ -34,6 +34,9 @@
 #include "basicAlgorithms.h"
 #include "exactOctree.h"
 #include "predicates.h"
+
+namespace vegafem
+{
 #ifdef USE_TBB
   #include <tbb/tbb.h>
 #endif
@@ -76,3 +79,5 @@ vector<vector<int>> computeTrianglesIntersectingEachTetExact(const TetMeshRef te
 #endif
   return tetEmbedTri;
 }
+
+}//namespace vegafem

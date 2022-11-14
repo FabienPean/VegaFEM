@@ -37,6 +37,9 @@
 #include <cfloat>
 #include "sceneObjectReducedGPU.h"
 
+namespace vegafem
+{
+
 SceneObjectReducedGPU::SceneObjectReducedGPU(const char * filenameOBJ, 
       ModalMatrix * modalMatrix, int GPUMethod):
       SceneObjectWithRestPosition(filenameOBJ), SceneObjectReduced(filenameOBJ, modalMatrix)
@@ -194,3 +197,5 @@ int SceneObjectReducedGPU::GetClosestVertex(Vec3d & queryPos, double * distance,
   return mesh->getClosestVertex(queryPos, distance);
 }
 
+
+}//namespace vegafem

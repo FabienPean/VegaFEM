@@ -32,6 +32,9 @@
 
 #include "StVKTetHighMemoryABCD.h"
 
+namespace vegafem
+{
+
 //#define CONTIGUOUSBLOCK
 
 StVKTetHighMemoryABCD::StVKTetHighMemoryABCD(TetMesh * tetMesh)
@@ -135,3 +138,5 @@ void StVKTetHighMemoryABCD::StVKSingleTetABCD(Vec3d vtx[4], Mat3d A[4][4], doubl
           D[i][j][k][l] = volume * dot(Phig[i],Phig[j]) * dot(Phig[k],Phig[l]);
 }
 
+
+}//namespace vegafem

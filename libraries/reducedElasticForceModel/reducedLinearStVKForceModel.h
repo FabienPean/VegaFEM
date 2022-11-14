@@ -41,6 +41,9 @@
 #include "reducedForceModel.h"
 #include "StVKReducedStiffnessMatrix.h"
 
+namespace vegafem
+{
+
 class ReducedLinearStVKForceModel : public ReducedForceModel
 {
 public:
@@ -55,5 +58,9 @@ protected:
   double * K;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

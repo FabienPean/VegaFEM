@@ -37,6 +37,8 @@
 #include <functional>
 #include <utility>
 
+namespace vegafem
+{
 // unoriented edge
 struct UEdgeKey
 {
@@ -73,13 +75,14 @@ protected:
 };
 
 inline std::ostream & operator << (std::ostream & s, const OEdgeKey & v);
+}//namespace vegafem
 
 namespace std
 {
   template <>
-  struct hash<UEdgeKey>
+  struct hash<vegafem::UEdgeKey>
   {
-    size_t operator()(const UEdgeKey & k) const
+    size_t operator()(const vegafem::UEdgeKey & k) const
     {
       static_assert(sizeof(int) * 2 == sizeof(uint64_t), "uint64_t is not twice the same size as int");
       uint64_t v = (((uint64_t)k[0]) + ((uint64_t)(k[1]) << (sizeof(int)*8)));
@@ -88,9 +91,9 @@ namespace std
   };
 
   template <>
-  struct hash<OEdgeKey>
+  struct hash<vegafem::OEdgeKey>
   {
-    size_t operator()(const OEdgeKey & k) const
+    size_t operator()(const vegafem::OEdgeKey & k) const
     {
       static_assert(sizeof(int) * 2 == sizeof(uint64_t), "uint64_t is not twice the same size as int");
       uint64_t v = (((uint64_t)k[0]) + ((uint64_t)(k[1]) << (sizeof(int)*8)));
@@ -103,7 +106,8 @@ namespace std
 //                             IMPLEMENTATION                                //
 ///////////////////////////////////////////////////////////////////////////////
 
-
+namespace vegafem
+{
 inline UEdgeKey::UEdgeKey(int v0, int v1)
 {
   if (v0 < v1)
@@ -160,5 +164,6 @@ inline std::ostream & operator << (std::ostream & s, const OEdgeKey & v)
   return s << '(' << v[0] << ' ' << v[1] << ')';
 }
 
+}//namespace vegafem
 
 #endif

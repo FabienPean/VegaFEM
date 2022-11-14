@@ -45,6 +45,7 @@ using namespace std;
 #include "getopts.h"
 #include "matrixIO.h"
 #include "objMesh.h"
+using namespace vegafem;
 
 vector<string> filenames;
 

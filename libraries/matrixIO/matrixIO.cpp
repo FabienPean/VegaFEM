@@ -37,6 +37,9 @@
 #include "matrixMacros.h"
 #include "matrixIO.h"
 
+namespace vegafem
+{
+
 // writes out the m x n matrix onto the stream, in binary format
 // LAPACK column-major order
 template <class real>
@@ -933,3 +936,5 @@ template int ReadModesFromDisk<float>(const char * filename, int * n, int * r, f
 
 template int WriteModesToDisk<double>(const char * filename, int n, int r, double * frequencies, double * modes);
 template int WriteModesToDisk<float>(const char * filename, int n, int r, float * frequencies, float * modes);
+
+}//namespace vegafem

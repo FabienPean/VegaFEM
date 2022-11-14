@@ -40,6 +40,8 @@
 
   See also matrixIO.h.
 */
+namespace vegafem
+{
 
 // construct vector f, using the equation f = U q
 // matrix U is of size n x r
@@ -67,6 +69,6 @@ void ProjectVector(int n, int r, real * U, real * q, real * f);
 // and f_buffer[j] specifies the force component at i_buffer[j]
 template <class real>
 void ProjectSparseVector(int n, int r, real * U, real * q, real * f_buffer, int * i_buffer, int k);
-
+}//namespace vegafem
 #endif
 

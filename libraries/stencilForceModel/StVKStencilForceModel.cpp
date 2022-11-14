@@ -32,6 +32,9 @@
 
 #include "StVKStencilForceModel.h"
 #include <cassert>
+
+namespace vegafem
+{
 using namespace std;
 
 StVKStencilForceModel::StVKStencilForceModel(StVKFEM * fem): stvkFEM(fem)
@@ -54,3 +57,5 @@ const int *StVKStencilForceModel::GetStencilVertexIndices(int stencilType, int s
   assert(stencilType == 0);
   return stvkFEM->GetVolumetricMesh()->getVertexIndices(stencilId);
 }
+
+}//namespace vegafem

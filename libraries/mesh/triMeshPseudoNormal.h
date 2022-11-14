@@ -36,6 +36,9 @@
 #include "triMeshGeo.h"
 #include <map>
 
+namespace vegafem
+{
+
 // compute pseudo-normal on a triangle mesh
 // assuming TriMesh is edge-manifold, required by TriMeshNeighbor
 class TriMeshPseudoNormal
@@ -61,5 +64,9 @@ protected:
   std::vector<Vec3d> triNormals;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

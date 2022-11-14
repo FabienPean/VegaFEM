@@ -39,6 +39,9 @@
 #include <ostream>
 #include <cstring>
 
+namespace vegafem
+{
+
 class Vec3d
 {
 public:
@@ -119,17 +122,17 @@ inline Vec3d::Vec3d(double entry)
 
 inline Vec3d::Vec3d(const double vec[3])
 {
-  memcpy(elt, vec, sizeof(double) * 3);
+  std::memcpy(elt, vec, sizeof(double) * 3);
 }
 
 inline Vec3d::Vec3d(const Vec3d & vec)
 {
-  memcpy(elt, vec.elt, sizeof(double) * 3);
+  std::memcpy(elt, vec.elt, sizeof(double) * 3);
 }
 
 inline Vec3d & Vec3d::operator=(const Vec3d & source)
 {
-  memcpy(elt, source.elt, sizeof(double) * 3);
+  std::memcpy(elt, source.elt, sizeof(double) * 3);
   return *this;
 }
 
@@ -325,8 +328,10 @@ inline bool Vec3d::isNaN(double x)
     return (_isnan(x) != 0);
   #else
     return (x != x); 
-  #endif
+#endif
 }
+
+}//namespace vegafem
 
 #endif
 

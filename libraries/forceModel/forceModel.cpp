@@ -36,6 +36,9 @@
 #include <cmath>
 #include "forceModel.h"
 
+namespace vegafem
+{
+
 ForceModel::~ForceModel()
 {
 }
@@ -46,3 +49,5 @@ void ForceModel::GetForceAndMatrix(const double * u, double * internalForces, Sp
   GetTangentStiffnessMatrix(u, tangentStiffnessMatrix);
 }
 
+
+}//namespace vegafem

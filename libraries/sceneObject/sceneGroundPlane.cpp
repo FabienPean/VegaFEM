@@ -34,6 +34,9 @@
 #include "openGL-headers.h"
 #include "imageIO.h"
 #include <cstring>
+
+namespace vegafem
+{
 using namespace std;
 
 
@@ -192,3 +195,5 @@ void SceneGroundPlane::render()
   else
     glCallList(displayListGroundWithTexture);
 }
+
+}//namespace vegafem

@@ -38,6 +38,9 @@
 #include "sceneObject.h"
 #include "objMeshRender.h"
 
+namespace vegafem
+{
+
 SceneObject::SceneObject(const char * filename):
   mesh(NULL), meshRender(NULL), displayList(0), displayListExists(false), displayListEdges(0), displayListEdgesExists(false)
 { 
@@ -458,3 +461,5 @@ void SceneObject::TransformRigidly(double * centerOfMass, double * R)
   mesh->transformRigidly(cv, Rv);
 }
 
+
+}//namespace vegafem

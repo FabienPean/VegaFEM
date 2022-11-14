@@ -44,6 +44,9 @@
 #include "reducedMassSpringSystemForceModel.h"
 #include "reducedForceModelWithHessian.h"
 
+namespace vegafem
+{
+
 class ReducedMassSpringSystemForceModelWithHessian : public ReducedMassSpringSystemForceModel, public ReducedForceModelWithHessian
 {
 public:
@@ -57,5 +60,9 @@ protected:
   double * bufferTangentMatrix;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

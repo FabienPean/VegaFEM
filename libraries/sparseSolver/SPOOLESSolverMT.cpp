@@ -34,6 +34,9 @@
 #include "SPOOLESSolver.h"
 #include "sparseSolverAvailability.h"
 
+namespace vegafem
+{
+
 #ifdef SPOOLES_SOLVER_IS_AVAILABLE
 
 // SPOOLES solver is available
@@ -280,3 +283,5 @@ int SPOOLESSolverMT::SolveLinearSystem(double * x, const double * rhs)
 
 #endif
 
+
+}//namespace vegafem

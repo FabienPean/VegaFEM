@@ -47,6 +47,9 @@
 #include "openGL-headers.h"
 #include "minivector.h"
 
+namespace vegafem
+{
+
 // ============================= Rendering Texts =========================
 
 
@@ -176,5 +179,9 @@ protected:
   bool prevOffsetEnabled = false;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -38,5 +38,12 @@
 #include "SPOOLESSolver.h"
 #include "SPOOLESSolverMT.h"
 
+namespace vegafem
+{
+
+
+}//namespace vegafem
+
 #endif
+
 

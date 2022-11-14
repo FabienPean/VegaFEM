@@ -38,6 +38,9 @@
 #include "constrainedDOFs.h"
 #include "eulerSparse.h"
 
+namespace vegafem
+{
+
 EulerSparse::EulerSparse(int r, double timestep, SparseMatrix * massMatrix_, ForceModel * forceModel_, int symplectic_, int numConstrainedDOFs_, int * constrainedDOFs_, double dampingMassCoef, int numSolverThreads): IntegratorBaseSparse(r, timestep, massMatrix_, forceModel_, numConstrainedDOFs_, constrainedDOFs_, dampingMassCoef, 0.0), symplectic(symplectic_)
 {
   systemMatrix = new SparseMatrix(*massMatrix);
@@ -201,3 +204,5 @@ int EulerSparse::DoTimestep()
   return 0;
 }
 
+
+}//namespace vegafem

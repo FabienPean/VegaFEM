@@ -35,6 +35,9 @@
 #include "lapack-headers.h"
 #include "modalMatrix.h"
 
+namespace vegafem
+{
+
 ModalMatrix::ModalMatrix(int n, int r, double * U, int flag)
 {
   this->n = n;
@@ -208,3 +211,5 @@ void ModalMatrix::AddAssembleVector(double * q, double * u) //u = U * q;
   cblas_dgemv(order, trans, M, N, alpha, a, lda, x, incx, beta, y, incy);
 }
 
+
+}//namespace vegafem

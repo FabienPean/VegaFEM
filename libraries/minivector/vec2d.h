@@ -38,6 +38,9 @@
 #include <cmath>
 #include <ostream>
 
+namespace vegafem
+{
+
 class Vec2d {
 public:
 
@@ -235,5 +238,9 @@ inline std::ostream &operator << (std::ostream &s, const Vec2d &v)
   return(s << '[' << a << ' ' << b << ']');
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

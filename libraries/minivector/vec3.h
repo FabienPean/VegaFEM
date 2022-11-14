@@ -38,6 +38,9 @@
 #include <cmath>
 #include <ostream>
 
+namespace vegafem
+{
+
 // forward declarations for external helper functions
 template <typename real> class Vec3;
 template <typename real> inline Vec3<real> operator* (real alpha, Vec3<real> vec);
@@ -356,5 +359,9 @@ Vec3<real> Vec3<real>::findOrthonormalVector() const
   return result;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -40,6 +40,9 @@
 #include "vec3ER.h"
 #include "tetTriCutFeature.h"
 
+namespace vegafem
+{
+
 /*
   Our implementation of the Sutherland-Hodgman algorithm for tet vs tri intersection.
   We assume input tet is in relatively good quality, and input triangle mesh has no degenerate triangles
@@ -112,4 +115,8 @@ protected:
 
 };
 
+
+}//namespace vegafem
+
 #endif
+

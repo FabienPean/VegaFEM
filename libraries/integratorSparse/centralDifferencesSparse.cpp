@@ -39,6 +39,9 @@
 #include "constrainedDOFs.h"
 #include "centralDifferencesSparse.h"
 
+namespace vegafem
+{
+
 CentralDifferencesSparse::CentralDifferencesSparse(int numDOFs, double timestep, SparseMatrix * massMatrix_, ForceModel * forceModel_, int numConstrainedDOFs, int * constrainedDOFs, double dampingMassCoef, double dampingStiffnessCoef, int tangentialDampingMode_, int numSolverThreads_): IntegratorBaseSparse(numDOFs, timestep, massMatrix_, forceModel_, numConstrainedDOFs, constrainedDOFs, dampingMassCoef, dampingStiffnessCoef), tangentialDampingMode(tangentialDampingMode_), numSolverThreads(numSolverThreads_), timestepIndex(0)
 {
   rhs = (double*) malloc (sizeof(double) * r);
@@ -259,3 +262,5 @@ void CentralDifferencesSparse::ResetToRest()
   timestepIndex = 0;
 }
 
+
+}//namespace vegafem

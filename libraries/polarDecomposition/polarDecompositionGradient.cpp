@@ -53,6 +53,9 @@
 #include "matrixMultiplyMacros.h"
 #include "mat3d.h"
 
+namespace vegafem
+{
+
 void PolarDecompositionGradient::Compute(const double * M, const double * Q, const double * S, const double * MDot, double * omega, double * QDot, double * SDot, const double * MDotDot, double * omegaDot, double * QDotDot)
 {
   // compute omega = G^{-1} (2 * skew(Q^T * MDot)), where G = (tr(S)I - S) * Q^T
@@ -146,3 +149,5 @@ void PolarDecompositionGradient::Compute(const double * M, const double * Q, con
   }
 }
 
+
+}//namespace vegafem

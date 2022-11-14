@@ -47,6 +47,9 @@
 #include "objMeshOctree.h"
 #include "trilinearInterpolation.h"
 #include "vegalong.h"
+
+namespace vegafem
+{
 using namespace std;
 
 vegalong DistanceFieldNarrowBand::GetFilesize(const char *filename)
@@ -70,6 +73,7 @@ DistanceFieldNarrowBand::~DistanceFieldNarrowBand()
 {
   free(gridPointStatus);
 }
+}//namespace vegafem
 
 // the routines for signed and unsigned distance field computation
 #define COMPUTE_SIGNED_FIELD_NARROWBAND
@@ -80,6 +84,8 @@ DistanceFieldNarrowBand::~DistanceFieldNarrowBand()
 #undef COMPUTE_SIGNED_FIELD_NARROWBAND
   #include "computeFieldNarrowBand.cpp"
 
+namespace vegafem
+{
 int DistanceFieldNarrowBand::load(const std::string& filename)
 {
   ifstream fin(filename.c_str(),ios::binary);
@@ -716,3 +722,5 @@ void DistanceFieldNarrowBand::offsetDistanceField(double offset)
     it->second += (float) offset;
 }
 
+
+}//namespace vegafem

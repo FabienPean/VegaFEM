@@ -31,6 +31,9 @@
  *************************************************************************/
 
 #include "containerHelper.h"
+
+namespace vegafem
+{
 using namespace std;
 
 template<class T>
@@ -74,3 +77,5 @@ template bool saveToAscii<double>(const std::vector<double> & v, std::ostream & 
 template bool loadFromAscii<int>(std::vector<int> & v, std::istream & in);
 template bool loadFromAscii<double>(std::vector<double> & v, std::istream & in);
 
+
+}//namespace vegafem

@@ -36,6 +36,9 @@
 #include "PardisoSolver.h"
 #include "sparseSolverAvailability.h"
 
+namespace vegafem
+{
+
 #ifdef PARDISO_SOLVER_IS_AVAILABLE
 
 // Pardiso solver is available
@@ -454,3 +457,5 @@ MKL_INT PardisoSolver::SolveLinearSystemDirectIterative(const SparseMatrix * A, 
 
 #endif
 
+
+}//namespace vegafem

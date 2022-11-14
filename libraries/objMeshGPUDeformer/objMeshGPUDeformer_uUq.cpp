@@ -38,6 +38,9 @@
 #include "objMeshGPUDeformer_uUq.h"
 #include "uUq-shaders.cpp"
 
+namespace vegafem
+{
+
 extern char fragment_uUqShaderProgramCode [];
 extern char fragmentShaderPass2ProgramCode [];
 extern char vertexShaderProgramCode [];
@@ -556,3 +559,5 @@ void ObjMeshGPUDeformer_uUq::Clone(ObjMeshGPUDeformer_uUq * ObjMeshGPUDeformer_u
 
 bool ObjMeshGPUDeformer_uUq::hasStaticBeenInitialized = false;
 
+
+}//namespace vegafem

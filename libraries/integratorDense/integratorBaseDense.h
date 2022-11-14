@@ -46,6 +46,9 @@
 #include "integratorBase.h"
 #include "reducedForceModel.h"
 
+namespace vegafem
+{
+
 class IPIVC;
 
 // this abstract class is derived into: implicit Newmark, central differences
@@ -104,6 +107,7 @@ protected:
     #define INTEGER int
   #endif
 
+
   double forceAssemblyTime, systemSolveTime;
 
   ReducedForceModel * reducedForceModel; 
@@ -124,6 +128,8 @@ protected:
   void SetTotalForces(double * fq);
   void ProcessPlasticDeformations();
 };
+
+}//namespace vegafem
 
 #endif
 

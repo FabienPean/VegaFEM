@@ -74,6 +74,9 @@
 #include "tetMesh.h"
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 class CorotationalLinearFEM
 {
 public:
@@ -136,5 +139,9 @@ protected:
   static void GetStiffnessMatrixTopology(VolumetricMesh * mesh, SparseMatrix ** stiffnessMatrixTopology);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

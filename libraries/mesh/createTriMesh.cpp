@@ -41,6 +41,9 @@
 #include <cmath>
 #include <functional>
 #include <map>
+
+namespace vegafem
+{
 using namespace std;
 
 TriMeshGeo createBoxMesh(const Vec3d & bmin, const Vec3d & bmax)
@@ -149,3 +152,5 @@ TriMeshGeo createCylinderMesh(double radius, double height, int subdivisionAxis,
 
   return mesh;
 }
+
+}//namespace vegafem

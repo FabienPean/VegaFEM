@@ -40,6 +40,9 @@
 #include "clothBW.h"
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 class ClothBWFromObjMesh
 {
 public:
@@ -61,5 +64,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

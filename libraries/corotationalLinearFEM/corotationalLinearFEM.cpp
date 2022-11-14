@@ -38,6 +38,9 @@
 #include "volumetricMeshOrthotropicMaterial.h"
 #include "cubicMesh.h"
 
+namespace vegafem
+{
+
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
@@ -1208,3 +1211,5 @@ void CorotationalLinearFEM::inverse4x4(double * A, double * AInv)
     AInv[i] *= invDet;
 }
 
+
+}//namespace vegafem

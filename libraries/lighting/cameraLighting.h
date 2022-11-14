@@ -36,6 +36,9 @@
 #include <cstdlib>
 #include <cstring>
 
+namespace vegafem
+{
+
 class SphericalCamera;
 
 class CameraLighting
@@ -117,4 +120,8 @@ inline bool CameraLighting::IsLightEnabled() const
 {
   return lightEnabled;
 }
+
+}//namespace vegafem
+
 #endif
+

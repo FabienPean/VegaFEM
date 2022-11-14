@@ -32,6 +32,9 @@
 
 #include "volumetricMeshMooneyRivlinMaterial.h"
 
+namespace vegafem
+{
+
 VolumetricMesh::Material::materialType VolumetricMesh::MooneyRivlinMaterial::getType() 
 { 
   return VolumetricMesh::Material::MOONEYRIVLIN; 
@@ -51,3 +54,5 @@ VolumetricMesh::MooneyRivlinMaterial * downcastMooneyRivlinMaterial(VolumetricMe
   return (VolumetricMesh::MooneyRivlinMaterial*) material;
 }
 
+
+}//namespace vegafem

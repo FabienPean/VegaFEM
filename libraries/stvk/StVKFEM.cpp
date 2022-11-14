@@ -33,6 +33,9 @@
 #include "StVKFEM.h"
 #include "volumetricMeshENuMaterial.h"
 
+namespace vegafem
+{
+
 #include <cassert>
 #include <cstdio>
 
@@ -345,3 +348,5 @@ void StVKFEM::ComputeElementLocalEnergyAndInternalForcesAndStiffnessMatrix(const
     }
   }
 }
+
+}//namespace vegafem

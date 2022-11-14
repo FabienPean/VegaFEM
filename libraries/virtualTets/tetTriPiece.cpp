@@ -44,6 +44,9 @@
 #include <cassert>
 using namespace std;
 
+namespace vegafem
+{
+
 //extern Profiler profiler;
 //#define USE_MULTITHREADING
 
@@ -727,3 +730,5 @@ TriMeshRef TetTriPiece::mesh(const TetTriCuttingData & cut) const
   assert(gnrCutTri.size() > 0);
   return { cut.cutVtxPos, gnrCutTri };
 }
+
+}//namespace vegafem

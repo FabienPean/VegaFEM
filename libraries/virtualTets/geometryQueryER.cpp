@@ -31,6 +31,9 @@
  *************************************************************************/
 
 #include "geometryQueryER.h"
+
+namespace vegafem
+{
 using namespace std;
 
 namespace
@@ -158,3 +161,5 @@ Vec3ER getClosestPointToTriangleWithFeature(const Vec3ER & queryPoint, const Vec
   return getClosestPointToPlane(queryPoint, scaledNormal, vertex0);
 }
 
+
+}//namespace vegafem

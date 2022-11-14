@@ -35,6 +35,9 @@
 
 #include "volumetricMesh.h"
 
+namespace vegafem
+{
+
 // stores an isotropic material specified by E (Young's modulus), nu (Poisson's ratio), and density
 // such a material specification is very common: (corotational) linear FEM, StVK, etc.
 class VolumetricMesh::ENuMaterial : public VolumetricMesh::Material
@@ -69,5 +72,9 @@ inline void VolumetricMesh::ENuMaterial::setNu(double nu) { nu_ = nu; }
 // obtain pointer to ENuMaterial (necessary inside classes that assume ENu material)
 VolumetricMesh::ENuMaterial * downcastENuMaterial(VolumetricMesh::Material * material); // performs a check via getType and returns NULL if material is not ENU
 
+
+}//namespace vegafem
+
 #endif
+
 

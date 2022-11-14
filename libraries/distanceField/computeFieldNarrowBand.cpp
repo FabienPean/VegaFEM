@@ -38,6 +38,9 @@
 #include "performanceCounter.h"
 #include "vegalong.h"
 
+namespace vegafem
+{
+
 #ifdef COMPUTE_SIGNED_FIELD_NARROWBAND
    #ifdef COMPUTE_INTERIOR_FIELD_NARROWBAND
      int DistanceFieldNarrowBand::computeInteriorSignedField(ObjMesh * objMeshIn, int resolutionX_, int resolutionY_, int resolutionZ_, double bandWidth, int maxTriCount_, int maxDepth_)
@@ -370,3 +373,5 @@
   return 0;
 }
 
+
+}//namespace vegafem

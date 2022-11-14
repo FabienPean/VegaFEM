@@ -55,6 +55,9 @@
 #include "tetKey.h"
 #include "triKey.h"
 
+namespace vegafem
+{
+
 class TetMesh;
 
 class DelaunayMesher
@@ -395,5 +398,9 @@ protected:
   label_t nextBallLabel;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

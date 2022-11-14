@@ -42,6 +42,9 @@
 #include <cstdlib>
 #include <cstdio>
 
+namespace vegafem
+{
+
 class ReducedForceModel
 {
 public:
@@ -64,5 +67,9 @@ protected:
 };
 
 
+
+}//namespace vegafem
+
 #endif
+
 

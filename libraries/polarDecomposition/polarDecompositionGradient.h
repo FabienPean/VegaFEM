@@ -54,6 +54,9 @@
 
 #include <cstdlib>
 
+namespace vegafem
+{
+
 class PolarDecompositionGradient
 {
 public:
@@ -86,5 +89,9 @@ protected:
 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

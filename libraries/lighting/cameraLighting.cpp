@@ -35,6 +35,9 @@
 #include "openGL-headers.h"
 #include "camera.h"
 #include <iostream>
+
+namespace vegafem
+{
 using namespace std;
 
 void CameraLighting::initialize()
@@ -145,3 +148,5 @@ int CameraLighting::SaveConfig(const char * filename)
   return configFile.saveOptions(filename);
 }
 
+
+}//namespace vegafem

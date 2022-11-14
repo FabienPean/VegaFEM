@@ -37,6 +37,9 @@
 #include <vector>
 #include <string>
 
+namespace vegafem
+{
+
 // a simple class to load/save a script of handle creation/deletion/movement
 
 class HandleScript
@@ -74,4 +77,8 @@ protected:
 };
 
 
+
+}//namespace vegafem
+
 #endif
+

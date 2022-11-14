@@ -36,6 +36,9 @@
 #include "isotropicHyperelasticFEM.h"
 #include "stencilForceModel.h"
 
+namespace vegafem
+{
+
 // Stencils for isotropic hyperelastic FEM.
 // A stencil here refers to one FEM element.
 // See comments in the parent class.
@@ -54,5 +57,9 @@ protected:
   IsotropicHyperelasticFEM * isotropicHyperelasticFEM;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

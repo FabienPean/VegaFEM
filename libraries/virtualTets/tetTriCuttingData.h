@@ -37,6 +37,9 @@
 #include <vector>
 #include <mutex>
 
+namespace vegafem
+{
+
 /*
   Datastructure to use our virtual tets in the immersion algorithm.
 */
@@ -72,4 +75,8 @@ struct TetTriIntersectingData
   std::vector<std::vector<int>> triInTet;
   std::vector<Vec3ER> tetPosER;            // exact real for tet pos
 };
+
+}//namespace vegafem
+
 #endif
+

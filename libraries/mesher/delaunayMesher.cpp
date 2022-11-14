@@ -41,6 +41,9 @@
 #include <cassert>
 #include <cmath>
 #include <functional>
+
+namespace vegafem
+{
 using namespace std;
 
 DelaunayMesher::DelaunayMesher()
@@ -1778,3 +1781,5 @@ int DelaunayMesher::segmentRecoveryUsingSteinerPoint(const OEdgeKey& edge)
   return 100;
 }
 
+
+}//namespace vegafem

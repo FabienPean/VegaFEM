@@ -39,6 +39,9 @@
 #include <ostream>
 #include "vec3d.h"
 
+namespace vegafem
+{
+
 class Vec3i
 {
 public:
@@ -360,4 +363,8 @@ inline bool Vec3i::intersect(const Vec3i & vec2) const
   return false;
 }
 
+
+}//namespace vegafem
+
 #endif
+

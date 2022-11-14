@@ -40,8 +40,15 @@
 #include <cstring>
 #include <cfloat>
 
+namespace vegafem
+{
+
 void print_bitmap_string(float x, float y, float z, const char * s);
 void print_bitmap_integer(float x, float y, float z, int i);
 
+
+}//namespace vegafem
+
 #endif
+
 

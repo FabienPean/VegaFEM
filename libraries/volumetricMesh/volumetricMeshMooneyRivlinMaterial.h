@@ -35,6 +35,9 @@
 
 #include "volumetricMesh.h"
 
+namespace vegafem
+{
+
 // Mooney-Rivlin material
 
 /*
@@ -79,5 +82,9 @@ inline void VolumetricMesh::MooneyRivlinMaterial::setv1(double v1) { v1_ = v1; }
 // obtain pointer to MooneyRivlinMaterial (necessary inside classes that implement the Mooney-Rivlin material)
 VolumetricMesh::MooneyRivlinMaterial * downcastMooneyRivlinMaterial(VolumetricMesh::Material * material); // performs a check via getType and returns NULL if material is not Mooney Rivlin
 
+
+}//namespace vegafem
+
 #endif
+
 

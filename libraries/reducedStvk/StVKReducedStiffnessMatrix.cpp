@@ -33,6 +33,9 @@
 #include "matrixMacros.h"
 #include "StVKReducedStiffnessMatrix.h"
 #include "lapack-headers.h"
+
+namespace vegafem
+{
 #if defined(_WIN32) || defined(WIN32) || defined(linux) || defined(__linux__)
   #include "mkl_service.h"
 #endif
@@ -701,3 +704,5 @@ StVKReducedStiffnessMatrix * StVKReducedStiffnessMatrix::ShallowClone()
   return output;
 }
 
+
+}//namespace vegafem

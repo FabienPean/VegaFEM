@@ -41,6 +41,9 @@
 
 #include "reducedForceModelWithHessian.h"
 
+namespace vegafem
+{
+
 class ReducedSpringForceModel : public ReducedForceModelWithHessian
 {
 public:
@@ -53,5 +56,9 @@ protected:
   double k; 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

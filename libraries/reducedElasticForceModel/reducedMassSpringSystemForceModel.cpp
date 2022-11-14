@@ -40,6 +40,8 @@
   #include "mkl.h"
 #endif
 
+namespace vegafem
+{
 ReducedMassSpringSystemForceModel::ReducedMassSpringSystemForceModel(
                          MassSpringSystem * massSpringSystem_,
                          ModalMatrix * modalMatrix_): ReducedForceModel(), massSpringSystem(massSpringSystem_), modalMatrix(modalMatrix_)
@@ -158,3 +160,5 @@ void ReducedMassSpringSystemForceModel::GetTangentStiffnessMatrixHelper(
     tangentStiffnessMatrix[i] *= -1;
 }
 
+
+}//namespace vegafem

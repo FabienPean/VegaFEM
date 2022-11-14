@@ -40,6 +40,9 @@
 #include "clothBW.h"
 #include "forceModel.h"
 
+namespace vegafem
+{
+
 class ClothBWForceModel : public ForceModel
 {
 public:
@@ -55,5 +58,9 @@ protected:
   ClothBW * clothBW;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

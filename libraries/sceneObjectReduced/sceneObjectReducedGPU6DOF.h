@@ -36,6 +36,9 @@
 #include "sceneObjectReduced6DOF.h"
 #include "sceneObjectReducedGPU.h"
 
+namespace vegafem
+{
+
 class SceneObjectReducedGPU6DOF : public SceneObjectReducedGPU, public SceneObjectReduced6DOF
 {
 public:
@@ -61,5 +64,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

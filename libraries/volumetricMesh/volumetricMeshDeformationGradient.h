@@ -40,6 +40,9 @@
 
 #include "volumetricMesh.h"
 
+namespace vegafem
+{
+
 class VolumetricMeshDeformationGradient
 {
 public:
@@ -59,5 +62,9 @@ protected:
 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

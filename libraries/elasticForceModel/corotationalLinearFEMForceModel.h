@@ -40,6 +40,9 @@
 #include "corotationalLinearFEM.h"
 #include "forceModel.h"
 
+namespace vegafem
+{
+
 class CorotationalLinearFEMForceModel : public ForceModel
 {
 public:
@@ -62,5 +65,9 @@ protected:
   int warp;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

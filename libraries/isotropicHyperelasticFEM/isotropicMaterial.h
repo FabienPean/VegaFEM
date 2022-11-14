@@ -33,6 +33,8 @@
 #ifndef VEGAFEM_ISOTROPICMATERIAL_H
 #define VEGAFEM_ISOTROPICMATERIAL_H
 
+namespace vegafem
+{
 class IsotropicMaterial
 {
 public:
@@ -45,6 +47,6 @@ public:
 
 protected:
 };
-
+}//namespace vegafem
 #endif
 

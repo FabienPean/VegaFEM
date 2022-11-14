@@ -34,6 +34,9 @@
 #include "StVKIsotropicMaterial.h"
 #include "volumetricMeshENuMaterial.h"
 
+namespace vegafem
+{
+
 StVKIsotropicMaterial::StVKIsotropicMaterial(TetMesh * tetMesh, int enableCompressionResistance_, double compressionResistance_) : IsotropicMaterialWithCompressionResistance(enableCompressionResistance_), compressionResistance(compressionResistance_)
 {
   //printf("Entering StVKIsotropicMaterial::StVKIsotropicMaterial\n");
@@ -162,3 +165,5 @@ double StVKIsotropicMaterial::GetCompressionResistanceFactor(int elementIndex)
   return EdivNuFactor[elementIndex];
 }
 
+
+}//namespace vegafem

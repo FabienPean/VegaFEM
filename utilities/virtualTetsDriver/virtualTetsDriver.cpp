@@ -53,6 +53,7 @@
 #include "objMesh.h"
 #include "profiler.h"
 using namespace std;
+using namespace vegafem;
 
 int main(int argc, char ** argv)
 {

@@ -40,6 +40,9 @@
 #include "isotropicHyperelasticFEM.h"
 #include "forceModel.h"
 
+namespace vegafem
+{
+
 class IsotropicHyperelasticFEMForceModel : public ForceModel
 {
 public:
@@ -57,5 +60,9 @@ protected:
   IsotropicHyperelasticFEM * isotropicHyperelasticFEM;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

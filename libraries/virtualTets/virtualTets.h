@@ -40,6 +40,9 @@
 #include "tetTriCuttingData.h"
 #include "profiler.h"
 
+namespace vegafem
+{
+
 /*
   This file implements our "virtual tets" method, as described in:
 
@@ -104,5 +107,9 @@ TetMeshGeo createVirtualTetsMesh(
     bool verbose = false,
     Profiler * profiler = nullptr);
 
+
+}//namespace vegafem
+
 #endif
+
 

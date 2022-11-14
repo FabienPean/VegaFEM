@@ -35,6 +35,9 @@
 
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 // create a cylinder without cap, centered at origin and axis at y-direction
 // subdivisionAxis: #cut on the circle
 // subdivisionHeight: #subdivision on the height direction
@@ -46,4 +49,8 @@ ObjMesh createCylinderObjMesh(double radius, double height, int subdivisionAxis,
 ObjMesh createBoundingBoxObjMesh(Vec3d bmin, Vec3d bmax);
 
 
+
+}//namespace vegafem
+
 #endif
+

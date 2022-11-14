@@ -32,6 +32,9 @@
 
 #include "planeER.h"
 
+namespace vegafem
+{
+
 FastPlaneER::FastPlaneER(const Vec3ER & v0, const Vec3ER & v1, const Vec3ER & v2)
 {
   Vec3ER e1 = v1 - v0, e2 = v2 - v0;
@@ -47,3 +50,5 @@ int FastPlaneER::outside(const Vec3ER & v) const {
 ER FastPlaneER::scaledDistance(const Vec3ER & v) const {
   return ER_abs(dot(v,dir) - d);
 }
+
+}//namespace vegafem

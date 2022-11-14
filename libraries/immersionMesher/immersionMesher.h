@@ -46,6 +46,9 @@
 #include <map>
 #include <array>
 
+namespace vegafem
+{
+
 /*
   This class implements:
 
@@ -235,5 +238,9 @@ protected:
   bool debugImmersion = false;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

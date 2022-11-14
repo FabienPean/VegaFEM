@@ -38,10 +38,13 @@
 #include "objMeshGraph.h"
 #include "vegalong.h"
 #include "basicAlgorithms.h"
+
 #ifdef USE_TBB
   #include <tbb/tbb.h>
 #endif
 
+namespace vegafem
+{
 #ifdef COMPUTE_SIGNED_FIELD
   #ifdef COMPUTE_FLOOD_FIELD
     int DistanceField::computeFloodFillSignedField(ObjMesh* objMeshIn, int  resolutionX_, int resolutionY_, int resolutionZ_, int maxTriCount_, int maxDepth_,int zMin_, int zMax_ )
@@ -491,3 +494,5 @@
   return 0;
 }
 
+
+}//namespace vegafem

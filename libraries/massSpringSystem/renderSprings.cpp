@@ -34,6 +34,9 @@
 #include "openGL-headers.h"
 #include "renderSprings.h"
 
+namespace vegafem
+{
+
 void RenderSprings::Render(MassSpringSystem * massSpringSystem, double * u)
 {
   for(int edge=0; edge < massSpringSystem->numEdges; edge++)
@@ -113,3 +116,5 @@ void RenderSprings::JetColorMap(double x, double color[3])
   }
 }
 
+
+}//namespace vegafem

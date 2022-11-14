@@ -35,6 +35,9 @@
 
 #include "sceneObject.h"
 
+namespace vegafem
+{
+
 class SceneObjectWithRestPosition: public SceneObject
 {
 public:
@@ -53,5 +56,9 @@ protected:
   double * restPosition;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

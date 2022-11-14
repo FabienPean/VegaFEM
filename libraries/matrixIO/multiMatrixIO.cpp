@@ -39,6 +39,9 @@
 #include <cstring>
 #include "multiMatrixIO.h"
 
+namespace vegafem
+{
+
 int MultiMatrixIO::Save(const char * filename, int numMatrices, int * m, int * n, double ** matrices)
 {
   FILE * fout = fopen(filename, "wb");
@@ -157,3 +160,5 @@ int MultiMatrixIO::Load(const char * filename, int * numMatrices, int ** m, int 
   return 0;
 }
 
+
+}//namespace vegafem

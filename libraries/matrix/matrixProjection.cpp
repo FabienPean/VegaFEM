@@ -44,6 +44,8 @@
 #include "matrixMacros.h"
 #include "matrixProjection.h"
 
+namespace vegafem
+{
 #ifdef CBLAS
 // if-then-else template choosing
 template<bool C>
@@ -190,3 +192,5 @@ template void ProjectVector<float>(int n, int r, float * U, float * q, float * f
 template void ProjectSparseVector<double>(int n, int r, double * U, double * q, double * f_buffer, int * i_buffer, int k);
 template void ProjectSparseVector<float>(int n, int r, float * U, float * q, float * f_buffer, int * i_buffer, int k);
 
+
+}//namespace vegafem

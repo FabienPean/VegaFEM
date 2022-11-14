@@ -36,6 +36,9 @@
 #include <cstring>
 #include "sceneObjectDeformable.h"
 
+namespace vegafem
+{
+
 SceneObjectDeformable::SceneObjectDeformable(const char * filenameOBJ):
    SceneObjectWithRestPosition(filenameOBJ) 
 {
@@ -86,3 +89,5 @@ void SceneObjectDeformable::SetLighting(Lighting * lighting)
   lighting->LightScene();
 }
 
+
+}//namespace vegafem

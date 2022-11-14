@@ -46,6 +46,9 @@
 #include "volumetricMesh.h"
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 
 class GenerateSurfaceMesh
 {
@@ -62,5 +65,9 @@ public:
   static ObjMesh * ComputeMesh(const VolumetricMesh * volumetricMesh, const ObjMesh * superMesh, bool triangulate=false);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

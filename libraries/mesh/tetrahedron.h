@@ -36,6 +36,9 @@
 #include "vec3d.h"
 #include <array>
 
+namespace vegafem
+{
+
 class Tetrahedron
 {
 public:
@@ -54,5 +57,9 @@ protected:
   std::array<Vec3d, 4> v;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -76,6 +76,7 @@
 #endif
 
 using namespace std;
+using namespace vegafem;
 
 #define PRINT_SWITCH(sw) printf(#sw " is %s\n", (sw) ? "ON" : "OFF")
 #define PRINT_VALUE(value) cout << #value << " is now " << value << endl

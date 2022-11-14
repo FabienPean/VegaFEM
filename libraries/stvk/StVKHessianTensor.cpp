@@ -33,6 +33,9 @@
 #include "StVKHessianTensor.h"
 #include "volumetricMeshENuMaterial.h"
 
+namespace vegafem
+{
+
 #define QUADRATICFORM(m,x,y)\
   m[0] * x[0] * y[0] + \
   m[1] * x[1] * y[0] + \
@@ -684,3 +687,5 @@ void StVKHessianTensor::AddCubicTermsContribution(double * u, double * du, Spars
 }
 
 
+
+}//namespace vegafem

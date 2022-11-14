@@ -45,6 +45,9 @@
 #include <vector>
 #include <list>
 
+namespace vegafem
+{
+
 template<class Data>
 class HashTable
 {
@@ -83,5 +86,9 @@ inline unsigned int HashTable<Data>::hashFunction(unsigned int key)
   return (key*(key+3) % p);
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

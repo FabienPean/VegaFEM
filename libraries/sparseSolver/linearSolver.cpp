@@ -32,5 +32,10 @@
 
 #include "linearSolver.h"
 
+namespace vegafem
+{
+
 LinearSolver::~LinearSolver() {}
 
+
+}//namespace vegafem

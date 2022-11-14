@@ -39,6 +39,9 @@
 #include "volumetricMeshENuMaterial.h"
 #include "cubicMesh.h"
 #include "tetMesh.h"
+
+namespace vegafem
+{
 using namespace std;
 
 // controls how material groups are rendered
@@ -730,3 +733,5 @@ void RenderVolumetricMesh::TetWireframeDeformable(double u0x,double u0y,double u
   glEnd();
 }
 
+
+}//namespace vegafem

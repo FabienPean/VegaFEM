@@ -72,6 +72,9 @@
 #include <cstdlib>
 #include <cstring>
 
+namespace vegafem
+{
+
 class ConfigFile;
 
 class Lighting
@@ -147,22 +150,22 @@ inline float Lighting::GetLightIntensity(int lightID) const
 
 inline void Lighting::GetLightPosition(int lightID, float pos[4]) const
 {
-  memcpy(pos, &(lightPosition[4*lightID]), 4 * sizeof(float));
+  std::memcpy(pos, &(lightPosition[4*lightID]), 4 * sizeof(float));
 }
 
 inline void Lighting::GetLightAmbientTerm(int lightID, float Ka[4]) const
 {
-  memcpy(Ka, &(lKa[4*lightID]), 4* sizeof(float));
+  std::memcpy(Ka, &(lKa[4*lightID]), 4* sizeof(float));
 }
 
 inline void Lighting::GetLightDiffuseTerm(int lightID, float Kd[4]) const
 {
-  memcpy(Kd, &(lKd[4*lightID]), 4* sizeof(float));
+  std::memcpy(Kd, &(lKd[4*lightID]), 4* sizeof(float));
 }
 
 inline void Lighting::GetLightSpecularTerm(int lightID, float Ks[4]) const
 {
-  memcpy(Ks, &(lKs[4*lightID]), 4* sizeof(float));
+  std::memcpy(Ks, &(lKs[4*lightID]), 4* sizeof(float));
 }
 
 inline float Lighting::GetAmbientIntensity() const
@@ -175,5 +178,9 @@ inline bool Lighting::IsLightEnabled(int lightID) const
   return lightEnabled[lightID];
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

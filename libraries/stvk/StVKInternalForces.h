@@ -74,6 +74,9 @@ Note: all matrices are stored in the column-major order (same format as in LAPAC
 #include "volumetricMesh.h"
 #include "StVKElementABCD.h"
 
+namespace vegafem
+{
+
 class StVKInternalForces
 {
 public:
@@ -121,5 +124,9 @@ protected:
   double * muLame;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

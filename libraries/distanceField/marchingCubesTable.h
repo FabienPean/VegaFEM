@@ -30,6 +30,8 @@
  *                                                                       *
  *************************************************************************/
 
+namespace vegafem 
+{
 /*
   Marching cubes tables. These tables were generated programmatically,
   using our code.
@@ -1368,3 +1370,4 @@ static unsigned char ** triangleTable[256] =
   triangleTable_248, triangleTable_249, triangleTable_250, triangleTable_251, triangleTable_252, triangleTable_253, triangleTable_254, NULL
 };
 
+}//namespace vegafem

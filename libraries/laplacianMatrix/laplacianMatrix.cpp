@@ -37,6 +37,8 @@ using namespace std;
 #include "LagrangeMultiplierSolver.h"
 #include "generateGradientMatrix.h"
 
+namespace vegafem
+{
 // standard Laplace matrix on the tets
 // dimension is T x T, T is #tets
 // In each row i, the diagonal entry is the #tets neighboring to tet i. And the entries corresponding to the neighboring tet indices are set to -1.
@@ -235,3 +237,5 @@ void LaplacianMatrix::ExtrapolateScalarField(const SparseMatrix * L, int numSele
   free(xExtended);
 }
 
+
+}//namespace vegafem

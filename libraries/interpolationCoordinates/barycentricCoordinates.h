@@ -43,6 +43,9 @@
 #include <vector>
 #include <string>
 
+namespace vegafem
+{
+
 // Compute and store barycentric coordinates.
 // Optionally, compute the indices of the elements that the embedded vertices belong to.
 
@@ -92,5 +95,9 @@ protected:
   std::vector<int> elements;
 };
 
-#endif /* BARYCENTRICCOORDINATES_H */
+
+}//namespace vegafem
+
+#endif
+ /* BARYCENTRICCOORDINATES_H */
 

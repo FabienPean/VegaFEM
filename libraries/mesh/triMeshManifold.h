@@ -37,6 +37,9 @@
 #include <set>
 #include "triKey.h"
 
+namespace vegafem
+{
+
 // Maintain a triangle mesh to enfore manifoldness on face-edge connections.
 // It can also query neighboring relationship on faces.
 // Note that it only detects non-manifoldness created by one edge shared by more than two faces,
@@ -114,4 +117,8 @@ protected:
 
 
 
+
+}//namespace vegafem
+
 #endif
+

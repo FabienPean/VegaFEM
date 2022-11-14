@@ -35,6 +35,9 @@
 #include <iostream>
 #include <cstring>
 #include <cassert>
+
+namespace vegafem
+{
 using namespace std;
 
 TetMeshManifold::TetMeshManifold() {}
@@ -292,3 +295,5 @@ TetMeshManifold::Triangle::Triangle(const UTriKey & key) : UTriKey(key)
 }
 
 
+
+}//namespace vegafem

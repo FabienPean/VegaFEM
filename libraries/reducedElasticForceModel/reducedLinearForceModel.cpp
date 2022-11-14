@@ -34,6 +34,9 @@
 #include "reducedLinearForceModel.h"
 #include "lapack-headers.h"
 
+namespace vegafem
+{
+
 ReducedLinearForceModel::ReducedLinearForceModel(int r, double * stiffnessMatrix) : ReducedForceModel()
 {
   this->r = r;
@@ -67,6 +70,8 @@ void ReducedLinearForceModel::GetInternalForce(double * q, double * internalForc
 
 void ReducedLinearForceModel::GetTangentStiffnessMatrix(double * q, double * tangentStiffnessMatrix)
 {
-  memcpy(tangentStiffnessMatrix,stiffnessMatrix,sizeof(double)*r*r);
+  std::memcpy(tangentStiffnessMatrix,stiffnessMatrix,sizeof(double)*r*r);
 }
 
+
+}//namespace vegafem

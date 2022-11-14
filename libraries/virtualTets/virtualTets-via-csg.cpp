@@ -56,6 +56,9 @@
 
 using namespace std;
 
+namespace vegafem
+{
+
 class TetER
 {
 public:
@@ -638,7 +641,7 @@ tbb::parallel_for(0, sizei(outerTriVtxIDs), [&](const int & i)
 
       assert(vi.index >= 0);
       newTetMeshRef.computeTetBarycentricWeights(vi.index, pos, &weights[4*triVtxID]);
-      memcpy(&tetVtxIndices[4*triVtxID], newTetMesh.tet(vi.index).data(), sizeof(int) * 4);
+      std::memcpy(&tetVtxIndices[4*triVtxID], newTetMesh.tet(vi.index).data(), sizeof(int) * 4);
       embeddingTetIndices[triVtxID] = vi.index;
 #ifdef USE_TBB
     });
@@ -668,3 +671,5 @@ tbb::parallel_for(0, sizei(outerTriVtxIDs), [&](const int & i)
 
   return newTetMesh;
 }
+
+}//namespace vegafem

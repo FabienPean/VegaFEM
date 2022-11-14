@@ -47,6 +47,7 @@ using namespace std;
 #include "matrixMacros.h"
 #include "getopts.h"
 #include "listIO.h"
+using namespace vegafem;
 
 /*
   Builds an interpolant that can be used to efficiently transfer deformations from

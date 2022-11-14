@@ -51,7 +51,8 @@
 #endif
 
 using namespace std;
-
+namespace vegafem
+{
 /////////////////////////////////////////////////////////////
 //                   ExactOctreeBase
 /////////////////////////////////////////////////////////////
@@ -885,7 +886,7 @@ bool ExactTriMeshOctree::lineSegmentFirstIntersectionPoint(const TriMeshRef triM
     {
       if (alpha[0] < segWeight[0])
       {
-        memcpy(segWeight, alpha, sizeof(double) * 2);
+        std::memcpy(segWeight, alpha, sizeof(double) * 2);
       }
     }
   };
@@ -1076,3 +1077,5 @@ void ExactTetMeshOctree::build(const TetMeshRef & tetMesh, int maxDepth, int max
 //  nearestQuery(toBB, toElement, minDist, distanceHi);
 //  if (minDistance) *minDistance = minDist;
 //}
+
+}//namespace vegafem

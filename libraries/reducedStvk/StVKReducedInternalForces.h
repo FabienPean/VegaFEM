@@ -50,6 +50,9 @@
 
 #include "StVKInternalForces.h"
 
+namespace vegafem
+{
+
 class StVKReducedInternalForces
 {
 public:
@@ -252,5 +255,9 @@ inline int StVKReducedInternalForces::cubicCoefPos(int index, int i, int j, int 
   + (-j + (i-j)*(-1+i+j)/2 + k + (j-i)*r + i * (2 - 3*i + i*i + 6 * r - 3 * i * r + 3 * r2 ) / 6);
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

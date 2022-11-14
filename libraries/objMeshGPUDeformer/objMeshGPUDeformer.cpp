@@ -59,6 +59,8 @@
 
 using namespace std;
 
+namespace vegafem
+{
 ObjMeshGPUDeformer::ObjMeshGPUDeformer()
 {
   numGroupTriangles = NULL;
@@ -1155,3 +1157,5 @@ void ObjMeshGPUDeformer::RenderWithDeformedNormals()
 }
 */
 
+
+}//namespace vegafem

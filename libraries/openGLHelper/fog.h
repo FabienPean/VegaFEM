@@ -35,6 +35,9 @@
 
 #include "openGL-headers.h"
 
+namespace vegafem
+{
+
 // a simple struct for rendering fog using openGL
 struct Fog
 {
@@ -61,4 +64,8 @@ inline void Fog::setParameters() const
   glFogi(GL_FOG_MODE, GL_LINEAR);
 }
 
+
+}//namespace vegafem
+
 #endif
+

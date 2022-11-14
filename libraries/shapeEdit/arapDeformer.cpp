@@ -55,6 +55,9 @@ using namespace std;
 
 #define USE_DIRICHLET
 
+namespace vegafem
+{
+
 // ARAP Energy: E = \sum_i \sum_j\in N(i) wij | (pi'-pj') - Ri (pi-pj) |^2,
 //                  i: vtx index, j: nbr index in i's neighborhood N(i), pi: rest position of vtx i, pi': deformed position of i
 //                  Ri: the current rotation around vtx i
@@ -679,3 +682,5 @@ void ARAPDeformer::setNumThreads(int threads)
 //  setConstraintMatrix(&C[0]);
 //}
 
+
+}//namespace vegafem

@@ -42,6 +42,9 @@
 #include "ZTAZMultiplicator.h"
 #include "lapack-headers.h"
 
+namespace vegafem
+{
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -1010,3 +1013,5 @@ int ARPACKSolver::SolveGenEigShInv(SparseMatrix * K, SparseMatrix * M, SparseMat
   return nconv;
 }
 
+
+}//namespace vegafem

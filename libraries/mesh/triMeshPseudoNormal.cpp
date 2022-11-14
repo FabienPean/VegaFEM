@@ -33,6 +33,9 @@
 #include "triMeshPseudoNormal.h"
 #include "triMeshNeighbor.h"
 #include <cassert>
+
+namespace vegafem
+{
 using namespace std;
 
 TriMeshPseudoNormal::TriMeshPseudoNormal(TriMeshRef triMesh, const Vec3d * extTriNormals) :
@@ -101,3 +104,5 @@ const Vec3d & TriMeshPseudoNormal::edgeNormal(int vtxID0, int vtxID1) const
 //  if (iter == edgeMap.end()) { return Vec3d(0.0); }
   return iter->second;
 }
+
+}//namespace vegafem

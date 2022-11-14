@@ -34,6 +34,9 @@
 #include "tetMesh.h"
 #include "massSpringSystemFromTetMesh.h"
 
+namespace vegafem
+{
+
 int MassSpringSystemFromTetMesh::GenerateMassSpringSystem(TetMesh * tetMesh, MassSpringSystem ** massSpringSystem, double density, double tensileStiffness, double damping, int addGravity)
 {
   int numParticles;
@@ -59,3 +62,5 @@ int MassSpringSystemFromTetMesh::GenerateMassSpringSystem(TetMesh * tetMesh, Mas
   return 0;
 }
 
+
+}//namespace vegafem

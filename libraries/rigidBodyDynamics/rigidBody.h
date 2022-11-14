@@ -155,6 +155,9 @@ or 4th order. Add support for impulses.
 #include <cstring>
 #include "quaternion.h"
 
+namespace vegafem
+{
+
 class RigidBody
 {
 public:
@@ -486,5 +489,9 @@ inline void RigidBody::ResetBodyToRest()
   angularMomentumX = angularMomentumY = angularMomentumZ = 0;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -73,6 +73,7 @@
 #include "glslPhong.h"
 #include "camera.h"
 #include "listIO.h"
+using namespace vegafem;
 
 std::set<int> * selectedVerticesSet;  // each object will have a set storing selected vertices
 std::set<int> * selectedGroupsSet; // each object will have a set storing selected groups

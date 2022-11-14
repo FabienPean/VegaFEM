@@ -34,6 +34,9 @@
 #include "matrixBLAS.h"
 #include <cmath>
 
+namespace vegafem
+{
+
 template<class real>
 real * SumMatrices(int m, int n, real * mtx1, real * mtx2, real * output)
 {
@@ -124,3 +127,5 @@ real VectorNorm(int m, real * vec)
   return (sqrt(norm));
 }
 
+
+}//namespace vegafem

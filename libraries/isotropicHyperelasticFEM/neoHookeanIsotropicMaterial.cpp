@@ -34,6 +34,9 @@
 #include "neoHookeanIsotropicMaterial.h"
 #include "volumetricMeshENuMaterial.h"
 
+namespace vegafem
+{
+
 NeoHookeanIsotropicMaterial::NeoHookeanIsotropicMaterial(TetMesh * tetMesh, int enableCompressionResistance_, double compressionResistance_) : IsotropicMaterialWithCompressionResistance(enableCompressionResistance_), compressionResistance(compressionResistance_)
 {
   int numElements = tetMesh->getNumElements();
@@ -126,3 +129,5 @@ double NeoHookeanIsotropicMaterial::GetCompressionResistanceFactor(int elementIn
   return EdivNuFactor[elementIndex];
 }
 
+
+}//namespace vegafem

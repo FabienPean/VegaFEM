@@ -40,6 +40,9 @@
 #include "invZTAZSolver.h"
 #include "ZTAZMultiplicator.h"
 
+namespace vegafem
+{
+
 /*
   Given a vector x, compute (Z^T A Z)^{-1} (Z^T M Z) x
   Z = P [ -C_p^{-1} C_n  ]
@@ -64,5 +67,9 @@ protected:
   int dim;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

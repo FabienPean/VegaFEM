@@ -35,6 +35,9 @@
 
 #include "triMeshGeo.h"
 
+namespace vegafem
+{
+
 // =========================================================
 //              Create simple TriMeshes
 // =========================================================
@@ -59,5 +62,9 @@ TriMeshGeo createCylinderWallMesh(double radius, double height, int subdivisionA
 // create a cylinder mesh centered at origin and axis at y-direction
 TriMeshGeo createCylinderMesh(double radius, double height, int subdivisionAxis, int subdivisionHeight);
 
+
+}//namespace vegafem
+
 #endif
+
 

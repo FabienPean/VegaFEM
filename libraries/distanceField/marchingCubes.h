@@ -53,6 +53,8 @@
 #include "objMesh.h"
 #include "distanceFieldBase.h"
 
+namespace vegafem
+{
 class MarchingCubes
 {
 public:
@@ -91,5 +93,9 @@ protected:
   static void printTable();
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

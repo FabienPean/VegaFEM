@@ -7,6 +7,9 @@
 #define VEGAFEM_HASHHELPER_H
 #include <cstddef>
 
+namespace vegafem
+{
+
 inline std::size_t hashCombine(std::size_t seed, std::size_t newValue)
 {
     seed ^= newValue + 0x9e3779b9 + (seed << 6) + (seed >> 2);
@@ -14,4 +17,8 @@ inline std::size_t hashCombine(std::size_t seed, std::size_t newValue)
 }
 
 
+
+}//namespace vegafem
+
 #endif
+

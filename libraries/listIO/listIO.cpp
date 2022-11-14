@@ -41,6 +41,9 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+
+namespace vegafem
+{
 using namespace std;
 
 // removes all whitespace characters from string s
@@ -410,3 +413,5 @@ int ListIO::saveBinaryMulti(const char * filename, int numLists, int * numListEn
   return code;
 }
 
+
+}//namespace vegafem

@@ -36,6 +36,9 @@
 
 #include "stencilForceModel.h"
 
+namespace vegafem
+{
+
 #include <vector>
 
 // Stencils for linear FEM.
@@ -60,5 +63,9 @@ protected:
   std::vector<std::vector<double>> elementK;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

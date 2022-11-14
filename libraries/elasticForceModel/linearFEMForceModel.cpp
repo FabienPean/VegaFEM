@@ -33,6 +33,9 @@
 #include "linearFEMForceModel.h"
 #include "StVKStiffnessMatrix.h"
 
+namespace vegafem
+{
+
 LinearFEMForceModel::LinearFEMForceModel(StVKInternalForces * stVKInternalForces) 
 {
   StVKStiffnessMatrix * stVKStiffnessMatrix = new StVKStiffnessMatrix(stVKInternalForces);
@@ -70,3 +73,5 @@ void LinearFEMForceModel::GetTangentStiffnessMatrix(const double * u, SparseMatr
   *tangentStiffnessMatrix = *K;
 } 
 
+
+}//namespace vegafem

@@ -35,6 +35,9 @@
 */
 
 #include "uniqueIntegerID.h"
+
+namespace vegafem
+{
 using namespace std;
 
 UniqueIntegerID::UniqueIntegerID(unsigned int startID)
@@ -112,3 +115,5 @@ void UniqueIntegerID::Clear(unsigned int startID)
   maxID = startID;
 }
 
+
+}//namespace vegafem

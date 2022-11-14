@@ -36,6 +36,11 @@
 #include "octree.h"
 #include "triangle.h"
 
+namespace vegafem
+{
+
 template class Octree<TriangleBasic>;
 template class Octree<TriangleWithCollisionInfo>;
 template class Octree<TriangleWithCollisionInfoAndPseudoNormals>;
+
+}//namespace vegafem

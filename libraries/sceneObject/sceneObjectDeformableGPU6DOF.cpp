@@ -32,6 +32,9 @@
 
 #include "sceneObjectDeformableGPU6DOF.h"
 
+namespace vegafem
+{
+
 SceneObjectDeformableGPU6DOF::SceneObjectDeformableGPU6DOF(const char * filenameOBJ): SceneObjectWithRestPosition(filenameOBJ), SceneObjectDeformable(filenameOBJ), SceneObjectDeformableGPU(filenameOBJ), SceneObjectDeformable6DOF(filenameOBJ)
 {
 }
@@ -134,3 +137,5 @@ int SceneObjectDeformableGPU6DOF::closestVertex(double queryPosX, double queryPo
   return SceneObjectReducedGPU::closestVertex(localQueryPos[0], localQueryPos[1], localQueryPos[2], uBuffer);
 }
 */
+
+}//namespace vegafem

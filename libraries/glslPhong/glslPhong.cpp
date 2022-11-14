@@ -39,6 +39,7 @@
 #include <cstdio>
 #include <cstring>
 
+
 #if defined(_WIN32) || defined(WIN32) || defined(linux) || defined(__linux__)
   #define USE_GLEW
 #elif defined(__APPLE__)
@@ -52,6 +53,8 @@
 
 #include "glslPhong.h"
 
+namespace vegafem
+{
 char GLSLPhong::vertexShaderStringAll [] = "varying vec3 normal, eyeVec;\n"
 "#define MAX_LIGHTS 8\n"
 "varying vec3 lightDir[MAX_LIGHTS];\n"
@@ -318,3 +321,5 @@ void GLSLPhong::Disable()
   glUseProgram(0);
 }
 
+
+}//namespace vegafem

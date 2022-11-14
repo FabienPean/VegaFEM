@@ -35,6 +35,9 @@
 
 #include "minivector.h"
 
+namespace vegafem
+{
+
 /*
   This abstract class serves as storage space for the St.Venant-Kirchhoff A,B,C,D coefficients for a mesh element. 
   See also StVKInternalForces.h .
@@ -59,5 +62,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

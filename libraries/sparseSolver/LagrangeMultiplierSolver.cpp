@@ -43,6 +43,9 @@
 #include <vector>
 #include <set>
 #include <algorithm>
+
+namespace vegafem
+{
 using namespace std;
 
 LagrangeMultiplierSolver::LagrangeMultiplierSolver(const SparseMatrix * A, const SparseMatrix * J, const SparseMatrix * B, int numFixedDOFs_, const int * fixedDOFs_, int numThreads_, int updatable, int addDirichlet) : numFixedDOFs(numFixedDOFs_), numThreads(numThreads_)
@@ -296,3 +299,5 @@ void LagrangeMultiplierSolver::SetNumThreads(int numThreads_)
     pardisoSolver->SetNumThreads(numThreads);
 }
 
+
+}//namespace vegafem

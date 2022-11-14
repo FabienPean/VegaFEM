@@ -37,6 +37,9 @@
 #include <functional>
 #include <vector>
 
+namespace vegafem
+{
+
 // use flood-fill to remove tets which considered outside when embedding a closed surface.
 // isTetBoundary returns true if tetID embeds the surface
 // isTetOuter returns true if tetID is outside the surface. One way to detect this fast is to use winding number.
@@ -44,4 +47,8 @@
 std::vector<bool> labelOuterTets(const TetMeshRef & tetMesh, const TetNeighbor & tetNeighbor,
     std::function<bool(int tetID)> isTetBoundary, std::function<bool(int tetID)> isTetOuter);
 
+
+}//namespace vegafem
+
 #endif
+

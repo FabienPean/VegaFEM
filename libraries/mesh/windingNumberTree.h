@@ -48,6 +48,9 @@
 #include <limits>
 #include <climits>
 
+namespace vegafem
+{
+
 class WindingNumberTree
 {
 public:
@@ -84,5 +87,9 @@ protected:
   std::vector<Node> nodes;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

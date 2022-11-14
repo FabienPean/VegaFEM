@@ -49,6 +49,8 @@ ostream & operator << (ostream & o, ImmOwnership os)
   return o;
 }
 
+namespace vegafem
+{
 ImmersionGraphNode::ImmersionGraphNode(int cellID, int nodeID, const vector<map<int, bool>> & cellPatches) : nodeID(nodeID), cellID(cellID)
 {
   for(auto p : cellPatches[cellID])
@@ -164,3 +166,5 @@ bool ImmersionGraphNode::operator == (const ImmersionGraphNode & node2) const
   return true;
 }
 
+
+}//namespace vegafem

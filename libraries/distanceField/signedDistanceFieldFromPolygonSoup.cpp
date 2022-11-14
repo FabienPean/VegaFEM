@@ -40,6 +40,9 @@
 #include <cstdio>
 #include "signedDistanceFieldFromPolygonSoup.h"
 #include "marchingCubes.h"
+
+namespace vegafem
+{
 using namespace::std;
 
 SignedDistanceFieldFromPolygonSoup::SignedDistanceFieldFromPolygonSoup(ObjMesh * objMesh_, double expansionRatio_, bool useCubicBox_,
@@ -526,3 +529,5 @@ DistanceFieldNarrowBand * SignedDistanceFieldFromPolygonSoup::ComputeDistanceFie
   return field;
 }
 
+
+}//namespace vegafem

@@ -36,6 +36,9 @@
 #include "matrixExp.h"
 #include <cassert>
 #include <algorithm>
+
+namespace vegafem
+{
 using namespace std;
 
 template<class real>
@@ -679,3 +682,5 @@ void Matrix<real>::Resize(int i, int j, int newRows, int newCols)
 
 template class Matrix<float>;
 template class Matrix<double>;
+
+}//namespace vegafem

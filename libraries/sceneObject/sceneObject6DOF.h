@@ -40,6 +40,9 @@
 
 #include "sceneObjectWithRestPosition.h"
 
+namespace vegafem
+{
+
 class SceneObject6DOF : public virtual SceneObjectWithRestPosition
 {
 public:
@@ -139,5 +142,9 @@ inline void SceneObject6DOF::SetRotationMode(int rotation_)
   rotation = rotation_;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

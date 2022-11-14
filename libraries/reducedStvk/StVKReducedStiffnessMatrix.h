@@ -53,6 +53,9 @@
 
 #include "StVKReducedInternalForces.h"
 
+namespace vegafem
+{
+
 class StVKReducedStiffnessMatrix
 {
 public:
@@ -171,5 +174,9 @@ protected:
   int shallowCopy;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

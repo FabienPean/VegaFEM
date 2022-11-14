@@ -32,6 +32,9 @@
 
 #include "generateMassMatrix.h"
 
+namespace vegafem
+{
+
 void GenerateMassMatrix::computeMassMatrix(
   const VolumetricMesh * volumetricMesh, SparseMatrix ** massMatrix, bool inflate3Dim)
 {
@@ -86,3 +89,5 @@ void GenerateMassMatrix::computeVertexMasses(const VolumetricMesh * volumetricMe
   delete(massMatrix);
 }
 
+
+}//namespace vegafem

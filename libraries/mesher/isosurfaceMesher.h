@@ -61,6 +61,8 @@
 #include "exactOctree.h"
 #endif
 
+namespace vegafem
+{
 class IsosurfaceMesher
 {
 public:
@@ -204,6 +206,8 @@ protected:
 
   int globalLoopIndex = 0;
 };
+
+}//namespace vegafem
 
 #endif
 

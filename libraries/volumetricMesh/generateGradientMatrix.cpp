@@ -34,6 +34,9 @@
 #include "matrixMacros.h"
 #include "generateGradientMatrix.h"
 
+namespace vegafem
+{
+
 void GenerateGradientMatrix::GenerateElementMatrixEntries(const TetMesh * tetMesh, int element, double * m)
 {
   // grad is constant inside a tet
@@ -219,3 +222,5 @@ void GenerateGradientMatrix::GenerateForScalarField(const TetMesh * tetMesh, Spa
     *GTG = new SparseMatrix(&outlineGTG);
 }
 
+
+}//namespace vegafem

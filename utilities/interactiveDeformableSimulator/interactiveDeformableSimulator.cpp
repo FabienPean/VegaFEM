@@ -129,6 +129,8 @@ using namespace std;
 
 #include <GL/glui.h>
 
+using namespace vegafem;
+
 // graphics 
 char windowTitleBase[4096] = "Real-time sim";
 void displayFunction(void);

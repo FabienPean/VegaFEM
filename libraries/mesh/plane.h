@@ -35,6 +35,9 @@
 
 #include "vec3d.h"
 
+namespace vegafem
+{
+
 // a plane implementation for fast geometry queries
 // no normalization operation is used
 
@@ -72,4 +75,8 @@ inline double FastPlane::scaledDistance(const Vec3d & v) const
   return fabs(dot(v,dir) - d);
 }
 
+
+}//namespace vegafem
+
 #endif
+

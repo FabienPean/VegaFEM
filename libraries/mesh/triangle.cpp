@@ -48,6 +48,8 @@
 #include "tribox3.h"
 using namespace std;
 
+namespace vegafem
+{
 bool TriangleBasic::doesIntersectBox(const BoundingBox & bbox) const
 {
   // prepare the data and call the "triBoxOverlap" worker routine
@@ -365,12 +367,15 @@ void TriangleWithCollisionInfo::ComputeCollisionInfo()
   N21 = Vec3d(n2[0],n2[1],-dot(P2,n2));
   N22 = Vec3d(n2[0],n2[1],-dot(P0,n2));
 }
+}//namespace vegafem
 
 #undef __VERSION_WITH_BARYCENTRIC_COORDS_JNB_CMU__
 #include "triangle-closestPoint.cpp"
 #define __VERSION_WITH_BARYCENTRIC_COORDS_JNB_CMU__
 #include "triangle-closestPoint.cpp"
 
+namespace vegafem
+{
 TriangleWithCollisionInfoAndPseudoNormals::TriangleWithCollisionInfoAndPseudoNormals
 (const Vec3d & first_g, const Vec3d & second_g, const Vec3d & third_g, const Vec3d pseudoNormals[7]): TriangleWithCollisionInfo(first_g,second_g,third_g)
 {
@@ -401,3 +406,4 @@ template void makeUniqueList<TriangleWithCollisionInfo>(vector<TriangleWithColli
 template void makeUniqueList<TriangleWithCollisionInfoAndPseudoNormals>(const vector<TriangleWithCollisionInfoAndPseudoNormals*> & triangleList, vector<TriangleWithCollisionInfoAndPseudoNormals*> & uniqueList);
 template void makeUniqueList<TriangleWithCollisionInfoAndPseudoNormals>(vector<TriangleWithCollisionInfoAndPseudoNormals*> & triangleList);
 
+}//namespace vegafem

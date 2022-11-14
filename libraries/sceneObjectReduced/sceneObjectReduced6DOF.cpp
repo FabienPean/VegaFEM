@@ -32,6 +32,9 @@
 
 #include "sceneObjectReduced6DOF.h"
 
+namespace vegafem
+{
+
 SceneObjectReduced6DOF::SceneObjectReduced6DOF(const char * filenameOBJ, ModalMatrix * modalMatrix): SceneObjectWithRestPosition(filenameOBJ), SceneObjectReduced(filenameOBJ, modalMatrix), SceneObject6DOF(filenameOBJ), qvel(NULL)
 {
 }
@@ -80,3 +83,5 @@ void SceneObjectReduced6DOF::Setqvel(double * qvel_)
 }
 
 
+
+}//namespace vegafem

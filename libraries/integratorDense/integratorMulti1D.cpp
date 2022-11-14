@@ -37,6 +37,9 @@
 #include "integratorMulti1D.h"
 #include <cfloat>
 
+namespace vegafem
+{
+
 IntegratorMulti1D::IntegratorMulti1D(int r, double timestep, double * massMatrix_, double * tangentStiffnessMatrix_, double dampingMassCoef, double dampingStiffnessCoef): IntegratorBaseDense(r, timestep, dampingMassCoef, dampingStiffnessCoef)
 {
   z = (double *) calloc (r, sizeof(double));
@@ -299,3 +302,5 @@ void IntegratorMulti1D::ComputeQTM(double * massMatrix_)
   QTMM = QM.MultiplyT(massM);
 }
 
+
+}//namespace vegafem

@@ -39,6 +39,9 @@
 #include "volumetricMesh.h"
 #include "vegalong.h"
 
+namespace vegafem
+{
+
 // input: filename, numModels
 // output: numTargetLocations, numElementVertices, vertices, weights
 int multiLoadInterpolationWeightsBinary(const char * filename, int * numModels, int ** numTargetLocations, int ** numElementVertices, int *** vertices, double *** weights) // binary version; returns 0 on success
@@ -118,3 +121,5 @@ int multiSaveInterpolationWeightsBinary(const char * filename, int numModels, in
   return code;
 }
 
+
+}//namespace vegafem

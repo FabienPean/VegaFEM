@@ -36,6 +36,9 @@
 #include "StVKFEM.h"
 #include "stencilForceModel.h"
 
+namespace vegafem
+{
+
 // Stencils for StVK FEM.
 // A stencil is one FEM element.
 // See comments in the parent class.
@@ -54,5 +57,9 @@ protected:
   StVKFEM * stvkFEM;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

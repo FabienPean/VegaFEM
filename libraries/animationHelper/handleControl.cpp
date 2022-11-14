@@ -33,6 +33,9 @@
 #include "handleControl.h"
 #include "openGLHelper.h"
 #include <iostream>
+
+namespace vegafem
+{
 using namespace std;
 
 void HandleControl::setMouseButtonActivity(bool mouseDown, bool mouseOnObject, bool buildNewHandle, Vec3d worldPos, float zValue,
@@ -119,3 +122,5 @@ void HandleControl::renderHandle(SphericalCamera * camera, const Vec3d & handleP
 
   handleRender.render(handlePosition);
 }
+
+}//namespace vegafem

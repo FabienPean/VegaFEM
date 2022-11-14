@@ -35,6 +35,9 @@
 #include <cstring>
 #include "integratorBaseSparse.h"
 
+namespace vegafem
+{
+
 IntegratorBaseSparse::IntegratorBaseSparse(int r, double timestep, SparseMatrix * massMatrix_, ForceModel * forceModel_, int numConstrainedDOFs_, int * constrainedDOFs_, double dampingMassCoef, double dampingStiffnessCoef): IntegratorBase(r, timestep, dampingMassCoef, dampingStiffnessCoef), massMatrix(massMatrix_), forceModel(forceModel_), numConstrainedDOFs(numConstrainedDOFs_)
 {
   systemSolveTime = 0.0;
@@ -99,3 +102,5 @@ void IntegratorBaseSparse::ClearTangentStiffnessMatrixOffset()
   tangentStiffnessMatrixOffset = NULL;
 }
 
+
+}//namespace vegafem

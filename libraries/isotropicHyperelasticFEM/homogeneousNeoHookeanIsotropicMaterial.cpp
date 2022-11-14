@@ -33,6 +33,9 @@
 #include <cmath>
 #include "homogeneousNeoHookeanIsotropicMaterial.h"
 
+namespace vegafem
+{
+
 HomogeneousNeoHookeanIsotropicMaterial::HomogeneousNeoHookeanIsotropicMaterial(double E_, double nu_, int enableCompressionResistance_, double compressionResistance_) : IsotropicMaterialWithCompressionResistance(enableCompressionResistance_), compressionResistance(compressionResistance_)
 {
   SetYoungModulusAndPoissonRatio(E_, nu_);
@@ -107,3 +110,5 @@ double HomogeneousNeoHookeanIsotropicMaterial::GetCompressionResistanceFactor(in
   return EdivNuFactor;
 }
 
+
+}//namespace vegafem

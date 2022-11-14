@@ -40,6 +40,9 @@
 
 #include "sceneObjectReduced.h"
 
+namespace vegafem
+{
+
 class SceneObjectReducedCPU : virtual public SceneObjectReduced
 {
 public:
@@ -61,5 +64,9 @@ protected:
   double * u;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

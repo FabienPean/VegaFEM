@@ -47,6 +47,9 @@
 #include "objMesh.h"
 #include "minivector.h"
 
+namespace vegafem
+{
+
 class WindingNumber 
 {
 public:
@@ -55,5 +58,9 @@ public:
   static double computeWindingNumber(ObjMesh * objMesh, const Vec3d & p);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

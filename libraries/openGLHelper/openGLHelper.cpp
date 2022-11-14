@@ -33,6 +33,9 @@
 #include "openGLHelper.h"
 #include "macros.h"
 #include <iostream>
+
+namespace vegafem
+{
 using namespace std;
 //static void * fonts[] =
 //{
@@ -664,3 +667,5 @@ void PolygonOffsetFillState::changeOffset(GLfloat inputFactor, GLfloat inputUnit
   if (type == OT_ABSOLUTE) { glPolygonOffset(inputFactor, inputUnits); }
   else { glPolygonOffset(prevFactor + inputFactor, prevUnits + inputUnits); } // relative
 }
+
+}//namespace vegafem

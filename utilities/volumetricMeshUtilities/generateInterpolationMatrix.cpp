@@ -43,6 +43,7 @@
 #include "matrixIO.h"
 #include "matrixMacros.h"
 #include "getopts.h"
+using namespace vegafem;
 
 /*
   Builds an interpolation matrix A that can be used to efficiently transfer deformations from

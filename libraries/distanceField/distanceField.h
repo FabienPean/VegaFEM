@@ -82,6 +82,9 @@
 #include "distanceFieldBase.h"
 #include "vegalong.h"
 
+namespace vegafem
+{
+
 class DistanceField : public DistanceFieldBase
 {
 public:
@@ -215,5 +218,9 @@ inline void DistanceField::setComputationZRange(int zMin, int zMax)
   this->zMax = zMax;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -41,6 +41,9 @@
 #include "centralDifferencesDense.h"
 #include "IPIVC.h"
 
+namespace vegafem
+{
+
 #ifdef __APPLE__
   #define DGETRF dgetrf_
   #define DGETRS dgetrs_
@@ -191,3 +194,5 @@ int CentralDifferencesDense::DoTimestep()
   return 0;
 }
 
+
+}//namespace vegafem

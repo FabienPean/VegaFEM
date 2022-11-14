@@ -34,6 +34,9 @@
 #include "stringHelper.h"
 #include <cstring>
 #include <iostream>
+
+namespace vegafem
+{
 using namespace std;
 
 int readEachLine(const std::string & filename, std::function<int(std::string & line)> processLine, const char * comment)
@@ -61,3 +64,5 @@ int readEachLine(std::istream & fin, std::function<int(std::string & line)> proc
   }
   return 0;
 }
+
+}//namespace vegafem

@@ -42,6 +42,9 @@
 #include <cmath>
 #include <iostream>
 
+namespace vegafem
+{
+
 class TriangleBasic;
 class TriangleWithCollisionInfo;
 class TriangleWithCollisionInfoAndPseudoNormals;
@@ -169,4 +172,8 @@ BoundingBox::BoundingBox(const Vec3d * allVertices, const Vec3i * allTriangles, 
     }
   updateData();
 }
+
+}//namespace vegafem
+
 #endif
+

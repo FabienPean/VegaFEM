@@ -41,6 +41,9 @@
 
 #include "openGL-headers.h"
 
+namespace vegafem
+{
+
 class GLSLPhong
 {
 public:
@@ -72,5 +75,9 @@ protected:
   static char fragmentShaderStringEpilogue [];
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

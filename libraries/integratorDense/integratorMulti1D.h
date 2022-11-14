@@ -49,6 +49,9 @@
 #include "integratorBaseDense.h"
 #include "reducedForceModel.h"
 
+namespace vegafem
+{
+
 class IntegratorMulti1D : public virtual IntegratorBaseDense
 {
 public:
@@ -114,5 +117,9 @@ protected:
   double * rotatedForces;   // a r x 1 vector, rotatedForces = Q^T * externalForces  
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

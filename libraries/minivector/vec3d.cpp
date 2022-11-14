@@ -31,6 +31,9 @@
 
 #include "vec3d.h"
 
+namespace vegafem
+{
+
 static_assert(sizeof(Vec3d) == sizeof(double) * 3, "Size of Vec3d should be sizeof(double) * 3");
 
 /*
@@ -52,3 +55,5 @@ Vec3d Vec3d::findOrthonormalVector() const
   return result;
 }
 
+
+}//namespace vegafem

@@ -37,6 +37,9 @@
 #include "massSpringSystemFromObjMeshConfigFile.h"
 #include <cstring>
 
+namespace vegafem
+{
+
 char * MassSpringSystemFromObjMeshConfigFile::DuplicateString(const char * s)
 {
   // strdup sometimes causes problems, so we use this
@@ -102,3 +105,5 @@ int MassSpringSystemFromObjMeshConfigFile::GenerateMassSpringSystem(const char *
   return code;
 }
 
+
+}//namespace vegafem

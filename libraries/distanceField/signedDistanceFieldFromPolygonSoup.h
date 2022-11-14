@@ -47,6 +47,9 @@
 #include "closestPointField.h"
 #include "objMesh.h"
 
+namespace vegafem
+{
+
 class SignedDistanceFieldFromPolygonSoup
 {
 public:
@@ -108,5 +111,9 @@ protected:
   bool setBoundingBox(DistanceFieldBase* field, int resolutionX, int resolutionY, int resolutionZ);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -36,6 +36,9 @@
 #include "sceneObject6DOF.h"
 #include "sceneObjectReduced.h"
 
+namespace vegafem
+{
+
 class SceneObjectReduced6DOF : public virtual SceneObjectReduced, public SceneObject6DOF
 {
 public:
@@ -60,5 +63,9 @@ protected:
   double * qvel;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

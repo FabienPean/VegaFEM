@@ -35,6 +35,9 @@
 
 #include <vector>
 
+namespace vegafem
+{
+
 /*
   To simulate a deformable object, we usually discretize it into elements.
   For example, a 3D solid can be represented by a set of tetrahedra,
@@ -94,5 +97,9 @@ protected:
   int n3;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

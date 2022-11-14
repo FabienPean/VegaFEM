@@ -85,6 +85,9 @@
 #include "distanceField.h"
 #include "trilinearInterpolation.h"
 #include "vegalong.h"
+
+namespace vegafem
+{
 using namespace std;
 
 //#define GENERATE_DEBUG_DATA
@@ -134,7 +137,7 @@ void DistanceField::enableVoronoiDiagramComputation(bool computeVoronoiDiagram)
 {
   this->computeVoronoiDiagram = computeVoronoiDiagram;
 }
-
+}//namespace vegafem
 // the routines for signed and unsigned distance field computation
 #define COMPUTE_SIGNED_FIELD
   #define COMPUTE_FLOOD_FIELD
@@ -143,7 +146,8 @@ void DistanceField::enableVoronoiDiagramComputation(bool computeVoronoiDiagram)
     #include "computeField.cpp"
 #undef COMPUTE_SIGNED_FIELD
   #include "computeField.cpp"
-
+namespace vegafem
+{
 int DistanceField::load(const std::string& filename)
 {
   ifstream fin(filename.c_str(),ios::binary);
@@ -1058,3 +1062,5 @@ void DistanceField::offsetDistanceField(double offset)
     distanceData[i] += (float) offset;
 }
 
+
+}//namespace vegafem

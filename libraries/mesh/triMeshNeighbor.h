@@ -38,6 +38,9 @@
 #include <unordered_map>
 #include <map>
 
+namespace vegafem
+{
+
 // Edge-manifold neighboring structure for vector of triangles.
 // No vtx positions needed.
 class TriangleNeighbor
@@ -178,5 +181,9 @@ bool getNonManifoldOEdgeTrisMap(const std::vector<Vec3i> & triangles, std::unord
 std::vector<OEdgeKey> getExteriorEdges(int numTriangles, const Vec3i * triangles);
 inline std::vector<OEdgeKey> getExteriorEdges(const std::vector<Vec3i> & triangles) { return getExteriorEdges(triangles.size(), triangles.data()); }
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -35,6 +35,9 @@
 #include "distanceFieldCreator.h"
 #include "signedDistanceFieldFromPolygonSoup.h"
 #include "marchingCubes.h"
+
+namespace vegafem
+{
 using namespace::std;
 
 DistanceFieldCreator::DistanceFieldCreator(ObjMesh * objMesh_, double expansionRatio_, bool useCubicBox_, const Vec3d * bbmin_, const Vec3d * bbmax_): objMesh(objMesh_), expansionRatio(expansionRatio_), useCubicBox(useCubicBox_), bbmin(0.0), bbmax(1.0)
@@ -206,3 +209,5 @@ DistanceFieldNarrowBand * DistanceFieldCreator::ComputeDistanceFieldNarrowBand(i
   return field;
 }
 
+
+}//namespace vegafem

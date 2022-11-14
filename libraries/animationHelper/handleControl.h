@@ -39,6 +39,8 @@
 
 #include <functional>
 
+namespace vegafem
+{
 class HandleControl
 {
 public:
@@ -73,4 +75,8 @@ protected:
 };
 
 
+
+}//namespace vegafem
+
 #endif
+

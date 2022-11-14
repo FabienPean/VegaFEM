@@ -36,6 +36,9 @@
 #include "sceneObjectDeformableGPU.h"
 #include "sceneObjectDeformable6DOF.h"
 
+namespace vegafem
+{
+
 class SceneObjectDeformableGPU6DOF : public SceneObjectDeformableGPU, public SceneObjectDeformable6DOF
 {
 public:
@@ -55,5 +58,9 @@ public:
 protected:
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

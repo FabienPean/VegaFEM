@@ -28,6 +28,8 @@
 #include <iostream>
 #include <algorithm>
 
+namespace vegafem
+{
 namespace iglInterface
 {
 
@@ -178,3 +180,5 @@ SelfCutMeshData remeshSelfIntersection(TriMeshRef mesh, bool stitch,
 }
 
 }
+
+}//namespace vegafem

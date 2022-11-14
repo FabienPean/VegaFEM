@@ -36,6 +36,9 @@
 #include "massSpringSystem.h"
 #include "stencilForceModel.h"
 
+namespace vegafem
+{
+
 // Stencils for mass-spring systems.
 // A stencil is one spring.
 // See comments in the parent class.
@@ -51,5 +54,9 @@ protected:
   MassSpringSystem *massSpringSystem;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

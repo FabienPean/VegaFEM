@@ -37,6 +37,8 @@
 #ifndef VEGAFEM_MULTIMATRIXIO_H
 #define VEGAFEM_MULTIMATRIXIO_H
 
+namespace vegafem
+{
 class MultiMatrixIO
 {
 public:
@@ -52,6 +54,6 @@ public:
 
 protected:
 };
-
+}//namespace vegafem
 #endif
 

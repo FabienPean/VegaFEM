@@ -68,6 +68,9 @@ take very small explicit timesteps, or use the ImplicitNewmark class.
 
 #include "integratorBaseDense.h"
 
+namespace vegafem
+{
+
 class CentralDifferencesDense : public virtual IntegratorBaseDense
 {
 public:
@@ -91,5 +94,9 @@ protected:
   int UpdateLU();
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

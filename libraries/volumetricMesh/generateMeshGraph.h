@@ -39,6 +39,9 @@
 #include "volumetricMesh.h"
 #include "graph.h"
 
+namespace vegafem
+{
+
 // generates a graph of the vertices of a volumetric mesh
 // two vertices are connected if they share an edge
 
@@ -48,5 +51,9 @@ public:
   static Graph * Generate(const VolumetricMesh * volumetricMesh);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

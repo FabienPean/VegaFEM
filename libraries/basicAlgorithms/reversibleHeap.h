@@ -38,6 +38,9 @@
 #include <cassert>
 #include <cstddef>
 
+namespace vegafem
+{
+
 // a heap that finds the Key with the smallest Value
 // the input Key must be unique
 // has the ability to find the Key inside the heap (therefore named Reversible)
@@ -148,4 +151,8 @@ const Value * ReversibleHeap<Value, Key>::find(const Key & key) const
 }
 
 
-#endif /* REVERSIBLEHEAP_H_ */
+
+}//namespace vegafem
+
+#endif
+ /* REVERSIBLEHEAP_H_ */

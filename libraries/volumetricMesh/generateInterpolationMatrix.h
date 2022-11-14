@@ -35,6 +35,9 @@
 
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 // creates the sparse matrix A that interpolates a quantity from volumetric 
 // mesh vertices to an embedded triangle mesh:
 // y = A * x
@@ -52,5 +55,9 @@ public:
   static void generate(int numTargetLocations, int numElementVertices, const int * vertices, const double * weights, SparseMatrix ** A, int numSourceLocations=-1); 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

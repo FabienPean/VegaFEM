@@ -46,6 +46,9 @@ values of r, there will be a computational slowdown.
 
 #include "integratorBaseDense.h"
 
+namespace vegafem
+{
+
 class ImplicitBackwardEulerDense : public virtual IntegratorBaseDense
 {
 public:
@@ -76,5 +79,9 @@ protected:
   solverType solver;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

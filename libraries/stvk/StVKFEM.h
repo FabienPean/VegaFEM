@@ -36,6 +36,9 @@
 #include "volumetricMesh.h"
 #include "StVKElementABCD.h"
 
+namespace vegafem
+{
+
 #include <vector>
 
 
@@ -121,4 +124,8 @@ protected:
   }
 };
 
+
+}//namespace vegafem
+
 #endif
+

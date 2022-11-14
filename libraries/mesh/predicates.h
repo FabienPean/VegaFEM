@@ -38,6 +38,9 @@
 
 #include "initPredicates.h"
 
+namespace vegafem
+{
+
 // !!!!!!!!!! IMPORTANT !!!!!!!!!!
 // You must first call "initPredicates" defined in initPredicates.h to initialize variables used for exact predicates.
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -107,5 +110,9 @@ bool intersectSegSeg2d(const double sa[2], const double sb[2], const double ta[2
 // sw[2] and tw[2] are weight of the intersection
 bool intersectSegSeg2d(const double sa[2], const double sb[2], const double ta[2], const double tb[2], double sw[2], double tw[2]);
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -79,6 +79,9 @@
 #include "objMesh.h"
 #include <algorithm>
 
+namespace vegafem
+{
+
 class DistanceFieldBase
 {
 public:
@@ -313,5 +316,9 @@ inline double DistanceFieldBase::gridUnitsToAbsoluteUnits(double gridUnits) cons
 }
 
 
+
+}//namespace vegafem
+
 #endif
+
 

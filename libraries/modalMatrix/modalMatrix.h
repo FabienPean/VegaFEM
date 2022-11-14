@@ -35,6 +35,9 @@
 
 #include "matrixMacros.h"
 
+namespace vegafem
+{
+
 #define MODAL_MATRIX_INTERNAL_COPY 0
 #define MODAL_MATRIX_NO_INTERNAL_COPY 1
 
@@ -128,5 +131,9 @@ inline void ModalMatrix::AddAssembleSingleVertex(int vertex, double * q, double 
   *uz += regz;
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

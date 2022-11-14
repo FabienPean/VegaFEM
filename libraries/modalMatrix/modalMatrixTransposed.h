@@ -34,6 +34,9 @@
 
 #include "matrixMacros.h"
 
+namespace vegafem
+{
+
 template<class real>
 class ModalMatrixTransposed 
 {
@@ -164,6 +167,8 @@ inline void ModalMatrixTransposed<real>::AddAssembleSingleVertex
   *uy += regy;
   *uz += regz;
 }
+
+}//namespace vegafem
 
 #endif
 

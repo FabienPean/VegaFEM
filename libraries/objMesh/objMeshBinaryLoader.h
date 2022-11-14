@@ -41,6 +41,9 @@
 #include "objMesh.h"
 #include <string>
 
+namespace vegafem
+{
+
 class ObjMeshBinaryLoader
 {
 public:
@@ -63,5 +66,9 @@ protected:
   static int writeVec3dToBinary(Vec3d & vec, std::ofstream * fout);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

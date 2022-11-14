@@ -34,6 +34,9 @@
 #define VEGAFEM_HANDLERENDER_H
 #include "minivector.h"
 
+namespace vegafem
+{
+
 
 // used to draw a handle with three arrows forming a coordinate system
 class HandleRender
@@ -88,4 +91,8 @@ protected:
 };
 
 
+
+}//namespace vegafem
+
 #endif
+

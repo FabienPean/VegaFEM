@@ -37,6 +37,9 @@
 #include <functional>
 #include <string>
 
+namespace vegafem
+{
+
 // read each line from fin
 // empty line will be skipped, so input parameter line to processLine is always not empty
 // the input function processLine should return 0 when success
@@ -46,4 +49,8 @@ int readEachLine(const std::string & filename, std::function<int(std::string & l
 int readEachLine(std::istream & fin, std::function<int(std::string & line)> processLine, const char * comment = "#");
 
 
+
+}//namespace vegafem
+
 #endif
+

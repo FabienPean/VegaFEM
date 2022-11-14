@@ -57,6 +57,7 @@ using namespace std;
 #include "objMesh.h"
 #include "tetMesher.h"
 #include "initPredicates.h"
+using namespace vegafem;
 
 int main( int argc, char** argv )
 {

@@ -37,6 +37,9 @@
 #include <cfloat>
 #include "sceneObjectReduced.h"
 
+namespace vegafem
+{
+
 SceneObjectReduced::SceneObjectReduced(const char * filenameOBJ, ModalMatrix * modalMatrix): SceneObjectWithRestPosition(filenameOBJ), SceneObjectDeformable(filenameOBJ) 
 {
   Construct(modalMatrix);
@@ -70,3 +73,5 @@ void SceneObjectReduced::Scaleq(double scale)
     q[i] *= scale;
 }
 
+
+}//namespace vegafem

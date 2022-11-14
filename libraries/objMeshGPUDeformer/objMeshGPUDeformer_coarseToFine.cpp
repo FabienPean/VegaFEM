@@ -41,6 +41,8 @@
 #include "objMeshGPUDeformer_coarseToFine.h"
 #include "coarseToFine-shaders.cpp"
 
+namespace vegafem
+{
 ObjMeshGPUDeformer_coarseToFine::ObjMeshGPUDeformer_coarseToFine() : ObjMeshGPUDeformer()
 {
   interp_vertices = NULL;
@@ -599,3 +601,5 @@ CGprofile ObjMeshGPUDeformer_coarseToFine::Fragment_InterpolationProfile;
 CGprogram ObjMeshGPUDeformer_coarseToFine::Fragment_InterpolationProgram;
 CGprogram ObjMeshGPUDeformer_coarseToFine::FragmentPass2ProgramNoTexture;
 
+
+}//namespace vegafem

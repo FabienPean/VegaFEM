@@ -41,6 +41,9 @@
 #include "sparseMatrix.h"
 #include <vector>
 
+namespace vegafem
+{
+
 class FiniteDifferenceTester
 {
 public:
@@ -82,4 +85,8 @@ protected:
   SparseMatrix * unsymmetricStiffness = nullptr;
 };
 
-#endif /* FINITEDIFFERENCETESTER_H_ */
+
+}//namespace vegafem
+
+#endif
+ /* FINITEDIFFERENCETESTER_H_ */

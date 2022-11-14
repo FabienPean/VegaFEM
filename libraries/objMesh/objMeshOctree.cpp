@@ -36,6 +36,9 @@
 
 #include "triple.h"
 #include "objMeshOctree.h"
+
+namespace vegafem
+{
 using namespace std;
 
 template<class TriangleClass>
@@ -222,3 +225,5 @@ template ObjMeshOctree<TriangleWithCollisionInfo>::ObjMeshOctree(const ObjMesh *
   //template ObjMeshOctree<TriangleWithCollisionInfoAndPseudoNormals>::ObjMeshOctree( ObjMesh * objMesh, int maxNumTrianglesInLeafNode_, int maxTreeDepth_, int printInfo );
 #endif
 
+
+}//namespace vegafem

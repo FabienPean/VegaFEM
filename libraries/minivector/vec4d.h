@@ -39,6 +39,9 @@
 #include <ostream>
 #include <cstring>
 
+namespace vegafem
+{
+
 class Vec4d
 {
 public:
@@ -107,17 +110,17 @@ inline Vec4d::Vec4d(double entry)
 
 inline Vec4d::Vec4d(const double vec[4])
 {
-  memcpy(elt, vec, sizeof(double) * 4);
+  std::memcpy(elt, vec, sizeof(double) * 4);
 }
 
 inline Vec4d::Vec4d(const Vec4d & vec)
 {
-  memcpy(elt, vec.elt, sizeof(double) * 4);
+  std::memcpy(elt, vec.elt, sizeof(double) * 4);
 }
 
 inline Vec4d & Vec4d::operator=(const Vec4d & source)
 {
-  memcpy(elt, source.elt, sizeof(double) * 4);
+  std::memcpy(elt, source.elt, sizeof(double) * 4);
   return *this;
 }
 
@@ -304,5 +307,9 @@ inline bool Vec4d::hasNaN() const
   return (std::isnan(elt[0]) || std::isnan(elt[1]) || std::isnan(elt[2]) || std::isnan(elt[3]));
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

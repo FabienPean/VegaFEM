@@ -33,6 +33,9 @@
 
 #include "reducedStVKForceModel.h"
 
+namespace vegafem
+{
+
 ReducedStVKForceModel::ReducedStVKForceModel(StVKReducedInternalForces * stVKReducedInternalForces_, StVKReducedStiffnessMatrix * stVKStiffnessMatrix_): stVKReducedInternalForces(stVKReducedInternalForces_), stVKStiffnessMatrix(stVKStiffnessMatrix_), useScale(0), scale(1.0), own_stVKStiffnessMatrix(false)
 {
   r = stVKReducedInternalForces->Getr();
@@ -70,3 +73,5 @@ void ReducedStVKForceModel::GetTangentStiffnessMatrix(double * q, double * tange
   }
 }
 
+
+}//namespace vegafem

@@ -43,6 +43,9 @@
 #include "reducedStVKForceModel.h"
 #include "reducedForceModelWithHessian.h"
 
+namespace vegafem
+{
+
 class ReducedStVKForceModelWithHessian : public ReducedStVKForceModel, public ReducedForceModelWithHessian
 {
 public:
@@ -55,5 +58,9 @@ protected:
   StVKReducedHessianTensor * stVKReducedHessianTensor;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

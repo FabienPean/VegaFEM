@@ -44,6 +44,9 @@
 #include "sceneObjectDeformable.h"
 #include "objMeshGPUDeformer_coarseToFine_fbo.h"
 
+namespace vegafem
+{
+
 class SceneObjectDeformableGPU : public virtual SceneObjectDeformable
 {
 public:
@@ -67,5 +70,9 @@ protected:
   ObjMeshGPUDeformer_coarseToFine_fbo * render_coarseToFine;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

@@ -48,6 +48,8 @@
 #include "sceneObjectDeformable.h"
 #include "modalMatrix.h"
 
+namespace vegafem
+{
 // abstract class
 class SceneObjectReduced : public SceneObjectDeformable
 {
@@ -94,5 +96,9 @@ inline void SceneObjectReduced::GetSingleVertexPosition(int vertex, double * x, 
   modalMatrix->AddAssembleSingleVertex(vertex,q,x,y,z);
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

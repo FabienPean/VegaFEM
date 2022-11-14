@@ -36,6 +36,9 @@
 #include "cubicMesh.h"
 #include "triKey.h"
 #include "rectKey.h"
+
+namespace vegafem
+{
 using namespace std;
 
 // the main routine
@@ -261,3 +264,5 @@ ObjMesh * GenerateSurfaceMesh::ComputeMesh(const VolumetricMesh * mesh, const Ob
   return objMesh;
 }
 
+
+}//namespace vegafem

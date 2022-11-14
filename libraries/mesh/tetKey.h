@@ -54,6 +54,9 @@
 #include <algorithm>
 #include <ostream>
 
+namespace vegafem
+{
+
 // unoriented tet key based on vtx indices
 struct UTetKey
 {
@@ -245,4 +248,7 @@ inline int OTetKey::getInvertedTriIndex(const UTriKey & tri) const
   return -1;
 }
 
+}//namespace vegafem
+
 #endif
+

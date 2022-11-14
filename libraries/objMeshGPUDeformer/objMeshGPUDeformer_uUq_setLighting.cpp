@@ -33,6 +33,9 @@
 
 #include "objMeshGPUDeformer_uUq_setLighting.h"
 
+namespace vegafem
+{
+
 void ObjMeshGPUDeformer_uUq_setLighting::SetLighting(
   ObjMeshGPUDeformer_uUq * renderGPUObject, Lighting * lighting)
 {
@@ -79,3 +82,5 @@ void ObjMeshGPUDeformer_uUq_setLighting::SetLighting(
   */
 }
 
+
+}//namespace vegafem

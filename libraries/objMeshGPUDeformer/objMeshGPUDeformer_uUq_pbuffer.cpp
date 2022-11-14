@@ -39,6 +39,9 @@
 #include <cstring>
 #include "ObjMeshGPUDeformer_uUq_pbuffer.h"
 
+namespace vegafem
+{
+
 ObjMeshGPUDeformer_uUq_pbuffer::~ObjMeshGPUDeformer_uUq_pbuffer() {}
 
 void ObjMeshGPUDeformer_uUq_pbuffer::EnableRTT()
@@ -267,5 +270,5 @@ PFNWGLBINDTEXIMAGEARBPROC ObjMeshGPUDeformer_uUq_pbuffer::wglBindTexImageARB = N
 PFNWGLRELEASETEXIMAGEARBPROC ObjMeshGPUDeformer_uUq_pbuffer::wglReleaseTexImageARB = NULL;
 PFNWGLSETPBUFFERATTRIBARBPROC ObjMeshGPUDeformer_uUq_pbuffer::wglSetPbufferAttribARB = NULL;
 
+}//namespace vegafem
 #endif
-

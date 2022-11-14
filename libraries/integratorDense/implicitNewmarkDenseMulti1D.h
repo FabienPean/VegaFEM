@@ -39,6 +39,9 @@
 
 #include "integratorMulti1D.h"
 
+namespace vegafem
+{
+
 class ImplicitNewmarkDenseMulti1D : public IntegratorMulti1D, public ImplicitNewmarkDense
 {
 public:
@@ -64,5 +67,9 @@ protected:
   void UpdateCoefs();       // this function should be always called after alphas are updated
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

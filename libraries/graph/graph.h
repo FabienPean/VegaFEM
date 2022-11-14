@@ -38,6 +38,9 @@
 #include <map>
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 /*
   A class to store an undirected graph (nodes connected with edges).
 */
@@ -149,5 +152,9 @@ inline int Graph::GetNeighbor(int vertex, int i) const
   return vertexNeighborsVector[vertex][i];
 }
 
+
+}//namespace vegafem
+
 #endif
+
 

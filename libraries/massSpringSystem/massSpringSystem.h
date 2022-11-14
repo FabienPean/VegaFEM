@@ -49,6 +49,9 @@
 
 #include "sparseMatrix.h"
 
+namespace vegafem
+{
+
 enum MassSpringSystemElementType {TET, CUBE};
 
 class MassSpringSystem
@@ -163,5 +166,9 @@ protected:
   double g;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

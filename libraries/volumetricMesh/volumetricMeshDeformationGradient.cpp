@@ -34,6 +34,9 @@
 #include "mat3d.h"
 #include "volumetricMeshDeformationGradient.h"
 
+namespace vegafem
+{
+
 // computes the deformation gradient for the deformation given by the displacement vector u (length 3n, where n=#vertices), for the element with index "elementIndex"
 // F is a 3x3 matrix, stored row-major into a vector of length 9
 void VolumetricMeshDeformationGradient::ComputeDeformationGradient(VolumetricMesh * mesh, double * u, int elementIndex, double * F)
@@ -92,3 +95,5 @@ double VolumetricMeshDeformationGradient::ComputeMaximalStretch(VolumetricMesh *
 }
 
 
+
+}//namespace vegafem

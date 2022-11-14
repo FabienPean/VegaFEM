@@ -35,6 +35,9 @@
 
 #include "isotropicMaterial.h"
 
+namespace vegafem
+{
+
 class IsotropicMaterialWithCompressionResistance : public IsotropicMaterial
 {
 public:
@@ -54,5 +57,9 @@ protected:
   void AddCompressionResistanceHessian(int elementIndex, double * invariants, double * hessian); 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

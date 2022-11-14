@@ -49,7 +49,8 @@
 #include <numeric>
 using namespace std;
 
-
+namespace vegafem
+{
 /////////////////////////////////////////////////////////////////
 //                   TriMeshRef functions
 /////////////////////////////////////////////////////////////////
@@ -766,3 +767,5 @@ int TriMeshRef::computeEulerCharacteristicAssumingClosedManifold() const
   assert(numTriangles() % 2 == 0);
   return numVertices() - numTriangles() / 2;
 }
+
+}//namespace vegafem

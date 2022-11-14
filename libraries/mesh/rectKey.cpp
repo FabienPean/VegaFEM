@@ -32,7 +32,12 @@
 
 #include "rectKey.h"
 
+namespace vegafem
+{
+
 const int URectKey::rectEdgeIndex[4][2] = { {0,1}, {1,2},{2,3},{3,0} };
 
 const int ORectKey::rectEdgeIndex[4][2] = { {0,1}, {1,2},{2,3},{3,0} };
 
+
+}//namespace vegafem

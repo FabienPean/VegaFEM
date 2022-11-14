@@ -36,6 +36,9 @@
 #include "sparseMatrix.h"
 #include "tetMesh.h"
 
+namespace vegafem
+{
+
 // creates the sparse matrix G that computes the gradient
 // of a 3D vector field on a tet mesh
 // optionally, computes G^T G as well
@@ -57,5 +60,9 @@ protected:
   static void GenerateElementMatrixEntries(const TetMesh * tetMesh, int el, double * m); // of a single element, condensed array "m" of 12 doubles
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

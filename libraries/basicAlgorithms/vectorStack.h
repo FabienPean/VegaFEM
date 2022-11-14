@@ -35,6 +35,9 @@
 
 #include <vector>
 
+namespace vegafem
+{
+
 // a stack/vector combination that holds multiple items in order and has an index
 // that points to the current item
 // useful for displaying history of an editing process
@@ -76,4 +79,8 @@ protected:
 };
 
 
+
+}//namespace vegafem
+
 #endif
+

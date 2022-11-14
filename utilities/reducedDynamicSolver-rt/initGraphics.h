@@ -59,7 +59,7 @@ void initCamera(double cameraRadius,
                 double focusPosX, double focusPosY, double focusPosZ,
                 double camera2WorldScalingFactor,
                 double * zNear, double * zFar, 
-                SphericalCamera ** camera);
+                vegafem::SphericalCamera ** camera);
 
 void initGraphics(int windowWidth, int windowHeight);
 

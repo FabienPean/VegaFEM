@@ -1,6 +1,9 @@
 #include <cstring>
 #include "integratorSolverSelection.h"
 
+namespace vegafem
+{
+
 // returns the string corresponding to the selected integrator solver
 void GetIntegratorSolver(char * solver)
 {
@@ -19,3 +22,5 @@ void GetIntegratorSolver(char * solver)
   #endif
 }
 
+
+}//namespace vegafem

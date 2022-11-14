@@ -32,6 +32,9 @@
 
 #include "isotropicHyperelasticFEMForceModel.h"
 
+namespace vegafem
+{
+
 IsotropicHyperelasticFEMForceModel::IsotropicHyperelasticFEMForceModel(IsotropicHyperelasticFEM * isotropicHyperelasticFEM_): isotropicHyperelasticFEM(isotropicHyperelasticFEM_)
 {
   r = 3 * isotropicHyperelasticFEM->GetTetMesh()->getNumVertices();
@@ -64,3 +67,5 @@ void IsotropicHyperelasticFEMForceModel::GetForceAndMatrix(const double * u, dou
   isotropicHyperelasticFEM->GetForceAndTangentStiffnessMatrix(u, internalForces, tangentStiffnessMatrix);
 }
 
+
+}//namespace vegafem

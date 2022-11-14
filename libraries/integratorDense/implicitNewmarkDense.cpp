@@ -37,6 +37,9 @@
 #include "implicitNewmarkDense.h"
 #include "IPIVC.h"
 
+namespace vegafem
+{
+
 ImplicitNewmarkDense::ImplicitNewmarkDense(int r, double timestep, double * massMatrix, ReducedForceModel * reducedForceModel, solverType solver, double dampingMassCoef, double dampingStiffnessCoef, int maxIterations, double epsilon, double NewmarkBeta, double NewmarkGamma): IntegratorBaseDense(r, timestep, massMatrix, reducedForceModel, dampingMassCoef, dampingStiffnessCoef)
 {
   this->solver = solver;
@@ -395,3 +398,5 @@ void ImplicitNewmarkDense::Setq(double * q)
 }
 
 
+
+}//namespace vegafem

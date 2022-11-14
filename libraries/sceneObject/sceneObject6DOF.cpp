@@ -37,6 +37,9 @@
 #include <cfloat>
 #include "sceneObject6DOF.h"
 
+namespace vegafem
+{
+
 SceneObject6DOF::SceneObject6DOF(const char * filenameOBJ): SceneObjectWithRestPosition(filenameOBJ), scale(1.0) 
 {
   Construct();
@@ -291,3 +294,5 @@ int SceneObject6DOF::GetClosestVertex(Vec3d & queryPos, double * distance, doubl
   return SceneObject::GetClosestVertex(localQueryPos, distance, auxVertexBuffer);
 }
 
+
+}//namespace vegafem

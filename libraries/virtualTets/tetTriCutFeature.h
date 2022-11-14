@@ -40,6 +40,8 @@
 #include <vector>
 #include <map>
 
+namespace vegafem
+{
 
 // to perform geometric queries on a tet
 struct TetShape
@@ -119,13 +121,16 @@ struct TetTriCutFeature
   std::vector<UTriKey> getTouchingTetFaces(const TetShape & tetShape) const;
 };
 
+}//namespace vegafem
+
 namespace std
 {
   template <>
-  struct hash<TetTriCutFeature>
+  struct hash<vegafem::TetTriCutFeature>
   {
-    size_t operator()(const TetTriCutFeature & k) const
+    size_t operator()(const vegafem::TetTriCutFeature & k) const
     {
+      using vegafem::hashCombine;
       size_t v = hash<int>()(k.triFeature[0]);
       v = hashCombine(v, hash<int>()(k.triFeature[1]));
       v = hashCombine(v, hash<int>()(k.triFeature[2]));

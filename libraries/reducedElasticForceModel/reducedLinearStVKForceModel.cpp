@@ -34,6 +34,9 @@
 #include "matrixMacros.h"
 #include "reducedLinearStVKForceModel.h"
 
+namespace vegafem
+{
+
 ReducedLinearStVKForceModel::ReducedLinearStVKForceModel(StVKReducedStiffnessMatrix * stVKReducedStiffnessMatrix)
 {
   r = stVKReducedStiffnessMatrix->Getr();
@@ -70,3 +73,5 @@ void ReducedLinearStVKForceModel::GetTangentHessianTensor(double * q, double * t
   memset(tangentHessianTensor, 0, sizeof(double) * r * r*(r+1)/2);
 }
 
+
+}//namespace vegafem

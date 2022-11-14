@@ -34,6 +34,9 @@
 #include <iostream>
 #include <cstdio>
 #include "matrixIO.h"
+
+namespace vegafem
+{
 using namespace std;
 
 FrameRecorder::FrameRecorder(int size, const std::string & fn, int mf, int numSkippedIntervalFrames) :
@@ -110,3 +113,5 @@ void SimulationRecorder::clear()
   vFrames.clear();
   fFrames.clear();
 }
+
+}//namespace vegafem

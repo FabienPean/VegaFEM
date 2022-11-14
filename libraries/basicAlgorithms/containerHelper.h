@@ -43,6 +43,9 @@
 #include <numeric>
 #include <unordered_set>
 
+namespace vegafem
+{
+
 /////////////////////////////////////////////////////
 //            Check element in set/map             //
 /////////////////////////////////////////////////////
@@ -431,4 +434,8 @@ std::vector<T,A> findUniqueElements(const std::vector<T,A> vec, std::vector<int>
 
   return ret;
 }
+
+}//namespace vegafem
+
 #endif
+

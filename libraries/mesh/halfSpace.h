@@ -35,6 +35,9 @@
 
 #include "vec3d.h"
 
+namespace vegafem
+{
+
 class HalfSpace
 {
 public:
@@ -84,4 +87,8 @@ inline bool HalfSpace::intersect(const BoundingBox & bb) const
 
 
 
+
+}//namespace vegafem
+
 #endif
+

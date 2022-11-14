@@ -104,6 +104,9 @@ Both publications are available online at www.jernejbarbic.com .
 
 #include <cstdlib>
 
+namespace vegafem
+{
+
 // This abstract class is derived into: IntegratorBaseDense (dense systems)
 // and ImplicitNewmarkSparse ((large) sparse systems).
 class IntegratorBase
@@ -212,5 +215,9 @@ protected:
   double timestep; 
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

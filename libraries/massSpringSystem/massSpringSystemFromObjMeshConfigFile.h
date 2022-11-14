@@ -36,6 +36,9 @@
 
 #include "massSpringSystem.h"
 
+namespace vegafem
+{
+
 class MassSpringSystemObjMeshConfiguration
 {
 public:
@@ -61,5 +64,9 @@ protected:
   char * DuplicateString(const char *);
 };
 
+
+}//namespace vegafem
+
 #endif
+
 

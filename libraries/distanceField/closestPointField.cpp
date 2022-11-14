@@ -40,6 +40,9 @@
 #include <fstream>
 #include "closestPointField.h"
 #include "trilinearInterpolation.h"
+
+namespace vegafem
+{
 using namespace std;
 
 ClosestPointField::ClosestPointField() : DistanceField()
@@ -51,7 +54,7 @@ ClosestPointField::~ClosestPointField()
 {
   free(closestPointData);
 }
-
+}//namespace vegafem
 // the routines for signed/unsigned closest point field computation
 #define COMPUTE_CLOSEST_POINT
   #define COMPUTE_SIGNED_FIELD
@@ -59,7 +62,8 @@ ClosestPointField::~ClosestPointField()
   #undef COMPUTE_SIGNED_FIELD
     #include "computeField.cpp"
 #undef COMPUTE_CLOSEST_POINT
-
+namespace vegafem
+{
 void ClosestPointField::set(int resolutionX, int resolutionY, int resolutionZ, Vec3d bmin_, Vec3d bmax_, float * distanceData, float * closestPointData)
 {
   DistanceField::set(resolutionX, resolutionY, resolutionZ, bmin_, bmax_, distanceData);
@@ -300,3 +304,5 @@ bool ClosestPointField::sanityCheck()
   return exitCode && myExitCode;
 }
 
+
+}//namespace vegafem

@@ -59,6 +59,9 @@
 #include "polarDecomposition.h"
 #include "polarDecompositionGradient.h"
 
+namespace vegafem
+{
+
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
@@ -123,3 +126,5 @@ int main()
   return 0;
 }
 
+
+}//namespace vegafem

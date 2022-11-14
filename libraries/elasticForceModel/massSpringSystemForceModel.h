@@ -40,6 +40,9 @@
 #include "massSpringSystem.h"
 #include "forceModel.h"
 
+namespace vegafem
+{
+
 class MassSpringSystemForceModel : public ForceModel
 {
 public:
@@ -54,5 +57,9 @@ protected:
   MassSpringSystem * massSpringSystem;
 };
 
+
+}//namespace vegafem
+
 #endif
+
 
