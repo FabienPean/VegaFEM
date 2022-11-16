@@ -138,8 +138,6 @@ list(FILTER all_sources EXCLUDE REGEX ".*GPU.*")                                
 list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
-list(FILTER all_sources EXCLUDE REGEX ".*example.*")                            #contains a main()
-list(FILTER all_sources EXCLUDE REGEX ".*polarDecompositionGradientDriver.*")   #contains a main()
 
 target_sources(${PROJECT_NAME} PRIVATE ${all_sources})
 
