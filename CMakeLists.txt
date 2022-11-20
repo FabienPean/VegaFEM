@@ -23,7 +23,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE glui::glui glui::glui_static)
 
 ### MKL
 #set(TBB_ENABLE_IPO OFF) # static dynamic sdl
-find_package(TBB REQUIRED)
+find_package(TBB CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE TBB::tbb)
 set(MKL_THREADING tbb_thread) # sequential intel_thread gnu_thread pgi_thread tbb_thread
 #set(MKL_LINK static) # static dynamic sdl

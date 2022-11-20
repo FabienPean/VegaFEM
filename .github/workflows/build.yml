@@ -110,7 +110,7 @@ jobs:
     - name: Run vcpkg
       shell: cmd
       run: |
-        ${{github.workspace}}\vcpkg\vcpkg.exe install opengl glui glew cgal openblas eigen3 intel-mkl
+        ${{github.workspace}}\vcpkg\vcpkg.exe install opengl glui glew cgal openblas eigen3 intel-mkl tbb
     - name: Setup MSVC
       uses: ilammy/msvc-dev-cmd@v1
     - name: Configure CMake
@@ -118,8 +118,9 @@ jobs:
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: |
-        set "MKL_DIR=C:\Program Files (x86)\Intel\oneAPI\mkl\2022.0.3\lib\cmake\mkl"
-        cmake.exe -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_TOOLCHAIN_FILE="${{github.workspace}}\vcpkg\scripts\buildsystems\vcpkg.cmake" -DMKL_DIR="C:\Program Files (x86)\Intel\oneAPI\mkl\2022.0.3\lib\cmake\mkl" -DTBB_DIR="C:\Program Files (x86)\Intel\oneAPI\tbb\latest\lib\cmake\tbb" -S ${{github.workspace}} -B ${{github.workspace}}\build
+        set MKL_DIR=C:\Program Files (x86)\Intel\oneAPI\mkl\2022.0.3\lib\cmake\mkl
+        set TBB_DIR=C:\Program Files (x86)\Intel\oneAPI\tbb\2022.0.3\lib\cmake\tbb
+        cmake.exe -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_TOOLCHAIN_FILE="${{github.workspace}}\vcpkg\scripts\buildsystems\vcpkg.cmake" -DMKL_DIR="C:\Program Files (x86)\Intel\oneAPI\mkl\2022.0.3\lib\cmake\mkl" -DTBB_DIR="C:\Program Files (x86)\Intel\oneAPI\tbb\2022.0.3\lib\cmake\tbb" -S ${{github.workspace}} -B ${{github.workspace}}\build
     - name: Build
       # Build your program with the given configuration
       run: cmake.exe --build ${{github.workspace}}\build --config ${{env.BUILD_TYPE}}
