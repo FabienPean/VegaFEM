@@ -38,26 +38,14 @@
   It calls routines from the immersionMeshing library.
 */
 
-#include "containerHelper.h"
-#include "sceneObjectDeformable.h"
-#include "getopts.h"
-#include "initPredicates.h"
-#include "lighting.h"
-#include "listIO.h"
-#include "tetKey.h"
-#include "basicAlgorithms.h"
-#include "camera.h"
-#include "performanceCounter.h"
-#include "inputDevice.h"
-#include "commandLineParser.h"
-#include "saveScreenShot.h"
-#include "vec4d.h"
-#include "openGLHelper.h"
+#include "objMesh.h"
 #include "immersionMesher.h"
+#include "performanceCounter.h"
+#include "tetMeshGeo.h"
+#include "basicAlgorithms.h"
+#include "initPredicates.h"
 #include "stringHelper.h"
-#ifdef WIN32
-  #include <windows.h>
-#endif
+#include "commandLineParser.h"
 #include <set>
 #include <cstdlib>
 #include <cstdio>
@@ -68,7 +56,6 @@
 #include <memory>
 #include <cmath>
 #include <ctime>
-#include <GL/glui.h>
 
 //#define USE_GPERF_TOOLS
 #ifdef USE_GPERF_TOOLS
