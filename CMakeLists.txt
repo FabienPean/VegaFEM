@@ -6,8 +6,8 @@ project(
   VERSION 4.0.1
   LANGUAGES C CXX
 )
-
-add_library(${PROJECT_NAME} STATIC)
+set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
+add_library(${PROJECT_NAME})
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 14)
 
 target_include_directories(
@@ -17,12 +17,11 @@ target_include_directories(
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE GLUT::GLUT)
-find_package(glui CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE glui::glui glui::glui_static)
+target_link_libraries(${PROJECT_NAME} PUBLIC GLUT::GLUT)
+
 
 ### MKL
-#set(TBB_ENABLE_IPO OFF) # static dynamic sdl
+set(TBB_ENABLE_IPO OFF)
 find_package(TBB CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE TBB::tbb)
 set(MKL_THREADING tbb_thread) # sequential intel_thread gnu_thread pgi_thread tbb_thread
@@ -148,6 +147,7 @@ target_sources(${PROJECT_NAME} PUBLIC ${all_headers} PRIVATE ${all_sources})
 ################################################################################
 
 add_library(vegafem_gpl)
+set_target_properties(vegafem_gpl PROPERTIES CXX_STANDARD 14)
 
 set(VegaFEM_gpl_libs
     exactArithmetic
@@ -171,9 +171,7 @@ endforeach()
 target_sources(vegafem_gpl PUBLIC ${all_headers} PRIVATE ${all_sources})
 target_link_libraries(vegafem_gpl PUBLIC ${PROJECT_NAME})
 target_link_libraries(vegafem_gpl PRIVATE igl::core igl::predicates igl_copyleft::cgal)
-target_link_libraries(vegafem_gpl PRIVATE CGAL::CGAL)
-target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL_Core)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
-
+target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL CGAL::CGAL_Core)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
 
 set(VegaFEM_opengl
   openGLHelper
@@ -186,16 +184,17 @@ set(VegaFEM_with_CG
   objMeshGPUDeformer
 )
 
-
-#target_compile_options(${PROJECT_NAME} PRIVATE "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->")
-target_compile_definitions(${PROJECT_NAME} PUBLIC "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:-DNOMINMAX>")
-target_compile_definitions(${PROJECT_NAME} PUBLIC "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:-DWIN32_LEAN_AND_MEAN>")
-target_compile_definitions(${PROJECT_NAME} PUBLIC -D_USE_MATH_DEFINES)
+#target_compile_options(${PROJECT_NAME} PRIVATE $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->)
+target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:NOMINMAX>)
+target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:WIN32_LEAN_AND_MEAN>)
+target_compile_definitions(${PROJECT_NAME} PUBLIC _USE_MATH_DEFINES)
 
 ################################################################################
 # Utilities
 ################################################################################
-find_package(X11 REQUIRED)
+find_package(X11 REQUIRED) # freeglut on linux
+find_package(glui CONFIG REQUIRED) # clothBW-rt displayObj editShapeARAP interactiveDeformableSimulator reducedDynamicSolver
+
 set(VegaFEM_utilities
     clothBW-rt
     computeDistanceField
@@ -213,7 +212,7 @@ foreach(exe ${VegaFEM_utilities})
   file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
   add_executable(${exe} ${sources})
   target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
-      GLUT::GLUT glui::glui #reducedDynamicSolver-rt interactiveDeformableSimulator immersionMesher editShapeARAP displayObj clothBW-rt
+      GLUT::GLUT glui::glui glui::glui_static #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
       $<$<PLATFORM_ID:Linux,Darwin>:X11::X11>
   )
   if($<BOOL:$<PLATFORM_ID:Windows>>)
@@ -231,7 +230,7 @@ set(VegaFEM_utilities_gpl
 foreach(exe ${VegaFEM_utilities_gpl})
   file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
   add_executable(${exe} ${sources})
-  target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} vegafem_gpl)
+  target_link_libraries(${exe} vegafem_gpl)
   if($<BOOL:$<PLATFORM_ID:Windows>>)
   add_custom_command(TARGET ${exe} POST_BUILD
       COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<$<PLATFORM_ID:Windows>:$<TARGET_RUNTIME_DLLS:${exe}>>" $<TARGET_FILE_DIR:${exe}> 

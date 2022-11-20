@@ -110,7 +110,8 @@ jobs:
     - name: Run vcpkg
       shell: cmd
       run: |
-        ${{github.workspace}}\vcpkg\vcpkg.exe install opengl glui glew cgal openblas eigen3 intel-mkl tbb
+        set MKL_DIR=C:\Program Files (x86)\Intel\oneAPI\mkl\2022.0.3\lib\cmake\mkl
+        ${{github.workspace}}\vcpkg\vcpkg.exe install opengl freeglut glui glew cgal eigen3 intel-mkl tbb
     - name: Setup MSVC
       uses: ilammy/msvc-dev-cmd@v1
     - name: Configure CMake
