@@ -171,7 +171,7 @@ endforeach()
 target_sources(vegafem_gpl PUBLIC ${all_headers} PRIVATE ${all_sources})
 target_link_libraries(vegafem_gpl PUBLIC ${PROJECT_NAME})
 target_link_libraries(vegafem_gpl PRIVATE igl::core igl::predicates igl_copyleft::cgal)
-target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL CGAL::CGAL_Core)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
+target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
 
 set(VegaFEM_opengl
   openGLHelper
