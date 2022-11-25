@@ -31,13 +31,13 @@
  *                                                                       *
  *************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cfloat>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <vector>
 using namespace std;
 
-#include "float.h"
 #include "volumetricMesh.h"
 #include "volumetricMeshLoader.h"
 #include "tetMesh.h"
