@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.21)
 # 3.21 for https://cmake.org/cmake/help/git-stage/manual/cmake-generator-expressions.7.html#genex:TARGET_RUNTIME_DLLS to copy DLLs to binary folder
 # Alternative 3.16 for https://cmake.org/cmake/help/latest/command/file.html#get-runtime-dependencies
 project(
@@ -7,8 +7,26 @@ project(
   LANGUAGES C CXX
 )
 set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
+
+option(VEGAFEM_BUILD_UTILITIES "build utilities applications" ON)
+option(VEGAFEM_BUILD_UTILITIES_GRAPHICS "build utilities applications requiring a graphics API" ON)
+
+################################################################################
+# Core
+################################################################################
 add_library(${PROJECT_NAME})
-set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 14)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
+#set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 14)
+#set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD_REQUIRED ON)
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_EXTENSIONS OFF)
+
+target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:NOMINMAX>)
+target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:WIN32_LEAN_AND_MEAN>)
+target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:_USE_MATH_DEFINES>)
+target_compile_options(${PROJECT_NAME} 
+    PRIVATE $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->
+            $<$<COMPILE_LANG_AND_ID:CXX,GNU,Clang,AppleClang>:-pedantic-errors>
+)
 
 target_include_directories(
   ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
@@ -31,32 +49,6 @@ set(MKL_THREADING tbb_thread) # sequential intel_thread gnu_thread pgi_thread tb
 find_package(MKL CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE MKL::MKL)
 target_compile_definitions(${PROJECT_NAME} PRIVATE PARDISO_SOLVER_IS_AVAILABLE)
-
-find_package(CGAL CONFIG REQUIRED COMPONENTS Core) # for libigl and exactArithmetic
-find_package(Eigen3 CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE Eigen3::Eigen)
-# Options for libigl modules
-option(LIBIGL_COPYLEFT_CGAL     "Use CGAL"                     ON)
-option(LIBIGL_PREDICATES        "Use exact predicates"         ON)
-option(LIBIGL_USE_STATIC_LIBRARY"Use libigl as static library" OFF)
-option(LIBIGL_COPYLEFT_COMISO   "Use CoMiso"                   OFF)
-option(LIBIGL_EMBREE            "Use Embree"                   OFF)
-option(LIBIGL_OPENGL            "Use OpenGL"                   OFF)
-option(LIBIGL_GLFW              "Use GLFW"                     OFF)
-option(LIBIGL_IMGUI             "Use ImGui"                    OFF)
-option(LIBIGL_PNG               "Use PNG"                      OFF)
-option(LIBIGL_TETGEN            "Use Tetgen"                   OFF)
-option(LIBIGL_TRIANGLE          "Use Triangle"                 OFF)
-option(LIBIGL_XML               "Use XML"                      OFF)
-include(FetchContent)
-FetchContent_Declare(
-    libigl
-    URL https://github.com/libigl/libigl/archive/refs/tags/v2.4.0.zip
-    URL_HASH MD5=0b4fea5dba2117b8db85c99a39a71f83
-)
-FetchContent_MakeAvailable(libigl)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE GLEW::GLEW)
 
 set(VegaFEM_core_libs
     animationHelper
@@ -113,7 +105,6 @@ set(VegaFEM_core_libs
     windingNumber
 )
 
-
 set(all_headers)
 set(all_sources)
 foreach(lib ${VegaFEM_core_libs})
@@ -127,7 +118,7 @@ foreach(lib ${VegaFEM_core_libs})
   list(APPEND all_sources ${sources})
 endforeach()
 
-file(GLOB_RECURSE to_remove "{CMAKE_CURRENT_SOURCE_DIR}/libraries/*/*GPU*")
+### NVidia CG
 find_path(NVIDIA_CG_INCLUDE_DIR Cg/cg.h)
 find_library(NVIDIA_CG_LIBRARY Cg)
 find_library(NVIDIA_CGGL_LIBRARY CgGL)
@@ -135,7 +126,7 @@ if(NVIDIA_CG_INCLUDE_DIR AND NVIDIA_CG_LIBRARY AND NVIDIA_CGGL_LIBRARY)
     target_include_directories(${PROJECT_NAME} PUBLIC ${NVIDIA_CG_INCLUDE_DIR})
     target_link_libraries(${PROJECT_NAME} PRIVATE ${NVIDIA_CG_LIBRARY} ${NVIDIA_CGGL_LIBRARY})
 else()
-    list(FILTER all_sources EXCLUDE REGEX ".*GPU.*")                                #requires dependency on CG
+    list(FILTER all_sources EXCLUDE REGEX ".*GPU.*")                            #requires dependency on CG
 endif()
 list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
@@ -147,9 +138,37 @@ target_sources(${PROJECT_NAME} PUBLIC ${all_headers} PRIVATE ${all_sources})
 ################################################################################
 # GPL components
 ################################################################################
+find_package(CGAL CONFIG REQUIRED COMPONENTS Core) # for libigl (CGAL+Core) and exactArithmetic (CGAL)
+find_package(Eigen3 CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE Eigen3::Eigen)
+# Options for libigl modules
+option(LIBIGL_COPYLEFT_CGAL     "Use CGAL"                     ON)
+option(LIBIGL_PREDICATES        "Use exact predicates"         ON)
+option(LIBIGL_USE_STATIC_LIBRARY"Use libigl as static library" OFF)
+option(LIBIGL_COPYLEFT_COMISO   "Use CoMiso"                   OFF)
+option(LIBIGL_EMBREE            "Use Embree"                   OFF)
+option(LIBIGL_OPENGL            "Use OpenGL"                   OFF)
+option(LIBIGL_GLFW              "Use GLFW"                     OFF)
+option(LIBIGL_IMGUI             "Use ImGui"                    OFF)
+option(LIBIGL_PNG               "Use PNG"                      OFF)
+option(LIBIGL_TETGEN            "Use Tetgen"                   OFF)
+option(LIBIGL_TRIANGLE          "Use Triangle"                 OFF)
+option(LIBIGL_XML               "Use XML"                      OFF)
+include(FetchContent)
+FetchContent_Declare(
+    libigl
+    URL https://github.com/libigl/libigl/archive/refs/tags/v2.4.0.zip
+    URL_HASH MD5=0b4fea5dba2117b8db85c99a39a71f83
+)
+FetchContent_MakeAvailable(libigl)
+
 
 add_library(vegafem_gpl)
-set_target_properties(vegafem_gpl PROPERTIES CXX_STANDARD 14)
+set_target_properties(vegafem_gpl PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_features(vegafem_gpl PRIVATE cxx_std_14)
+target_link_libraries(vegafem_gpl PUBLIC ${PROJECT_NAME})
+target_link_libraries(vegafem_gpl PRIVATE igl::core igl::predicates igl_copyleft::cgal)
+target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
 
 set(VegaFEM_gpl_libs
     exactArithmetic
@@ -171,9 +190,7 @@ foreach(lib ${VegaFEM_gpl_libs})
   list(APPEND all_sources ${sources})
 endforeach()
 target_sources(vegafem_gpl PUBLIC ${all_headers} PRIVATE ${all_sources})
-target_link_libraries(vegafem_gpl PUBLIC ${PROJECT_NAME})
-target_link_libraries(vegafem_gpl PRIVATE igl::core igl::predicates igl_copyleft::cgal)
-target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
+
 
 set(VegaFEM_opengl
   openGLHelper
@@ -186,90 +203,104 @@ set(VegaFEM_with_CG
   objMeshGPUDeformer
 )
 
-#target_compile_options(${PROJECT_NAME} PRIVATE $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->)
-target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:NOMINMAX>)
-target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:WIN32_LEAN_AND_MEAN>)
-target_compile_definitions(${PROJECT_NAME} PUBLIC _USE_MATH_DEFINES)
-
 ################################################################################
 # Utilities
 ################################################################################
-find_package(X11 REQUIRED) # freeglut on linux
-find_package(glui CONFIG REQUIRED) # clothBW-rt displayObj editShapeARAP interactiveDeformableSimulator reducedDynamicSolver
+if(VEGAFEM_BUILD_UTILITIES)
 
-set(VegaFEM_utilities
-    clothBW-rt
-    computeDistanceField
-    displayObj
-    editShapeARAP
-    finiteDifferenceTest
-    interactiveDeformableSimulator
-    isosurfaceMesher
-    #largeModalDeformationFactory #requires wxwidget arpack
-    objMergeFiles
-    reducedDynamicSolver-rt
-    tetMesher
-)
-foreach(exe ${VegaFEM_utilities})
-  file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
-  add_executable(${exe} ${sources})
-  target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
-      GLUT::GLUT glui::glui glui::glui_static #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
-      $<$<PLATFORM_ID:Linux,Darwin>:X11::X11>
-  )
-  if($<BOOL:$<PLATFORM_ID:Windows>>)
-  add_custom_command(TARGET ${exe} POST_BUILD
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<$<PLATFORM_ID:Windows>:$<TARGET_RUNTIME_DLLS:${exe}>>" $<TARGET_FILE_DIR:${exe}> 
-      COMMAND_EXPAND_LISTS
-  )
-  endif()
-endforeach()
+    set(VegaFEM_utilities
+        computeDistanceField
+        finiteDifferenceTest
+        isosurfaceMesher
+        objMergeFiles
+        tetMesher
+    )
 
-set(VegaFEM_utilities_gpl
-    immersionMesher
-    virtualTetsDriver
-)
-foreach(exe ${VegaFEM_utilities_gpl})
-  file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
-  add_executable(${exe} ${sources})
-  target_link_libraries(${exe} vegafem_gpl)
-  if($<BOOL:$<PLATFORM_ID:Windows>>)
-  add_custom_command(TARGET ${exe} POST_BUILD
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<$<PLATFORM_ID:Windows>:$<TARGET_RUNTIME_DLLS:${exe}>>" $<TARGET_FILE_DIR:${exe}> 
-      COMMAND_EXPAND_LISTS
-  )
-  endif()
-endforeach()
+    foreach(exe ${VegaFEM_utilities})
+      file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
+      add_executable(${exe} ${sources})
+      target_link_libraries(${exe} PRIVATE ${PROJECT_NAME})
+      if($<TARGET_RUNTIME_DLLS:${exe}>)
+        add_custom_command(TARGET ${exe} POST_BUILD
+          COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
+          COMMAND_EXPAND_LISTS
+        )
+      endif()
+    endforeach()
+
+    # For generateInterpolant/generateInterpolationMatrix/generateMassMAtrix/generateSurfaceMesh
+    file(GLOB_RECURSE VegaFEM_utilities_tmp CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/volumetricMeshUtilities/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/volumetricMeshUtilities/*.cpp")
+    foreach(exe ${VegaFEM_utilities_tmp})
+      get_filename_component(filename ${exe} NAME_WE)
+      add_executable(${filename} ${exe})
+      target_link_libraries(${filename} PRIVATE ${PROJECT_NAME})
+
+      if($<TARGET_RUNTIME_DLLS:${exe}>)
+        add_custom_command(TARGET ${exe} POST_BUILD
+          COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
+          COMMAND_EXPAND_LISTS
+        )
+      endif()
+    endforeach()
+
+    set(VegaFEM_utilities_gpl
+        immersionMesher
+        virtualTetsDriver
+    )
+    foreach(exe ${VegaFEM_utilities_gpl})
+      file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
+      add_executable(${exe} ${sources})
+      target_link_libraries(${exe} vegafem_gpl)
+      if($<TARGET_RUNTIME_DLLS:${exe}>)
+        add_custom_command(TARGET ${exe} POST_BUILD
+          COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
+          COMMAND_EXPAND_LISTS
+        )
+      endif()
+    endforeach()
+
+endif()
+
+if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
+
+    find_package(X11 REQUIRED) # freeglut on linux
+    find_package(glui CONFIG REQUIRED) # clothBW-rt displayObj editShapeARAP interactiveDeformableSimulator reducedDynamicSolver
+
+    set(VegaFEM_utilities
+        clothBW-rt
+        displayObj
+        editShapeARAP
+        interactiveDeformableSimulator
+        #largeModalDeformationFactory #requires wxwidget arpack
+        reducedDynamicSolver-rt
+    )
+    foreach(exe ${VegaFEM_utilities})
+      file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
+      add_executable(${exe} ${sources})
+      target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
+          GLUT::GLUT glui::glui glui::glui_static #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
+          $<$<PLATFORM_ID:Linux,Darwin>:X11::X11>
+      )
+      if($<TARGET_RUNTIME_DLLS:${exe}>)
+        add_custom_command(TARGET ${exe} POST_BUILD
+          COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
+          COMMAND_EXPAND_LISTS
+        )
+      endif()
+    endforeach()
+
+    #target_link_libraries(clothBW-rt PUBLIC OpenGL::GL)
 
 
-file(GLOB_RECURSE VegaFEM_utilities_tmp CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/volumetricMeshUtilities/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/volumetricMeshUtilities/*.cpp")
-foreach(exe ${VegaFEM_utilities_tmp})
-  get_filename_component(filename ${exe} NAME_WE)
-  add_executable(${filename} ${exe})
-  target_link_libraries(${filename} PRIVATE ${PROJECT_NAME})
+    find_package(GLEW REQUIRED)
+    target_link_libraries(displayObj PRIVATE GLEW::GLEW)
 
-   if($<BOOL:$<PLATFORM_ID:Windows>>)
-   add_custom_command(TARGET ${filename} POST_BUILD
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<$<PLATFORM_ID:Windows>:$<TARGET_RUNTIME_DLLS:${filename}>>" $<TARGET_FILE_DIR:${filename}>
-      COMMAND_EXPAND_LISTS
-  )
-  endif()
+    #find_package(wxWidgets REQUIRED)
+    #target_compile_definitions(largeModalDeformationFactory PRIVATE ${wxWidgets_DEFINITIONS} "$<$<CONFIG:DEBUG>:${wxWidgets_DEFINITIONS_DEBUG}>")
+    #target_include_directories(largeModalDeformationFactory PRIVATE ${wxWidgets_INCLUDE_DIRS})
+    #target_link_libraries(largeModalDeformationFactory PRIVATE ${wxWidgets_LIBRARIES})
+    #target_compile_definitions(largeModalDeformationFactory PUBLIC "-DWIN32_LEAN_AND_MEAN")
 
-endforeach()
-
-
-
-#target_link_libraries(clothBW-rt PUBLIC OpenGL::GL)
-
-
-find_package(GLEW REQUIRED)
-target_link_libraries(displayObj PRIVATE GLEW::GLEW)
-
-#find_package(wxWidgets REQUIRED)
-#target_compile_definitions(largeModalDeformationFactory PRIVATE ${wxWidgets_DEFINITIONS} "$<$<CONFIG:DEBUG>:${wxWidgets_DEFINITIONS_DEBUG}>")
-#target_include_directories(largeModalDeformationFactory PRIVATE ${wxWidgets_INCLUDE_DIRS})
-#target_link_libraries(largeModalDeformationFactory PRIVATE ${wxWidgets_LIBRARIES})
-#target_compile_definitions(largeModalDeformationFactory PUBLIC "-DWIN32_LEAN_AND_MEAN")
-
+endif()
 
  
