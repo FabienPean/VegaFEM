@@ -15,10 +15,12 @@ target_include_directories(
                          $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
 )
 
+
+
+### OpenGL
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
-target_link_libraries(${PROJECT_NAME} PUBLIC GLUT::GLUT)
-
+target_link_libraries(${PROJECT_NAME} PUBLIC OpenGL::GL GLUT::GLUT)
 
 ### MKL
 set(TBB_ENABLE_IPO OFF)
