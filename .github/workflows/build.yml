@@ -20,10 +20,10 @@ jobs:
         os: [ubuntu-20.04,ubuntu-latest]
         compiler: [ {cpp: g++, c: gcc}, {cpp: clang++, c: clang} ]
 
-    env:
-      VCPKG_DEFAULT_TRIPLET: x64-linux-release
-
     runs-on: ${{ matrix.os }}
+
+    env:
+      VCPKG_DEFAULT_TRIPLET: x64-linux
 
     steps:
 
@@ -118,15 +118,16 @@ jobs:
 
   Windows:
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-2019,windows-latest]
         compiler: [ {cpp: cl.exe, c: cl.exe}, {cpp: clang++, c: clang} ]
+    
+    runs-on: ${{ matrix.os }}
 
     env:
       INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19040/w_onemkl_p_2022.2.1.19754_offline.exe
-      VCPKG_DEFAULT_TRIPLET: x64-windows-release
-    
-    runs-on: ${{ matrix.os }}
+      VCPKG_DEFAULT_TRIPLET: x64-windows
 
     steps:
 
