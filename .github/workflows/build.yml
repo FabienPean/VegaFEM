@@ -15,9 +15,15 @@ env:
 jobs:
 
   Linux:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-20.04,ubuntu-latest]
+        compiler: [ {cpp: g++, c: gcc}, {cpp: clang++, c: clang} ]
+
     env:
       VCPKG_DEFAULT_TRIPLET: x64-linux-release
+
+    runs-on: ${{ matrix.os }}
 
     steps:
 
@@ -74,8 +80,8 @@ jobs:
 
     - name: Configure CMake
       env:
-        CC: clang
-        CXX: clang++
+        CC:  ${{ matrix.compiler.c }}
+        CXX: ${{ matrix.compiler.cpp }}
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: |
@@ -111,11 +117,16 @@ jobs:
         retention-days: 2
 
   Windows:
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        os: [windows-2019,windows-latest]
+        compiler: [ {cpp: cl.exe, c: cl.exe}, {cpp: clang++, c: clang} ]
 
     env:
       INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19040/w_onemkl_p_2022.2.1.19754_offline.exe
       VCPKG_DEFAULT_TRIPLET: x64-windows-release
+    
+    runs-on: ${{ matrix.os }}
 
     steps:
 
@@ -170,6 +181,8 @@ jobs:
       run: |
         cmake.exe `
           -G Ninja `
+          -D CMAKE_C_COMPILER:FILEPATH=${{ matrix.compiler.c }} `
+          -D CMAKE_CXX_COMPILER:FILEPATH=${{ matrix.compiler.cpp }} `
           -D CMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} `
           -D CMAKE_TOOLCHAIN_FILE="${{github.workspace}}\vcpkg\scripts\buildsystems\vcpkg.cmake" `
           -S ${{github.workspace}} `
