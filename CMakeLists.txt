@@ -44,6 +44,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC OpenGL::GL GLUT::GLUT)
 set(TBB_ENABLE_IPO OFF)
 find_package(TBB CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE TBB::tbb)
+set(MKL_INTERFACE lp64) # lp64 -> int32, ilp64 -> int64
 set(MKL_THREADING tbb_thread) # sequential intel_thread gnu_thread pgi_thread tbb_thread
 #set(MKL_LINK static) # static dynamic sdl
 find_package(MKL CONFIG REQUIRED)
