@@ -67,8 +67,8 @@ target_link_libraries(${PROJECT_NAME} PUBLIC OpenGL::GL GLUT::GLUT)
 #target_compile_definitions(${PROJECT_NAME} PUBLIC USE_TBB)
 ### MKL
 set(MKL_INTERFACE lp64) # lp64 -> int32, ilp64 -> int64
-set(MKL_THREADING tbb_thread) # sequential intel_thread gnu_thread pgi_thread tbb_thread
-#set(MKL_LINK static) # static dynamic sdl
+set(MKL_THREADING sequential) # sequential intel_thread gnu_thread pgi_thread tbb_thread
+set(MKL_LINK ${VCPKG_LIBRARY_LINKAGE}) # static dynamic sdl
 find_package(MKL CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE MKL::MKL)
 target_compile_definitions(${PROJECT_NAME} PRIVATE PARDISO_SOLVER_IS_AVAILABLE)
