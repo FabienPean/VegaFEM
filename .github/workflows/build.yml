@@ -16,6 +16,7 @@ jobs:
 
   Linux:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-20.04,ubuntu-latest]
         compiler: [ {cpp: g++, c: gcc}, {cpp: clang++, c: clang} ]
