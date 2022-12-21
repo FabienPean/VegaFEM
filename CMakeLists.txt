@@ -20,13 +20,33 @@ target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
 #set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD_REQUIRED ON)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_EXTENSIONS OFF)
 
-target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:NOMINMAX>)
-target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:WIN32_LEAN_AND_MEAN>)
-target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:_USE_MATH_DEFINES>)
-target_compile_options(${PROJECT_NAME} 
-    PRIVATE $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->
-            $<$<COMPILE_LANG_AND_ID:CXX,GNU,Clang,AppleClang>:-pedantic-errors>
-)
+### Handle platform/compiler specific options
+# With Clang being cross-platform and in various flavors (Clang and Clang-cl),
+# We need to handle flags in a specific way whether MSVC/GNU command line options and ABI is chosen
+# Clang-cl has MSVC input and MSVC ABI, while Clang has GNU input and MSVC ABI
+# https://gitlab.kitware.com/cmake/cmake/-/issues/22666#note_1019610
+# https://gitlab.kitware.com/cmake/cmake/-/issues/22668#note_1022426
+# https://gitlab.kitware.com/cmake/community/-/wikis/doc/tutorials/How-To-Write-Platform-Checks
+# https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_SIMULATE_ID.html
+# https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_FRONTEND_VARIANT.html
+# Note that it is empty when non-applicable hence wrapping it with quote to get an empty string
+if(MSVC OR "${CMAKE_CXX_SIMULATE_ID}" MATCHES MSVC) # 
+    target_compile_definitions(${PROJECT_NAME} PUBLIC NOMINMAX)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC WIN32_LEAN_AND_MEAN)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC _USE_MATH_DEFINES)
+elseif(UNIX OR "${CMAKE_CXX_SIMULATE_ID}" MATCHES GNU)
+else()
+endif()
+if(MSVC OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES MSVC)
+    target_compile_options(${PROJECT_NAME}
+        PRIVATE /permissive-
+    )
+elseif(UNIX OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES GNU)
+#    target_compile_options(${PROJECT_NAME}
+#        PRIVATE # -Werror code cluttered # -Wall -pedantic-errors # problem with CGAL headers
+#    )
+else()
+endif()
 
 target_include_directories(
   ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
@@ -170,6 +190,18 @@ target_compile_features(vegafem_gpl PRIVATE cxx_std_14)
 target_link_libraries(vegafem_gpl PUBLIC ${PROJECT_NAME})
 target_link_libraries(vegafem_gpl PRIVATE igl::core igl::predicates igl_copyleft::cgal)
 target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
+
+if(MSVC OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES MSVC)
+    target_compile_options(vegafem_gpl
+        PRIVATE /permissive-
+    )
+elseif(UNIX OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES GNU)
+#    target_compile_options(vegafem_gpl
+#        PRIVATE -Werror # -Wall -pedantic-errors # problem with CGAL headers
+#    )
+else()
+endif()
+
 
 set(VegaFEM_gpl_libs
     exactArithmetic
