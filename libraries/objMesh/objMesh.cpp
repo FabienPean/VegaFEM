@@ -51,6 +51,7 @@
 #include <cctype>
 #include <cassert>
 #include <cassert>
+#include <limits>
 #include "macros.h"
 #include "disjointSet.h"
 #include "objMesh.h"
