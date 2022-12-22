@@ -59,6 +59,9 @@ target_include_directories(
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC OpenGL::GL GLUT::GLUT)
+find_package(GLEW REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE GLEW::GLEW) # Linux|Windows, glslPhong.cpp objMeshGPUDeformer_coarseToFine.cpp
+    
 
 ### TBB # Avoid TBB for now
 #set(TBB_ENABLE_IPO OFF)
@@ -313,7 +316,7 @@ if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
       file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
       add_executable(${exe} ${sources})
       target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
-          GLUT::GLUT glui::glui glui::glui_static #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
+          OpenGL::GL GLUT::GLUT glui::glui glui::glui_static #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
           $<$<PLATFORM_ID:Linux,Darwin>:X11::X11>
       )
       if($<TARGET_RUNTIME_DLLS:${exe}>)
@@ -327,7 +330,6 @@ if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
     #target_link_libraries(clothBW-rt PUBLIC OpenGL::GL)
 
 
-    find_package(GLEW REQUIRED)
     target_link_libraries(displayObj PRIVATE GLEW::GLEW)
 
     #find_package(wxWidgets REQUIRED)

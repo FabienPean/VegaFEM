@@ -56,12 +56,10 @@
 
 #ifdef WIN32
   #include <windows.h>
-  #ifndef M_PI
-    #define M_PI 3.141592654 
-  #endif
+#endif
+#if defined(_WIN32) || defined(WIN32) || defined(linux) || defined(__linux__)
   #include <GL/glew.h>
 #endif
-
 #include "openGL-headers.h"
 #include "objMeshRender.h"
 #include "getopts.h"
