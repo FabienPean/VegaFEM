@@ -1,8 +1,8 @@
 #if defined(WIN32) || defined(_WIN32) || defined(linux) || defined(__linux__)
-  #include "mkl_cblas.h"
-  #include "mkl_types.h"
-  #include "mkl_lapack.h"
-  #include "mkl_blas.h"
+  #include <mkl_cblas.h>
+  #include <mkl_types.h>
+  #include <mkl_lapack.h>
+  #include <mkl_blas.h>
 #elif defined(__APPLE__)
   #include <Accelerate/Accelerate.h>
   #ifdef __GNUC__
