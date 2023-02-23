@@ -138,10 +138,6 @@ jobs:
     - name: Setup ninja
       uses: seanmiddleditch/gha-setup-ninja@master
 
-    - name: Use GNU Tar from MSYS # for restoring mkl\latest symlink correctly
-      if: ${{ runner.os == 'Windows' }}
-      run: echo "C:\msys64\usr\bin" >> $env:GITHUB_PATH
-
     - name: Restore cache for Intel oneAPI MKL
       id: cache-intel
       uses: actions/cache@v3 # mkl\latest symlink corrupted on cache restore https://github.com/actions/cache/issues/120
