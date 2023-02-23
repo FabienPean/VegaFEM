@@ -165,7 +165,7 @@ jobs:
         committish: ${{ env.VCPKG_VERSION }}
 
     - name: Run vcpkg
-      shell: cmd
+      shell: bash
       run: |
         ${{github.workspace}}\vcpkg\vcpkg.exe install intel-mkl
         ${{github.workspace}}\vcpkg\vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
