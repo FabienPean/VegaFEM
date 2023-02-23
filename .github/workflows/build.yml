@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04,ubuntu-latest]
+        os: [ubuntu-20.04,ubuntu-22.04]
         compiler: [ {cpp: g++, c: gcc}, {cpp: clang++, c: clang} ]
 
     runs-on: ${{ matrix.os }}
@@ -119,7 +119,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2019,windows-latest]
+        os: [windows-2019,windows-2022]
         compiler: [ {cpp: cl.exe, c: cl.exe}, {cpp: clang++, c: clang} ]
     
     runs-on: ${{ matrix.os }}
