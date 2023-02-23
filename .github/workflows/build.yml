@@ -16,6 +16,8 @@ jobs:
 
   Cache-Linux:
     runs-on: ubuntu-latest
+    env:
+      VCPKG_DEFAULT_TRIPLET: x64-linux-release
     steps:
     - name: Intel Apt repository
       timeout-minutes: 1
@@ -69,7 +71,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     env:
-      VCPKG_DEFAULT_TRIPLET: x64-linux
+      VCPKG_DEFAULT_TRIPLET: x64-linux-release
 
     steps:
 
@@ -165,6 +167,7 @@ jobs:
     runs-on: windows-latest
     env:
       INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19040/w_onemkl_p_2022.2.1.19754_offline.exe
+      VCPKG_DEFAULT_TRIPLET: x64-windows-release
     steps:
       - name: Restore cache for Intel oneAPI MKL
         id: cache-intel
@@ -210,7 +213,7 @@ jobs:
 
     env:
       INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19040/w_onemkl_p_2022.2.1.19754_offline.exe
-      VCPKG_DEFAULT_TRIPLET: x64-windows
+      VCPKG_DEFAULT_TRIPLET: x64-windows-release
 
     steps:
 
