@@ -83,11 +83,8 @@ jobs:
       run: |
         wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
         sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
-        echo "deb https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
-        sudo apt update
 
-    - name: Cache Intel oneAPI
-      id: cache-intel
+    - name: Restore cache Intel oneAPI
       uses: actions/cache@v3
       with:
         path: |
@@ -95,11 +92,7 @@ jobs:
            /opt/intel/oneapi/setvars.sh
            /opt/intel/oneapi/mkl
         key: oneAPI-MKL-${{ runner.os }}-${{ hashFiles('GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB') }}
-
-    - name: Install Intel oneAPI
-      timeout-minutes: 5
-      if: steps.cache-intel.outputs.cache-hit != 'true'
-      run: sudo apt install -y intel-oneapi-common-vars intel-oneapi-mkl intel-oneapi-mkl-devel intel-oneapi-tbb intel-oneapi-tbb-devel #devel needed for cmake and headers
+        fail-on-cache-miss: true
 
     - name: Setup Intel oneAPI environment
       run: |
@@ -231,12 +224,8 @@ jobs:
           C:\Program Files (x86)\Intel\oneAPI\setvars-vcvarsall.bat
           C:\Program Files (x86)\Intel\oneAPI\setvars.bat
           C:\Program Files (x86)\Intel\oneAPI\mkl
-        key: oneAPI-MKL-${{ runner.os }}-2022.2.1
-
-    - name: Install Intel oneAPI MKL
-      timeout-minutes: 25
-      if: steps.cache-intel.outputs.cache-hit != 'true'
-      run: scripts/install_windows.bat $env:INTEL_WINDOWS_MKL_URL
+        key: oneAPI-MKL-${{ matrix.os }}-2022.2.1
+        fail-on-cache-miss: true
 
     - name: Set MKL environment variables
       run: |
@@ -252,7 +241,6 @@ jobs:
     - name: Run vcpkg
       shell: bash
       run: |
-        vcpkg/vcpkg.exe install intel-mkl
         vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
 
     - name: Setup MSVC
