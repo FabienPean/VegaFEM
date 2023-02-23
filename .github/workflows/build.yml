@@ -14,7 +14,52 @@ env:
 
 jobs:
 
+  Cache-Linux:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Intel Apt repository
+      timeout-minutes: 1
+      run: |
+        wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
+        sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB
+        echo "deb https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
+        sudo apt update
+
+    - name: Cache Intel oneAPI
+      id: cache-intel
+      uses: actions/cache@v3
+      with:
+        path: |
+           /opt/intel/oneapi/setvars-vcvarsall.sh
+           /opt/intel/oneapi/setvars.sh
+           /opt/intel/oneapi/mkl
+        key: oneAPI-MKL-${{ runner.os }}-${{ hashFiles('GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB') }}
+
+    - name: Install Intel oneAPI
+      timeout-minutes: 5
+      if: steps.cache-intel.outputs.cache-hit != 'true'
+      run: sudo apt install -y intel-oneapi-common-vars intel-oneapi-mkl intel-oneapi-mkl-devel intel-oneapi-tbb intel-oneapi-tbb-devel #devel needed for cmake and headers
+
+    - name: System dependencies
+      run: |
+        sudo apt install -y clang
+        sudo apt install -y autoconf-archive #mpfr
+        sudo apt install -y libopengl-dev libglu-dev libx11-dev libxrandr-dev libxi-dev libxxf86vm-dev #freeglut
+        sudo apt install -y libxmu-dev libxi-dev libgl-dev #glew
+
+    - name: Setup vcpkg
+      id: setup-vcpkg
+      uses: friendlyanon/setup-vcpkg@v1
+      with: 
+        committish: ${{ env.VCPKG_VERSION }}
+
+    - name: Run vcpkg
+      run: |
+        vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 intel-mkl tbb
+
+
   Linux:
+    needs: Cache-Linux
     strategy:
       fail-fast: false
       matrix:
@@ -90,6 +135,7 @@ jobs:
           -G Ninja \
           -D CMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} \
           -D CMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake \
+          -D VCPKG_TARGET_TRIPLET=${VCPKG_DEFAULT_TRIPLET} \
           -DMKL_DIR=/opt/intel/oneapi/mkl/latest/lib/cmake/mkl \
           -S . \
           -B build
@@ -115,7 +161,45 @@ jobs:
         path: build
         retention-days: 2
 
+  Cache-Windows:
+    runs-on: windows-latest
+    env:
+      INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19040/w_onemkl_p_2022.2.1.19754_offline.exe
+    steps:
+      - name: Restore cache for Intel oneAPI MKL
+        id: cache-intel
+        uses: actions/cache@v3
+        with:
+          path: |
+              C:\Program Files (x86)\Intel\oneAPI\setvars-vcvarsall.bat
+              C:\Program Files (x86)\Intel\oneAPI\setvars.bat
+              C:\Program Files (x86)\Intel\oneAPI\mkl
+          key: oneAPI-MKL-${{ matrix.os }}-2022.2.1
+
+      - name: Install Intel oneAPI MKL
+        timeout-minutes: 25
+        if: steps.cache-intel.outputs.cache-hit != 'true'
+        run: scripts/install_windows.bat $env:INTEL_WINDOWS_MKL_URL
+
+      - name: Set MKL environment variables
+        run: |
+          echo "ONEAPI_ROOT=C:\Program Files (x86)\Intel\oneAPI" >> $env:GITHUB_ENV
+          echo "MKL_DIR=C:\Program Files (x86)\Intel\oneAPI\mkl\latest\lib\cmake\mkl" >> $env:GITHUB_ENV
+
+      - name: Setup vcpkg
+        id: setup-vcpkg
+        uses: friendlyanon/setup-vcpkg@v1
+        with: 
+          committish: ${{ env.VCPKG_VERSION }}
+
+      - name: Run vcpkg
+        shell: bash
+        run: |
+          vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
+
+
   Windows:
+    needs: Cache-Windows
     strategy:
       fail-fast: false
       matrix:
@@ -181,6 +265,7 @@ jobs:
           -D CMAKE_CXX_COMPILER:FILEPATH=${{ matrix.compiler.cpp }} `
           -D CMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} `
           -D CMAKE_TOOLCHAIN_FILE:FILEPATH="vcpkg/scripts/buildsystems/vcpkg.cmake" `
+          -D VCPKG_TARGET_TRIPLET=${VCPKG_DEFAULT_TRIPLET} `
           -S . `
           -B build
 
