@@ -77,7 +77,7 @@ jobs:
 
     - name: Run vcpkg
       run: |
-        ${{github.workspace}}/vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 intel-mkl tbb
+        vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 intel-mkl tbb
 
     - name: Configure CMake
       env:
@@ -86,21 +86,19 @@ jobs:
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: |
-        mkdir build
-        cd build
         cmake \
           -G Ninja \
           -D CMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} \
-          -D CMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake \
+          -D CMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake \
           -DMKL_DIR=/opt/intel/oneapi/mkl/latest/lib/cmake/mkl \
-          -S ../ \
-          -B ./
+          -S . \
+          -B build
 
     - name: Build
       # Build your program with the given configuration
       run: |
         cmake \
-        --build ${{github.workspace}}/build \
+        --build build \
         --config ${{env.BUILD_TYPE}}
 
     - name: Test
@@ -114,7 +112,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Linux-build-dir
-        path: ${{github.workspace}}/build
+        path: build
         retention-days: 2
 
   Windows:
@@ -167,8 +165,8 @@ jobs:
     - name: Run vcpkg
       shell: bash
       run: |
-        ${{github.workspace}}\vcpkg\vcpkg.exe install intel-mkl
-        ${{github.workspace}}\vcpkg\vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
+        vcpkg/vcpkg.exe install intel-mkl
+        vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
 
     - name: Setup MSVC
       uses: ilammy/msvc-dev-cmd@v1
@@ -182,20 +180,20 @@ jobs:
           -D CMAKE_C_COMPILER:FILEPATH=${{ matrix.compiler.c }} `
           -D CMAKE_CXX_COMPILER:FILEPATH=${{ matrix.compiler.cpp }} `
           -D CMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} `
-          -D CMAKE_TOOLCHAIN_FILE:FILEPATH="${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake" `
-          -S ${{github.workspace}} `
-          -B ${{github.workspace}}/build
+          -D CMAKE_TOOLCHAIN_FILE:FILEPATH="vcpkg/scripts/buildsystems/vcpkg.cmake" `
+          -S . `
+          -B build
 
     - name: Build VegaFEM
       # Build your program with the given configuration
       run: |
         cmake.exe `
-          --build ${{github.workspace}}/build `
+          --build build `
           --config ${{env.BUILD_TYPE}}
 
     - name: Upload build folder
       uses: actions/upload-artifact@v3
       with:
         name: Windows-build-dir
-        path: ${{github.workspace}}/build
+        path: build
         retention-days: 2
