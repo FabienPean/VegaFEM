@@ -164,11 +164,12 @@ jobs:
   Cache-Windows:
     runs-on: windows-latest
     env:
-      INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19040/w_onemkl_p_2022.2.1.19754_offline.exe
+      INTEL_WINDOWS_BASEKIT_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19078/w_BaseKit_p_2023.0.0.25940_offline.exe
       VCPKG_DEFAULT_TRIPLET: x64-windows-release
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Restore cache for Intel oneAPI MKL
         id: cache-intel
         uses: actions/cache@v3
@@ -177,18 +178,17 @@ jobs:
               C:\Program Files (x86)\Intel\oneAPI\setvars-vcvarsall.bat
               C:\Program Files (x86)\Intel\oneAPI\setvars.bat
               C:\Program Files (x86)\Intel\oneAPI\mkl
-          key: oneAPI-MKL-${{ runner.os }}-2022.2.1
+          key: oneAPI-MKL-${{ runner.os }}-2023.0.0
 
+      # https://github.com/oneapi-src/oneapi-ci/blob/master/.github/workflows/build_all.yml
+      # https://oneapi-src.github.io/oneapi-ci/#intelr-oneapi-base-toolkit
+      # https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-windows/2023-0/install-with-command-line.html
       - name: Install Intel oneAPI MKL
         timeout-minutes: 30
-        shell: cmd
         if: steps.cache-intel.outputs.cache-hit != 'true'
-        run: scripts/install_windows.bat $env:INTEL_WINDOWS_MKL_URL
-
-      - name: Set MKL environment variables
         run: |
-          echo "ONEAPI_ROOT=C:\Program Files (x86)\Intel\oneAPI" >> $env:GITHUB_ENV
-          echo "MKL_DIR=C:\Program Files (x86)\Intel\oneAPI\mkl\latest\lib\cmake\mkl" >> $env:GITHUB_ENV
+            curl.exe --output webimage.exe --url $Env:INTEL_WINDOWS_BASEKIT_URL --retry 5 --retry-delay 5
+            .\webimage.exe -s -a --silent --eula accept --components intel.oneapi.win.mkl.devel
 
       - name: Setup vcpkg
         id: setup-vcpkg
@@ -198,6 +198,7 @@ jobs:
 
       - name: Run vcpkg
         shell: bash
+        if: steps.setup-vcpkg.outputs.cache-hit != 'true'
         run: |
           vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
 
@@ -213,7 +214,6 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     env:
-      INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19040/w_onemkl_p_2022.2.1.19754_offline.exe
       VCPKG_DEFAULT_TRIPLET: x64-windows-release
 
     steps:
@@ -232,7 +232,7 @@ jobs:
           C:\Program Files (x86)\Intel\oneAPI\setvars-vcvarsall.bat
           C:\Program Files (x86)\Intel\oneAPI\setvars.bat
           C:\Program Files (x86)\Intel\oneAPI\mkl
-        key: oneAPI-MKL-${{ matrix.os }}-2022.2.1
+        key: oneAPI-MKL-${{ matrix.os }}-2023.0.0
         fail-on-cache-miss: true
 
     - name: Set MKL environment variables
