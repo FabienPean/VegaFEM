@@ -19,6 +19,9 @@ jobs:
     env:
       VCPKG_DEFAULT_TRIPLET: x64-linux-release
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
     - name: Intel Apt repository
       timeout-minutes: 1
       run: |
@@ -42,20 +45,22 @@ jobs:
       if: steps.cache-intel.outputs.cache-hit != 'true'
       run: sudo apt install -y intel-oneapi-common-vars intel-oneapi-mkl intel-oneapi-mkl-devel intel-oneapi-tbb intel-oneapi-tbb-devel #devel needed for cmake and headers
 
-    - name: System dependencies
-      run: |
-        sudo apt install -y clang
-        sudo apt install -y autoconf-archive #mpfr
-        sudo apt install -y libopengl-dev libglu-dev libx11-dev libxrandr-dev libxi-dev libxxf86vm-dev #freeglut
-        sudo apt install -y libxmu-dev libxi-dev libgl-dev #glew
-
     - name: Setup vcpkg
       id: setup-vcpkg
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
 
+    - name: System dependencies
+      if: steps.setup-vcpkg.outputs.cache-hit != 'true'
+      run: |
+        sudo apt install -y clang
+        sudo apt install -y autoconf-archive #mpfr
+        sudo apt install -y libopengl-dev libglu-dev libx11-dev libxrandr-dev libxi-dev libxxf86vm-dev #freeglut
+        sudo apt install -y libxmu-dev libxi-dev libgl-dev #glew
+
     - name: Run vcpkg
+      if: steps.setup-vcpkg.outputs.cache-hit != 'true'
       run: |
         vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 intel-mkl tbb
 
@@ -162,6 +167,8 @@ jobs:
       INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19040/w_onemkl_p_2022.2.1.19754_offline.exe
       VCPKG_DEFAULT_TRIPLET: x64-windows-release
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Restore cache for Intel oneAPI MKL
         id: cache-intel
         uses: actions/cache@v3
@@ -170,10 +177,11 @@ jobs:
               C:\Program Files (x86)\Intel\oneAPI\setvars-vcvarsall.bat
               C:\Program Files (x86)\Intel\oneAPI\setvars.bat
               C:\Program Files (x86)\Intel\oneAPI\mkl
-          key: oneAPI-MKL-${{ matrix.os }}-2022.2.1
+          key: oneAPI-MKL-${{ runner.os }}-2022.2.1
 
       - name: Install Intel oneAPI MKL
-        timeout-minutes: 25
+        timeout-minutes: 30
+        shell: cmd
         if: steps.cache-intel.outputs.cache-hit != 'true'
         run: scripts/install_windows.bat $env:INTEL_WINDOWS_MKL_URL
 
@@ -218,7 +226,7 @@ jobs:
 
     - name: Restore cache for Intel oneAPI MKL
       id: cache-intel
-      uses: actions/cache@v3 # mkl\latest symlink corrupted on cache restore https://github.com/actions/cache/issues/120
+      uses: actions/cache@v3
       with:
         path: |
           C:\Program Files (x86)\Intel\oneAPI\setvars-vcvarsall.bat
