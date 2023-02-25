@@ -184,7 +184,6 @@ jobs:
       # https://oneapi-src.github.io/oneapi-ci/#intelr-oneapi-base-toolkit
       # https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-windows/2023-0/install-with-command-line.html
       - name: Install Intel oneAPI MKL
-        timeout-minutes: 30
         if: steps.cache-intel.outputs.cache-hit != 'true'
         shell: cmd
         run: scripts/install_windows.bat $env:INTEL_WINDOWS_MKL_URL intel.oneapi.win.mkl.devel
