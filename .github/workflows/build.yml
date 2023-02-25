@@ -164,7 +164,7 @@ jobs:
   Cache-Windows:
     runs-on: windows-latest
     env:
-      INTEL_WINDOWS_BASEKIT_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19078/w_BaseKit_p_2023.0.0.25940_offline.exe
+      INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/IRC_NAS/19150/w_onemkl_p_2023.0.0.25930_offline.exe
       VCPKG_DEFAULT_TRIPLET: x64-windows-release
     steps:
       - name: Checkout repository
@@ -185,8 +185,7 @@ jobs:
       # https://www.intel.com/content/www/us/en/docs/oneapi/installation-guide-windows/2023-0/install-with-command-line.html
       - name: Install Intel oneAPI MKL
         if: steps.cache-intel.outputs.cache-hit != 'true'
-        shell: cmd
-        run: scripts/install_windows.bat $env:INTEL_WINDOWS_MKL_URL intel.oneapi.win.mkl.devel
+        run: scripts/install_windows.bat $env:INTEL_WINDOWS_MKL_URL
 
       - name: Setup vcpkg
         id: setup-vcpkg
