@@ -10,14 +10,14 @@ on:
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
-  VCPKG_VERSION: 2022.11.14
+  VCPKG_VERSION: 2023.02.24
 
 jobs:
 
   Cache-Linux:
     runs-on: ubuntu-latest
     env:
-      VCPKG_DEFAULT_TRIPLET: x64-linux
+      VCPKG_DEFAULT_TRIPLET: x64-linux-release
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -76,7 +76,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     env:
-      VCPKG_DEFAULT_TRIPLET: x64-linux
+      VCPKG_DEFAULT_TRIPLET: x64-linux-release
 
     steps:
 
@@ -165,7 +165,7 @@ jobs:
     runs-on: windows-latest
     env:
       INTEL_WINDOWS_BASEKIT_URL: https://registrationcenter-download.intel.com/akdlm/irc_nas/19078/w_BaseKit_p_2023.0.0.25940_offline.exe
-      VCPKG_DEFAULT_TRIPLET: x64-windows
+      VCPKG_DEFAULT_TRIPLET: x64-windows-release
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -214,7 +214,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     env:
-      VCPKG_DEFAULT_TRIPLET: x64-windows
+      VCPKG_DEFAULT_TRIPLET: x64-windows-release
 
     steps:
 
