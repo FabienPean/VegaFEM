@@ -232,7 +232,7 @@ jobs:
           C:\Program Files (x86)\Intel\oneAPI\setvars-vcvarsall.bat
           C:\Program Files (x86)\Intel\oneAPI\setvars.bat
           C:\Program Files (x86)\Intel\oneAPI\mkl
-        key: oneAPI-MKL-${{ matrix.os }}-2023.0.0
+        key: oneAPI-MKL-${{ runner.os }}-2023.0.0
         fail-on-cache-miss: true
 
     - name: Set MKL environment variables
