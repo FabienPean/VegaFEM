@@ -188,7 +188,7 @@ jobs:
         if: steps.cache-intel.outputs.cache-hit != 'true'
         run: |
             curl.exe --output webimage.exe --url $Env:INTEL_WINDOWS_BASEKIT_URL --retry 5 --retry-delay 5
-            .\webimage.exe -s -a --silent --eula accept --components intel.oneapi.win.mkl.devel
+            .\webimage.exe -s -a --action install --silent --eula accept --components intel.oneapi.win.mkl.devel
 
       - name: Setup vcpkg
         id: setup-vcpkg
