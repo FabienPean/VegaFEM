@@ -200,7 +200,7 @@ jobs:
       - name: Run vcpkg
         if: steps.setup-vcpkg.outputs.cache-hit != 'true'
         run: |
-          vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
+          ${{github.workspace}}\vcpkg\vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
 
 
   Windows:
@@ -249,7 +249,7 @@ jobs:
 
     - name: Run vcpkg
       run: |
-        vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
+        ${{github.workspace}}\vcpkg\vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
 
     - name: Setup MSVC
       uses: ilammy/msvc-dev-cmd@v1
@@ -264,7 +264,7 @@ jobs:
           -D CMAKE_CXX_COMPILER:FILEPATH=${{ matrix.compiler.cpp }} `
           -D CMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} `
           -D CMAKE_TOOLCHAIN_FILE:FILEPATH="${{github.workspace}}\vcpkg\scripts\buildsystems\vcpkg.cmake" `
-          -D VCPKG_TARGET_TRIPLET=${VCPKG_DEFAULT_TRIPLET} `
+          -D VCPKG_TARGET_TRIPLET=${{env.VCPKG_DEFAULT_TRIPLET}} `
           -S . `
           -B build
 
