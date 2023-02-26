@@ -260,7 +260,7 @@ jobs:
           -D CMAKE_C_COMPILER:FILEPATH=${{ matrix.compiler.c }} `
           -D CMAKE_CXX_COMPILER:FILEPATH=${{ matrix.compiler.cpp }} `
           -D CMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} `
-          -D CMAKE_TOOLCHAIN_FILE:FILEPATH="vcpkg/scripts/buildsystems/vcpkg.cmake" `
+          -D CMAKE_TOOLCHAIN_FILE:FILEPATH="${{github.workspace}}\vcpkg\scripts\buildsystems\vcpkg.cmake" `
           -D VCPKG_TARGET_TRIPLET=${VCPKG_DEFAULT_TRIPLET} `
           -S . `
           -B build
