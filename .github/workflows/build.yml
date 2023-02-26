@@ -50,6 +50,7 @@ jobs:
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
+        cache-version: ${{github.run_id}}
 
     - name: System dependencies
       if: steps.setup-vcpkg.outputs.cache-hit != 'true'
@@ -119,6 +120,7 @@ jobs:
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
+        cache-version: ${{github.run_id}}
 
     - name: Run vcpkg
       run: |
@@ -192,6 +194,8 @@ jobs:
         uses: friendlyanon/setup-vcpkg@v1
         with: 
           committish: ${{ env.VCPKG_VERSION }}
+          cache-version: ${{github.run_id}}
+
 
       - name: Run vcpkg
         shell: bash
@@ -242,6 +246,7 @@ jobs:
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
+        cache-version: ${{github.run_id}}
 
     - name: Run vcpkg
       shell: bash
