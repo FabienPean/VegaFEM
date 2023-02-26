@@ -43,7 +43,7 @@ jobs:
     - name: Install Intel oneAPI
       timeout-minutes: 5
       if: steps.cache-intel.outputs.cache-hit != 'true'
-      run: sudo apt install -y intel-oneapi-common-vars intel-oneapi-mkl intel-oneapi-mkl-devel intel-oneapi-tbb intel-oneapi-tbb-devel #devel needed for cmake and headers
+      run: sudo apt install -y intel-oneapi-common-vars intel-oneapi-mkl intel-oneapi-mkl-devel #devel needed for cmake and headers
 
     - name: Setup vcpkg
       id: setup-vcpkg
@@ -63,7 +63,7 @@ jobs:
     - name: Run vcpkg
       if: steps.setup-vcpkg.outputs.cache-hit != 'true'
       run: |
-        vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 intel-mkl tbb
+        vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb
 
 
   Linux:
@@ -124,7 +124,7 @@ jobs:
 
     - name: Run vcpkg
       run: |
-        vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 intel-mkl tbb
+        vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb
 
     - name: Configure CMake
       env:
