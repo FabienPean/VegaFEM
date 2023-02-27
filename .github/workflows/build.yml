@@ -62,8 +62,7 @@ jobs:
 
     - name: Run vcpkg
       if: steps.setup-vcpkg.outputs.cache-hit != 'true'
-      run: |
-        vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb
+      run: vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb
 
 
   Linux:
@@ -123,8 +122,7 @@ jobs:
         cache-version: ${{github.run_id}}
 
     - name: Run vcpkg
-      run: |
-        vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb
+      run: vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb
 
     - name: Configure CMake
       env:
@@ -196,12 +194,9 @@ jobs:
           committish: ${{ env.VCPKG_VERSION }}
           cache-version: ${{github.run_id}}
 
-
       - name: Run vcpkg
         if: steps.setup-vcpkg.outputs.cache-hit != 'true'
-        run: |
-          ${{github.workspace}}\vcpkg\vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
-
+        run: vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
 
   Windows:
     needs: Cache-Windows
@@ -249,7 +244,7 @@ jobs:
 
     - name: Run vcpkg
       run: |
-        ${{github.workspace}}\vcpkg\vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
+        vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
 
     - name: Setup MSVC
       uses: ilammy/msvc-dev-cmd@v1
