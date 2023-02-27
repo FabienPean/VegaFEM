@@ -268,18 +268,6 @@ jobs:
           -S . `
           -B build
 
-    - name: fdqg
-      if: success() || failure()
-      run: |
-        tree /F "${{github.workspace}}\vcpkg\installed"
-
-    - name: upload cmake logs
-      uses: actions/upload-artifact@v3
-      if: success() || failure()
-      with:
-        name: ${{matrix.os}}-${{matrix.compiler.cpp}}-cmake-log
-        path: build/CMakeFiles/CMakeOutput.log
-        retention-days: 2
     - name: Build VegaFEM
       # Build your program with the given configuration
       run: |
