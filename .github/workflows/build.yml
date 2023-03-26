@@ -104,11 +104,9 @@ jobs:
         echo "ONEAPI_ROOT=/opt/intel/oneapi/" >> $GITHUB_ENV
         echo "MKL_DIR=/opt/intel/oneapi/mkl/latest/lib/cmake/mkl" >> $GITHUB_ENV
 
-    - name: Setup ninja
-      uses: seanmiddleditch/gha-setup-ninja@master
-
     - name: System dependencies
       run: |
+        sudo apt install -y ninja-build
         sudo apt install -y clang
         sudo apt install -y autoconf-archive #mpfr
         sudo apt install -y libopengl-dev libglu-dev libx11-dev libxrandr-dev libxi-dev libxxf86vm-dev #freeglut
@@ -216,8 +214,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Setup ninja
-      uses: seanmiddleditch/gha-setup-ninja@master
+    - name: Install ninja
+      run: choco install ninja
 
     - name: Restore cache for Intel oneAPI MKL
       id: cache-intel
