@@ -160,6 +160,7 @@ list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              
 list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
 
 target_sources(${PROJECT_NAME} PRIVATE ${all_headers} PRIVATE ${all_sources})
+install(FILES ${all_headers} DESTINATION "include/${PROJECT_NAME}")
 
 ################################################################################
 # GPL components
@@ -227,6 +228,7 @@ foreach(lib ${VegaFEM_gpl_libs})
   list(APPEND all_sources ${sources})
 endforeach()
 target_sources(vegafem_gpl PRIVATE ${all_headers} PRIVATE ${all_sources})
+install(FILES ${all_headers} DESTINATION "include/${PROJECT_NAME}")
 
 set(VegaFEM_opengl
   openGLHelper
