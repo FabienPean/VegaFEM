@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.21)
 # 3.21 for https://cmake.org/cmake/help/git-stage/manual/cmake-generator-expressions.7.html#genex:TARGET_RUNTIME_DLLS to copy DLLs to binary folder
 # Alternative 3.16 for https://cmake.org/cmake/help/latest/command/file.html#get-runtime-dependencies
 project(
-  VegaFEM
+  vegafem
   VERSION 4.0.1
   LANGUAGES C CXX
 )
