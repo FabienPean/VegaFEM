@@ -159,8 +159,7 @@ list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
 
-target_sources(${PROJECT_NAME} PUBLIC ${all_headers} PRIVATE ${all_sources})
-
+target_sources(${PROJECT_NAME} PRIVATE ${all_headers} PRIVATE ${all_sources})
 
 ################################################################################
 # GPL components
@@ -227,8 +226,7 @@ foreach(lib ${VegaFEM_gpl_libs})
   file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.cpp")
   list(APPEND all_sources ${sources})
 endforeach()
-target_sources(vegafem_gpl PUBLIC ${all_headers} PRIVATE ${all_sources})
-
+target_sources(vegafem_gpl PRIVATE ${all_headers} PRIVATE ${all_sources})
 
 set(VegaFEM_opengl
   openGLHelper
