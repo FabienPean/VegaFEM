@@ -166,7 +166,6 @@ target_sources(${PROJECT_NAME} PUBLIC ${all_headers} PRIVATE ${all_sources})
 ################################################################################
 find_package(CGAL CONFIG REQUIRED COMPONENTS Core) # for libigl (CGAL+Core) and exactArithmetic (CGAL)
 find_package(Eigen3 CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE Eigen3::Eigen)
 # Options for libigl modules
 option(LIBIGL_COPYLEFT_CGAL     "Use CGAL"                     ON)
 option(LIBIGL_PREDICATES        "Use exact predicates"         ON)
@@ -193,7 +192,7 @@ add_library(vegafem_gpl)
 set_target_properties(vegafem_gpl PROPERTIES CXX_EXTENSIONS OFF)
 target_compile_features(vegafem_gpl PRIVATE cxx_std_14)
 target_link_libraries(vegafem_gpl PUBLIC ${PROJECT_NAME})
-target_link_libraries(vegafem_gpl PRIVATE igl::core igl::predicates igl_copyleft::cgal)
+target_link_libraries(vegafem_gpl PRIVATE $<BUILD_INTERFACE:Eigen3::Eigen igl::core igl::predicates igl_copyleft::cgal>)
 target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
 
 if(MSVC OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES MSVC)
