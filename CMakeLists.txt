@@ -74,8 +74,25 @@ set(MKL_INTERFACE lp64) # lp64 -> int32, ilp64 -> int64
 set(MKL_THREADING sequential) # sequential intel_thread gnu_thread pgi_thread tbb_thread
 set(MKL_LINK ${VCPKG_LIBRARY_LINKAGE}) # static dynamic sdl
 find_package(MKL CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE MKL::MKL)
-target_compile_definitions(${PROJECT_NAME} PRIVATE PARDISO_SOLVER_IS_AVAILABLE)
+get_target_property(MKL_LIBS MKL::MKL INTERFACE_LINK_LIBRARIES)
+
+target_link_libraries(${PROJECT_NAME} PUBLIC MKL::MKL;${MKL_LIBS})
+target_compile_definitions(${PROJECT_NAME} PUBLIC PARDISO_SOLVER_IS_AVAILABLE)
+
+foreach(lib IN LISTS MKL_LIBS)
+if(TARGET ${lib})
+    get_target_property(MKL_DLL ${lib} IMPORTED_LOCATION)
+    if(MKL_DLL)
+    message(WARNING ${MKL_DLL})
+    add_custom_command(
+        TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            ${MKL_DLL}
+            $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    )
+    endif()
+endif()
+endforeach()
 
 set(VegaFEM_core_libs
     animationHelper
