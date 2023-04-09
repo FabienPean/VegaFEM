@@ -45,8 +45,8 @@
 #include <set>
 #include <string>
 
-#include "wx/wx.h" 
-#include "wx/spinctrl.h" 
+#include <wx/wx.h>
+#include <wx/spinctrl.h>
 
 #include "objMesh.h"
 #include "listIO.h"

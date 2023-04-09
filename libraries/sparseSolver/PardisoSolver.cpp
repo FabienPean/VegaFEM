@@ -44,7 +44,7 @@
   #include "TargetConditionals.h"
 #endif
 
-#include "mkl.h"
+#include <mkl.h>
 
 #if defined(_WIN32) || defined(WIN32) || defined(_WIN64)
   #define PARDISO pardiso
