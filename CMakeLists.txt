@@ -157,7 +157,7 @@ else()
 endif()
 list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
-list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
+# list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
 
 target_sources(${PROJECT_NAME} PRIVATE ${all_headers} PRIVATE ${all_sources})
 install(FILES ${all_headers} DESTINATION "include/${PROJECT_NAME}")
@@ -340,6 +340,27 @@ if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
     #target_link_libraries(largeModalDeformationFactory PRIVATE ${wxWidgets_LIBRARIES})
     #target_compile_definitions(largeModalDeformationFactory PUBLIC "-DWIN32_LEAN_AND_MEAN")
 
+    set(exe
+        largeModalDeformationFactory #requires wxwidget arpack
+    )
+    file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
+    add_executable(${exe} WIN32 ${sources})
+    target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
+        OpenGL::GL 
+        GLUT::GLUT
+        $<IF:$<BOOL:BUILD_SHARED_LIBS>,glui::glui,glui::glui_static> #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
+        $<$<PLATFORM_ID:Linux,Darwin>:X11::X11>
+    )
+    if($<TARGET_RUNTIME_DLLS:${exe}>)
+    add_custom_command(TARGET ${exe} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
+        COMMAND_EXPAND_LISTS
+    )
+    endif()
+    find_package(wxWidgets CONFIG REQUIRED)
+    target_link_libraries(largeModalDeformationFactory PRIVATE wx::core wx::base wx::gl)
+    find_package(arpackng CONFIG REQUIRED)
+    target_link_libraries(largeModalDeformationFactory PRIVATE ARPACK::ARPACK)
 endif()
 
 
