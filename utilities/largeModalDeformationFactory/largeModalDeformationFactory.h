@@ -54,6 +54,7 @@
 #include "modalMatrix.h"
 #include "StVKReducedInternalForces.h"
 
+using namespace vegafem;
 #include "states.h"
 class MyGLCanvas;
 class MyFrame;
