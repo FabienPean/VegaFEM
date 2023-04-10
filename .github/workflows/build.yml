@@ -165,7 +165,7 @@ jobs:
     runs-on: windows-latest
     env:
       INTEL_WINDOWS_MKL_URL: https://registrationcenter-download.intel.com/akdlm/IRC_NAS/19150/w_onemkl_p_2023.0.0.25930_offline.exe
-      VCPKG_DEFAULT_TRIPLET: x64-windows-release
+      VCPKG_DEFAULT_TRIPLET: x64-windows-static-release
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -209,7 +209,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     env:
-      VCPKG_DEFAULT_TRIPLET: x64-windows-release
+      VCPKG_DEFAULT_TRIPLET: x64-windows-static-release
 
     steps:
 
