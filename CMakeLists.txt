@@ -329,7 +329,7 @@ if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
       target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
           OpenGL::GL 
           GLUT::GLUT
-          $<IF:$<BOOL:BUILD_SHARED_LIBS>,glui::glui,glui::glui_static> #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
+          $<IF:$<TARGET_EXISTS:glui::glui>,glui::glui,glui::glui_static> #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
           $<$<PLATFORM_ID:Linux,Darwin>:X11::X11>
       )
       if($<TARGET_RUNTIME_DLLS:${exe}>)
@@ -359,7 +359,7 @@ if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
     target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
         OpenGL::GL 
         GLUT::GLUT
-        $<IF:$<BOOL:BUILD_SHARED_LIBS>,glui::glui,glui::glui_static> #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
+        $<IF:$<TARGET_EXISTS:glui::glui>,glui::glui,glui::glui_static> #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
         $<$<PLATFORM_ID:Linux,Darwin>:X11::X11>
     )
     if($<TARGET_RUNTIME_DLLS:${exe}>)
