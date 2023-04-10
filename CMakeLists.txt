@@ -167,6 +167,8 @@ endif()
 list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
 # list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
+find_package(arpackng CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE ARPACK::ARPACK)
 
 target_sources(${PROJECT_NAME} PRIVATE ${all_headers} PRIVATE ${all_sources})
 install(FILES ${all_headers} DESTINATION "include/${PROJECT_NAME}")
@@ -368,8 +370,7 @@ if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
     endif()
     find_package(wxWidgets CONFIG REQUIRED)
     target_link_libraries(largeModalDeformationFactory PRIVATE wx::core wx::base wx::gl)
-    find_package(arpackng CONFIG REQUIRED)
-    target_link_libraries(largeModalDeformationFactory PRIVATE ARPACK::ARPACK)
+
 endif()
 
 
