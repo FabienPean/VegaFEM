@@ -41,6 +41,8 @@
 #ifndef VEGAFEM_MATRIXEXP_H
 #define VEGAFEM_MATRIXEXP_H
 
+namespace vegafem
+{
 // computes exp(mtx*t)
 template<class real>
 int MatrixExp(int m, real * mtx, real t, real * output, int ideg=6);
@@ -48,5 +50,6 @@ int MatrixExp(int m, real * mtx, real t, real * output, int ideg=6);
 // computes w = exp(mtx*t)*v
 template<class real>
 int MatrixExpv(int m, real * mtx, real t, real * v, real * w, int ideg=6);
+}// namespace vegafem
 
 #endif
