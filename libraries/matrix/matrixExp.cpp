@@ -72,7 +72,12 @@ public:
                  INTEGER * ldh, double * wsp, INTEGER * lwsp,
 		 INTEGER * ipiv, INTEGER * iexph, INTEGER * ns, INTEGER * flag)
     {
-      DGPADM(ideg, m, t, H, ldh, wsp, lwsp, ipiv, iexph, ns, flag);
+#ifdef USE_EXPOKIT
+      DGPADM(ideg, m, t, H, ldh, wsp, lwsp, ipiv, iexph, ns, flag); 
+#else
+      printf("Error: expokit not linked\n");
+#endif // USE_EXPOKIT
+
     }
 };
 
