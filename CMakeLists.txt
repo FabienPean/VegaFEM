@@ -77,14 +77,14 @@ find_package(MKL CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE MKL::MKL)
 target_compile_definitions(${PROJECT_NAME} PUBLIC PARDISO_SOLVER_IS_AVAILABLE)
 # Copy all MKL DLLs
-file(GLOB MKL_DLLS "${MKL_ROOT}/redist/${MKL_ARCH}/*.dll")
-if(MKL_DLLS)
-add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${MKL_DLLS}
-        $<TARGET_FILE_DIR:${PROJECT_NAME}>
-)
-endif()
+#file(GLOB MKL_DLLS "${MKL_ROOT}/redist/${MKL_ARCH}/*.dll")
+#if(MKL_DLLS)
+#add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+#    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+#        ${MKL_DLLS}
+#        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+#)
+#endif()
 
 set(VegaFEM_core_libs
     animationHelper
