@@ -72,7 +72,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE GLEW::GLEW) # Linux|Windows, glslP
 ### MKL
 set(MKL_INTERFACE lp64) # lp64 -> int32, ilp64 -> int64
 set(MKL_THREADING sequential) # sequential intel_thread gnu_thread pgi_thread tbb_thread
-set(MKL_LINK ${VCPKG_LIBRARY_LINKAGE}) # static dynamic sdl
+set(MKL_LINK static) # static dynamic sdl
 find_package(MKL CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE MKL::MKL)
 target_compile_definitions(${PROJECT_NAME} PUBLIC PARDISO_SOLVER_IS_AVAILABLE)
@@ -167,6 +167,11 @@ endif()
 list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
 # list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
+set(BLA_VENDOR Intel10_64lp_seq)
+set(BLA_STATIC ON)
+find_package(BLAS REQUIRED)
+find_package(LAPACK REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE BLAS::BLAS LAPACK::LAPACK)
 find_package(arpackng CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE ARPACK::ARPACK)
 
