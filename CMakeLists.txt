@@ -167,11 +167,11 @@ endif()
 list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
 # list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
-set(BLA_VENDOR Intel10_64lp_seq)
-set(BLA_STATIC ON)
-find_package(BLAS REQUIRED)
-find_package(LAPACK REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE BLAS::BLAS LAPACK::LAPACK)
+#set(BLA_VENDOR Intel10_64lp_seq)
+#set(BLA_STATIC ON)
+#find_package(BLAS REQUIRED)
+#find_package(LAPACK REQUIRED)
+#target_link_libraries(${PROJECT_NAME} PRIVATE BLAS::BLAS LAPACK::LAPACK)
 find_package(arpackng CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE ARPACK::ARPACK)
 
