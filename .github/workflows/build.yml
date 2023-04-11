@@ -50,7 +50,9 @@ jobs:
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
-        cache-version: ${{github.run_id}}
+        cache-version: ${{github.run_number}}
+        cache-restore-keys: |
+          vcpkg-${{runner.os}}-${{github.run_number}}
 
     - name: System dependencies
       if: steps.setup-vcpkg.outputs.cache-hit != 'true'
@@ -119,7 +121,7 @@ jobs:
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
-        cache-version: ${{github.run_id}}
+        cache-version: ${{github.run_number}}
 
     - name: Run vcpkg
       run: vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
@@ -192,7 +194,9 @@ jobs:
         uses: friendlyanon/setup-vcpkg@v1
         with: 
           committish: ${{ env.VCPKG_VERSION }}
-          cache-version: ${{github.run_id}}
+          cache-version: ${{github.run_number}}
+          cache-restore-keys: |
+            vcpkg-${{runner.os}}-${{github.run_number}}
 
       - name: Run vcpkg
         if: steps.setup-vcpkg.outputs.cache-hit != 'true'
@@ -240,7 +244,7 @@ jobs:
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
-        cache-version: ${{github.run_id}}
+        cache-version: ${{github.run_number}}
 
     - name: Run vcpkg
       run: |
