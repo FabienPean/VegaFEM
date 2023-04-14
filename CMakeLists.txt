@@ -167,6 +167,8 @@ else()
 endif()
 list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
+list(FILTER all_sources EXCLUDE REGEX ".*matrixBLAS[^\\.].*")                   #cpp embedded into another one
+
 # list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
 #set(BLA_VENDOR Intel10_64lp_seq)
 #set(BLA_STATIC ON)
