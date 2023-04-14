@@ -216,9 +216,7 @@ target_link_libraries(vegafem_gpl PRIVATE $<BUILD_INTERFACE:Eigen3::Eigen igl::c
 target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
 
 if(MSVC OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES MSVC)
-    target_compile_options(vegafem_gpl
-        PRIVATE /permissive-
-    )
+    target_compile_options(vegafem_gpl PRIVATE /permissive-)
 elseif(UNIX OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES GNU)
 #    target_compile_options(vegafem_gpl
 #        PRIVATE -Werror # -Wall -pedantic-errors # problem with CGAL headers
