@@ -13,7 +13,7 @@ option(VEGAFEM_BUILD_UTILITIES_GRAPHICS "build utilities applications requiring 
 ################################################################################
 # Core
 ################################################################################
-add_library(${PROJECT_NAME})
+add_library(${PROJECT_NAME} STATIC)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
 #set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 14)
 #set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD_REQUIRED ON)
