@@ -319,7 +319,7 @@ if(VEGAFEM_BUILD_UTILITIES)
     foreach(exe ${VegaFEM_utilities_gpl})
       file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
       add_executable(${exe} ${sources})
-      target_link_libraries(${exe} vegafem_gpl)
+      target_link_libraries(${exe} PRIVATE vegafem_gpl)
       if($<TARGET_RUNTIME_DLLS:${exe}>)
         add_custom_command(TARGET ${exe} POST_BUILD
           COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
@@ -403,7 +403,7 @@ if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
     )
     endif()
     find_package(wxWidgets CONFIG REQUIRED)
-    target_link_libraries(largeModalDeformationFactory wx::core wx::base wx::gl)
+    target_link_libraries(largeModalDeformationFactory PRIVATE wx::core wx::base wx::gl)
     install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
           install(TARGETS ${exe}
             RUNTIME_DEPENDENCIES
