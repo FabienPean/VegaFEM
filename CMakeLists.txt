@@ -7,10 +7,8 @@ project(
   LANGUAGES C CXX
 )
 set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
-
 option(VEGAFEM_BUILD_UTILITIES "build utilities applications" ON)
 option(VEGAFEM_BUILD_UTILITIES_GRAPHICS "build utilities applications requiring a graphics API" ON)
-set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 ################################################################################
 # Core
