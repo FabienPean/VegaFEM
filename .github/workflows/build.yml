@@ -53,6 +53,8 @@ jobs:
         cache-version: ${{github.run_number}}
         cache-restore-keys: |
           vcpkg-${{runner.os}}-${{github.run_number}}
+          vcpkg-${{runner.os}}
+
 
     - name: System dependencies
       if: steps.setup-vcpkg.outputs.cache-hit != 'true'
@@ -197,6 +199,7 @@ jobs:
           cache-version: ${{github.run_number}}
           cache-restore-keys: |
             vcpkg-${{runner.os}}-${{github.run_number}}
+            vcpkg-${{runner.os}}
 
       - name: Run vcpkg
         if: steps.setup-vcpkg.outputs.cache-hit != 'true'
