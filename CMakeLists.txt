@@ -281,6 +281,13 @@ if(VEGAFEM_BUILD_UTILITIES)
           COMMAND_EXPAND_LISTS
         )
       endif()
+      install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
+      install(TARGETS ${exe}
+            RUNTIME_DEPENDENCIES
+            PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
+            POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
+            DIRECTORIES "$<TARGET_FILE_DIR:${exe}>"
+        )
     endforeach()
 
     # For generateInterpolant/generateInterpolationMatrix/generateMassMAtrix/generateSurfaceMesh
@@ -296,6 +303,13 @@ if(VEGAFEM_BUILD_UTILITIES)
           COMMAND_EXPAND_LISTS
         )
       endif()
+       install(TARGETS ${filename} RUNTIME DESTINATION bin CONFIGURATIONS Release)
+      install(TARGETS ${filename}
+            RUNTIME_DEPENDENCIES
+            PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
+            POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
+            DIRECTORIES "$<TARGET_FILE_DIR:${filename}> "
+        )
     endforeach()
 
     set(VegaFEM_utilities_gpl
@@ -312,9 +326,16 @@ if(VEGAFEM_BUILD_UTILITIES)
           COMMAND_EXPAND_LISTS
         )
       endif()
+      install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
+     install(TARGETS ${exe}
+            RUNTIME_DEPENDENCIES
+            PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
+            POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
+            DIRECTORIES "$<TARGET_FILE_DIR:${exe}> "
+        )
     endforeach()
 
-endif()
+endif(VEGAFEM_BUILD_UTILITIES)
 
 if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
 
@@ -344,6 +365,13 @@ if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
           COMMAND_EXPAND_LISTS
         )
       endif()
+      install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
+     install(TARGETS ${exe}
+           RUNTIME_DEPENDENCIES
+           PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
+           POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
+           DIRECTORIES "$<TARGET_FILE_DIR:${exe}>"
+       )
     endforeach()
 
     #target_link_libraries(clothBW-rt PUBLIC OpenGL::GL)
@@ -375,9 +403,15 @@ if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
     )
     endif()
     find_package(wxWidgets CONFIG REQUIRED)
-    target_link_libraries(largeModalDeformationFactory PRIVATE wx::core wx::base wx::gl)
-
-endif()
+    target_link_libraries(largeModalDeformationFactory wx::core wx::base wx::gl)
+    install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
+          install(TARGETS ${exe}
+            RUNTIME_DEPENDENCIES
+            PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
+            POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
+            DIRECTORIES "$<TARGET_FILE_DIR:${exe}>"
+        )
+endif(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
 
 
 include(CMakePackageConfigHelpers)
