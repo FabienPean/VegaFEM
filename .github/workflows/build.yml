@@ -73,7 +73,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04,ubuntu-22.04]
+        os: [ubuntu-22.04]
         compiler: [ {cpp: g++, c: gcc}, {cpp: clang++, c: clang} ]
 
     runs-on: ${{ matrix.os }}
