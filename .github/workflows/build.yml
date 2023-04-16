@@ -57,7 +57,6 @@ jobs:
 
 
     - name: System dependencies
-      if: steps.setup-vcpkg.outputs.cache-hit != 'true'
       run: |
         sudo apt install -y clang
         sudo apt install -y autoconf-archive #mpfr
