@@ -416,7 +416,7 @@ endif(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
-    VegaFEMConfigVersion.cmake
+    ${PROJECT_NAME}ConfigVersion.cmake
     VERSION ${PACKAGE_VERSION}
     COMPATIBILITY AnyNewerVersion
 )
