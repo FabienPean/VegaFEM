@@ -66,7 +66,6 @@ jobs:
         sudo apt install -y libdbus-1-dev libxi-dev libxtst-dev #wxWidgets
 
     - name: Run vcpkg
-      if: steps.setup-vcpkg.outputs.cache-hit != 'true'
       run: vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
 
 
@@ -202,7 +201,6 @@ jobs:
             vcpkg-${{runner.os}}
 
       - name: Run vcpkg
-        if: steps.setup-vcpkg.outputs.cache-hit != 'true'
         run: vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
 
   Windows:
