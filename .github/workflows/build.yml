@@ -144,10 +144,16 @@ jobs:
           -B build
 
     - name: Build
-      # Build your program with the given configuration
       run: |
         cmake \
         --build build \
+        --config ${{env.BUILD_TYPE}}
+
+    - name: Install
+      run: |
+        cmake \
+        --install build \
+        --prefix install \
         --config ${{env.BUILD_TYPE}}
 
     - name: Test
@@ -157,11 +163,11 @@ jobs:
       run: |
         ctest -C ${{env.BUILD_TYPE}}
 
-    - name: Upload build folder
+    - name: Upload installation folder
       uses: actions/upload-artifact@v3
       with:
-        name: Linux-build-dir
-        path: build
+        name: Linux-install-dir
+        path: install
         retention-days: 2
 
   Cache-Windows:
@@ -269,15 +275,21 @@ jobs:
           -B build
 
     - name: Build VegaFEM
-      # Build your program with the given configuration
       run: |
         cmake.exe `
           --build build `
           --config ${{env.BUILD_TYPE}}
 
-    - name: Upload build folder
+    - name: Install
+      run: |
+        cmake `
+        --install build `
+        --prefix install `
+        --config ${{env.BUILD_TYPE}}
+
+    - name: Upload install folder
       uses: actions/upload-artifact@v3
       with:
-        name: Windows-build-dir
-        path: build
+        name: Windows-install-dir
+        path: install
         retention-days: 2
