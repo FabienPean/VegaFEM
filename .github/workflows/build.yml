@@ -163,6 +163,7 @@ jobs:
         ctest -C ${{env.BUILD_TYPE}}
 
     - name: Upload installation folder
+      if: ${{strategy.job-index == 0}}
       uses: actions/upload-artifact@v3
       with:
         name: Linux-install-dir
@@ -287,6 +288,7 @@ jobs:
         --config ${{env.BUILD_TYPE}}
 
     - name: Upload install folder
+      if: ${{strategy.job-index == 0}}
       uses: actions/upload-artifact@v3
       with:
         name: Windows-install-dir
