@@ -10,7 +10,7 @@ on:
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
-  VCPKG_VERSION: 2023.02.24
+  VCPKG_VERSION: 69efe9cc2df0015f0bb2d37d55acde4a75c9a25b #2023.04.01
 
 jobs:
 
@@ -50,19 +50,22 @@ jobs:
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
-        cache-version: ${{github.run_id}}
+        cache-version: ${{github.run_number}}
+        cache-restore-keys: |
+          vcpkg-${{runner.os}}-${{github.run_number}}
+          vcpkg-${{runner.os}}
+
 
     - name: System dependencies
-      if: steps.setup-vcpkg.outputs.cache-hit != 'true'
       run: |
         sudo apt install -y clang
         sudo apt install -y autoconf-archive #mpfr
         sudo apt install -y libopengl-dev libglu-dev libx11-dev libxrandr-dev libxi-dev libxxf86vm-dev #freeglut
         sudo apt install -y libxmu-dev libxi-dev libgl-dev #glew
+        sudo apt install -y libdbus-1-dev libxi-dev libxtst-dev #wxWidgets
 
     - name: Run vcpkg
-      if: steps.setup-vcpkg.outputs.cache-hit != 'true'
-      run: vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb
+      run: vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
 
 
   Linux:
@@ -70,7 +73,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04,ubuntu-22.04]
+        os: [ubuntu-22.04]
         compiler: [ {cpp: g++, c: gcc}, {cpp: clang++, c: clang} ]
 
     runs-on: ${{ matrix.os }}
@@ -111,16 +114,17 @@ jobs:
         sudo apt install -y autoconf-archive #mpfr
         sudo apt install -y libopengl-dev libglu-dev libx11-dev libxrandr-dev libxi-dev libxxf86vm-dev #freeglut
         sudo apt install -y libxmu-dev libxi-dev libgl-dev #glew
+        sudo apt install -y libdbus-1-dev libxi-dev libxtst-dev #wxWidgets
 
     - name: Setup vcpkg
       id: setup-vcpkg
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
-        cache-version: ${{github.run_id}}
+        cache-version: ${{github.run_number}}
 
     - name: Run vcpkg
-      run: vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb
+      run: vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
 
     - name: Configure CMake
       env:
@@ -139,10 +143,16 @@ jobs:
           -B build
 
     - name: Build
-      # Build your program with the given configuration
       run: |
         cmake \
         --build build \
+        --config ${{env.BUILD_TYPE}}
+
+    - name: Install
+      run: |
+        cmake \
+        --install build \
+        --prefix install \
         --config ${{env.BUILD_TYPE}}
 
     - name: Test
@@ -152,11 +162,11 @@ jobs:
       run: |
         ctest -C ${{env.BUILD_TYPE}}
 
-    - name: Upload build folder
+    - name: Upload installation folder
       uses: actions/upload-artifact@v3
       with:
-        name: Linux-build-dir
-        path: build
+        name: Linux-install-dir
+        path: install
         retention-days: 2
 
   Cache-Windows:
@@ -190,11 +200,13 @@ jobs:
         uses: friendlyanon/setup-vcpkg@v1
         with: 
           committish: ${{ env.VCPKG_VERSION }}
-          cache-version: ${{github.run_id}}
+          cache-version: ${{github.run_number}}
+          cache-restore-keys: |
+            vcpkg-${{runner.os}}-${{github.run_number}}
+            vcpkg-${{runner.os}}
 
       - name: Run vcpkg
-        if: steps.setup-vcpkg.outputs.cache-hit != 'true'
-        run: vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
+        run: vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
 
   Windows:
     needs: Cache-Windows
@@ -238,11 +250,11 @@ jobs:
       uses: friendlyanon/setup-vcpkg@v1
       with: 
         committish: ${{ env.VCPKG_VERSION }}
-        cache-version: ${{github.run_id}}
+        cache-version: ${{github.run_number}}
 
     - name: Run vcpkg
       run: |
-        vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb
+        vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
 
     - name: Setup MSVC
       uses: ilammy/msvc-dev-cmd@v1
@@ -262,15 +274,21 @@ jobs:
           -B build
 
     - name: Build VegaFEM
-      # Build your program with the given configuration
       run: |
         cmake.exe `
           --build build `
           --config ${{env.BUILD_TYPE}}
 
-    - name: Upload build folder
+    - name: Install
+      run: |
+        cmake `
+        --install build `
+        --prefix install `
+        --config ${{env.BUILD_TYPE}}
+
+    - name: Upload install folder
       uses: actions/upload-artifact@v3
       with:
-        name: Windows-build-dir
-        path: build
+        name: Windows-install-dir
+        path: install
         retention-days: 2

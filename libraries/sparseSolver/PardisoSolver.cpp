@@ -36,9 +36,6 @@
 #include "PardisoSolver.h"
 #include "sparseSolverAvailability.h"
 
-namespace vegafem
-{
-
 #ifdef PARDISO_SOLVER_IS_AVAILABLE
 
 // Pardiso solver is available
@@ -47,13 +44,16 @@ namespace vegafem
   #include "TargetConditionals.h"
 #endif
 
-#include "mkl.h"
+#include <mkl.h>
 
 #if defined(_WIN32) || defined(WIN32) || defined(_WIN64)
   #define PARDISO pardiso
 #else
   #define PARDISO pardiso
 #endif
+
+namespace vegafem
+{
 
 PardisoSolver::PardisoSolver(const SparseMatrix * A, int numThreads_, matrixType mtype_, reorderingType rtype_, int directIterative_, int verbose_): numThreads(numThreads_), mtype(mtype_), rtype(rtype_), directIterative(directIterative_), verbose(verbose_)
 {

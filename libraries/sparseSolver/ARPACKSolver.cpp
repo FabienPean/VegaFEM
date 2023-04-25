@@ -42,9 +42,6 @@
 #include "ZTAZMultiplicator.h"
 #include "lapack-headers.h"
 
-namespace vegafem
-{
-
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -104,6 +101,9 @@ using namespace std;
 #ifdef PARDISO
   #include "PardisoSolver.h"
 #endif
+
+namespace vegafem
+{
 
 int ARPACKSolver::SolveGenEigReg(SparseMatrix * KInput, SparseMatrix * MInput, int numEigenvalues, double * eigenvalues, double * eigenvectors, const char * mode, int numLinearSolverThreads, int verbose)
 {
