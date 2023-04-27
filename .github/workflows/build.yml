@@ -26,6 +26,7 @@ jobs:
       timeout-minutes: 1
       run: |
         wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB  
+        # See https://www.digitalocean.com/community/tutorials/how-to-handle-apt-key-and-add-apt-repository-deprecation-using-gpg-to-add-external-repositories-on-ubuntu-22-04
         cat GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB | sudo gpg --dearmor -o /usr/share/keyrings/intel.gpg
         echo "deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/intel.gpg] https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneapi.list
         sudo apt update
@@ -90,6 +91,7 @@ jobs:
       timeout-minutes: 1
       run: |
         wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB  
+        # See https://www.digitalocean.com/community/tutorials/how-to-handle-apt-key-and-add-apt-repository-deprecation-using-gpg-to-add-external-repositories-on-ubuntu-22-04
         cat GPG-PUB-KEY-INTEL-SW-PRODUCTS-2023.PUB | sudo gpg --dearmor -o /usr/share/keyrings/intel.gpg
         echo "deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/intel.gpg] https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneapi.list
         sudo apt update
