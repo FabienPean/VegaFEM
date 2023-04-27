@@ -34,13 +34,13 @@
 #include "basicAlgorithms.h"
 #include "exactOctree.h"
 #include "predicates.h"
-
-namespace vegafem
-{
 #ifdef USE_TBB
-  #include <tbb/tbb.h>
+#include <tbb/tbb.h>
 #endif
 using namespace std;
+namespace vegafem
+{
+
 
 vector<vector<int>> computeTrianglesIntersectingEachTetExact(const TetMeshRef tetMesh, const TriMeshRef triMesh)
 {

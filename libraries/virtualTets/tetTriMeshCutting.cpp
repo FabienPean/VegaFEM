@@ -50,9 +50,9 @@
   #include <tbb/tbb.h>
 #endif
 
+using namespace std;
 namespace vegafem
 {
-using namespace std;
 
 //static int debugInt = 0;
 
