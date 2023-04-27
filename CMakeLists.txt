@@ -52,8 +52,6 @@ target_include_directories(
                          $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
 )
 
-
-
 ### OpenGL
 find_package(OpenGL REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC OpenGL::GL)
@@ -61,8 +59,6 @@ find_package(GLUT REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC GLUT::GLUT)
 find_package(GLEW REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE GLEW::GLEW) # Linux|Windows, glslPhong.cpp objMeshGPUDeformer_coarseToFine.cpp
-    
-
 ### TBB # Avoid TBB for now
 #set(TBB_ENABLE_IPO OFF)
 #find_package(TBB CONFIG REQUIRED)
@@ -77,15 +73,9 @@ set(MKL_MPI intelmpi)           # intelmpi, mpich, openmpi, msmpi, mshpc
 find_package(MKL CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE MKL::MKL)
 target_compile_definitions(${PROJECT_NAME} PUBLIC PARDISO_SOLVER_IS_AVAILABLE)
-# Copy all MKL DLLs
-#file(GLOB MKL_DLLS "${MKL_ROOT}/redist/${MKL_ARCH}/*.dll")
-#if(MKL_DLLS)
-#add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-#    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-#        ${MKL_DLLS}
-#        $<TARGET_FILE_DIR:${PROJECT_NAME}>
-#)
-#endif()
+### ARPACK
+find_package(arpackng CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE ARPACK::ARPACK)
 
 set(VegaFEM_core_libs
     animationHelper
@@ -169,14 +159,6 @@ list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*matrixBLAS[^\\.].*")                   #cpp embedded into another one
 
-# list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
-#set(BLA_VENDOR Intel10_64lp_seq)
-#set(BLA_STATIC ON)
-#find_package(BLAS REQUIRED)
-#find_package(LAPACK REQUIRED)
-#target_link_libraries(${PROJECT_NAME} PRIVATE BLAS::BLAS LAPACK::LAPACK)
-find_package(arpackng CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE ARPACK::ARPACK)
 
 target_sources(${PROJECT_NAME} PRIVATE ${all_headers} PRIVATE ${all_sources})
 install(FILES ${all_headers} DESTINATION "include/${PROJECT_NAME}")
