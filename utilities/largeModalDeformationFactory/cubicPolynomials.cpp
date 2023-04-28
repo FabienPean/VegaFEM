@@ -204,7 +204,7 @@ void * MyFrame::CubicPolynomialsWorker(int * code, StVKReducedInternalForces ** 
   // compute cubic polynomials
   StVKElementABCD * precomputedABCDIntegrals = StVKElementABCDLoader::load(precomputationState.simulationMesh);
 #ifdef USE_TBB
-  tbb::task_scheduler_init init(uiState.numComputationThreads);
+  tbb::task_arena init(uiState.numComputationThreads);
   // tbb::task_arena arena(uiState.numComputationThreads);
   // arena.execute([&]
   // {

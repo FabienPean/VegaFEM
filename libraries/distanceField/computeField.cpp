@@ -257,10 +257,6 @@ namespace vegafem
     assert(e != 0);
     return e;
   }
-  catch(tbb::captured_exception & ex) // in case tbb failed to propogate our thrown ret
-  {
-    return 1;
-  }
   return 0;
 #else
   return ZIGZAGROUTINE (objMeshOctree_, meshGraph_, zMin, zMax);
