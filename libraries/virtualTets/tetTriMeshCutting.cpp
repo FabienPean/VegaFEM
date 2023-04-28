@@ -46,7 +46,7 @@
 #include <fstream>
 #include <unordered_map>
 #include <mutex>
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #endif
 
@@ -212,7 +212,7 @@ void TetTriMeshCutting::computeCutTriangles(const std::vector<Vec3ER> * triVtxPo
 
   cutTrisInTet.clear();
   cutTrisInTet.resize(tetMesh.numTets());
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   mutex cutVtxMutex; // used to lock the access to the buffer storing the cut result
   vector<mutex> tetVtxMutex(tetMesh.numVertices()); // used to lock the access to each exact tet vtx pos
   vector<mutex> triVtxMutex(triMesh.numVertices()); // used to lock the access to each exact input tri vtx pos
@@ -251,7 +251,7 @@ void TetTriMeshCutting::computeCutTriangles(const std::vector<Vec3ER> * triVtxPo
         };
 
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
         // guard to all the traingle vtx
         // this will not cause dead locks, because we acquire the lock of each tri vtx according to
         // the order of the tri vtx
@@ -484,7 +484,7 @@ void TetTriMeshCutting::computeCutTriangles(const std::vector<Vec3ER> * triVtxPo
         // but we require input triangles are free of degeneracy
 
         {
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
             lock_guard<mutex> cutVtxlock(cutVtxMutex);
 #endif
           for(size_t i = 0; i < cutVertices.size(); i++)
@@ -541,7 +541,7 @@ void TetTriMeshCutting::computeCutTriangles(const std::vector<Vec3ER> * triVtxPo
 
       cutTrisInTet[tetID] = move(triGroupInTet);
     } // end each tetID
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   }, tbb::auto_partitioner()); //end for locations
 #endif
 

@@ -56,7 +56,7 @@ using namespace std;
 #include "marchingCubes.h"
 #include "performanceCounter.h"
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #else
   #include "range.h"
@@ -394,7 +394,7 @@ ObjMesh * MarchingCubes::compute()
   vector<int> allTriangles;
   unordered_map<int64_t, int> edgeInterID2AllMeshVtxID;
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   struct ThreadLocalData
   {
     vector<Vec3d> vertices;
@@ -565,7 +565,7 @@ ObjMesh * MarchingCubes::compute()
             meshTriangles.push_back(v3);
           }
         } // end for (distance loop)
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   }); //end for locations
 
 //  pc.StopCounter();

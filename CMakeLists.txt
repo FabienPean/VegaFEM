@@ -63,7 +63,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE GLEW::GLEW) # Linux|Windows, glslP
 #set(TBB_ENABLE_IPO OFF)
 find_package(TBB CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC TBB::tbb TBB::tbbmalloc $<$<PLATFORM_ID:Windows>:TBB::tbbmalloc_proxy>)
-target_compile_definitions(${PROJECT_NAME} PUBLIC USE_TBB)
+target_compile_definitions(${PROJECT_NAME} PUBLIC VEGAFEM_USE_TBB)
 ### MKL
 set(MKL_ARCH intel64)           # intel64 ia32 
 set(MKL_INTERFACE lp64)         # lp64 ilp64 https://en.wikipedia.org/wiki/64-bit_computing#64-bit_data_models

@@ -42,7 +42,7 @@
 #include "matrixIO.h"
 #include "StVKElementABCDLoader.h"
 #include "largeModalDeformationFactory.h"
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #endif
 
@@ -203,7 +203,7 @@ void * MyFrame::CubicPolynomialsWorker(int * code, StVKReducedInternalForces ** 
 {
   // compute cubic polynomials
   StVKElementABCD * precomputedABCDIntegrals = StVKElementABCDLoader::load(precomputationState.simulationMesh);
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   tbb::task_arena init(uiState.numComputationThreads);
   // tbb::task_arena arena(uiState.numComputationThreads);
   // arena.execute([&]
@@ -213,7 +213,7 @@ void * MyFrame::CubicPolynomialsWorker(int * code, StVKReducedInternalForces ** 
       precomputationState.rNonLin,
       precomputationState.nonLinearModalMatrix->GetMatrix(),
       precomputationState.simulationMesh, precomputedABCDIntegrals); 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   // });
 #endif
   delete(precomputedABCDIntegrals);

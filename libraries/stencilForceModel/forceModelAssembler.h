@@ -36,7 +36,7 @@
 #include "forceModel.h"
 #include "stencilForceModel.h"
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #endif
 
@@ -81,7 +81,7 @@ protected:
   std::vector<std::vector<int>> inverseIndices;
 
   // data structures for parallelism
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   typedef tbb::cache_aligned_allocator<double> BufferAllocator;
   typedef std::vector<double, BufferAllocator> Buffer;
   std::vector<tbb::enumerable_thread_specific<Buffer>*> localBuffers;

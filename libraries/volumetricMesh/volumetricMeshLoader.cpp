@@ -34,8 +34,8 @@
 #include "cubicMesh.h"
 #include "tetMesh.h"
 
-// for faster parallel loading of multimesh binary files, enable the -DUSE_TBB macro line in the Makefile-header file (see also documentation)
-#ifdef USE_TBB
+// for faster parallel loading of multimesh binary files, enable the -DVEGAFEM_USE_TBB macro line in the Makefile-header file (see also documentation)
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #else
   #include "range.h"
@@ -170,7 +170,7 @@ int VolumetricMeshLoader::load(FILE * fin, int * numVolumetricMeshes, Volumetric
     offset[i] = offset[i-1] + bytesWritten[i-1];
 
   // load every volumetric mesh from memory
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   tbb::parallel_for(tbb::blocked_range<int>(0, numMeshes), [&](const tbb::blocked_range<int> & rng)
   {
 #else
@@ -185,7 +185,7 @@ int VolumetricMeshLoader::load(FILE * fin, int * numVolumetricMeshes, Volumetric
         (*volumetricMeshes)[i] = load((void *)location, memoryLoad);
       }
     }
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   });
 #endif
   return 0;

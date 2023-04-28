@@ -39,7 +39,7 @@
 #if defined(_WIN32) || defined(WIN32) || defined(linux) || defined(__linux__)
   #include "mkl_service.h"
 #endif
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #endif
 using namespace std;
@@ -68,7 +68,7 @@ StVKReducedInternalForces::StVKReducedInternalForces(int r, double * U, Volumetr
 
   InitComputation(r, U, volumetricMesh);
 
-  #ifdef USE_TBB
+  #ifdef VEGAFEM_USE_TBB
     tbb::enumerable_thread_specific<vector<double>> threadLocalData(r * (linearSize + quadraticSize + cubicSize), 0.0);
     tbb::parallel_for(tbb::blocked_range<int>(0, volumetricMesh->getNumElements()), [&](const tbb::blocked_range<int> & rng)
     {

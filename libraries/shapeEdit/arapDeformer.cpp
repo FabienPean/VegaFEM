@@ -45,7 +45,7 @@
 #include "basicAlgorithms.h"
 #include <algorithm>
 #include <iostream>
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #else
   #include "range.h"
@@ -101,7 +101,7 @@ ARAPModel::ARAPModel(const TetMesh * tetMesh, const double * vtxWeights)
   }
   sortAndDeduplicate(visitedFaces);
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   tbb::enumerable_thread_specific<vector<triple<int,int,double>>> threadLocalWeightBuffer;
   tbb::parallel_for(tbb::blocked_range<int>(0, visitedFaces.size()), [&](const tbb::blocked_range<int> & rng)
   {
@@ -135,7 +135,7 @@ ARAPModel::ARAPModel(const TetMesh * tetMesh, const double * vtxWeights)
         weightBuffer.emplace_back(v1, v2, w);
       }
     }
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   }, tbb::static_partitioner());
 
   for(const auto & weightBuffer : threadLocalWeightBuffer)

@@ -59,8 +59,8 @@
 
 using namespace std;
 
-// for faster parallel loading of multimesh binary files, enable the -DUSE_TBB macro line in the Makefile-header file (see also documentation)
-#ifdef USE_TBB
+// for faster parallel loading of multimesh binary files, enable the -DVEGAFEM_USE_TBB macro line in the Makefile-header file (see also documentation)
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #endif
 
@@ -4598,7 +4598,7 @@ int ObjMesh::loadObjMeshesFromBinary(FILE * fin, int * numObjMeshes, ObjMesh ***
 
   // load every obj mesh from memory
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   tbb::parallel_for(0, numMeshes, [&](int i)
 #else
   for(int i = 0; i < numMeshes; i++)
@@ -4612,7 +4612,7 @@ int ObjMesh::loadObjMeshesFromBinary(FILE * fin, int * numObjMeshes, ObjMesh ***
       (*objMeshes)[i] = new ObjMesh((void *)location, stream, verbose);
     }
   }
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   );
 #endif
 

@@ -36,7 +36,7 @@
 #include <cassert>
 #include <numeric>
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
 #include <tbb/tbb.h>
 #endif
 #include "range.h"
@@ -98,7 +98,7 @@ double FiniteDifferenceTester::testInternalForce(const double * u)
   analyticForce.assign(r, 0.);
   forceModel->GetInternalForce((double*)u, analyticForce.data());
   // Warning: multi-threading works only when forceModel->GetElasticEnergy is parallel-safe
-  #ifdef USE_TBB
+  #ifdef VEGAFEM_USE_TBB
   tbb::parallel_for(tbb::blocked_range<int>(0, r), [&](const tbb::blocked_range<int> & rng)
   {
   #else
@@ -129,7 +129,7 @@ double FiniteDifferenceTester::testInternalForce(const double * u)
       }
       localDispBuffer[j] = oldvalue;
     }
-    #ifdef USE_TBB
+    #ifdef VEGAFEM_USE_TBB
   }, tbb::static_partitioner());
   #endif
 
@@ -158,7 +158,7 @@ double FiniteDifferenceTester::testStiffnessMatrix(const double * u, double * re
 
   // Warning: multi-threading works only when forceModel->GetInternalForce is parallel-safe
   // Warning: multi-threading works only when forceModel->GetElasticEnergy is parallel-safe
-  #ifdef USE_TBB
+  #ifdef VEGAFEM_USE_TBB
   tbb::parallel_for(tbb::blocked_range<int>(0, r), [&](const tbb::blocked_range<int> & rng)
   {
   #else
@@ -217,7 +217,7 @@ double FiniteDifferenceTester::testStiffnessMatrix(const double * u, double * re
 
       localDispBuffer[j] = oldvalue;
     }
-  #ifdef USE_TBB
+  #ifdef VEGAFEM_USE_TBB
   }, tbb::static_partitioner());
   #endif
 

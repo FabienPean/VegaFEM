@@ -32,7 +32,7 @@
 
 #include "linearFEMStencilForceModel.h"
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
 #include <tbb/tbb.h>
 #endif
 
@@ -65,7 +65,7 @@ LinearFEMStencilForceModel::LinearFEMStencilForceModel(StencilForceModel * fem):
 
     cout << "Computing element stiffness matrices.." << endl;
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
     tbb::parallel_for(0, nele, [&] (int el) 
     {
       stencilForceModel->GetStencilLocalEnergyAndForceAndMatrix(eltype, el, u.data(), nullptr, nullptr, elementK[eltype].data() + el * nelev * nelev * 9);

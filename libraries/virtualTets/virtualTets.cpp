@@ -48,7 +48,7 @@
 #include "tetTriPiece.h"
 #include <iostream>
 #include <sstream>
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #endif
 using namespace std;
@@ -800,7 +800,7 @@ TetMeshGeo createVirtualTetsMesh(const TetMeshGeo & tetMesh, const TriMeshGeo & 
     if (outerTriVtxIDs.size() > 0)
     {
       TetMeshRef newTetMeshRef = newTetMesh.ref();
-  #ifdef USE_TBB
+  #ifdef VEGAFEM_USE_TBB
       tbb::parallel_for(0, sizei(outerTriVtxIDs), [&](const int & i)
   #else
       for(int i = 0; i < sizei(outerTriVtxIDs); i++)
@@ -820,7 +820,7 @@ TetMeshGeo createVirtualTetsMesh(const TetMeshGeo & tetMesh, const TriMeshGeo & 
         newTetMeshRef.computeTetBarycentricWeights(vi.index, pos, &weights[4*triVtxID]);
         std::memcpy(&tetVtxIndices[4*triVtxID], newTetMesh.tet(vi.index).data(), sizeof(int) * 4);
         embeddingTetIndices[triVtxID] = vi.index;
-  #ifdef USE_TBB
+  #ifdef VEGAFEM_USE_TBB
       });
   #else
       }
