@@ -52,8 +52,6 @@ target_include_directories(
                          $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
 )
 
-
-
 ### OpenGL
 find_package(OpenGL REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC OpenGL::GL)
@@ -61,9 +59,7 @@ find_package(GLUT REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC GLUT::GLUT)
 find_package(GLEW REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE GLEW::GLEW) # Linux|Windows, glslPhong.cpp objMeshGPUDeformer_coarseToFine.cpp
-    
-
-### TBB # Avoid TBB for now
+### TBB
 #set(TBB_ENABLE_IPO OFF)
 #find_package(TBB CONFIG REQUIRED)
 #target_link_libraries(${PROJECT_NAME} PUBLIC TBB::tbb TBB::tbbmalloc $<$<PLATFORM_ID:Windows>:TBB::tbbmalloc_proxy>)
@@ -77,15 +73,9 @@ set(MKL_MPI intelmpi)           # intelmpi, mpich, openmpi, msmpi, mshpc
 find_package(MKL CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE MKL::MKL)
 target_compile_definitions(${PROJECT_NAME} PUBLIC PARDISO_SOLVER_IS_AVAILABLE)
-# Copy all MKL DLLs
-#file(GLOB MKL_DLLS "${MKL_ROOT}/redist/${MKL_ARCH}/*.dll")
-#if(MKL_DLLS)
-#add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-#    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-#        ${MKL_DLLS}
-#        $<TARGET_FILE_DIR:${PROJECT_NAME}>
-#)
-#endif()
+### ARPACK
+find_package(arpackng CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE ARPACK::ARPACK)
 
 set(VegaFEM_core_libs
     animationHelper
@@ -169,14 +159,6 @@ list(FILTER all_sources EXCLUDE REGEX ".*computeField.*")                       
 list(FILTER all_sources EXCLUDE REGEX ".*triangle-closestPoint.*")              #cpp embedded into another one
 list(FILTER all_sources EXCLUDE REGEX ".*matrixBLAS[^\\.].*")                   #cpp embedded into another one
 
-# list(FILTER all_sources EXCLUDE REGEX ".*ARPACK.*")                             #requires dependency on ARPACK
-#set(BLA_VENDOR Intel10_64lp_seq)
-#set(BLA_STATIC ON)
-#find_package(BLAS REQUIRED)
-#find_package(LAPACK REQUIRED)
-#target_link_libraries(${PROJECT_NAME} PRIVATE BLAS::BLAS LAPACK::LAPACK)
-find_package(arpackng CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE ARPACK::ARPACK)
 
 target_sources(${PROJECT_NAME} PRIVATE ${all_headers} PRIVATE ${all_sources})
 install(FILES ${all_headers} DESTINATION "include/${PROJECT_NAME}")
@@ -212,6 +194,9 @@ add_library(vegafem_gpl)
 set_target_properties(vegafem_gpl PROPERTIES CXX_EXTENSIONS OFF)
 target_compile_features(vegafem_gpl PRIVATE cxx_std_14)
 target_link_libraries(vegafem_gpl PUBLIC ${PROJECT_NAME})
+# The following targets are only set in the build interface because
+# 1) they are private, so nothing links against it
+# 2) they would require to be exported along in the install set
 target_link_libraries(vegafem_gpl PRIVATE $<BUILD_INTERFACE:Eigen3::Eigen igl::core igl::predicates igl_copyleft::cgal>)
 target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
 
@@ -223,7 +208,6 @@ elseif(UNIX OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES GNU)
 #    )
 else()
 endif()
-
 
 set(VegaFEM_gpl_libs
     exactArithmetic
@@ -259,160 +243,8 @@ set(VegaFEM_with_CG
 )
 
 ################################################################################
-# Utilities
+# Install
 ################################################################################
-if(VEGAFEM_BUILD_UTILITIES)
-
-    set(VegaFEM_utilities
-        computeDistanceField
-        finiteDifferenceTest
-        isosurfaceMesher
-        objMergeFiles
-        tetMesher
-    )
-
-    foreach(exe ${VegaFEM_utilities})
-      file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
-      add_executable(${exe} ${sources})
-      target_link_libraries(${exe} PRIVATE ${PROJECT_NAME})
-      if($<TARGET_RUNTIME_DLLS:${exe}>)
-        add_custom_command(TARGET ${exe} POST_BUILD
-          COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
-          COMMAND_EXPAND_LISTS
-        )
-        install(TARGETS $<IF:$<PLATFORM_ID:Windows>,${exe},>
-            RUNTIME_DEPENDENCIES
-            PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
-            POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
-            DIRECTORIES "$<TARGET_FILE_DIR:${exe}>"
-        )
-      endif()
-      install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
-    endforeach()
-
-    # For generateInterpolant/generateInterpolationMatrix/generateMassMAtrix/generateSurfaceMesh
-    file(GLOB_RECURSE VegaFEM_utilities_tmp CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/volumetricMeshUtilities/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/volumetricMeshUtilities/*.cpp")
-    foreach(exe ${VegaFEM_utilities_tmp})
-      get_filename_component(filename ${exe} NAME_WE)
-      add_executable(${filename} ${exe})
-      target_link_libraries(${filename} PRIVATE ${PROJECT_NAME})
-      if($<TARGET_RUNTIME_DLLS:${exe}>)
-        add_custom_command(TARGET ${exe} POST_BUILD
-          COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
-          COMMAND_EXPAND_LISTS
-        )
-        install(TARGETS ${filename}
-            RUNTIME_DEPENDENCIES
-            PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
-            POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
-            DIRECTORIES "$<TARGET_FILE_DIR:${filename}> "
-        )
-      endif()
-       install(TARGETS ${filename} RUNTIME DESTINATION bin CONFIGURATIONS Release)
-    endforeach()
-
-    set(VegaFEM_utilities_gpl
-        immersionMesher
-        virtualTetsDriver
-    )
-    foreach(exe ${VegaFEM_utilities_gpl})
-      file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
-      add_executable(${exe} ${sources})
-      target_link_libraries(${exe} PRIVATE vegafem_gpl)
-      if($<TARGET_RUNTIME_DLLS:${exe}>)
-        add_custom_command(TARGET ${exe} POST_BUILD
-          COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
-          COMMAND_EXPAND_LISTS
-        )
-        install(TARGETS ${exe}
-            RUNTIME_DEPENDENCIES
-            PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
-            POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
-            DIRECTORIES "$<TARGET_FILE_DIR:${exe}> "
-        )
-      endif()
-      install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
-    endforeach()
-
-endif(VEGAFEM_BUILD_UTILITIES)
-
-if(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
-
-    find_package(X11 REQUIRED) # freeglut on linux
-    find_package(glui CONFIG REQUIRED) # clothBW-rt displayObj editShapeARAP interactiveDeformableSimulator reducedDynamicSolver
-
-    set(VegaFEM_utilities
-        clothBW-rt
-        displayObj
-        editShapeARAP
-        interactiveDeformableSimulator
-        #largeModalDeformationFactory #requires wxwidget arpack
-        reducedDynamicSolver-rt
-    )
-    foreach(exe ${VegaFEM_utilities})
-      file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
-      add_executable(${exe} ${sources})
-      target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
-          OpenGL::GL 
-          GLUT::GLUT
-          $<IF:$<TARGET_EXISTS:glui::glui>,glui::glui,glui::glui_static> #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
-          $<$<PLATFORM_ID:Linux,Darwin>:X11::X11>
-      )
-      if($<TARGET_RUNTIME_DLLS:${exe}>)
-        add_custom_command(TARGET ${exe} POST_BUILD
-          COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
-          COMMAND_EXPAND_LISTS
-        )
-        install(TARGETS ${exe}
-           RUNTIME_DEPENDENCIES
-           PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
-           POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
-           DIRECTORIES "$<TARGET_FILE_DIR:${exe}>"
-       )
-      endif()
-      install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
-    endforeach()
-
-    #target_link_libraries(clothBW-rt PUBLIC OpenGL::GL)
-
-
-    target_link_libraries(displayObj PRIVATE GLEW::GLEW)
-
-    #find_package(wxWidgets REQUIRED)
-    #target_compile_definitions(largeModalDeformationFactory PRIVATE ${wxWidgets_DEFINITIONS} "$<$<CONFIG:DEBUG>:${wxWidgets_DEFINITIONS_DEBUG}>")
-    #target_include_directories(largeModalDeformationFactory PRIVATE ${wxWidgets_INCLUDE_DIRS})
-    #target_link_libraries(largeModalDeformationFactory PRIVATE ${wxWidgets_LIBRARIES})
-    #target_compile_definitions(largeModalDeformationFactory PUBLIC "-DWIN32_LEAN_AND_MEAN")
-
-    set(exe
-        largeModalDeformationFactory #requires wxwidget arpack
-    )
-    file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/utilities/${exe}/*.cpp")
-    add_executable(${exe} WIN32 ${sources})
-    target_link_libraries(${exe} PRIVATE ${PROJECT_NAME} 
-        OpenGL::GL 
-        GLUT::GLUT
-        $<IF:$<TARGET_EXISTS:glui::glui>,glui::glui,glui::glui_static> #reducedDynamicSolver-rt interactiveDeformableSimulator editShapeARAP displayObj clothBW-rt
-        $<$<PLATFORM_ID:Linux,Darwin>:X11::X11>
-    )
-    if($<TARGET_RUNTIME_DLLS:${exe}>)
-        add_custom_command(TARGET ${exe} POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
-            COMMAND_EXPAND_LISTS
-        )
-       install(TARGETS ${exe}
-           RUNTIME_DEPENDENCIES
-           PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
-           POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
-           DIRECTORIES "$<TARGET_FILE_DIR:${exe}>"
-       )
-    endif()
-    find_package(wxWidgets CONFIG REQUIRED)
-    target_link_libraries(largeModalDeformationFactory PRIVATE wx::core wx::base wx::gl)
-    install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
-endif(VEGAFEM_BUILD_UTILITIES_GRAPHICS)
-
-
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
     ${PROJECT_NAME}ConfigVersion.cmake
@@ -436,3 +268,8 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
               "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
         DESTINATION lib/cmake/${PROJECT_NAME}
 )
+
+################################################################################
+# Utilities
+################################################################################
+add_subdirectory(utilities)

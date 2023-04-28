@@ -36,13 +36,13 @@
 #include <cassert>
 #include <numeric>
 
-namespace vegafem
-{
 #ifdef USE_TBB
-  #include <tbb/tbb.h>
+#include <tbb/tbb.h>
 #endif
 #include "range.h"
 using namespace std;
+namespace vegafem
+{
 
 static double squaredEuclideanNorm(const std::vector<double> & v)
 {
