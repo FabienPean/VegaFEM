@@ -261,9 +261,9 @@ int ObjMesh::loadFromAscii(const string & filename, int verbose)
 
     std::string lineString(line);
     // trim white space ahead
-    lineString.erase(lineString.begin(), std::find_if(lineString.begin(), lineString.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
+    lineString.erase(lineString.begin(), std::find_if(lineString.begin(), lineString.end(), [](int c) {return !std::isspace(c); }));
     // trim white space in the end
-    lineString.erase(std::find_if(lineString.rbegin(), lineString.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), lineString.end());
+    lineString.erase(std::find_if(lineString.rbegin(), lineString.rend(), [](int c) {return !std::isspace(c); }).base(), lineString.end());
 
 
     memset(line, 0, maxline);
