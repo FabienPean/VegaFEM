@@ -42,10 +42,10 @@
 #include "matrixMultiplyMacros.h"
 #include "triple.h"
 
-namespace vegafem
-{
 using namespace std;
 
+namespace vegafem
+{
 const VolumetricMesh::elementType CubicMesh::elementType_ = CUBIC;
 
 CubicMesh::CubicMesh(const char * filename, fileFormatType fileFormat, int verbose) : VolumetricMesh(filename, fileFormat, 8, &temp, verbose), parallelepipedMode(0)

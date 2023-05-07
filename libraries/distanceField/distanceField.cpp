@@ -86,10 +86,10 @@
 #include "trilinearInterpolation.h"
 #include "vegalong.h"
 
-namespace vegafem
-{
 using namespace std;
 
+namespace vegafem
+{
 //#define GENERATE_DEBUG_DATA
 
 vegalong DistanceField::GetFilesize(const char *filename)
