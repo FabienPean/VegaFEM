@@ -55,6 +55,7 @@ using namespace std;
 #include "vec3d.h"
 #include "marchingCubes.h"
 #include "performanceCounter.h"
+#include "triple.h"
 
 #ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
