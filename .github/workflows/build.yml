@@ -130,6 +130,10 @@ jobs:
     - name: Run vcpkg
       run: vcpkg/vcpkg install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
 
+    - uses: hendrikmuhs/ccache-action@v1.2
+      with:
+        key: ${{ github.job }}-${{ matrix.os }}-${{ matrix.compiler.cpp }}
+
     - name: Configure CMake
       env:
         CC:  ${{ matrix.compiler.c }}
@@ -260,6 +264,16 @@ jobs:
     - name: Run vcpkg
       run: |
         vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
+
+
+    - name: Install ccache and ninja # For correct caching with ccache on Windows
+      shell: bash
+      run: |
+          choco install ccache
+          
+    - uses: hendrikmuhs/ccache-action@v1.2
+      with:
+        key: ${{ github.job }}-${{ matrix.os }}-${{ matrix.compiler.cpp }}
 
     - name: Setup MSVC
       uses: ilammy/msvc-dev-cmd@v1

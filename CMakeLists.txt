@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.21)
 # 3.21 for https://cmake.org/cmake/help/git-stage/manual/cmake-generator-expressions.7.html#genex:TARGET_RUNTIME_DLLS to copy DLLs to binary folder
 # Alternative 3.16 for https://cmake.org/cmake/help/latest/command/file.html#get-runtime-dependencies
+
+find_program(CCACHE_PROGRAM ccache)
+if(CCACHE_PROGRAM)
+    set(CMAKE_C_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+    set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+endif()
+
 project(
   vegafem
   VERSION 4.0.1
