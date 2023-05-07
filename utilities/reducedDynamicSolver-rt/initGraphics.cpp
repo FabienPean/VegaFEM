@@ -40,8 +40,9 @@
    StVK simulation.
 */
 
-#include "macros.h"
 #include "initGraphics.h"
+
+#include <cmath>
 using namespace vegafem;
 
 extern void displayFunction(void);
@@ -91,8 +92,8 @@ void initCamera(double cameraRadius,
 
   double upPos[3] = {0,1,0};
   *camera = new SphericalCamera(cameraRadius, 
-	     1.0 * cameraLongitude / 360 * (2*PI), 
-             1.0 * cameraLattitude / 360 * (2*PI), 
+	     1.0 * cameraLongitude / 360 * (2*M_PI), 
+             1.0 * cameraLattitude / 360 * (2*M_PI), 
              focusPos,  upPos, 0.05, camera2WorldScalingFactor); 
 }
 

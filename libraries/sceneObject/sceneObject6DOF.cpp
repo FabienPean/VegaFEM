@@ -36,6 +36,7 @@
 #include <cstring>
 #include <cfloat>
 #include "sceneObject6DOF.h"
+#include "macros.h"
 
 namespace vegafem
 {
