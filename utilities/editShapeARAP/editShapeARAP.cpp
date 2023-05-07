@@ -43,14 +43,12 @@
 #include "performanceCounter.h"
 #include "configFile.h"
 #include "volumetricMeshLoader.h"
-#include <GL/glui.h>
 #include "lighting.h"
 #include "valueIndex.h"
 #include "listIO.h"
 #include "openGLHelper.h"
 #include "matrix.h"
 #include "arapDeformer.h"
-#include "matrixMultiplyMacros.h"
 #include "constrainedDOFs.h"
 #include "matrixIO.h"
 #ifdef USE_GLSL
@@ -74,6 +72,7 @@
 #include "cameraChangeLoad.h"
 using namespace vegafem;
 
+#include <GL/glui.h>
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
