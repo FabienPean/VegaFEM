@@ -190,26 +190,26 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(libigl)
 
 
-add_library(vegafem_gpl)
-set_target_properties(vegafem_gpl PROPERTIES CXX_EXTENSIONS OFF)
-target_compile_features(vegafem_gpl PRIVATE cxx_std_14)
-target_link_libraries(vegafem_gpl PUBLIC ${PROJECT_NAME})
+add_library(${PROJECT_NAME}_gpl)
+set_target_properties(${PROJECT_NAME}_gpl PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_features(${PROJECT_NAME}_gpl PRIVATE cxx_std_14)
+target_link_libraries(${PROJECT_NAME}_gpl PUBLIC ${PROJECT_NAME})
 # The following targets are only set in the build interface because
 # 1) they are private, so nothing links against it
 # 2) they would require to be exported along in the install set
-target_link_libraries(vegafem_gpl PRIVATE $<BUILD_INTERFACE:Eigen3::Eigen igl::core igl::predicates igl_copyleft::cgal>)
-target_link_libraries(vegafem_gpl PUBLIC CGAL::CGAL)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
+target_link_libraries(${PROJECT_NAME}_gpl PRIVATE $<BUILD_INTERFACE:Eigen3::Eigen igl::core igl::predicates igl_copyleft::cgal>)
+target_link_libraries(${PROJECT_NAME}_gpl PUBLIC CGAL::CGAL)# er.h:#include<CGAL/Exact_predicates_exact_constructions_kernel.h>
 
 if(MSVC OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES MSVC)
-    target_compile_options(vegafem_gpl PRIVATE /permissive-)
+    target_compile_options(${PROJECT_NAME}_gpl PRIVATE /permissive-)
 elseif(UNIX OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES GNU)
-#    target_compile_options(vegafem_gpl
+#    target_compile_options(${PROJECT_NAME}_gpl
 #        PRIVATE -Werror # -Wall -pedantic-errors # problem with CGAL headers
 #    )
 else()
 endif()
 
-set(VegaFEM_gpl_libs
+set(${PROJECT_NAME}_gpl_libs
     exactArithmetic
     immersionMesher
     libiglInterface
@@ -218,9 +218,9 @@ set(VegaFEM_gpl_libs
 
 set(all_headers)
 set(all_sources)
-foreach(lib ${VegaFEM_gpl_libs})
+foreach(lib ${${PROJECT_NAME}_gpl_libs})
   target_include_directories(
-    vegafem_gpl PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/libraries/${lib}>
+    ${PROJECT_NAME}_gpl PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/libraries/${lib}>
                        $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
   )
   file(GLOB_RECURSE headers CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.h" "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.hpp")
@@ -228,7 +228,7 @@ foreach(lib ${VegaFEM_gpl_libs})
   file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.cpp")
   list(APPEND all_sources ${sources})
 endforeach()
-target_sources(vegafem_gpl PRIVATE ${all_headers} PRIVATE ${all_sources})
+target_sources(${PROJECT_NAME}_gpl PRIVATE ${all_headers} PRIVATE ${all_sources})
 install(FILES ${all_headers} DESTINATION "include/${PROJECT_NAME}")
 
 set(VegaFEM_opengl
