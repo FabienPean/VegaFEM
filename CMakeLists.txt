@@ -14,6 +14,7 @@ option(VEGAFEM_BUILD_UTILITIES_GRAPHICS "build utilities applications requiring 
 # Core
 ################################################################################
 add_library(${PROJECT_NAME} STATIC)
+add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 #set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 14)
 #set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD_REQUIRED ON)
@@ -191,6 +192,7 @@ FetchContent_MakeAvailable(libigl)
 
 
 add_library(${PROJECT_NAME}_gpl)
+add_library(${PROJECT_NAME}::${PROJECT_NAME}_gpl ALIAS ${PROJECT_NAME}_gpl)
 set_target_properties(${PROJECT_NAME}_gpl PROPERTIES CXX_EXTENSIONS OFF)
 target_compile_features(${PROJECT_NAME}_gpl PRIVATE cxx_std_14)
 target_link_libraries(${PROJECT_NAME}_gpl PUBLIC ${PROJECT_NAME})
