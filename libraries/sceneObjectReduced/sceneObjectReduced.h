@@ -38,7 +38,6 @@
 #ifndef VEGAFEM_SCENEOBJECTREDUCED_H
 #define VEGAFEM_SCENEOBJECTREDUCED_H
 
-#include "macros.h"
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>

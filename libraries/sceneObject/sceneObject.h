@@ -40,7 +40,6 @@
 
 #include "openGL-headers.h"
 
-#include "macros.h"
 #include "objMesh.h"
 #include "objMeshRender.h"
 #include "minivector.h"

@@ -34,7 +34,7 @@
 #include "basicAlgorithms.h"
 #include "exactOctree.h"
 #include "predicates.h"
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
 #include <tbb/tbb.h>
 #endif
 using namespace std;
@@ -49,7 +49,7 @@ vector<vector<int>> computeTrianglesIntersectingEachTetExact(const TetMeshRef te
 
   vector<vector<int>> tetEmbedTri(tetMesh.numTets());
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   tbb::parallel_for(tbb::blocked_range<int>(0, tetMesh.numTets()), [&](const tbb::blocked_range<int> & rng)
   {
     for (int tetID = rng.begin(); tetID != rng.end(); ++tetID)
@@ -74,7 +74,7 @@ vector<vector<int>> computeTrianglesIntersectingEachTetExact(const TetMeshRef te
       octree.rangeQuery(toBB, toTri, tetEmbedTri[tetID]);
       sortAndDeduplicate(tetEmbedTri[tetID]);
     }
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   }, tbb::auto_partitioner()); //end for locations
 #endif
   return tetEmbedTri;

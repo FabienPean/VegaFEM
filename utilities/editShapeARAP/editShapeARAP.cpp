@@ -43,14 +43,12 @@
 #include "performanceCounter.h"
 #include "configFile.h"
 #include "volumetricMeshLoader.h"
-#include <GL/glui.h>
 #include "lighting.h"
 #include "valueIndex.h"
 #include "listIO.h"
 #include "openGLHelper.h"
 #include "matrix.h"
 #include "arapDeformer.h"
-#include "matrixMultiplyMacros.h"
 #include "constrainedDOFs.h"
 #include "matrixIO.h"
 #ifdef USE_GLSL
@@ -74,6 +72,7 @@
 #include "cameraChangeLoad.h"
 using namespace vegafem;
 
+#include <GL/glui.h>
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
@@ -82,6 +81,7 @@ using namespace vegafem;
 #include <cstdio>
 #include <algorithm>
 #include <cassert>
+#include <cmath>
 using namespace std;
 
 // graphics
@@ -693,8 +693,8 @@ static void initScene()
   zFar = cameraRadius * 100.0;
 
   camera = new SphericalCamera(cameraRadius,
-            1.0 * cameraLongitude / 360 * (2.0 * PI),
-            1.0 * cameraLattitude / 360 * (2.0 * PI),
+            1.0 * cameraLongitude / 360 * (2.0 * M_PI),
+            1.0 * cameraLattitude / 360 * (2.0 * M_PI),
             &cameraFocus[0], cameraUp, 0.05);
   if (cameraPosFilename.size() > 0)
     camera->LoadPosition(cameraPosFilename.c_str());

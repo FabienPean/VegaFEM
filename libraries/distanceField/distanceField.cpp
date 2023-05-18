@@ -86,10 +86,10 @@
 #include "trilinearInterpolation.h"
 #include "vegalong.h"
 
-namespace vegafem
-{
 using namespace std;
 
+namespace vegafem
+{
 //#define GENERATE_DEBUG_DATA
 
 vegalong DistanceField::GetFilesize(const char *filename)
@@ -411,7 +411,8 @@ typedef struct
   double fieldDist, gridDist, relError; 
 } errorData;
 
-struct more_errorData : public std::binary_function< errorData, errorData, bool > {
+struct more_errorData
+{
   bool operator()(const errorData& x, const errorData& y) {
     return((x.relError) > (y.relError)); 
   }

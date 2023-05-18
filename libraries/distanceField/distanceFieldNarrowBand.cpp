@@ -288,7 +288,8 @@ typedef struct
   double fieldDist, gridDist, relError; 
 } errorData;
 
-struct more_errorData : public std::binary_function< errorData, errorData, bool > {
+struct more_errorData
+{
   bool operator()(const errorData& x, const errorData& y) {
     return((x.relError) > (y.relError)); 
   }

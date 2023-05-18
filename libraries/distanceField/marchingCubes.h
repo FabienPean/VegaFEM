@@ -49,7 +49,6 @@
 #include <vector>
 #include <map>
 
-#include "triple.h"
 #include "objMesh.h"
 #include "distanceFieldBase.h"
 

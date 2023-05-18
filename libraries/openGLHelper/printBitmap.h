@@ -33,7 +33,6 @@
 #ifndef VEGAFEM_PRINTBITMAP_H
 #define VEGAFEM_PRINTBITMAP_H
 
-#include "macros.h"
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>

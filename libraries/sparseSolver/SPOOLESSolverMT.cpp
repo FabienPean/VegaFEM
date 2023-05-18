@@ -34,9 +34,6 @@
 #include "SPOOLESSolver.h"
 #include "sparseSolverAvailability.h"
 
-namespace vegafem
-{
-
 #ifdef SPOOLES_SOLVER_IS_AVAILABLE
 
 // SPOOLES solver is available
@@ -44,6 +41,9 @@ namespace vegafem
 extern "C" {
   #include "LinSol/BridgeMT.h"
 }
+
+namespace vegafem
+{
 
 SPOOLESSolverMT::SPOOLESSolverMT(const SparseMatrix * A, int numThreads, int verbose)
 {
@@ -255,9 +255,10 @@ int SPOOLESSolverMT::SolveLinearSystem(double * x, const double * rhs)
 
   return 0;
 }
-
+}//namespace vegafem
 #else
-
+namespace vegafem
+{
 // SPOOLES Solver is not available
 
 SPOOLESSolverMT::SPOOLESSolverMT(const SparseMatrix * A, int numThreads, int verbose)
@@ -280,8 +281,5 @@ int SPOOLESSolverMT::SolveLinearSystem(double * x, const double * rhs)
   DisabledSolverError();
   return 1;
 }
-
-#endif
-
-
 }//namespace vegafem
+#endif

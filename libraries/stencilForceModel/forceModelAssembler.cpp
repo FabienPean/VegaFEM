@@ -103,7 +103,7 @@ ForceModelAssembler::ForceModelAssembler(StencilForceModel *eleFM) : stencilForc
     bufferExamplars[eltype].resize(nelev * 3 + nelev * nelev * 9);
   }
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   localBuffers.resize(stencilForceModel->GetNumStencilTypes());
   for (int eltype = 0; eltype < stencilForceModel->GetNumStencilTypes(); eltype++) 
   {
@@ -119,7 +119,7 @@ ForceModelAssembler::ForceModelAssembler(StencilForceModel *eleFM) : stencilForc
 
 ForceModelAssembler::~ForceModelAssembler()
 {
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   delete[] internalForceVertexLocks;
   delete[] stiffnessMatrixVertexRowLocks;
   delete[] partitioners;
@@ -142,7 +142,7 @@ void ForceModelAssembler::GetEnergyAndForceAndMatrix(const double * u, double * 
   if (tangentStiffnessMatrix)
     tangentStiffnessMatrix->ResetToZero();
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   for (auto itt = energyLocalBuffer.begin(); itt != energyLocalBuffer.end(); ++itt)
     *itt = 0.0;
 

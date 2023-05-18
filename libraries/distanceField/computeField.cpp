@@ -39,7 +39,7 @@
 #include "vegalong.h"
 #include "basicAlgorithms.h"
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #endif
 
@@ -243,7 +243,7 @@ namespace vegafem
   #define ZIGZAGROUTINE ZigZagUnsigned
 #endif
 {
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   try
   {
     tbb::parallel_for(zMin, zMax+1, [&](int z)
@@ -256,10 +256,6 @@ namespace vegafem
   { 
     assert(e != 0);
     return e;
-  }
-  catch(tbb::captured_exception & ex) // in case tbb failed to propogate our thrown ret
-  {
-    return 1;
   }
   return 0;
 #else

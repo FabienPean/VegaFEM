@@ -59,8 +59,8 @@
 
 using namespace std;
 
-// for faster parallel loading of multimesh binary files, enable the -DUSE_TBB macro line in the Makefile-header file (see also documentation)
-#ifdef USE_TBB
+// for faster parallel loading of multimesh binary files, enable the -DVEGAFEM_USE_TBB macro line in the Makefile-header file (see also documentation)
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #endif
 
@@ -261,9 +261,9 @@ int ObjMesh::loadFromAscii(const string & filename, int verbose)
 
     std::string lineString(line);
     // trim white space ahead
-    lineString.erase(lineString.begin(), std::find_if(lineString.begin(), lineString.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
+    lineString.erase(lineString.begin(), std::find_if(lineString.begin(), lineString.end(), [](int c) {return !std::isspace(c); }));
     // trim white space in the end
-    lineString.erase(std::find_if(lineString.rbegin(), lineString.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), lineString.end());
+    lineString.erase(std::find_if(lineString.rbegin(), lineString.rend(), [](int c) {return !std::isspace(c); }).base(), lineString.end());
 
 
     memset(line, 0, maxline);
@@ -4598,7 +4598,7 @@ int ObjMesh::loadObjMeshesFromBinary(FILE * fin, int * numObjMeshes, ObjMesh ***
 
   // load every obj mesh from memory
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   tbb::parallel_for(0, numMeshes, [&](int i)
 #else
   for(int i = 0; i < numMeshes; i++)
@@ -4612,7 +4612,7 @@ int ObjMesh::loadObjMeshesFromBinary(FILE * fin, int * numObjMeshes, ObjMesh ***
       (*objMeshes)[i] = new ObjMesh((void *)location, stream, verbose);
     }
   }
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   );
 #endif
 

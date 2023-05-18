@@ -46,7 +46,7 @@
 #include "exactOctree.h"
 #include "geometryQuery.h"
 #include "containerHelper.h"
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>
 #endif
 
@@ -590,7 +590,7 @@ void ExactTriMeshOctree::selfIntersectionExact(const TriMeshRef triMesh, std::ve
   vector<UEdgeKey> candidatePairs(candidateSet.begin(), candidateSet.end()); // store all those candidate triangle pairs for parallel evaluations
   vector<char> intersected(candidatePairs.size(), 0);
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   tbb::parallel_for(tbb::blocked_range<int>(0, candidatePairs.size()), [&](const tbb::blocked_range<int> & rng)
   {
     for (int i = rng.begin(); i != rng.end(); ++i)
@@ -606,7 +606,7 @@ void ExactTriMeshOctree::selfIntersectionExact(const TriMeshRef triMesh, std::ve
         intersected[i] = 1;
       }
     }
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   }, tbb::auto_partitioner()); //end for locations
 #endif
 
@@ -630,7 +630,7 @@ void ExactTriMeshOctree::intersectionExact(const TriMeshRef triMesh, const TriMe
 
   vector<pair<int,int>> allPairList;
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   struct ThreadLocalData
   {
     vector<int> IDlist;
@@ -656,7 +656,7 @@ void ExactTriMeshOctree::intersectionExact(const TriMeshRef triMesh, const TriMe
       for(int triID : IDlist)
         pairList.emplace_back(triID, oID);
     }
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   });
   for(const auto & local : threadLocalData)
     vectorInsertRangeBack(allPairList, local.pairList);
@@ -799,7 +799,7 @@ void ExactTriMeshOctree::intersectionExact(const TriMeshRef triMesh, const Exact
 
   vector<char> intersected(candidatePairs.size(), 0);
 
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   tbb::parallel_for(tbb::blocked_range<int>(0, candidatePairs.size()), [&](const tbb::blocked_range<int> & rng)
   {
     for (int i = rng.begin(); i != rng.end(); ++i)
@@ -817,7 +817,7 @@ void ExactTriMeshOctree::intersectionExact(const TriMeshRef triMesh, const Exact
         intersected[i] = 1;
       }
     }
-#ifdef USE_TBB
+#ifdef VEGAFEM_USE_TBB
   }, tbb::auto_partitioner()); //end for locations
 #endif
 

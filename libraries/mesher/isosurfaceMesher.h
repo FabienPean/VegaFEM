@@ -50,7 +50,6 @@
 #include "distanceFieldBase.h"
 #include "objMesh.h"
 #include "tetMesh.h"
-#include "triple.h"
 #include "triangle.h"
 #include "delaunayMesher.h"
 
