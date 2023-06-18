@@ -55,9 +55,9 @@ elseif(UNIX OR "${CMAKE_CXX_COMPILER_FRONTEND_VARIANT}" MATCHES GNU)
 else()
 endif()
 
-target_include_directories(
-  ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-                         $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
+target_include_directories(${PROJECT_NAME}
+    PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+    PUBLIC  $<INSTALL_INTERFACE:include>
 )
 
 ### OpenGL
@@ -143,9 +143,9 @@ set(VegaFEM_core_libs
 set(all_headers)
 set(all_sources)
 foreach(lib ${VegaFEM_core_libs})
-  target_include_directories(
-    ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/libraries/${lib}>
-                           $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
+  target_include_directories(${PROJECT_NAME}
+    PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/libraries/${lib}>
+    PUBLIC  $<INSTALL_INTERFACE:include>
   )
   file(GLOB_RECURSE headers CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.h" "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.hpp")
   list(APPEND all_headers ${headers})
@@ -228,9 +228,9 @@ set(${PROJECT_NAME}_gpl_libs
 set(all_headers)
 set(all_sources)
 foreach(lib ${${PROJECT_NAME}_gpl_libs})
-  target_include_directories(
-    ${PROJECT_NAME}_gpl PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/libraries/${lib}>
-                       $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
+  target_include_directories(${PROJECT_NAME}_gpl 
+    PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/libraries/${lib}>
+    PUBLIC  $<INSTALL_INTERFACE:include>
   )
   file(GLOB_RECURSE headers CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.h" "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.hpp")
   list(APPEND all_headers ${headers})
