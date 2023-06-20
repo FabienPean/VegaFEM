@@ -39,14 +39,14 @@
 
 #include <cmath>
 #include <cfloat>
-#include "sparseMatrix.h"
-#include "generateMassMatrix.h"
-#include "StVKStiffnessMatrix.h"
-#include "StVKCubeABCD.h"
-#include "matrixIO.h"
-#include "constrainedDOFs.h"
-#include "StVKElementABCDLoader.h"
-#include "ARPACKSolver.h"
+#include <vegafem/sparseMatrix.h>
+#include <vegafem/generateMassMatrix.h>
+#include <vegafem/StVKStiffnessMatrix.h>
+#include <vegafem/StVKCubeABCD.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/constrainedDOFs.h>
+#include <vegafem/StVKElementABCDLoader.h>
+#include <vegafem/ARPACKSolver.h>
 #include "largeModalDeformationFactory.h"
 
 #ifdef WIN32

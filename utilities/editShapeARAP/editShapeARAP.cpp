@@ -37,39 +37,38 @@
    Allows the user to interactively deform a 3d model using the ARAP energy.
 */ 
 
-#include "getopts.h"
-#include "sceneObjectDeformable.h"
-#include "objMesh.h"
-#include "performanceCounter.h"
-#include "configFile.h"
-#include "volumetricMeshLoader.h"
-#include "lighting.h"
-#include "valueIndex.h"
-#include "listIO.h"
-#include "openGLHelper.h"
-#include "matrix.h"
-#include "arapDeformer.h"
-#include "constrainedDOFs.h"
-#include "matrixIO.h"
+#include <vegafem/getopts.h>
+#include <vegafem/sceneObjectDeformable.h>
+#include <vegafem/objMesh.h>
+#include <vegafem/performanceCounter.h>
+#include <vegafem/configFile.h>
+#include <vegafem/volumetricMeshLoader.h>
+#include <vegafem/lighting.h>
+#include <vegafem/listIO.h>
+#include <vegafem/openGLHelper.h>
+#include <vegafem/matrix.h>
+#include <vegafem/arapDeformer.h>
+#include <vegafem/constrainedDOFs.h>
+#include <vegafem/matrixIO.h>
 #ifdef USE_GLSL
-  #include "glslPhong.h"
+  #include <vegafem/glslPhong.h>
 #endif
-#include "saveScreenShot.h"
-#include "camera.h"
-#include "matrix.h"
-#include "handleControl.h"
-#include "tetMesh.h"
-#include "generateSurfaceMesh.h"
-#include "handleRender.h"
-#include "sceneGroundPlane.h"
-#include "averagingBuffer.h"
-#include "barycentricCoordinates.h"
-#include "generateTetMeshFromCubicMesh.h"
-#include "simulationRecorder.h"
-#include "stringHelper.h"
-#include "cameraLighting.h"
-#include "inputDevice.h"
-#include "cameraChangeLoad.h"
+#include <vegafem/saveScreenShot.h>
+#include <vegafem/camera.h>
+#include <vegafem/matrix.h>
+#include <vegafem/handleControl.h>
+#include <vegafem/tetMesh.h>
+#include <vegafem/generateSurfaceMesh.h>
+#include <vegafem/handleRender.h>
+#include <vegafem/sceneGroundPlane.h>
+#include <vegafem/averagingBuffer.h>
+#include <vegafem/barycentricCoordinates.h>
+#include <vegafem/generateTetMeshFromCubicMesh.h>
+#include <vegafem/simulationRecorder.h>
+#include <vegafem/stringHelper.h>
+#include <vegafem/cameraLighting.h>
+#include <vegafem/inputDevice.h>
+#include <vegafem/cameraChangeLoad.h>
 using namespace vegafem;
 
 #include <GL/glui.h>

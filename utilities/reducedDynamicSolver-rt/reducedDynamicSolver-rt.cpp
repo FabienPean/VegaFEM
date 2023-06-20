@@ -65,20 +65,20 @@ using namespace std;
 #endif
 
 #include "initGraphics.h"
-#include "sceneObjectReducedCPU.h"
+#include <vegafem/sceneObjectReducedCPU.h>
 #ifdef USE_CG
-  #include "sceneObjectReducedGPU.h"
+  #include <vegafem/sceneObjectReducedGPU.h>
 #endif
-#include "performanceCounter.h"
-#include "implicitNewmarkDense.h"
-#include "implicitBackwardEulerDense.h"
-#include "modalMatrix.h"
-#include "reducedStVKForceModel.h"
-#include "reducedLinearStVKForceModel.h"
-#include "configFile.h"
+#include <vegafem/performanceCounter.h>
+#include <vegafem/implicitNewmarkDense.h>
+#include <vegafem/implicitBackwardEulerDense.h>
+#include <vegafem/modalMatrix.h>
+#include <vegafem/reducedStVKForceModel.h>
+#include <vegafem/reducedLinearStVKForceModel.h>
+#include <vegafem/configFile.h>
 #include <GL/glui.h>
-#include "lighting.h"
-#include "matrixIO.h"
+#include <vegafem/lighting.h>
+#include <vegafem/matrixIO.h>
 using namespace vegafem;
 
 char windowTitleBase[4096] = "Reduced StVK Demo";

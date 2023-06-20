@@ -36,19 +36,19 @@
 #include <vector>
 
 #include "initGraphics.h"
-#include "performanceCounter.h"
-#include "objMesh.h"
-#include "clothBWFromObjMesh.h"
+#include <vegafem/performanceCounter.h>
+#include <vegafem/objMesh.h>
+#include <vegafem/clothBWFromObjMesh.h>
 
-#include "clothBWStencilForceModel.h"
-#include "forceModelAssembler.h"
+#include <vegafem/clothBWStencilForceModel.h>
+#include <vegafem/forceModelAssembler.h>
 
-#include "implicitNewmarkSparse.h"
-#include "implicitBackwardEulerSparse.h"
-#include "configFile.h"
-#include "listIO.h"
-#include "sceneObjectDeformable.h"
-#include "saveScreenShot.h"
+#include <vegafem/implicitNewmarkSparse.h>
+#include <vegafem/implicitBackwardEulerSparse.h>
+#include <vegafem/configFile.h>
+#include <vegafem/listIO.h>
+#include <vegafem/sceneObjectDeformable.h>
+#include <vegafem/saveScreenShot.h>
 #include <GL/glui.h>
 
 using namespace vegafem;

@@ -37,7 +37,7 @@
 
 // basis from external deformation data 
 
-#include "matrixIO.h"
+#include <vegafem/matrixIO.h>
 #include "largeModalDeformationFactory.h"
 
 void MyFrame::OnLoadSketchData(wxCommandEvent& event)

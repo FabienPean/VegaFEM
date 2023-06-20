@@ -39,9 +39,9 @@
   #include <windows.h>
 #endif
 
-#include "openGL-headers.h"
+#include <vegafem/openGL-headers.h>
 #include <GL/glui.h>
-#include "camera.h"
+#include <vegafem/camera.h>
 
 void initGLUT(int argc, char* argv[], char * windowTitle, int windowWidth, int windowHeight, int * windowID);
 

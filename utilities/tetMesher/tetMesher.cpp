@@ -53,10 +53,10 @@
 #include <iostream>
 using namespace std;
 
-#include "getopts.h"
-#include "objMesh.h"
-#include "tetMesher.h"
-#include "initPredicates.h"
+#include <vegafem/getopts.h>
+#include <vegafem/objMesh.h>
+#include <vegafem/tetMesher.h>
+#include <vegafem/initPredicates.h>
 using namespace vegafem;
 
 int main( int argc, char** argv )

@@ -43,15 +43,15 @@
 #include <sstream>
 #include <functional>
 #include <vector>
-#include "virtualTets.h"
-#include "virtualTets-via-csg.h"
-#include "commandLineParser.h"
-#include "filterIterator.h"
-#include "predicates.h"
-#include "exactOctree.h"
-#include "tetMesh.h"
-#include "objMesh.h"
-#include "profiler.h"
+#include <vegafem/virtualTets.h>
+#include <vegafem/virtualTets-via-csg.h>
+#include <vegafem/commandLineParser.h>
+#include <vegafem/filterIterator.h>
+#include <vegafem/predicates.h>
+#include <vegafem/exactOctree.h>
+#include <vegafem/tetMesh.h>
+#include <vegafem/objMesh.h>
+#include <vegafem/profiler.h>
 using namespace std;
 using namespace vegafem;
 

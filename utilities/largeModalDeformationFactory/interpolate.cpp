@@ -37,7 +37,7 @@
 
 // interpolation from volumetric to rendering mesh
 
-#include "matrixIO.h"
+#include <vegafem/matrixIO.h>
 #include "largeModalDeformationFactory.h"
 
 void MyFrame::OnInterpolateLinearModes(wxCommandEvent& event)

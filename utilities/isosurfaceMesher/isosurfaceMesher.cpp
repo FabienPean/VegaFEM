@@ -43,15 +43,15 @@
 
 #include <iostream>
 
-#include "tetMesh.h"
-#include "delaunayMesher.h"
-#include "distanceFieldCreator.h"
-#include "isosurfaceMesher.h"
-#include "performanceCounter.h"
-#include "getopts.h"
-#include "objMeshOrientable.h"
-#include "matrixIO.h"
-#include "predicates.h"
+#include <vegafem/tetMesh.h>
+#include <vegafem/delaunayMesher.h>
+#include <vegafem/distanceFieldCreator.h>
+#include <vegafem/isosurfaceMesher.h>
+#include <vegafem/performanceCounter.h>
+#include <vegafem/getopts.h>
+#include <vegafem/objMeshOrientable.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/predicates.h>
 using namespace std;
 using namespace vegafem;
 

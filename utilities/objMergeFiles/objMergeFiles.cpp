@@ -41,10 +41,12 @@
 #include <cstring>
 #include <cmath>
 #include <vector>
+#include <string>
+#include <iostream>
 using namespace std;
-#include "getopts.h"
-#include "matrixIO.h"
-#include "objMesh.h"
+#include <vegafem/getopts.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/objMesh.h>
 using namespace vegafem;
 
 vector<string> filenames;

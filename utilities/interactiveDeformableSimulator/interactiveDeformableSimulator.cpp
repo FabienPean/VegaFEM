@@ -75,57 +75,57 @@ using namespace std;
   #include "TargetConditionals.h"
 #endif
 
-#include "getopts.h"
+#include <vegafem/getopts.h>
 #include "initGraphics.h"
-#include "sceneObjectDeformable.h"
-#include "performanceCounter.h"
+#include <vegafem/sceneObjectDeformable.h>
+#include <vegafem/performanceCounter.h>
 
-#include "volumetricMeshLoader.h"
-#include "tetMesh.h"
+#include <vegafem/volumetricMeshLoader.h>
+#include <vegafem/tetMesh.h>
 
-#include "StVKElementABCDLoader.h"
-#include "StVKCubeABCD.h"
-#include "StVKTetABCD.h"
-#include "StVKTetHighMemoryABCD.h"
-#include "StVKFEM.h"
-#include "StVKStencilForceModel.h"
+#include <vegafem/StVKElementABCDLoader.h>
+#include <vegafem/StVKCubeABCD.h>
+#include <vegafem/StVKTetABCD.h>
+#include <vegafem/StVKTetHighMemoryABCD.h>
+#include <vegafem/StVKFEM.h>
+#include <vegafem/StVKStencilForceModel.h>
 
-#include "implicitBackwardEulerSparse.h"
-#include "eulerSparse.h"
-#include "centralDifferencesSparse.h"
+#include <vegafem/implicitBackwardEulerSparse.h>
+#include <vegafem/eulerSparse.h>
+#include <vegafem/centralDifferencesSparse.h>
 
-#include "corotationalLinearFEM.h"
-#include "corotationalLinearFEMStencilForceModel.h"
+#include <vegafem/corotationalLinearFEM.h>
+#include <vegafem/corotationalLinearFEMStencilForceModel.h>
 
-#include "isotropicHyperelasticFEM.h"
-#include "isotropicMaterial.h"
-#include "StVKIsotropicMaterial.h"
-#include "neoHookeanIsotropicMaterial.h"
-#include "MooneyRivlinIsotropicMaterial.h"
-#include "isotropicHyperelasticFEMStencilForceModel.h"
+#include <vegafem/isotropicHyperelasticFEM.h>
+#include <vegafem/isotropicMaterial.h>
+#include <vegafem/StVKIsotropicMaterial.h>
+#include <vegafem/neoHookeanIsotropicMaterial.h>
+#include <vegafem/MooneyRivlinIsotropicMaterial.h>
+#include <vegafem/isotropicHyperelasticFEMStencilForceModel.h>
 
-#include "getIntegratorSolver.h"
-#include "generateMeshGraph.h"
-#include "generateMassMatrix.h"
+#include <vegafem/getIntegratorSolver.h>
+#include <vegafem/generateMeshGraph.h>
+#include <vegafem/generateMassMatrix.h>
 
-#include "massSpringSystem.h"
-#include "massSpringSystemFromObjMeshConfigFile.h"
-#include "massSpringSystemFromTetMeshConfigFile.h"
-#include "massSpringSystemFromCubicMeshConfigFile.h"
-#include "massSpringStencilForceModel.h"
+#include <vegafem/massSpringSystem.h>
+#include <vegafem/massSpringSystemFromObjMeshConfigFile.h>
+#include <vegafem/massSpringSystemFromTetMeshConfigFile.h>
+#include <vegafem/massSpringSystemFromCubicMeshConfigFile.h>
+#include <vegafem/massSpringStencilForceModel.h>
 
-#include "linearFEMStencilForceModel.h"
+#include <vegafem/linearFEMStencilForceModel.h>
 
-#include "forceModelAssembler.h"
+#include <vegafem/forceModelAssembler.h>
 
-#include "graph.h"
-#include "renderSprings.h"
-#include "configFile.h"
+#include <vegafem/graph.h>
+#include <vegafem/renderSprings.h>
+#include <vegafem/configFile.h>
 
-#include "lighting.h"
-#include "listIO.h"
-#include "matrixIO.h"
-#include "averagingBuffer.h"
+#include <vegafem/lighting.h>
+#include <vegafem/listIO.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/averagingBuffer.h>
 
 #include <GL/glui.h>
 

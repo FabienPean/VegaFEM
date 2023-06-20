@@ -63,7 +63,7 @@ if(VEGAFEM_BUILD_UTILITIES)
     endforeach()
 
 
-
+    if(VEGAFEM_BUILD_COPYLEFT)
     set(VegaFEM_utilities_gpl
         immersionMesher
         virtualTetsDriver
@@ -71,7 +71,7 @@ if(VEGAFEM_BUILD_UTILITIES)
     foreach(exe ${VegaFEM_utilities_gpl})
       file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/${exe}/*.cpp")
       add_executable(${exe} ${sources})
-      target_link_libraries(${exe} PRIVATE vegafem_gpl)
+      target_link_libraries(${exe} PRIVATE vegafem)
       if($<TARGET_RUNTIME_DLLS:${exe}>)
         add_custom_command(TARGET ${exe} POST_BUILD
           COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
@@ -86,6 +86,7 @@ if(VEGAFEM_BUILD_UTILITIES)
       endif()
       install(TARGETS ${exe} RUNTIME DESTINATION bin CONFIGURATIONS Release)
     endforeach()
+    endif()
 endif()
 
 ################################################################################

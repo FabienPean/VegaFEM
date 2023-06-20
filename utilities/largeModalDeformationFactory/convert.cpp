@@ -38,7 +38,7 @@
 // matrix conversion routines
 
 #include "largeModalDeformationFactory.h"
-#include "matrixIO.h"
+#include <vegafem/matrixIO.h>
 
 /* XPM */
 static const char *folder_open_xpm[] = {
