@@ -10,7 +10,7 @@ on:
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
-  VCPKG_VERSION: 69efe9cc2df0015f0bb2d37d55acde4a75c9a25b #2023.04.01
+  VCPKG_VERSION: "2023.06.20"
 
 jobs:
 
