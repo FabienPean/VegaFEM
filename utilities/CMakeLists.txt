@@ -20,7 +20,7 @@ if(VEGAFEM_BUILD_UTILITIES)
     foreach(exe ${VegaFEM_utilities})
       file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${exe}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/${exe}/*.cpp")
       add_executable(${exe} ${sources})
-      target_link_libraries(${exe} PRIVATE ${PROJECT_NAME})
+      target_link_libraries(${exe} ${PROJECT_NAME})
       if($<TARGET_RUNTIME_DLLS:${exe}>)
         add_custom_command(TARGET ${exe} POST_BUILD
           COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${exe}> $<TARGET_FILE_DIR:${exe}> 
@@ -46,7 +46,7 @@ if(VEGAFEM_BUILD_UTILITIES)
     )
     foreach(target_name ${VegaFEM_utilities})
         add_executable(${target_name} "volumetricMeshUtilities/${target_name}.cpp")
-        target_link_libraries(${target_name} PRIVATE ${PROJECT_NAME})
+        target_link_libraries(${target_name} ${PROJECT_NAME})
         if($<TARGET_RUNTIME_DLLS:${target_name}>)
             add_custom_command(TARGET ${target_name} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:${target_name}> $<TARGET_FILE_DIR:${target_name}> 
