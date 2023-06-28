@@ -44,6 +44,7 @@
 #include <vegafem/configFile.h>
 #include <vegafem/volumetricMeshLoader.h>
 #include <vegafem/lighting.h>
+#include <vegafem/valueIndex.h>
 #include <vegafem/listIO.h>
 #include <vegafem/openGLHelper.h>
 #include <vegafem/matrix.h>
