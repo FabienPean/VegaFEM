@@ -155,7 +155,7 @@ foreach(lib ${VegaFEM_core_libs})
   file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/libraries/${lib}/*.cpp")
   list(APPEND all_sources ${sources})
 endforeach()
-
+target_include_directories(${PROJECT_NAME} PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/libraries/private>)
 ### NVidia CG
 find_path(NVIDIA_CG_INCLUDE_DIR Cg/cg.h)
 find_library(NVIDIA_CG_LIBRARY Cg)
