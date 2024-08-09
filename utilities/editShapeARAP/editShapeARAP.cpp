@@ -44,7 +44,6 @@
 #include <vegafem/configFile.h>
 #include <vegafem/volumetricMeshLoader.h>
 #include <vegafem/lighting.h>
-#include <vegafem/valueIndex.h>
 #include <vegafem/listIO.h>
 #include <vegafem/openGLHelper.h>
 #include <vegafem/matrix.h>
@@ -1370,14 +1369,20 @@ void mouseButtonActivityFunction(int button, int state, int x, int y)
 
     auto getClosestHandle = [&]()
     {
-      MinValueIndex vi;
-      for(map<int,Vec3d> :: iterator iter = selectedIKVertices.begin(); iter != selectedIKVertices.end(); iter++)
-      {
-        Vec3d pos(0.0);
-        deformableMesh->GetSingleVertexPositionFromBuffer(iter->first, &pos[0], &pos[1], &pos[2]);
-        vi.update(len2(pos - worldPos), iter->first);
-      }
-      return vi.index;
+        auto min_distance_sqr = std::numeric_limits<double>::max();
+        int min_index = -1;
+        for (const auto& [index,_] : selectedIKVertices)
+        {
+            Vec3d pos;
+            deformableMesh->GetSingleVertexPositionFromBuffer(index, &pos[0], &pos[1], &pos[2]);
+            auto distance_sqr = len2(pos - worldPos);
+            if (distance_sqr < min_distance_sqr)
+            {
+                min_distance_sqr = distance_sqr;
+                min_index = index;
+            }
+        }
+      return min_index;
     };
 
     auto addOrRemoveHandle = [&]()
