@@ -30,6 +30,7 @@
  *                                                                       *
  *************************************************************************/
 
+#include <array>
 #include <cfloat>
 #include <cstring>
 #include <cassert>
@@ -124,7 +125,7 @@ CubicMesh * CubicMesh::createFromUniformGrid(int resolution, int numVoxels, int 
   int numElementVertices = 8;
 
   // create the indices of all vertices
-  typedef triple<int,int,int> tripleIndex;
+  typedef std::array<int,3> tripleIndex;
   set<tripleIndex> vertexSet;
   int vtxI[8] = { 0, 1, 1, 0, 0, 1, 1, 0 };
   int vtxJ[8] = { 0, 0, 1, 1, 0, 0, 1, 1 };
@@ -137,7 +138,7 @@ CubicMesh * CubicMesh::createFromUniformGrid(int resolution, int numVoxels, int 
  
     for(int corner=0; corner<numElementVertices; corner++)
     {
-      tripleIndex triIndex(i+vtxI[corner], j+vtxJ[corner], k+vtxK[corner]);
+      tripleIndex triIndex{ i + vtxI[corner], j + vtxJ[corner], k + vtxK[corner] };
       vertexSet.insert(triIndex);
     }
   }
@@ -146,15 +147,12 @@ CubicMesh * CubicMesh::createFromUniformGrid(int resolution, int numVoxels, int 
   double * vertices = (double*) malloc (sizeof(double) * 3 * numVertices);
   int count = 0;
   map<tripleIndex, int> vertexMap;
-  for(set<tripleIndex> :: iterator iter = vertexSet.begin(); iter != vertexSet.end(); iter++)
+  for(auto [i,j,k] : vertexSet)
   {
-    int i = iter->first;
-    int j = iter->second;
-    int k = iter->third;
     vertices[3*count+0] = -0.5 + 1.0 * i / resolution;
     vertices[3*count+1] = -0.5 + 1.0 * j / resolution;
     vertices[3*count+2] = -0.5 + 1.0 * k / resolution;
-    vertexMap.insert(make_pair(tripleIndex(i,j,k), count));
+    vertexMap.insert(make_pair(tripleIndex{ i,j,k }, count));
     //printf("%d %d %d: %d\n", i,j,k, count);
     count++;
   }
@@ -175,7 +173,7 @@ CubicMesh * CubicMesh::createFromUniformGrid(int resolution, int numVoxels, int 
       //printf("I=%d J=%d K=%d\n", I, J, K);
 
       // find I, J, K
-      int vtxIndex = vertexMap[tripleIndex(I, J, K)];
+      int vtxIndex = vertexMap[{I, J, K}];
       //printf("vtxIndex = %d\n", vtxIndex);
       elements[numElementVertices * vox + corner] = vtxIndex;
     }
