@@ -15,7 +15,7 @@ env:
 jobs:
 
   Cache-Linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       VCPKG_DEFAULT_TRIPLET: x64-linux-release
     steps:
