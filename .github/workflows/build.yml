@@ -223,7 +223,8 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-2022]
-        compiler: [ {cpp: cl.exe, c: cl.exe}, {cpp: clang++, c: clang} ]
+        compiler: [ {cpp: cl.exe, c: cl.exe} ]
+        # , {cpp: clang++, c: clang} ] # disabled due to github action runner compiler version bug
     
     runs-on: ${{ matrix.os }}
 
