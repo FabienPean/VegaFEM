@@ -60,17 +60,17 @@
 #if defined(_WIN32) || defined(WIN32) || defined(linux) || defined(__linux__)
   #include <GL/glew.h>
 #endif
-#include "openGL-headers.h"
-#include "objMeshRender.h"
-#include "getopts.h"
-#include "matrixIO.h"
+#include <vegafem/openGL-headers.h>
+#include <vegafem/objMeshRender.h>
+#include <vegafem/getopts.h>
+#include <vegafem/matrixIO.h>
 #include <GL/glui.h>
-#include "performanceCounter.h"
-#include "openGLHelper.h"
-#include "lighting.h"
-#include "glslPhong.h"
-#include "camera.h"
-#include "listIO.h"
+#include <vegafem/performanceCounter.h>
+#include <vegafem/openGLHelper.h>
+#include <vegafem/lighting.h>
+#include <vegafem/glslPhong.h>
+#include <vegafem/camera.h>
+#include <vegafem/listIO.h>
 using namespace vegafem;
 
 std::set<int> * selectedVerticesSet;  // each object will have a set storing selected vertices

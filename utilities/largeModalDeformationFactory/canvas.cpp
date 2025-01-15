@@ -39,10 +39,10 @@
   #include <windows.h>
 #endif
 
-#include "openGL-headers.h"
-#include "objMeshRender.h"
+#include <vegafem/openGL-headers.h>
+#include <vegafem/objMeshRender.h>
 #include "canvas.h"
-#include "renderVolumetricMesh.h"
+#include <vegafem/renderVolumetricMesh.h>
 
 #ifndef M_PI
   #define M_PI 3.1415926535897932384

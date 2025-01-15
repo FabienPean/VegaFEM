@@ -37,10 +37,10 @@
 
 // manage the simulation mesh
 
-#include "volumetricMeshLoader.h"
-#include "generateSurfaceMesh.h"
-#include "volumetricMeshENuMaterial.h"
-#include "objMeshOffsetVoxels.h"
+#include <vegafem/volumetricMeshLoader.h>
+#include <vegafem/generateSurfaceMesh.h>
+#include <vegafem/volumetricMeshENuMaterial.h>
+#include <vegafem/objMeshOffsetVoxels.h>
 #include "largeModalDeformationFactory.h"
 
 using namespace std;

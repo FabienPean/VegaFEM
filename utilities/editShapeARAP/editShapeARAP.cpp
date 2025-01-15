@@ -37,39 +37,38 @@
    Allows the user to interactively deform a 3d model using the ARAP energy.
 */ 
 
-#include "getopts.h"
-#include "sceneObjectDeformable.h"
-#include "objMesh.h"
-#include "performanceCounter.h"
-#include "configFile.h"
-#include "volumetricMeshLoader.h"
-#include "lighting.h"
-#include "valueIndex.h"
-#include "listIO.h"
-#include "openGLHelper.h"
-#include "matrix.h"
-#include "arapDeformer.h"
-#include "constrainedDOFs.h"
-#include "matrixIO.h"
+#include <vegafem/getopts.h>
+#include <vegafem/sceneObjectDeformable.h>
+#include <vegafem/objMesh.h>
+#include <vegafem/performanceCounter.h>
+#include <vegafem/configFile.h>
+#include <vegafem/volumetricMeshLoader.h>
+#include <vegafem/lighting.h>
+#include <vegafem/listIO.h>
+#include <vegafem/openGLHelper.h>
+#include <vegafem/matrix.h>
+#include <vegafem/arapDeformer.h>
+#include <vegafem/constrainedDOFs.h>
+#include <vegafem/matrixIO.h>
 #ifdef USE_GLSL
-  #include "glslPhong.h"
+  #include <vegafem/glslPhong.h>
 #endif
-#include "saveScreenShot.h"
-#include "camera.h"
-#include "matrix.h"
-#include "handleControl.h"
-#include "tetMesh.h"
-#include "generateSurfaceMesh.h"
-#include "handleRender.h"
-#include "sceneGroundPlane.h"
-#include "averagingBuffer.h"
-#include "barycentricCoordinates.h"
-#include "generateTetMeshFromCubicMesh.h"
-#include "simulationRecorder.h"
-#include "stringHelper.h"
-#include "cameraLighting.h"
-#include "inputDevice.h"
-#include "cameraChangeLoad.h"
+#include <vegafem/saveScreenShot.h>
+#include <vegafem/camera.h>
+#include <vegafem/matrix.h>
+#include <vegafem/handleControl.h>
+#include <vegafem/tetMesh.h>
+#include <vegafem/generateSurfaceMesh.h>
+#include <vegafem/handleRender.h>
+#include <vegafem/sceneGroundPlane.h>
+#include <vegafem/averagingBuffer.h>
+#include <vegafem/barycentricCoordinates.h>
+#include <vegafem/generateTetMeshFromCubicMesh.h>
+#include <vegafem/simulationRecorder.h>
+#include <vegafem/stringHelper.h>
+#include <vegafem/cameraLighting.h>
+#include <vegafem/inputDevice.h>
+#include <vegafem/cameraChangeLoad.h>
 using namespace vegafem;
 
 #include <GL/glui.h>
@@ -1370,14 +1369,20 @@ void mouseButtonActivityFunction(int button, int state, int x, int y)
 
     auto getClosestHandle = [&]()
     {
-      MinValueIndex vi;
-      for(map<int,Vec3d> :: iterator iter = selectedIKVertices.begin(); iter != selectedIKVertices.end(); iter++)
-      {
-        Vec3d pos(0.0);
-        deformableMesh->GetSingleVertexPositionFromBuffer(iter->first, &pos[0], &pos[1], &pos[2]);
-        vi.update(len2(pos - worldPos), iter->first);
-      }
-      return vi.index;
+        auto min_distance_sqr = std::numeric_limits<double>::max();
+        int min_index = -1;
+        for (const auto& [index,_] : selectedIKVertices)
+        {
+            Vec3d pos;
+            deformableMesh->GetSingleVertexPositionFromBuffer(index, &pos[0], &pos[1], &pos[2]);
+            auto distance_sqr = len2(pos - worldPos);
+            if (distance_sqr < min_distance_sqr)
+            {
+                min_distance_sqr = distance_sqr;
+                min_index = index;
+            }
+        }
+      return min_index;
     };
 
     auto addOrRemoveHandle = [&]()

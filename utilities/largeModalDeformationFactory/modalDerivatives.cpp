@@ -35,19 +35,19 @@
  *                                                                       *
  *************************************************************************/
 
-#include "sparseMatrix.h"
-#include "generateMassMatrix.h"
-#include "StVKStiffnessMatrix.h"
-#include "StVKCubeABCD.h"
-#include "StVKHessianTensor.h"
-#include "StVKElementABCDLoader.h"
-#include "constrainedDOFs.h"
-#include "matrixIO.h"
-#include "matrixPCA.h"
-#include "computeStiffnessMatrixNullspace.h"
+#include <vegafem/sparseMatrix.h>
+#include <vegafem/generateMassMatrix.h>
+#include <vegafem/StVKStiffnessMatrix.h>
+#include <vegafem/StVKCubeABCD.h>
+#include <vegafem/StVKHessianTensor.h>
+#include <vegafem/StVKElementABCDLoader.h>
+#include <vegafem/constrainedDOFs.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/matrixPCA.h>
+#include <vegafem/computeStiffnessMatrixNullspace.h>
 #include "largeModalDeformationFactory.h"
-#include "sparseSolverAvailability.h"
-#include "sparseSolvers.h"
+#include <vegafem/sparseSolverAvailability.h>
+#include <vegafem/sparseSolvers.h>
 using namespace std;
 
 void MyFrame::OnLoadModalDerivatives(wxCommandEvent& event)

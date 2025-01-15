@@ -36,45 +36,46 @@
   and it tests stiffness matrices by performing finite differences on the
   internal forces.
 */
-#include "finiteDifferenceTester.h"
+#include "vectorHelper.h""
 
-#include "forceModel.h"
-#include "configFile.h"
+#include <vegafem/finiteDifferenceTester.h>
 
-#include "tetMesh.h"
-#include "volumetricMesh.h"
-#include "volumetricMeshLoader.h"
-#include "generateMassMatrix.h"
+#include <vegafem/forceModel.h>
+#include <vegafem/configFile.h>
 
-#include "clothBWFromObjMesh.h"
-#include "clothBWStencilForceModel.h"
+#include <vegafem/tetMesh.h>
+#include <vegafem/volumetricMesh.h>
+#include <vegafem/volumetricMeshLoader.h>
+#include <vegafem/generateMassMatrix.h>
 
-#include "matrix.h"
-#include "vectorHelper.h"
+#include <vegafem/clothBWFromObjMesh.h>
+#include <vegafem/clothBWStencilForceModel.h>
 
-#include "neoHookeanIsotropicMaterial.h"
-#include "StVKIsotropicMaterial.h"
-#include "MooneyRivlinIsotropicMaterial.h"
-#include "isotropicHyperelasticFEM.h"
-#include "isotropicHyperelasticFEMStencilForceModel.h"
+#include <vegafem/matrix.h>
 
-#include "corotationalLinearFEM.h"
-#include "corotationalLinearFEMStencilForceModel.h"
+#include <vegafem/neoHookeanIsotropicMaterial.h>
+#include <vegafem/StVKIsotropicMaterial.h>
+#include <vegafem/MooneyRivlinIsotropicMaterial.h>
+#include <vegafem/isotropicHyperelasticFEM.h>
+#include <vegafem/isotropicHyperelasticFEMStencilForceModel.h>
 
-#include "StVKFEM.h"
-#include "StVKElementABCDLoader.h"
-#include "StVKStencilForceModel.h"
+#include <vegafem/corotationalLinearFEM.h>
+#include <vegafem/corotationalLinearFEMStencilForceModel.h>
 
-#include "massSpringSystem.h"
-#include "massSpringSystemFromObjMeshConfigFile.h"
-#include "massSpringSystemFromTetMeshConfigFile.h"
-#include "massSpringSystemFromCubicMeshConfigFile.h"
-#include "massSpringStencilForceModel.h"
+#include <vegafem/StVKFEM.h>
+#include <vegafem/StVKElementABCDLoader.h>
+#include <vegafem/StVKStencilForceModel.h>
 
-#include "stencilForceModel.h"
-#include "forceModelAssembler.h"
+#include <vegafem/massSpringSystem.h>
+#include <vegafem/massSpringSystemFromObjMeshConfigFile.h>
+#include <vegafem/massSpringSystemFromTetMeshConfigFile.h>
+#include <vegafem/massSpringSystemFromCubicMeshConfigFile.h>
+#include <vegafem/massSpringStencilForceModel.h>
 
-#include "linearFEMStencilForceModel.h"
+#include <vegafem/stencilForceModel.h>
+#include <vegafem/forceModelAssembler.h>
+
+#include <vegafem/linearFEMStencilForceModel.h>
 
 #include <iostream>
 #include <cassert>

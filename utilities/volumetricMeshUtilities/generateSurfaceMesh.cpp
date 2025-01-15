@@ -37,9 +37,9 @@
 #include <float.h>
 #include <time.h>
 
-#include "getopts.h"
-#include "volumetricMeshLoader.h"
-#include "generateSurfaceMesh.h"
+#include <vegafem/getopts.h>
+#include <vegafem/volumetricMeshLoader.h>
+#include <vegafem/generateSurfaceMesh.h>
 
 using namespace vegafem;
 

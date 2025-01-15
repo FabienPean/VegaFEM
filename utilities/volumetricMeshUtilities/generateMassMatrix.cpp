@@ -40,8 +40,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
-#include "generateMassMatrix.h"
-#include "volumetricMeshLoader.h"
+#include <vegafem/generateMassMatrix.h>
+#include <vegafem/volumetricMeshLoader.h>
 using namespace vegafem;
 
 int main(int argc, char ** argv)

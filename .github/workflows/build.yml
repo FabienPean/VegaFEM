@@ -10,12 +10,12 @@ on:
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
-  VCPKG_VERSION: 69efe9cc2df0015f0bb2d37d55acde4a75c9a25b #2023.04.01
+  VCPKG_VERSION: "2024.12.16"
 
 jobs:
 
   Cache-Linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       VCPKG_DEFAULT_TRIPLET: x64-linux-release
     steps:
@@ -223,7 +223,8 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-2022]
-        compiler: [ {cpp: cl.exe, c: cl.exe}, {cpp: clang++, c: clang} ]
+        compiler: [ {cpp: cl.exe, c: cl.exe} ]
+        # , {cpp: clang++, c: clang} ] # disabled due to github action runner compiler version bug
     
     runs-on: ${{ matrix.os }}
 

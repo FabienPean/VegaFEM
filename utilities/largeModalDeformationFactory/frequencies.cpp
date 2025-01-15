@@ -40,12 +40,12 @@
 #include <iomanip>
 #include <sstream>
 #include <iostream>
-#include "sparseMatrix.h"
-#include "generateMassMatrix.h"
-#include "StVKStiffnessMatrix.h"
-#include "matrixIO.h"
-#include "constrainedDOFs.h"
-#include "volumetricMeshENuMaterial.h"
+#include <vegafem/sparseMatrix.h>
+#include <vegafem/generateMassMatrix.h>
+#include <vegafem/StVKStiffnessMatrix.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/constrainedDOFs.h>
+#include <vegafem/volumetricMeshENuMaterial.h>
 #include "largeModalDeformationFactory.h"
 
 using namespace std;

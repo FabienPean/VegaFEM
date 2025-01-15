@@ -41,10 +41,10 @@
 #include <vector>
 using namespace std;
 
-#include "distanceFieldCreator.h"
-#include "closestPointField.h"
-#include "objMesh.h"
-#include "getopts.h"
+#include <vegafem/distanceFieldCreator.h>
+#include <vegafem/closestPointField.h>
+#include <vegafem/objMesh.h>
+#include <vegafem/getopts.h>
 using namespace vegafem;
 
 /*

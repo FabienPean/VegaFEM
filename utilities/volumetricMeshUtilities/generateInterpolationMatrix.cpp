@@ -34,15 +34,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "volumetricMesh.h"
-#include "volumetricMeshLoader.h"
-#include "cubicMesh.h"
-#include "tetMesh.h"
-#include "generateInterpolationMatrix.h"
-#include "objMesh.h"
-#include "matrixIO.h"
-#include "matrixMacros.h"
-#include "getopts.h"
+#include <vegafem/volumetricMesh.h>
+#include <vegafem/volumetricMeshLoader.h>
+#include <vegafem/cubicMesh.h>
+#include <vegafem/tetMesh.h>
+#include <vegafem/generateInterpolationMatrix.h>
+#include <vegafem/objMesh.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/matrixMacros.h>
+#include <vegafem/getopts.h>
 using namespace vegafem;
 
 /*

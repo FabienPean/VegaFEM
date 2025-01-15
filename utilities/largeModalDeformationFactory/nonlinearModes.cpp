@@ -37,14 +37,14 @@
 
 // nonlinear mode computation
 
-#include "sparseMatrix.h"
-#include "generateMassMatrix.h"
-#include "StVKStiffnessMatrix.h"
-#include "StVKHessianTensor.h"
-#include "constrainedDOFs.h"
-#include "sparseSolvers.h"
-#include "matrixIO.h"
-#include "matrixPCA.h"
+#include <vegafem/sparseMatrix.h>
+#include <vegafem/generateMassMatrix.h>
+#include <vegafem/StVKStiffnessMatrix.h>
+#include <vegafem/StVKHessianTensor.h>
+#include <vegafem/constrainedDOFs.h>
+#include <vegafem/sparseSolvers.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/matrixPCA.h>
 #include "largeModalDeformationFactory.h"
 
 void MyFrame::OnLoadNonLinearModes(wxCommandEvent& event)

@@ -37,11 +37,11 @@
 
 // create the configuration files for a runtime simulation
 
-#include "StVKReducedInternalForces.h"
-#include "StVKReducedStiffnessMatrix.h"
-#include "matrixIO.h"
-#include "matrix.h"
-#include "generateMassMatrix.h"
+#include <vegafem/StVKReducedInternalForces.h>
+#include <vegafem/StVKReducedStiffnessMatrix.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/matrix.h>
+#include <vegafem/generateMassMatrix.h>
 #include "largeModalDeformationFactory.h"
 
 using namespace std;

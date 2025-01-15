@@ -38,15 +38,15 @@
 #include <vector>
 using namespace std;
 
-#include "volumetricMesh.h"
-#include "volumetricMeshLoader.h"
-#include "tetMesh.h"
-#include "cubicMesh.h"
-#include "objMesh.h"
-#include "matrixIO.h"
-#include "matrixMacros.h"
-#include "getopts.h"
-#include "listIO.h"
+#include <vegafem/volumetricMesh.h>
+#include <vegafem/volumetricMeshLoader.h>
+#include <vegafem/tetMesh.h>
+#include <vegafem/cubicMesh.h>
+#include <vegafem/objMesh.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/matrixMacros.h>
+#include <vegafem/getopts.h>
+#include <vegafem/listIO.h>
 using namespace vegafem;
 
 /*

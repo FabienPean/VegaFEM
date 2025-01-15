@@ -48,11 +48,11 @@
 #include <wx/wx.h>
 #include <wx/spinctrl.h>
 
-#include "objMesh.h"
-#include "listIO.h"
-#include "volumetricMesh.h"
-#include "modalMatrix.h"
-#include "StVKReducedInternalForces.h"
+#include <vegafem/objMesh.h>
+#include <vegafem/listIO.h>
+#include <vegafem/volumetricMesh.h>
+#include <vegafem/modalMatrix.h>
+#include <vegafem/StVKReducedInternalForces.h>
 
 using namespace vegafem;
 #include "states.h"

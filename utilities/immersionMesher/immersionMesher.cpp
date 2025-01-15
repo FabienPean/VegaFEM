@@ -38,14 +38,14 @@
   It calls routines from the immersionMeshing library.
 */
 
-#include "objMesh.h"
-#include "immersionMesher.h"
-#include "performanceCounter.h"
-#include "tetMeshGeo.h"
-#include "basicAlgorithms.h"
-#include "initPredicates.h"
-#include "stringHelper.h"
-#include "commandLineParser.h"
+#include <vegafem/objMesh.h>
+#include <vegafem/immersionMesher.h>
+#include <vegafem/performanceCounter.h>
+#include <vegafem/tetMeshGeo.h>
+#include <vegafem/basicAlgorithms.h>
+#include <vegafem/initPredicates.h>
+#include <vegafem/stringHelper.h>
+#include <vegafem/commandLineParser.h>
 #include <set>
 #include <cstdlib>
 #include <cstdio>

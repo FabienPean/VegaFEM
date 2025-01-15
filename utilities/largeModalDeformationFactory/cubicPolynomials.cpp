@@ -37,10 +37,10 @@
 
 // cubic polynomial computation
 
-#include "StVKReducedInternalForces.h"
-#include "StVKCubeABCD.h"
-#include "matrixIO.h"
-#include "StVKElementABCDLoader.h"
+#include <vegafem/StVKReducedInternalForces.h>
+#include <vegafem/StVKCubeABCD.h>
+#include <vegafem/matrixIO.h>
+#include <vegafem/StVKElementABCDLoader.h>
 #include "largeModalDeformationFactory.h"
 #ifdef VEGAFEM_USE_TBB
   #include <tbb/tbb.h>

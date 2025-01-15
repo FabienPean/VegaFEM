@@ -37,7 +37,7 @@
 
 // manage the rendering mesh
 
-#include "generateSurfaceMesh.h"
+#include <vegafem/generateSurfaceMesh.h>
 #include "largeModalDeformationFactory.h"
 
 using namespace std;

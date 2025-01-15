@@ -39,11 +39,11 @@
 #define _CANVAS_H_
 
 #include <wx/glcanvas.h>
-#include "camera.h"
-#include "objMesh.h"
-#include "cubicMesh.h"
-#include "modalMatrix.h"
-#include "performanceCounter.h"
+#include <vegafem/camera.h>
+#include <vegafem/objMesh.h>
+#include <vegafem/cubicMesh.h>
+#include <vegafem/modalMatrix.h>
+#include <vegafem/performanceCounter.h>
 #include "largeModalDeformationFactory.h"
 #include "states.h"
 
