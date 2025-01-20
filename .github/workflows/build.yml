@@ -172,9 +172,9 @@ jobs:
 
     - name: Upload installation folder
       if: ${{strategy.job-index == 0}}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: Linux-install-dir
+        name: VegaFEM-x64-linux-${{ matrix.compiler.c }}
         path: install
         retention-days: 2
 
@@ -266,7 +266,6 @@ jobs:
       run: |
         vcpkg/vcpkg.exe install opengl freeglut glui glew cgal eigen3 tbb wxwidgets arpack-ng
 
-
     - name: Install ccache and ninja # For correct caching with ccache on Windows
       shell: bash
       run: |
@@ -308,8 +307,8 @@ jobs:
 
     - name: Upload install folder
       if: ${{strategy.job-index == 0}}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: Windows-install-dir
+        name: VegaFEM-x64-windows-msvc
         path: install
         retention-days: 2
