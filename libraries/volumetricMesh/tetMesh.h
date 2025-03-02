@@ -115,7 +115,6 @@ public:
 
   static double getSignedTetVolume(const Vec3d & a, const Vec3d & b, const Vec3d & c, const Vec3d & d);
   static double getTetVolume(const Vec3d & a, const Vec3d & b, const Vec3d & c, const Vec3d & d);
-  static double getTetDeterminant(const Vec3d & a, const Vec3d & b, const Vec3d & c, const Vec3d & d);
 
   virtual double getElementVolume(int el) const;
   virtual void getElementInertiaTensor(int el, Mat3d & inertiaTensor) const;

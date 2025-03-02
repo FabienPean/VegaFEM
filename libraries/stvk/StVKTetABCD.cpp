@@ -31,6 +31,7 @@
  *************************************************************************/
 
 #include "StVKTetABCD.h"
+#include "geometryQuery.h"
 
 namespace vegafem
 {
@@ -61,7 +62,7 @@ StVKTetABCD::~StVKTetABCD()
 
 void StVKTetABCD::StVKSingleTetABCD(Vec3d vtx[4], elementData * target)
 {
-  double det = TetMesh::getTetDeterminant(vtx[0], vtx[1], vtx[2], vtx[3]);
+  double det = getTetDeterminant(vtx[0], vtx[1], vtx[2], vtx[3]);
   target->volume = fabs(det / 6);
 
   for(int i=0; i<4; i++)

@@ -31,6 +31,7 @@
  *************************************************************************/
 
 #include "StVKTetHighMemoryABCD.h"
+#include "geometryQuery.h"
 
 namespace vegafem
 {
@@ -86,7 +87,7 @@ StVKTetHighMemoryABCD::~StVKTetHighMemoryABCD()
 
 void StVKTetHighMemoryABCD::StVKSingleTetABCD(Vec3d vtx[4], Mat3d A[4][4], double B[4][4], Vec3d C[4][4][4], double D[4][4][4][4])
 {
-  double det = TetMesh::getTetDeterminant(vtx[0], vtx[1], vtx[2], vtx[3]);
+  double det = getTetDeterminant(vtx[0], vtx[1], vtx[2], vtx[3]);
   double volume = fabs(det / 6);
 
   Vec3d Phig[4];
