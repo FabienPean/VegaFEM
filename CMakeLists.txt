@@ -10,7 +10,7 @@ endif()
 
 project(
   vegafem
-  VERSION 4.0.1
+  VERSION 4.0
   LANGUAGES C CXX
 )
 set(CMAKE_VERBOSE_MAKEFILE ON CACHE BOOL "ON" FORCE)
